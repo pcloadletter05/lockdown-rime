@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 01-03-PLAN.md
-last_updated: "2026-03-28T16:45:55.227Z"
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-28T17:25:03.166Z"
 progress:
   total_phases: 4
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 5
+  completed_plans: 4
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-28)
 
 **Core value:** The visitor must feel like they've sat down at a real person's real work computer in 1999.
-**Current focus:** Phase 01 — foundation
+**Current focus:** Phase 02 — desktop-environment
 
 ## Current Position
 
-Phase: 01 (foundation) — COMPLETE
-Plan: 3 of 3 (all plans complete)
+Phase: 02 (desktop-environment) — EXECUTING
+Plan: 2 of 2
 
 ## Performance Metrics
 
@@ -49,6 +49,7 @@ Plan: 3 of 3 (all plans complete)
 | Phase 01 P03 | 1min | 1 tasks | 1 files |
 | Phase 01 P02 | 1min | 1 tasks | 6 files |
 | Phase 01 P01 | 4min | 2 tasks | 6 files |
+| Phase 02 P01 | 2min | 3 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -66,6 +67,9 @@ Recent decisions affecting current work:
 - [Phase 01]: Boot login dialog only responds to OK button click (not general click/keypress)
 - [Phase 01]: Memory count uses requestAnimationFrame for smooth animation (not setInterval)
 - [Phase 01]: Ctrl+Alt+Delete hint appears after 3 seconds to prevent user confusion
+- [Phase 02]: Used globals (not ES modules) for EventBus/WindowManager -- consistent with existing codebase
+- [Phase 02]: Z-index scheme: 100+ windows, 10000 taskbar, 10001 Start menu, 30000 shutdown
+- [Phase 02]: Cascade offset resets at half viewport width/height (~8-10 positions)
 
 ### Pending Todos
 
@@ -77,6 +81,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-28T16:45:55.224Z
-Stopped at: Completed 01-03-PLAN.md
+Last session: 2026-03-28T17:25:03.163Z
+Stopped at: Completed 02-01-PLAN.md
 Resume file: None

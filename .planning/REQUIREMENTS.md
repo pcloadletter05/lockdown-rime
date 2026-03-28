@@ -27,12 +27,12 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Window Manager
 
-- [ ] **WIN-01**: Windows can be created from template with title bar, content area, and status bar
-- [ ] **WIN-02**: Windows can be dragged by title bar without text selection artifacts
-- [ ] **WIN-03**: Windows have working minimize, maximize, and close buttons
+- [x] **WIN-01**: Windows can be created from template with title bar, content area, and status bar
+- [x] **WIN-02**: Windows can be dragged by title bar without text selection artifacts
+- [x] **WIN-03**: Windows have working minimize, maximize, and close buttons
 - [ ] **WIN-04**: Minimized windows appear as taskbar buttons; clicking restores them
-- [ ] **WIN-05**: Clicking a window brings it to front (z-index stacking)
-- [ ] **WIN-06**: Multiple windows can be open simultaneously
+- [x] **WIN-05**: Clicking a window brings it to front (z-index stacking)
+- [x] **WIN-06**: Multiple windows can be open simultaneously
 
 ### Desktop Shell
 
@@ -150,12 +150,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CONT-01 | Phase 1 | Complete |
 | CONT-02 | Phase 1 | Complete |
 | CONT-03 | Phase 1 | Complete |
-| WIN-01 | Phase 2 | Pending |
-| WIN-02 | Phase 2 | Pending |
-| WIN-03 | Phase 2 | Pending |
+| WIN-01 | Phase 2 | Complete |
+| WIN-02 | Phase 2 | Complete |
+| WIN-03 | Phase 2 | Complete |
 | WIN-04 | Phase 2 | Pending |
-| WIN-05 | Phase 2 | Pending |
-| WIN-06 | Phase 2 | Pending |
+| WIN-05 | Phase 2 | Complete |
+| WIN-06 | Phase 2 | Complete |
 | SHELL-01 | Phase 2 | Pending |
 | SHELL-02 | Phase 2 | Pending |
 | SHELL-03 | Phase 2 | Pending |
