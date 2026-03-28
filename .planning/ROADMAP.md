@@ -88,7 +88,7 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -96,3 +96,14 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 2. Desktop Environment | 2/2 | Complete   | 2026-03-28 |
 | 3. Applications | 0/3 | Planning complete | - |
 | 4. Narrative Content | 2/2 | Complete   | 2026-03-28 |
+| 5. Add resizable windows | 0/1 | Planning complete | - |
+
+### Phase 5: Add resizable windows
+
+**Goal:** Visitor can resize any window by dragging edges or corners, with authentic NT4 ghost outline feedback and period-correct cursor files
+**Requirements**: V2-11
+**Depends on:** Phase 4
+**Plans:** 1 plan
+
+Plans:
+- [ ] 05-01-PLAN.md -- Resize CSS styles, NT4 cursor files, initResize() function, ghost outline, createWindow() integration
