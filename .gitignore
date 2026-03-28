@@ -144,3 +144,6 @@ CLAUDE.md
 
 # Planning & worldbuilding (never deploy)
 .dev/
+
+# GSD planning
+.planning/

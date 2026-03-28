@@ -212,9 +212,6 @@ async function bootLoader() {
         resolve();
       }
     }, 1000);
-
-    // Store interval for cleanup
-    countdownPromise._interval = interval;
   });
 
   await Promise.race([countdownPromise, waitForInput()]);
@@ -276,7 +273,7 @@ async function loginDialog() {
         '<table style="width: 100%;">' +
           '<tr>' +
             '<td style="padding: 4px 8px 4px 0; white-space: nowrap;">User name:</td>' +
-            '<td style="padding: 4px 0;"><input type="text" class="nt4-input" value="l.hartfield" readonly style="width: 100%;"></td>' +
+            '<td style="padding: 4px 0;"><input type="text" class="nt4-input" value="l.milavic" readonly style="width: 100%;"></td>' +
           '</tr>' +
           '<tr>' +
             '<td style="padding: 4px 8px 4px 0; white-space: nowrap;">From:</td>' +
