@@ -1,2 +1,427 @@
-/* Windows NT 4.0 Desktop Simulation Styles */
-/* Phase 0 placeholder — build out per BUILD_PLAN.md */
+/* ============================================================
+   nt4.css — Windows NT 4.0 Visual System
+   Complete CSS foundation for NT4 desktop simulation.
+   All bevels use box-shadow inset (NOT border-style outset/inset).
+   All colors match the Windows 95/NT4 "Windows Standard" scheme.
+   NO title bar blending. NO warm grey tones. This is NT4, not Win98.
+   ============================================================ */
+
+/* === Font Face === */
+
+@font-face {
+  font-family: "W95FA";
+  src: url("../assets/fonts/w95fa.woff2") format("woff2"),
+       url("../assets/fonts/w95fa.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* === CSS Custom Properties === */
+
+:root {
+  /* Surface Colors */
+  --button-face:        #C0C0C0;
+  --button-highlight:   #FFFFFF;
+  --button-light:       #DFDFDF;
+  --button-shadow:      #808080;
+  --button-dk-shadow:   #000000;
+  --window-bg:          #FFFFFF;
+  --window-text:        #000000;
+
+  /* Title Bar Colors */
+  --active-title:       #000080;
+  --active-title-text:  #FFFFFF;
+  --inactive-title:     #808080;
+  --inactive-title-text:#C0C0C0;
+
+  /* Desktop & System */
+  --desktop:            #008080;
+  --menu-bg:            #C0C0C0;
+  --menu-text:          #000000;
+  --highlight:          #000080;
+  --highlight-text:     #FFFFFF;
+  --scrollbar:          #C0C0C0;
+  --tooltip-bg:         #FFFFE1;
+  --tooltip-text:       #000000;
+  --disabled-text:      #808080;
+  --app-workspace:      #808080;
+
+  /* Link Colors (IE-era) */
+  --link:               #0000FF;
+  --visited-link:       #800080;
+}
+
+/* === Global Reset & Base Styles === */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: "W95FA", "MS Sans Serif", "Microsoft Sans Serif", Tahoma, sans-serif;
+  font-size: 11px;
+  color: var(--window-text);
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
+  text-rendering: optimizeSpeed;
+  cursor: default;
+}
+
+/* === Bevel Utility Classes === */
+
+.raised {
+  box-shadow: inset -1px -1px var(--button-dk-shadow),
+              inset  1px  1px var(--button-highlight),
+              inset -2px -2px var(--button-shadow),
+              inset  2px  2px var(--button-light);
+  background: var(--button-face);
+}
+
+.sunken {
+  box-shadow: inset -1px -1px var(--button-highlight),
+              inset  1px  1px var(--button-shadow),
+              inset -2px -2px var(--button-light),
+              inset  2px  2px var(--button-dk-shadow);
+  background: var(--window-bg);
+}
+
+.pressed {
+  box-shadow: inset -1px -1px var(--button-highlight),
+              inset  1px  1px var(--button-shadow),
+              inset -2px -2px var(--button-light),
+              inset  2px  2px var(--button-dk-shadow);
+  background: var(--button-face);
+}
+
+.well {
+  box-shadow: inset -1px -1px var(--button-highlight),
+              inset  1px  1px var(--button-shadow);
+}
+
+/* === NT4 Button Styles === */
+
+.nt4-button {
+  box-shadow: inset -1px -1px var(--button-dk-shadow),
+              inset  1px  1px var(--button-highlight),
+              inset -2px -2px var(--button-shadow),
+              inset  2px  2px var(--button-light);
+  background: var(--button-face);
+  border: none;
+  padding: 4px 12px;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: default;
+  min-width: 75px;
+  text-align: center;
+}
+
+.nt4-button:active {
+  box-shadow: inset -1px -1px var(--button-highlight),
+              inset  1px  1px var(--button-shadow),
+              inset -2px -2px var(--button-light),
+              inset  2px  2px var(--button-dk-shadow);
+  padding: 5px 11px 3px 13px;
+}
+
+.nt4-button:focus {
+  outline: 1px dotted var(--window-text);
+  outline-offset: -4px;
+}
+
+/* === Window Chrome === */
+
+.nt4-window {
+  background: var(--button-face);
+  box-shadow: inset -1px -1px var(--button-dk-shadow),
+              inset  1px  1px var(--button-highlight),
+              inset -2px -2px var(--button-shadow),
+              inset  2px  2px var(--button-light);
+  position: absolute;
+}
+
+.nt4-titlebar {
+  background: var(--active-title);
+  color: var(--active-title-text);
+  padding: 2px 3px;
+  font-weight: bold;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.nt4-titlebar.inactive {
+  background: var(--inactive-title);
+  color: var(--inactive-title-text);
+}
+
+.nt4-titlebar-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.nt4-titlebar-btn {
+  width: 16px;
+  height: 14px;
+  background: var(--button-face);
+  box-shadow: inset -1px -1px var(--button-dk-shadow),
+              inset  1px  1px var(--button-highlight),
+              inset -2px -2px var(--button-shadow),
+              inset  2px  2px var(--button-light);
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  font-size: 8px;
+  line-height: 1;
+  position: relative;
+}
+
+.nt4-titlebar-btn:active {
+  box-shadow: inset -1px -1px var(--button-highlight),
+              inset  1px  1px var(--button-shadow),
+              inset -2px -2px var(--button-light),
+              inset  2px  2px var(--button-dk-shadow);
+}
+
+/* Window Button Glyphs -- CSS-drawn, not text */
+
+/* Minimize: small horizontal line near bottom */
+.nt4-titlebar-btn.minimize::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 1px;
+  background: var(--window-text);
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Maximize: small rectangle outline */
+.nt4-titlebar-btn.maximize::after {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--window-text);
+  border-top-width: 2px;
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Close: X drawn with two crossing pseudo-elements */
+.nt4-titlebar-btn.close::before,
+.nt4-titlebar-btn.close::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 1px;
+  background: var(--window-text);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.nt4-titlebar-btn.close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nt4-titlebar-btn.close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* === Dialog Styles === */
+
+.nt4-dialog {
+  background: var(--button-face);
+  box-shadow: inset -1px -1px var(--button-dk-shadow),
+              inset  1px  1px var(--button-highlight),
+              inset -2px -2px var(--button-shadow),
+              inset  2px  2px var(--button-light);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.dialog-titlebar {
+  background: var(--active-title);
+  color: var(--active-title-text);
+  padding: 2px 4px;
+  font-weight: bold;
+  font-size: 11px;
+  user-select: none;
+}
+
+.dialog-body {
+  padding: 12px 16px;
+}
+
+.dialog-buttons {
+  padding: 8px 16px 12px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* === Form Field Styles === */
+
+.nt4-input {
+  box-shadow: inset -1px -1px var(--button-highlight),
+              inset  1px  1px var(--button-shadow),
+              inset -2px -2px var(--button-light),
+              inset  2px  2px var(--button-dk-shadow);
+  background: var(--window-bg);
+  border: none;
+  padding: 2px 4px;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.nt4-select {
+  box-shadow: inset -1px -1px var(--button-highlight),
+              inset  1px  1px var(--button-shadow),
+              inset -2px -2px var(--button-light),
+              inset  2px  2px var(--button-dk-shadow);
+  background: var(--window-bg);
+  border: none;
+  padding: 2px;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+/* === Desktop Background === */
+
+#desktop {
+  width: 100vw;
+  height: 100vh;
+  background: var(--desktop);
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Boot Screen Backgrounds === */
+
+#boot-screen {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.boot-post {
+  background: #000000;
+  color: #AAAAAA;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  white-space: pre;
+  line-height: 1.4;
+}
+
+.boot-ntldr {
+  background: #000000;
+  color: #AAAAAA;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  white-space: pre;
+  line-height: 1.4;
+}
+
+.boot-ntldr .highlight {
+  background: var(--active-title-text);
+  color: var(--active-title);
+}
+
+.boot-starting {
+  background: var(--active-title);
+  color: var(--active-title-text);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.boot-security {
+  background: var(--active-title);
+  color: var(--active-title-text);
+  font-family: inherit;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.boot-login {
+  background: var(--desktop);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Viewport Gate === */
+
+.viewport-gate {
+  min-width: 350px;
+  max-width: 420px;
+}
+
+.viewport-gate .dialog-body {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.viewport-gate .dialog-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+/* === Loading Settings Screen (return visitors) === */
+
+.boot-loading-settings {
+  background: var(--desktop);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--active-title-text);
+  font-size: 14px;
+}
+
+/* === Scrollbar Styles (Webkit) === */
+
+::-webkit-scrollbar { width: 16px; height: 16px; }
+::-webkit-scrollbar-track { background: var(--scrollbar); }
+::-webkit-scrollbar-thumb {
+  background: var(--button-face);
+  box-shadow: inset -1px -1px var(--button-dk-shadow),
+              inset  1px  1px var(--button-highlight),
+              inset -2px -2px var(--button-shadow),
+              inset  2px  2px var(--button-light);
+}
+::-webkit-scrollbar-button { display: block; height: 16px; width: 16px; background: var(--button-face); }
