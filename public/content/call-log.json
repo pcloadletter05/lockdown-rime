@@ -13,5 +13,24 @@
     }
   },
   "columns": ["Date", "Time", "Phone", "Disposition", "Duration", "Interviewer", "Notes"],
-  "rows": []
+  "rows": [
+    ["12/23/1999", "9:02 AM", "212-555-0891", "Complete", "17 min", "L. Milavic", "Very cooperative, no issues"],
+    ["12/23/1999", "9:24 AM", "212-555-0447", "No Answer", "", "L. Milavic", ""],
+    ["12/23/1999", "9:28 AM", "212-555-0523", "No Answer", "", "L. Milavic", ""],
+    ["12/23/1999", "9:35 AM", "212-555-0612", "Complete", "19 min", "L. Milavic", ""],
+    ["12/23/1999", "9:58 AM", "212-555-0178", "Callback", "3 min", "L. Milavic", "Said call back after 2pm"],
+    ["12/23/1999", "10:05 AM", "212-555-0334", "Busy", "", "L. Milavic", ""],
+    ["12/23/1999", "10:08 AM", "212-555-0756", "Complete", "16 min", "L. Milavic", ""],
+    ["12/23/1999", "10:30 AM", "212-555-0289", "Refusal", "1 min", "L. Milavic", "Hostile, hung up immediately"],
+    ["12/23/1999", "10:35 AM", "212-555-0901", "No Answer", "", "L. Milavic", ""],
+    ["12/23/1999", "10:40 AM", "212-555-0445", "Complete", "21 min", "L. Milavic", "Mentioned headaches -- coded minor"],
+    ["12/23/1999", "11:10 AM", "212-555-0667", "Complete", "15 min", "L. Milavic", ""],
+    ["12/23/1999", "11:30 AM", "212-555-0812", "Busy", "", "L. Milavic", ""],
+    ["12/23/1999", "11:35 AM", "212-555-0934", "Callback", "4 min", "L. Milavic", ""],
+    ["12/23/1999", "1:15 PM", "212-555-0556", "Complete", "18 min", "L. Milavic", ""],
+    ["12/23/1999", "1:40 PM", "212-555-0723", "Complete", "20 min", "L. Milavic", ""],
+    ["12/23/1999", "2:05 PM", "212-555-0178", "Callback", "2 min", "L. Milavic", "Rescheduled from morning"],
+    ["12/23/1999", "2:45 PM", "212-555-0398", "Partial", "8 min", "L. Milavic", ""],
+    ["12/23/1999", "3:10 PM", "212-555-0641", "Complete", "16 min", "L. Milavic", ""]
+  ]
 }

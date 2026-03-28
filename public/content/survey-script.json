@@ -11,5 +11,134 @@
       "field_code": "string|null - data field code"
     }
   },
-  "sections": []
+  "sections": [
+    {
+      "section_id": "HEADER",
+      "section_type": "header",
+      "title": "Horizon Consumer Satisfaction Study - Q4 1999",
+      "content": "Study Number: HCS-99-Q4\nClient: CalCom Communications Inc.\nField Dates: November 15 - December 30, 1999\nSample: CalCom Horizon owners, 18+, national\nAverage interview length: 15-20 minutes\nMode: CATI (Computer-Assisted Telephone Interview)",
+      "skip_logic": null,
+      "field_code": null
+    },
+    {
+      "section_id": "INST",
+      "section_type": "instruction",
+      "title": "Interviewer Instructions",
+      "content": "PLEASE READ THE FOLLOWING INSTRUCTIONS CAREFULLY BEFORE BEGINNING ANY INTERVIEWS:\n\n1. Read all text in CAPS exactly as written -- do not paraphrase or deviate from the script.\n2. Interviewer instructions appear in [BRACKETS] and should NOT be read aloud.\n3. Do not deviate from the question order unless directed by skip logic.\n4. Record ALL verbatim responses for open-ended questions (Q4, Q6). Include pauses and verbal fillers (um, uh).\n5. Code 'don't know' responses as 98.\n6. Code 'refused' responses as 99.\n7. If respondent asks about health or safety, refer to closing script instructions. Do not offer personal opinions.\n8. All calls are subject to quality monitoring and recording for training purposes.",
+      "skip_logic": null,
+      "field_code": null
+    },
+    {
+      "section_id": "INTRO",
+      "section_type": "question",
+      "title": "Introduction",
+      "content": "HELLO, MY NAME IS [INTERVIEWER NAME] CALLING FROM CALCOM RESEARCH SERVICES. WE'RE CONDUCTING A BRIEF SURVEY ABOUT YOUR EXPERIENCE WITH THE CALCOM HORIZON. THIS WILL TAKE APPROXIMATELY 15-20 MINUTES. YOUR RESPONSES ARE COMPLETELY CONFIDENTIAL.\n\n[IF RESPONDENT HESITATES: This is not a sales call. We're just interested in your honest feedback about your Horizon device.]\n[IF RESPONDENT ASKS WHO SPONSORED THE STUDY: This study is being conducted on behalf of CalCom Communications.]\n[IF RESPONDENT WANTS TO RESCHEDULE: Record callback time and phone number. Code as CALLBACK.]",
+      "skip_logic": null,
+      "field_code": null
+    },
+    {
+      "section_id": "S1",
+      "section_type": "question",
+      "title": "Screener 1 - Age Verification",
+      "content": "FIRST, ARE YOU 18 YEARS OF AGE OR OLDER?",
+      "skip_logic": "[IF NO -> TERMINATE: Thank you for your time, but we are only interviewing adults 18 and older for this study. Have a good day.]",
+      "field_code": "S1"
+    },
+    {
+      "section_id": "S2",
+      "section_type": "question",
+      "title": "Screener 2 - Product Ownership",
+      "content": "DO YOU CURRENTLY OWN OR USE A CALCOM HORIZON DEVICE?",
+      "skip_logic": "[IF NO -> TERMINATE: Thank you for your time, but this survey is only for CalCom Horizon users. Have a good day.]",
+      "field_code": "S2"
+    },
+    {
+      "section_id": "S3",
+      "section_type": "question",
+      "title": "Screener 3 - Usage Duration",
+      "content": "APPROXIMATELY HOW LONG HAVE YOU BEEN USING YOUR HORIZON DEVICE?\n\n[READ OPTIONS]\n1 - Less than 1 month\n2 - 1 to 3 months\n3 - 4 to 6 months\n4 - More than 6 months",
+      "skip_logic": null,
+      "field_code": "S3"
+    },
+    {
+      "section_id": "Q1",
+      "section_type": "question",
+      "title": "Overall Satisfaction",
+      "content": "ON A SCALE OF 1 TO 5, WHERE 1 IS VERY DISSATISFIED AND 5 IS VERY SATISFIED, HOW WOULD YOU RATE YOUR OVERALL SATISFACTION WITH THE CALCOM HORIZON?",
+      "skip_logic": null,
+      "field_code": "Q1"
+    },
+    {
+      "section_id": "Q2",
+      "section_type": "question",
+      "title": "Signal Reliability",
+      "content": "USING THE SAME SCALE, HOW WOULD YOU RATE THE SIGNAL RELIABILITY OF YOUR HORIZON DEVICE?",
+      "skip_logic": null,
+      "field_code": "Q2"
+    },
+    {
+      "section_id": "Q3",
+      "section_type": "question",
+      "title": "Ease of Use",
+      "content": "HOW WOULD YOU RATE THE EASE OF USE OF THE HORIZON?",
+      "skip_logic": null,
+      "field_code": "Q3"
+    },
+    {
+      "section_id": "Q4",
+      "section_type": "question",
+      "title": "Issues and Problems",
+      "content": "HAVE YOU EXPERIENCED ANY ISSUES OR PROBLEMS WITH YOUR HORIZON DEVICE?\n\n[PROBE: What kind of issues?]\n[RECORD VERBATIM -- include pauses, exact wording]\n[IF RESPONDENT MENTIONS HEALTH SYMPTOMS: Record in full. Code disposition as 'minor issue' per Supervisor Memo 12/15.]\n[DO NOT PROMPT FOR HEALTH-RELATED RESPONSES]",
+      "skip_logic": "[IF NONE -> SKIP TO Q5]",
+      "field_code": "Q4"
+    },
+    {
+      "section_id": "Q5",
+      "section_type": "question",
+      "title": "Likelihood to Recommend",
+      "content": "ON A SCALE OF 1 TO 10, WHERE 1 IS NOT AT ALL LIKELY AND 10 IS EXTREMELY LIKELY, HOW LIKELY ARE YOU TO RECOMMEND THE CALCOM HORIZON TO A FRIEND OR COLLEAGUE?",
+      "skip_logic": null,
+      "field_code": "Q5"
+    },
+    {
+      "section_id": "Q6",
+      "section_type": "question",
+      "title": "Additional Feedback",
+      "content": "IS THERE ANYTHING ELSE YOU'D LIKE TO SHARE ABOUT YOUR EXPERIENCE WITH THE HORIZON?\n\n[RECORD VERBATIM]\n[IF RESPONDENT BECOMES EMOTIONAL OR AGITATED: Thank them for sharing. Do not engage further on the topic. Note emotional state in call notes.]",
+      "skip_logic": null,
+      "field_code": "Q6"
+    },
+    {
+      "section_id": "D1",
+      "section_type": "question",
+      "title": "Demographics - Age Range",
+      "content": "NOW I HAVE JUST A FEW QUESTIONS FOR CLASSIFICATION PURPOSES. WHICH OF THE FOLLOWING AGE RANGES DO YOU FALL INTO?\n\n[READ OPTIONS]\n1 - 18 to 24\n2 - 25 to 34\n3 - 35 to 44\n4 - 45 to 54\n5 - 55 to 64\n6 - 65 or older",
+      "skip_logic": null,
+      "field_code": "D1"
+    },
+    {
+      "section_id": "D2",
+      "section_type": "question",
+      "title": "Demographics - Household Size",
+      "content": "INCLUDING YOURSELF, HOW MANY PEOPLE LIVE IN YOUR HOUSEHOLD?\n\n[RECORD NUMBER]",
+      "skip_logic": null,
+      "field_code": "D2"
+    },
+    {
+      "section_id": "D3",
+      "section_type": "question",
+      "title": "Demographics - Zip Code",
+      "content": "WHAT IS YOUR ZIP CODE?\n\n[RECORD 5-DIGIT ZIP CODE]",
+      "skip_logic": null,
+      "field_code": "D3"
+    },
+    {
+      "section_id": "CLOSE",
+      "section_type": "closing",
+      "title": "Closing Script",
+      "content": "THAT COMPLETES OUR SURVEY. THANK YOU VERY MUCH FOR YOUR TIME. YOUR FEEDBACK IS VALUABLE TO CALCOM AND WILL HELP US IMPROVE THE HORIZON EXPERIENCE.\n\n[IF RESPONDENT MENTIONS HEALTH CONCERNS: Note in Q4 open-end. Do not editorialize. Code as 'minor issue' per Supervisor Memo 12/15.]\n[IF RESPONDENT ASKS FOR FOLLOW-UP: We are unable to provide individual follow-up on survey responses, but your feedback will be reviewed by the product team.]\n[IF RESPONDENT MENTIONS LEGAL ACTION: Thank respondent. End call. Report to supervisor immediately. Do not discuss further.]",
+      "skip_logic": null,
+      "field_code": null
+    }
+  ]
 }

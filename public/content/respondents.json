@@ -8,14 +8,249 @@
       "interview_time": "string - time of interview",
       "phone": "string - redacted phone number (e.g. 212-555-XX42)",
       "disposition": "string - disposition code (COMPLETE, CALLBACK, REFUSAL, etc.)",
+      "duration": "number - interview duration in minutes",
       "demographics": {
         "age_range": "string",
         "gender": "string",
+        "household_size": "number",
         "zip": "string"
       },
       "responses": "object - keyed by question ID, values are coded responses",
       "lisa_notes": "string|null - Lisa's handwritten-style annotations"
     }
   },
-  "items": []
+  "items": [
+    {
+      "respondent_id": "H-1247",
+      "interview_date": "1999-12-15",
+      "interview_time": "10:15 AM",
+      "phone": "212-555-0142",
+      "disposition": "COMPLETE",
+      "duration": 18,
+      "demographics": {
+        "age_range": "45-54",
+        "gender": "F",
+        "household_size": 2,
+        "zip": "10044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "3",
+        "Q1": "4",
+        "Q2": "4",
+        "Q3": "4",
+        "Q4": "It gets warm sometimes, like really warm. I have to put it down for a while and let it cool off. And I've been having these headaches but that's probably just stress from the holidays.",
+        "Q5": "7",
+        "Q6": "It's a nice device overall. My husband likes it too. We use it every day.",
+        "D1": "4",
+        "D2": "2",
+        "D3": "10044"
+      },
+      "lisa_notes": "Really nice lady -- Mrs. Chen from 4C in my building! She brought me cookies last week. Said the warmth thing isn't a big deal, just has to set it down sometimes. Headaches she thinks are holiday stress. Coded Q4 as minor issue."
+    },
+    {
+      "respondent_id": "H-1248",
+      "interview_date": "1999-12-15",
+      "interview_time": "2:30 PM",
+      "phone": "212-555-0178",
+      "disposition": "COMPLETE",
+      "duration": 16,
+      "demographics": {
+        "age_range": "25-34",
+        "gender": "F",
+        "household_size": 3,
+        "zip": "10044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "4",
+        "Q1": "4",
+        "Q2": "3",
+        "Q3": "5",
+        "Q4": "My husband says I've been tossing and turning since we got it. I don't notice it myself but he says I talk in my sleep now too. Probably nothing.",
+        "Q5": "7",
+        "Q6": "We just got a new puppy so everything is a little chaotic right now! But the Horizon is great, we love it.",
+        "D1": "2",
+        "D2": "3",
+        "D3": "10044"
+      },
+      "lisa_notes": "So sweet! Just got a golden retriever puppy named Biscuit. She was laughing the whole time talking about how the puppy chewed up the Horizon manual. The sleep thing noted in Q4 -- husband's probably just not used to the puppy in the bed lol."
+    },
+    {
+      "respondent_id": "H-1249",
+      "interview_date": "1999-12-16",
+      "interview_time": "11:00 AM",
+      "phone": "212-555-0203",
+      "disposition": "COMPLETE",
+      "duration": 19,
+      "demographics": {
+        "age_range": "55-64",
+        "gender": "M",
+        "household_size": 1,
+        "zip": "10017"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "3",
+        "Q1": "3",
+        "Q2": "3",
+        "Q3": "3",
+        "Q4": "The TV does this weird static thing when the Horizon is nearby. Like the picture goes all fuzzy. I have to move it to the other room. Also the radio picks up some kind of... I don't know, a hum? When it's charging.",
+        "Q5": "6",
+        "Q6": "It's fine I guess. I'm not really a technology person. My son bought it for me.",
+        "D1": "5",
+        "D2": "1",
+        "D3": "10017"
+      },
+      "lisa_notes": "Sweet older gentleman, lives alone. TV static thing is probably just his old set -- those rabbit ear antennas pick up interference from everything. Marked as minor issue -- probably old TV. Radio hum noted too, same deal probably."
+    },
+    {
+      "respondent_id": "H-1250",
+      "interview_date": "1999-12-17",
+      "interview_time": "9:45 AM",
+      "phone": "212-555-0331",
+      "disposition": "COMPLETE",
+      "duration": 22,
+      "demographics": {
+        "age_range": "35-44",
+        "gender": "F",
+        "household_size": 4,
+        "zip": "10028"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "4",
+        "Q1": "3",
+        "Q2": "3",
+        "Q3": "4",
+        "Q4": "I've been so tired lately, and these headaches... I don't know if it's the Horizon or what. My daughter has them too and she uses it more than I do. The doctor said it's probably seasonal. But I've never had headaches like this before.",
+        "Q5": "6",
+        "Q6": "I like it, I do. I just wish I wasn't so exhausted all the time. That's not really a Horizon thing though, is it?",
+        "D1": "3",
+        "D2": "4",
+        "D3": "10028"
+      },
+      "lisa_notes": "Sounded really exhausted. Hope she's OK. Both her and her daughter getting headaches -- she asked me if other people had reported that and I said I couldn't discuss other responses (per protocol). Felt bad. Coded as minor issue."
+    },
+    {
+      "respondent_id": "H-1251",
+      "interview_date": "1999-12-18",
+      "interview_time": "1:15 PM",
+      "phone": "212-555-0456",
+      "disposition": "COMPLETE",
+      "duration": 14,
+      "demographics": {
+        "age_range": "25-34",
+        "gender": "M",
+        "household_size": 2,
+        "zip": "10003"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "2",
+        "Q1": "5",
+        "Q2": "5",
+        "Q3": "5",
+        "Q4": "None at all. This thing is great.",
+        "Q5": "9",
+        "Q6": "Honestly it's the best thing I've bought all year. Signal is crystal clear, easy to use, looks great. I'm buying one for my mom for Christmas.",
+        "D1": "2",
+        "D2": "2",
+        "D3": "10003"
+      },
+      "lisa_notes": "Super enthusiastic, wants to buy one for his mom for Christmas! Quick interview because he just loved everything. No issues at all. These are the easy ones :)"
+    },
+    {
+      "respondent_id": "H-1252",
+      "interview_date": "1999-12-19",
+      "interview_time": "3:00 PM",
+      "phone": "212-555-0512",
+      "disposition": "PARTIAL",
+      "duration": 11,
+      "demographics": {
+        "age_range": "35-44",
+        "gender": "M",
+        "household_size": 3,
+        "zip": "10044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "4",
+        "Q1": "3",
+        "Q2": "3",
+        "Q3": "4",
+        "Q4": "It gets warm, yeah. And there's this... humming? Like a low hum when you hold it up to your ear. My wife hears it too. Look, I have to go, can you call me back?",
+        "Q5": "",
+        "Q6": "",
+        "D1": "3",
+        "D2": "3",
+        "D3": "10044"
+      },
+      "lisa_notes": "Callback scheduled for 12/22 after 2pm. Seemed nervous about something -- kept pausing before answering. The humming thing is new, haven't heard that from anyone else. Warmth is the same as a few others though. Partial complete, need to finish Q5 through D3."
+    },
+    {
+      "respondent_id": "H-1253",
+      "interview_date": "1999-12-20",
+      "interview_time": "10:30 AM",
+      "phone": "212-555-0687",
+      "disposition": "COMPLETE",
+      "duration": 21,
+      "demographics": {
+        "age_range": "45-54",
+        "gender": "F",
+        "household_size": 1,
+        "zip": "10044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "3",
+        "Q1": "3",
+        "Q2": "4",
+        "Q3": "4",
+        "Q4": "Headaches. And I feel dizzy sometimes, like the room is spinning. I mentioned it to a coworker and she said the same thing. Actually everyone at the office who has one has been complaining about headaches.",
+        "Q5": "6",
+        "Q6": "I still like it. I just wonder if something is going on, you know? Maybe it's the building ventilation. We moved offices last month.",
+        "D1": "4",
+        "D2": "1",
+        "D3": "10044"
+      },
+      "lisa_notes": "Third person this week with headaches. Coincidence? She said everyone at her office has them too. Noted in Q4. She thinks it might be building ventilation from a recent office move. That actually makes more sense. Coded as minor issue per memo."
+    },
+    {
+      "respondent_id": "H-1254",
+      "interview_date": "1999-12-22",
+      "interview_time": "11:45 AM",
+      "phone": "212-555-0734",
+      "disposition": "REFUSAL",
+      "duration": 6,
+      "demographics": {
+        "age_range": "35-44",
+        "gender": "M",
+        "household_size": 2,
+        "zip": "10044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "4",
+        "Q1": "2",
+        "Q2": "2",
+        "Q3": "3",
+        "Q4": "You people should know about this already. I've called twice. My wife has nosebleeds now. NOSEBLEEDS. And you're asking me to rate my SATISFACTION?",
+        "Q5": "",
+        "Q6": "",
+        "D1": "",
+        "D2": "2",
+        "D3": "10044"
+      },
+      "lisa_notes": "Got really upset when I asked about issues. Said 'you people should know about this already.' Mentioned his wife is having nosebleeds and he's called CalCom twice about it. Refused to continue after Q4. I tried the softening script but he hung up. Weird. Reported to Margaret per refusal protocol."
+    }
+  ]
 }
