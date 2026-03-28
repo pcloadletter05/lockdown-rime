@@ -16,24 +16,116 @@
   "root": {
     "name": "C:",
     "type": "drive",
-    "icon": "drive",
+    "icon": "mycomputer",
     "children": [
       {
         "name": "My Documents",
         "type": "folder",
         "icon": "folder",
-        "children": []
+        "children": [
+          {
+            "name": "Surveys",
+            "type": "folder",
+            "icon": "folder",
+            "children": [
+              {
+                "name": "Q4 Status Report.doc",
+                "type": "file",
+                "icon": "file_doc",
+                "file_type": "doc",
+                "size": "24 KB",
+                "modified": "12/20/1999 3:45 PM",
+                "content_key": "q4-status-report",
+                "content": "<h2>Q4 Survey Status Report</h2><p><strong>Prepared by:</strong> Lisa Whitmore</p><p><strong>Date:</strong> December 20, 1999</p><p>The Q4 consumer confidence survey is progressing on schedule. We have completed <strong>847 out of 1,200</strong> targeted interviews.</p><h3>Key Metrics</h3><ul><li>Response rate: 34.2%</li><li>Average interview length: 18.4 minutes</li><li>Refusal rate: 12.1%</li></ul><p>No significant issues to report. Training compliance remains at 100%.</p>"
+              },
+              {
+                "name": "Call Schedule.xls",
+                "type": "file",
+                "icon": "file_doc",
+                "file_type": "xls",
+                "size": "18 KB",
+                "modified": "12/21/1999 9:15 AM",
+                "content_key": "call-schedule",
+                "content": {
+                  "columns": ["Day", "Shift", "Interviewer", "Target Calls", "Completed"],
+                  "rows": [
+                    ["Monday", "AM", "L. Whitmore", "45", "42"],
+                    ["Monday", "PM", "D. Chen", "45", "38"],
+                    ["Tuesday", "AM", "L. Whitmore", "45", "44"],
+                    ["Tuesday", "PM", "K. Rodriguez", "45", "41"],
+                    ["Wednesday", "AM", "L. Whitmore", "45", "45"],
+                    ["Wednesday", "PM", "D. Chen", "45", "39"],
+                    ["Thursday", "AM", "J. Park", "45", "40"],
+                    ["Thursday", "PM", "L. Whitmore", "45", "43"],
+                    ["Friday", "AM", "K. Rodriguez", "45", "37"]
+                  ]
+                }
+              },
+              {
+                "name": "Interview Notes.txt",
+                "type": "file",
+                "icon": "file_txt",
+                "file_type": "txt",
+                "size": "4 KB",
+                "modified": "12/22/1999 11:30 AM",
+                "content_key": "interview-notes",
+                "content": "Interview Notes - December 1999\n================================\n\nRespondent #0847 - Very cooperative, completed full survey.\nNoted some hesitation on health questions (Q14-Q18).\nSaid 'everyone at work has been getting headaches lately.'\n\nRespondent #0848 - Refused to continue after Q22.\nSaid the questions were 'too personal.'\nScheduled callback for 12/27.\n\nRespondent #0849 - Completed. No issues.\nMentioned Y2K concerns unprompted during Q31.\n\n-- L.W."
+              }
+            ]
+          },
+          {
+            "name": "Personal",
+            "type": "folder",
+            "icon": "folder",
+            "children": [
+              {
+                "name": "Holiday Party Notes.doc",
+                "type": "file",
+                "icon": "file_doc",
+                "file_type": "doc",
+                "size": "8 KB",
+                "modified": "12/17/1999 2:20 PM",
+                "content_key": "holiday-party",
+                "content": "<h2>Holiday Party Planning</h2><p><strong>Date:</strong> Friday, December 17th</p><p><strong>Location:</strong> Conference Room B, 14th Floor</p><h3>To-Do</h3><ul><li>Order cake from Veniero's (chocolate, serves 30)</li><li>Buy paper plates and napkins</li><li>Print Secret Santa assignments</li><li>Ask Dave about the playlist</li></ul><p><em>Note: Building management says we need to be out by 8 PM. Elevators shut down at 9.</em></p>"
+              },
+              {
+                "name": "Grocery List.txt",
+                "type": "file",
+                "icon": "file_txt",
+                "file_type": "txt",
+                "size": "1 KB",
+                "modified": "12/22/1999 8:45 AM",
+                "content_key": "grocery-list",
+                "content": "Grocery List\n============\n- Milk\n- Bread (whole wheat)\n- Coffee (Folgers)\n- Orange juice\n- Chicken breasts\n- Rice\n- Broccoli\n- Advil (running low again)\n- Cat food (Fancy Feast, tuna)\n- Paper towels"
+              }
+            ]
+          },
+          {
+            "name": "Resume Draft.doc",
+            "type": "file",
+            "icon": "file_doc",
+            "file_type": "doc",
+            "size": "12 KB",
+            "modified": "11/15/1999 4:30 PM",
+            "content_key": "resume-draft",
+            "content": "<h2>Lisa Whitmore</h2><p>142 Main Street, Apt 3B<br>Roosevelt Island, NY 10044<br>(212) 555-0147</p><h3>Objective</h3><p>Experienced survey research professional seeking senior CATI supervisor position.</p><h3>Experience</h3><p><strong>CalCom Research Services</strong> -- CATI Interviewer/Supervisor<br><em>March 1997 - Present</em></p><ul><li>Conduct computer-assisted telephone interviews for market research studies</li><li>Train and supervise team of 6 junior interviewers</li><li>Maintain 98.2% quality compliance rating</li><li>Manage call scheduling and quota fulfillment</li></ul><p><strong>DataLine Associates</strong> -- Phone Surveyor<br><em>June 1995 - February 1997</em></p><ul><li>Completed 200+ surveys monthly across multiple studies</li><li>Achieved highest completion rate in department (Q3 1996)</li></ul>"
+          }
+        ]
       },
       {
         "name": "Program Files",
         "type": "folder",
         "icon": "folder",
-        "children": []
+        "children": [
+          { "name": "Microsoft Office", "type": "folder", "icon": "folder", "children": [] },
+          { "name": "Internet Explorer", "type": "folder", "icon": "folder", "children": [] },
+          { "name": "Accessories", "type": "folder", "icon": "folder", "children": [] }
+        ]
       },
       {
         "name": "WINDOWS",
         "type": "folder",
-        "icon": "folder-system",
+        "icon": "folder",
         "children": []
       }
     ]
