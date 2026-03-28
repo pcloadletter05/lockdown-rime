@@ -84,16 +84,16 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### System Polish
 
-- [ ] **SYS-01**: Blinking printer icon in system tray
-- [ ] **SYS-02**: Clicking printer opens print queue showing stuck job with narratively significant timestamp
-- [ ] **SYS-03**: Clock tooltip shows full date
-- [ ] **SYS-04**: Notepad contains Lisa's personal notes (to-do list, phone numbers, passwords)
+- [x] **SYS-01**: Blinking printer icon in system tray
+- [x] **SYS-02**: Clicking printer opens print queue showing stuck job with narratively significant timestamp
+- [x] **SYS-03**: Clock tooltip shows full date
+- [x] **SYS-04**: Notepad contains Lisa's personal notes (to-do list, phone numbers, passwords)
 
 ### Narrative Layers
 
 - [x] **NARR-01**: Surface layer shows normal office life (deadlines, holiday party, positive survey data)
-- [ ] **NARR-02**: Middle layer contains 3+ anomalies for attentive visitors (headaches in responses, suspicious memos, timing inconsistencies)
-- [ ] **NARR-03**: Deep layer contains at least 1 secret for thorough investigators (deleted email, misplaced file, pattern across respondents)
+- [x] **NARR-02**: Middle layer contains 3+ anomalies for attentive visitors (headaches in responses, suspicious memos, timing inconsistencies)
+- [x] **NARR-03**: Deep layer contains at least 1 secret for thorough investigators (deleted email, misplaced file, pattern across respondents)
 
 ### Content Architecture
 
@@ -186,13 +186,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SURV-02 | Phase 4 | Complete |
 | SURV-03 | Phase 4 | Complete |
 | SURV-04 | Phase 4 | Complete |
-| SYS-01 | Phase 4 | Pending |
-| SYS-02 | Phase 4 | Pending |
-| SYS-03 | Phase 4 | Pending |
-| SYS-04 | Phase 4 | Pending |
+| SYS-01 | Phase 4 | Complete |
+| SYS-02 | Phase 4 | Complete |
+| SYS-03 | Phase 4 | Complete |
+| SYS-04 | Phase 4 | Complete |
 | NARR-01 | Phase 4 | Complete |
-| NARR-02 | Phase 4 | Pending |
-| NARR-03 | Phase 4 | Pending |
+| NARR-02 | Phase 4 | Complete |
+| NARR-03 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 58 total

@@ -126,7 +126,7 @@ function buildEmailUI(args) {
       toolbar.appendChild(sep);
     } else {
       var button = document.createElement('button');
-      button.className = 'toolbar-btn raised';
+      button.className = 'toolbar-btn-text raised';
       button.textContent = btn.label;
       toolbar.appendChild(button);
     }

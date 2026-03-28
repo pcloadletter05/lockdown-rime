@@ -460,7 +460,8 @@ body {
   font-size: 11px;
   color: #FFFFFF;
   padding: 1px 2px;
-  word-wrap: break-word;
+  white-space: pre-line;
+  line-height: 1.2;
 }
 
 .desktop-icon.selected .desktop-icon-label {
@@ -744,6 +745,27 @@ body {
   font-size: 10px;
   font-weight: bold;
   padding: 0;
+}
+
+.toolbar-btn-text {
+  height: 22px;
+  border: none;
+  background: var(--button-face);
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+.toolbar-btn-text:active {
+  box-shadow: inset -1px -1px var(--button-highlight),
+              inset  1px  1px var(--button-shadow),
+              inset -2px -2px var(--button-light),
+              inset  2px  2px var(--button-dk-shadow);
 }
 
 .toolbar-separator {

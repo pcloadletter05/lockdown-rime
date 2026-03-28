@@ -326,18 +326,12 @@ async function returnVisitorBoot() {
 async function bootSequence() {
   if (!checkViewport()) return;
 
-  if (isReturnVisitor()) {
-    await returnVisitorBoot();
-    return;
-  }
-
   await postScreen();
   await bootLoader();
   await startingNT();
   await ctrlAltDelScreen();
   await loginDialog();
 
-  setBootedFlag();
   window.location.href = 'desktop.html';
 }
 
