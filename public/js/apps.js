@@ -53,9 +53,9 @@ var AppRegistry = {
     if (appId === 'explorer' || appId === 'mycomputer') {
       content = buildExplorerUI(args);
     } else if (appId === 'outlook') {
-      content = (typeof buildEmailUI !== 'undefined') ? buildEmailUI(args) : null;
+      content = buildEmailUI(args);
     } else if (appId === 'iexplore') {
-      content = (typeof buildBrowserUI !== 'undefined') ? buildBrowserUI(args) : null;
+      content = buildBrowserUI(args);
     } else if (appId === 'wordpad') {
       content = buildWordPadUI(args);
       title = (args && args.file) ? args.file.name + ' - WordPad' : 'WordPad';
