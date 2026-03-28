@@ -4,10 +4,48 @@
     "description": "Browser bookmarks/favorites for IE5 client",
     "schema": {
       "name": "string - bookmark display name",
-      "url": "string - page URL or internal page key",
+      "url": "string - internal page key",
       "icon": "string|null - favicon identifier",
       "children": "array|null - subfolder contents"
     }
   },
-  "items": []
+  "items": [
+    {
+      "name": "CalCom Intranet",
+      "url": "calcom-intranet",
+      "icon": null,
+      "children": null
+    },
+    {
+      "name": "CalCom Research Services",
+      "url": "calcom-corporate",
+      "icon": null,
+      "children": null
+    },
+    {
+      "name": "Work",
+      "url": null,
+      "icon": null,
+      "children": [
+        { "name": "AAPOR - Survey Research", "url": "aapor", "icon": null, "children": null },
+        { "name": "Bureau of Labor Statistics", "url": "bls", "icon": null, "children": null }
+      ]
+    },
+    {
+      "name": "Personal",
+      "url": null,
+      "icon": null,
+      "children": [
+        { "name": "Yahoo! Mail", "url": "yahoo-portal", "icon": null, "children": null },
+        { "name": "MapQuest", "url": "mapquest", "icon": null, "children": null },
+        { "name": "Amazon.com", "url": "amazon", "icon": null, "children": null }
+      ]
+    },
+    {
+      "name": "Yahoo!",
+      "url": "yahoo-portal",
+      "icon": null,
+      "children": null
+    }
+  ]
 }
