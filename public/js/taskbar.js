@@ -27,12 +27,7 @@ const Taskbar = {
     var startBtn = document.createElement('button');
     startBtn.id = 'start-button';
     startBtn.className = 'raised';
-    startBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none">' +
-      '<rect x="1" y="1" width="6" height="6" fill="#FF0000"/>' +
-      '<rect x="9" y="1" width="6" height="6" fill="#00FF00"/>' +
-      '<rect x="1" y="9" width="6" height="6" fill="#0000FF"/>' +
-      '<rect x="9" y="9" width="6" height="6" fill="#FFFF00"/>' +
-      '</svg> <span>Start</span>';
+    startBtn.innerHTML = '<img src="assets/icons/16/windows_logo.png" width="16" height="16" alt="" draggable="false" style="image-rendering: pixelated;"> <span>Start</span>';
 
     startBtn.addEventListener('mousedown', function(e) {
       e.stopPropagation();
@@ -54,10 +49,7 @@ const Taskbar = {
     // Speaker icon (decorative)
     var speakerIcon = document.createElement('span');
     speakerIcon.className = 'tray-icon';
-    speakerIcon.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none">' +
-      '<polygon points="1,4 4,4 7,1 7,11 4,8 1,8" fill="#000000"/>' +
-      '<path d="M8,3.5 Q10,6 8,8.5" stroke="#000000" fill="none" stroke-width="1"/>' +
-      '</svg>';
+    speakerIcon.innerHTML = '<img src="assets/icons/16/speaker.png" width="16" height="16" alt="" draggable="false" style="image-rendering: pixelated;">';
     systemTray.appendChild(speakerIcon);
 
     // Clock
@@ -99,15 +91,15 @@ const Taskbar = {
     programsSub.style.display = 'none';
 
     var programItems = [
-      { label: 'Windows Explorer', appId: 'explorer' },
-      { label: 'Outlook', appId: 'outlook' },
-      { label: 'Internet Explorer', appId: 'iexplore' },
-      { label: 'Notepad', appId: 'notepad' }
+      { label: 'Windows Explorer', appId: 'explorer', iconName: 'explorer' },
+      { label: 'Outlook', appId: 'outlook', iconName: 'outlook' },
+      { label: 'Internet Explorer', appId: 'iexplore', iconName: 'iexplore' },
+      { label: 'Notepad', appId: 'notepad', iconName: 'notepad' }
     ];
 
     var self = this;
     programItems.forEach(function(item) {
-      var subItem = self._createMenuItem(item.label, null, false);
+      var subItem = self._createMenuItem(item.label, self._menuIcon(item.iconName), false);
       subItem.addEventListener('click', function() {
         EventBus.emit('app:launch', { appId: item.appId });
         self.closeStartMenu();
@@ -133,7 +125,7 @@ const Taskbar = {
     settingsSub.className = 'start-submenu raised';
     settingsSub.style.display = 'none';
 
-    var cpItem = this._createMenuItem('Control Panel', null, false);
+    var cpItem = this._createMenuItem('Control Panel', this._menuIcon('control_panel'), false);
     cpItem.addEventListener('click', function() {
       EventBus.emit('app:launch', { appId: 'control-panel' });
       self.closeStartMenu();
@@ -209,33 +201,24 @@ const Taskbar = {
     });
   },
 
+  _menuIcon: function(name) {
+    return '<img src="assets/icons/16/' + name + '.png" width="16" height="16" alt="" draggable="false" style="image-rendering: pixelated;">';
+  },
+
   _folderIconSVG: function() {
-    return '<svg width="16" height="16" viewBox="0 0 16 16" fill="none">' +
-      '<path d="M1,3 L6,3 L7,1 L15,1 L15,13 L1,13 Z" fill="#FFCC00" stroke="#996600" stroke-width="1"/>' +
-      '</svg>';
+    return this._menuIcon('programs');
   },
 
   _docIconSVG: function() {
-    return '<svg width="16" height="16" viewBox="0 0 16 16" fill="none">' +
-      '<rect x="2" y="1" width="10" height="14" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>' +
-      '<line x1="4" y1="5" x2="10" y2="5" stroke="#000000" stroke-width="1"/>' +
-      '<line x1="4" y1="8" x2="10" y2="8" stroke="#000000" stroke-width="1"/>' +
-      '</svg>';
+    return this._menuIcon('mydocuments');
   },
 
   _gearIconSVG: function() {
-    return '<svg width="16" height="16" viewBox="0 0 16 16" fill="none">' +
-      '<circle cx="8" cy="8" r="3" fill="#808080" stroke="#000000" stroke-width="1"/>' +
-      '<circle cx="8" cy="8" r="6" fill="none" stroke="#808080" stroke-width="2" stroke-dasharray="3,2"/>' +
-      '</svg>';
+    return this._menuIcon('settings');
   },
 
   _shutdownIconSVG: function() {
-    return '<svg width="16" height="16" viewBox="0 0 16 16" fill="none">' +
-      '<rect x="3" y="2" width="10" height="12" rx="1" fill="#808080" stroke="#000000" stroke-width="1"/>' +
-      '<rect x="5" y="4" width="6" height="6" fill="#000080" stroke="#000000" stroke-width="1"/>' +
-      '<rect x="6" y="11" width="4" height="2" fill="#C0C0C0"/>' +
-      '</svg>';
+    return this._menuIcon('shutdown');
   },
 
   // ---- Start Menu Toggle ----
