@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Browser bookmarks/favorites for IE5 client",
+    "schema": {
+      "name": "string - bookmark display name",
+      "url": "string - page URL or internal page key",
+      "icon": "string|null - favicon identifier",
+      "children": "array|null - subfolder contents"
+    }
+  },
+  "items": []
+}

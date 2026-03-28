@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Email messages for Outlook client",
+    "schema": {
+      "id": "string - unique message ID",
+      "folder": "string - Inbox|Sent Items|Drafts|Deleted Items",
+      "from": "string - sender display name and address",
+      "to": "string - recipient display name and address",
+      "cc": "string|null - CC recipients",
+      "date": "string - ISO 8601 date displayed in message",
+      "subject": "string - email subject line",
+      "body": "string - email body text (supports basic HTML)",
+      "attachments": "array - attachment filenames",
+      "read": "boolean - read/unread state",
+      "deliver_at": "string - ISO 8601 timestamp for time-gated visibility",
+      "in_reply_to": "string|null - parent message ID for threading"
+    }
+  },
+  "items": []
+}

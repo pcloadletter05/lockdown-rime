@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "CATI survey script document content - Horizon Consumer Satisfaction Study",
+    "schema": {
+      "section_id": "string - section identifier (e.g. INTRO, S1, Q1, D1, CLOSE)",
+      "section_type": "string - header|instruction|question|closing",
+      "title": "string - section heading",
+      "content": "string - section body text with interviewer instructions",
+      "skip_logic": "string|null - branching instructions in [BRACKETS]",
+      "field_code": "string|null - data field code"
+    }
+  },
+  "sections": []
+}

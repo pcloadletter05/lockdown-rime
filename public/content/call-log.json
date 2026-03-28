@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Call disposition log records for CATI operations",
+    "schema": {
+      "date": "string - call date",
+      "time": "string - call time",
+      "phone": "string - dialed number (redacted)",
+      "disposition": "string - disposition code",
+      "duration": "string|null - call duration",
+      "interviewer": "string - interviewer ID or name",
+      "notes": "string|null - call notes"
+    }
+  },
+  "columns": ["Date", "Time", "Phone", "Disposition", "Duration", "Interviewer", "Notes"],
+  "rows": []
+}

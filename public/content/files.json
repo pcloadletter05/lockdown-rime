@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "File system tree for Explorer",
+    "schema": {
+      "name": "string - file or folder name",
+      "type": "string - drive|folder|file",
+      "icon": "string - icon identifier",
+      "size": "string|null - file size display (e.g. '24 KB')",
+      "modified": "string|null - last modified date",
+      "file_type": "string|null - doc|xls|txt|bmp|etc",
+      "content_key": "string|null - key to look up content in another JSON",
+      "children": "array|null - child nodes (folders/files)"
+    }
+  },
+  "root": {
+    "name": "C:",
+    "type": "drive",
+    "icon": "drive",
+    "children": [
+      {
+        "name": "My Documents",
+        "type": "folder",
+        "icon": "folder",
+        "children": []
+      },
+      {
+        "name": "Program Files",
+        "type": "folder",
+        "icon": "folder",
+        "children": []
+      },
+      {
+        "name": "WINDOWS",
+        "type": "folder",
+        "icon": "folder-system",
+        "children": []
+      }
+    ]
+  }
+}

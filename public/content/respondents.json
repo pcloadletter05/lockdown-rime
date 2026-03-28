@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Survey respondent profiles with interviewer annotations",
+    "schema": {
+      "respondent_id": "string - e.g. H-1247",
+      "interview_date": "string - ISO 8601 date",
+      "interview_time": "string - time of interview",
+      "phone": "string - redacted phone number (e.g. 212-555-XX42)",
+      "disposition": "string - disposition code (COMPLETE, CALLBACK, REFUSAL, etc.)",
+      "demographics": {
+        "age_range": "string",
+        "gender": "string",
+        "zip": "string"
+      },
+      "responses": "object - keyed by question ID, values are coded responses",
+      "lisa_notes": "string|null - Lisa's handwritten-style annotations"
+    }
+  },
+  "items": []
+}
