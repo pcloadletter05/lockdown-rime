@@ -36,7 +36,7 @@
                 "size": "24 KB",
                 "modified": "12/20/1999 3:45 PM",
                 "content_key": "q4-status-report",
-                "content": "<h2>Q4 Survey Status Report</h2><p><strong>Prepared by:</strong> Lisa Whitmore</p><p><strong>Date:</strong> December 20, 1999</p><p>The Q4 consumer confidence survey is progressing on schedule. We have completed <strong>847 out of 1,200</strong> targeted interviews.</p><h3>Key Metrics</h3><ul><li>Response rate: 34.2%</li><li>Average interview length: 18.4 minutes</li><li>Refusal rate: 12.1%</li></ul><p>No significant issues to report. Training compliance remains at 100%.</p>"
+                "content": "<h2>Q4 Survey Status Report</h2><p><strong>Prepared by:</strong> Lisa Milavic</p><p><strong>Date:</strong> December 20, 1999</p><p>The Q4 consumer confidence survey is progressing on schedule. We have completed <strong>847 out of 1,200</strong> targeted interviews.</p><h3>Key Metrics</h3><ul><li>Response rate: 34.2%</li><li>Average interview length: 18.4 minutes</li><li>Refusal rate: 12.1%</li></ul><p>No significant issues to report. Training compliance remains at 100%.</p>"
               },
               {
                 "name": "Call Schedule.xls",
@@ -49,14 +49,14 @@
                 "content": {
                   "columns": ["Day", "Shift", "Interviewer", "Target Calls", "Completed"],
                   "rows": [
-                    ["Monday", "AM", "L. Whitmore", "45", "42"],
+                    ["Monday", "AM", "L. Milavic", "45", "42"],
                     ["Monday", "PM", "D. Chen", "45", "38"],
-                    ["Tuesday", "AM", "L. Whitmore", "45", "44"],
+                    ["Tuesday", "AM", "L. Milavic", "45", "44"],
                     ["Tuesday", "PM", "K. Rodriguez", "45", "41"],
-                    ["Wednesday", "AM", "L. Whitmore", "45", "45"],
+                    ["Wednesday", "AM", "L. Milavic", "45", "45"],
                     ["Wednesday", "PM", "D. Chen", "45", "39"],
                     ["Thursday", "AM", "J. Park", "45", "40"],
-                    ["Thursday", "PM", "L. Whitmore", "45", "43"],
+                    ["Thursday", "PM", "L. Milavic", "45", "43"],
                     ["Friday", "AM", "K. Rodriguez", "45", "37"]
                   ]
                 }
@@ -108,7 +108,7 @@
             "size": "12 KB",
             "modified": "11/15/1999 4:30 PM",
             "content_key": "resume-draft",
-            "content": "<h2>Lisa Whitmore</h2><p>142 Main Street, Apt 3B<br>Roosevelt Island, NY 10044<br>(212) 555-0147</p><h3>Objective</h3><p>Experienced survey research professional seeking senior CATI supervisor position.</p><h3>Experience</h3><p><strong>CalCom Research Services</strong> -- CATI Interviewer/Supervisor<br><em>March 1997 - Present</em></p><ul><li>Conduct computer-assisted telephone interviews for market research studies</li><li>Train and supervise team of 6 junior interviewers</li><li>Maintain 98.2% quality compliance rating</li><li>Manage call scheduling and quota fulfillment</li></ul><p><strong>DataLine Associates</strong> -- Phone Surveyor<br><em>June 1995 - February 1997</em></p><ul><li>Completed 200+ surveys monthly across multiple studies</li><li>Achieved highest completion rate in department (Q3 1996)</li></ul>"
+            "content": "<h2>Lisa Milavic</h2><p>142 Main Street, Apt 3B<br>Roosevelt Island, NY 10044<br>(212) 555-0147</p><h3>Objective</h3><p>Experienced survey research professional seeking senior CATI supervisor position.</p><h3>Experience</h3><p><strong>CalCom Research Services</strong> -- CATI Interviewer/Supervisor<br><em>March 1997 - Present</em></p><ul><li>Conduct computer-assisted telephone interviews for market research studies</li><li>Train and supervise team of 6 junior interviewers</li><li>Maintain 98.2% quality compliance rating</li><li>Manage call scheduling and quota fulfillment</li></ul><p><strong>DataLine Associates</strong> -- Phone Surveyor<br><em>June 1995 - February 1997</em></p><ul><li>Completed 200+ surveys monthly across multiple studies</li><li>Achieved highest completion rate in department (Q3 1996)</li></ul>"
           }
         ]
       },
