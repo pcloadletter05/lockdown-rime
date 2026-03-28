@@ -37,18 +37,49 @@ var AppRegistry = {
     'iexplore':      { title: 'Microsoft Internet Explorer', icon: iconImg('iexplore', 16),       width: 800, height: 600 },
     'notepad':       { title: 'Notepad',                     icon: iconImg('notepad', 16),        width: 480, height: 360 },
     'mycomputer':    { title: 'My Computer',                 icon: iconImg('mycomputer', 16),     width: 500, height: 400 },
-    'control-panel': { title: 'Control Panel',               icon: iconImg('control_panel', 16),  width: 450, height: 350 }
+    'control-panel': { title: 'Control Panel',               icon: iconImg('control_panel', 16),  width: 450, height: 350 },
+    'wordpad':       { title: 'WordPad',                     icon: iconImg('file_doc', 16),       width: 600, height: 450 },
+    'spreadsheet':   { title: 'Microsoft Excel',             icon: iconImg('file_doc', 16),       width: 650, height: 450 }
   },
 
   launch: function(appId, args) {
     var app = this.apps[appId];
-    if (app) {
+    var content = null;
+    var title = null;
+    var width = null;
+    var height = null;
+
+    // Route to app builders
+    if (appId === 'explorer' || appId === 'mycomputer') {
+      content = buildExplorerUI(args);
+    } else if (appId === 'outlook') {
+      content = (typeof buildEmailUI !== 'undefined') ? buildEmailUI(args) : null;
+    } else if (appId === 'iexplore') {
+      content = (typeof buildBrowserUI !== 'undefined') ? buildBrowserUI(args) : null;
+    } else if (appId === 'wordpad') {
+      content = buildWordPadUI(args);
+      title = (args && args.file) ? args.file.name + ' - WordPad' : 'WordPad';
+      width = 600;
+      height = 450;
+    } else if (appId === 'notepad') {
+      content = buildNotepadUI(args);
+      title = (args && args.file) ? args.file.name + ' - Notepad' : 'Notepad';
+      width = 480;
+      height = 360;
+    } else if (appId === 'spreadsheet') {
+      content = buildSpreadsheetUI(args);
+      title = (args && args.file) ? args.file.name + ' - Excel' : 'Excel';
+      width = 650;
+      height = 450;
+    }
+
+    if (app || content) {
       WindowManager.createWindow({
-        title: app.title,
-        icon: app.icon,
-        width: app.width,
-        height: app.height,
-        content: null
+        title: title || (app ? app.title : appId),
+        icon: app ? app.icon : iconImg('file_doc', 16),
+        width: width || (app ? app.width : 400),
+        height: height || (app ? app.height : 300),
+        content: content
       });
     } else {
       // Fallback for unregistered apps (Network Neighborhood, Recycle Bin, etc.)
