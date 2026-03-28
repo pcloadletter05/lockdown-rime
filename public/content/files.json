@@ -290,6 +290,26 @@
                 "modified": "12/22/1999 8:45 AM",
                 "content_key": "grocery-list",
                 "content": "Grocery List\n============\n- Milk\n- Bread (whole wheat)\n- Coffee (Folgers)\n- Orange juice\n- Chicken breasts\n- Rice\n- Broccoli\n- Advil (running low again)\n- Cat food (Fancy Feast, tuna)\n- Paper towels"
+              },
+              {
+                "name": "notes.txt",
+                "type": "file",
+                "icon": "file_txt",
+                "file_type": "txt",
+                "size": "2 KB",
+                "modified": "12/23/1999 5:30 PM",
+                "content_key": "lisa-notes",
+                "content": "notes - 12/23\n==============\n\nTODAY:\n- Finish callbacks: Mrs. Chen (after 2pm), Mr. Okafor (morning), Debra K (any time)\n- Update quota sheet before Margaret asks\n- Send Jim the PM shift schedule\n- Print survey script for Karen (printer jammed AGAIN)\n\nREMINDERS:\n- Rent due Jan 1 -- $1,340 (!!!)\n- Cat food -- Fancy Feast tuna (NOT the chicken, she won't eat it)\n- Dave's extension: x4217\n- Network password: Whiskers99! (change before Dec 30!!)\n- Building super: (212) 555-0193\n- Mom's new number: (718) 555-0284\n\nRANDOM:\n- Ask Karen if she still has Advil, I'm out again\n- Look into that new Thai place on Main St for lunch\n- Three people today mentioned headaches. Is something going around?\n- Weird that the printer jammed on the survey script. Third time this week.\n- Tom from Engineering stopped by, seemed nervous. Asked if I'd gotten any 'unusual calls.' What does that even mean?"
+              },
+              {
+                "name": "HZN_RF_Emissions_Test_Results.doc",
+                "type": "file",
+                "icon": "file_doc",
+                "file_type": "doc",
+                "size": "18 KB",
+                "modified": "12/16/1999 11:15 AM",
+                "content_key": "rf-emissions-test",
+                "content": "<h2>CALCOM ENGINEERING - INTERNAL</h2><p><strong>DOCUMENT:</strong> Horizon RF Emissions - Preliminary Test Results<br><strong>PREPARED BY:</strong> T. Hartley, RF Engineering<br><strong>DATE:</strong> December 12, 1999<br><strong>CLASSIFICATION:</strong> Confidential - Internal Use Only</p><h3>Summary</h3><p>Bench testing of production Horizon units (lot HZN-99-0847 through HZN-99-0923) reveals RF emission levels during sustained use that exceed FCC Part 15 guidelines by a factor of 2.3x at the 30-minute mark and 4.1x at the 60-minute mark.</p><h3>Thermal Profile</h3><p>Surface temperature measurements during extended operation:</p><ul><li>15 min: 38.2&deg;C (within spec)</li><li>30 min: 44.7&deg;C (<strong>above consumer comfort threshold</strong>)</li><li>60 min: 51.3&deg;C (<strong>exceeds safe handling guidelines</strong>)</li></ul><h3>Observed Effects During Testing</h3><ul><li>Interference with CRT monitors within 1.5m radius at 45+ minutes</li><li>Audible high-frequency tone above 14kHz during peak emission</li><li>Two lab technicians reported headaches during 4-hour test session</li></ul><h3>Recommendation</h3><p>Recommend <strong>immediate halt</strong> to shipments pending redesign of the RF shielding assembly. Current units should be recalled from early adopters.</p><p><em>Note: This recommendation was submitted to VP Engineering R. Caldwell on 12/13/1999. Response pending.</em></p><hr><p style=\"font-size: 9px; color: #808080;\">CalCom Communications Inc. - Confidential</p>"
               }
             ]
           },
