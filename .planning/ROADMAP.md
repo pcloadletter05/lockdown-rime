@@ -13,7 +13,7 @@ This roadmap delivers a Windows NT 4.0 desktop simulation in four phases. Phase 
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Foundation** - NT4 visual system, boot sequence, content architecture, viewport gate
-- [ ] **Phase 2: Desktop Environment** - Window manager, taskbar, Start menu, desktop icons, system tray
+- [x] **Phase 2: Desktop Environment** - Window manager, taskbar, Start menu, desktop icons, system tray (completed 2026-03-28)
 - [ ] **Phase 3: Applications** - File Explorer, document viewers, email client, web browser
 - [ ] **Phase 4: Narrative Content** - Survey materials, print queue, story layers, hidden content
 
@@ -93,6 +93,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/3 | Planning complete | - |
-| 2. Desktop Environment | 0/2 | Planning complete | - |
+| 2. Desktop Environment | 2/2 | Complete   | 2026-03-28 |
 | 3. Applications | 0/3 | Not started | - |
 | 4. Narrative Content | 0/2 | Not started | - |

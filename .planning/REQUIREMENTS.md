@@ -30,17 +30,17 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **WIN-01**: Windows can be created from template with title bar, content area, and status bar
 - [x] **WIN-02**: Windows can be dragged by title bar without text selection artifacts
 - [x] **WIN-03**: Windows have working minimize, maximize, and close buttons
-- [ ] **WIN-04**: Minimized windows appear as taskbar buttons; clicking restores them
+- [x] **WIN-04**: Minimized windows appear as taskbar buttons; clicking restores them
 - [x] **WIN-05**: Clicking a window brings it to front (z-index stacking)
 - [x] **WIN-06**: Multiple windows can be open simultaneously
 
 ### Desktop Shell
 
-- [ ] **SHELL-01**: Taskbar is bottom-anchored with Start button, window buttons area, and system tray
-- [ ] **SHELL-02**: System tray shows live clock mapped to 1999 date/time
-- [ ] **SHELL-03**: Start menu opens with Programs, Documents, Settings, Shut Down entries
-- [ ] **SHELL-04**: Desktop icons are left-aligned in a grid with single-click select, double-click open
-- [ ] **SHELL-05**: Each open window gets a taskbar button; active window button appears pressed
+- [x] **SHELL-01**: Taskbar is bottom-anchored with Start button, window buttons area, and system tray
+- [x] **SHELL-02**: System tray shows live clock mapped to 1999 date/time
+- [x] **SHELL-03**: Start menu opens with Programs, Documents, Settings, Shut Down entries
+- [x] **SHELL-04**: Desktop icons are left-aligned in a grid with single-click select, double-click open
+- [x] **SHELL-05**: Each open window gets a taskbar button; active window button appears pressed
 
 ### File Explorer
 
@@ -153,14 +153,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | WIN-01 | Phase 2 | Complete |
 | WIN-02 | Phase 2 | Complete |
 | WIN-03 | Phase 2 | Complete |
-| WIN-04 | Phase 2 | Pending |
+| WIN-04 | Phase 2 | Complete |
 | WIN-05 | Phase 2 | Complete |
 | WIN-06 | Phase 2 | Complete |
-| SHELL-01 | Phase 2 | Pending |
-| SHELL-02 | Phase 2 | Pending |
-| SHELL-03 | Phase 2 | Pending |
-| SHELL-04 | Phase 2 | Pending |
-| SHELL-05 | Phase 2 | Pending |
+| SHELL-01 | Phase 2 | Complete |
+| SHELL-02 | Phase 2 | Complete |
+| SHELL-03 | Phase 2 | Complete |
+| SHELL-04 | Phase 2 | Complete |
+| SHELL-05 | Phase 2 | Complete |
 | FILE-01 | Phase 3 | Pending |
 | FILE-02 | Phase 3 | Pending |
 | FILE-03 | Phase 3 | Pending |
