@@ -1133,3 +1133,96 @@ body {
   margin-left: 4px;
   font-size: 10px;
 }
+
+/* Browser (IE5) */
+.browser-app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.browser-toolbar {
+  gap: 4px;
+}
+
+.browser-address-bar {
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  gap: 4px;
+  background: var(--button-face);
+  border-bottom: 1px solid var(--button-shadow);
+}
+
+.browser-address-bar .address-label {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.browser-address-bar input {
+  flex: 1;
+}
+
+.browser-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.browser-favorites {
+  width: 200px;
+  overflow: auto;
+  background: white;
+  border-right: 1px solid var(--button-shadow);
+}
+
+.browser-favorites-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background: var(--button-face);
+  border-bottom: 1px solid var(--button-shadow);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.browser-favorites-header .close-btn {
+  cursor: default;
+  background: none;
+  border: none;
+  font-size: 12px;
+  padding: 0 4px;
+}
+
+.browser-bookmark-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  cursor: default;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.browser-bookmark-item:hover {
+  background: var(--highlight);
+  color: var(--highlight-text);
+}
+
+.browser-content {
+  flex: 1;
+  overflow: auto;
+  background: white;
+}
+
+.browser-content a {
+  cursor: default;
+}
+
+/* Disabled toolbar button appearance */
+.toolbar-btn:disabled,
+.toolbar-btn[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
