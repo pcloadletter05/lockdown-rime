@@ -102,10 +102,10 @@ var AppRegistry = {
 
 var DESKTOP_ICONS = [
   { appId: 'mycomputer', label: 'My Computer',           icon: iconImg('mycomputer', 32) },
-  { appId: 'network',    label: 'Network\nNeighborhood', icon: iconImg('network', 32) },
+  { appId: 'network',    label: 'Network Neighborhood', icon: iconImg('network', 32) },
   { appId: 'recycle',    label: 'Recycle Bin',            icon: iconImg('recycle_bin', 32) },
   { appId: 'outlook',    label: 'Inbox',                  icon: iconImg('outlook', 32) },
-  { appId: 'iexplore',   label: 'Internet\nExplorer',    icon: iconImg('iexplore', 32) }
+  { appId: 'iexplore',   label: 'Internet Explorer',    icon: iconImg('iexplore', 32) }
 ];
 
 function renderDesktopIcons() {

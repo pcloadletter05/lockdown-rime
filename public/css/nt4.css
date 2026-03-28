@@ -443,7 +443,7 @@ body {
 }
 
 .desktop-icon {
-  width: 64px;
+  width: 80px;
   text-align: center;
   padding: 4px;
   cursor: default;
@@ -460,8 +460,10 @@ body {
   font-size: 11px;
   color: #FFFFFF;
   padding: 1px 2px;
-  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   line-height: 1.2;
+  text-shadow: 1px 1px 1px #000000;
 }
 
 .desktop-icon.selected .desktop-icon-label {
