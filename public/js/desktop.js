@@ -54,6 +54,171 @@ function initDrag(titleBar, windowEl) {
   });
 }
 
+var MIN_WINDOW_WIDTH = 200;
+var MIN_WINDOW_HEIGHT = 120;
+var RESIZE_GRAB_SIZE = 4;
+
+function getResizeDirection(e, windowEl) {
+  var rect = windowEl.getBoundingClientRect();
+  var x = e.clientX - rect.left;
+  var y = e.clientY - rect.top;
+  var w = rect.width;
+  var h = rect.height;
+  var g = RESIZE_GRAB_SIZE;
+
+  var onLeft   = x < g;
+  var onRight  = x > w - g;
+  var onTop    = y < g;
+  var onBottom = y > h - g;
+
+  if (onTop && onLeft) return 'nw';
+  if (onTop && onRight) return 'ne';
+  if (onBottom && onLeft) return 'sw';
+  if (onBottom && onRight) return 'se';
+  if (onTop) return 'n';
+  if (onBottom) return 's';
+  if (onLeft) return 'w';
+  if (onRight) return 'e';
+  return '';
+}
+
+function createGhostOutline(state) {
+  var ghost = document.createElement('div');
+  ghost.className = 'resize-ghost';
+  ghost.style.left = state.startLeft + 'px';
+  ghost.style.top = state.startTop + 'px';
+  ghost.style.width = state.startWidth + 'px';
+  ghost.style.height = state.startHeight + 'px';
+  document.getElementById('desktop').appendChild(ghost);
+  return ghost;
+}
+
+function updateGhostOutline(ghost, state, e) {
+  var dx = e.clientX - state.startX;
+  var dy = e.clientY - state.startY;
+  var dir = state.direction;
+  var newLeft = state.startLeft;
+  var newTop = state.startTop;
+  var newWidth = state.startWidth;
+  var newHeight = state.startHeight;
+
+  if (dir.indexOf('e') !== -1) newWidth = Math.max(MIN_WINDOW_WIDTH, state.startWidth + dx);
+  if (dir.indexOf('w') !== -1) {
+    newWidth = Math.max(MIN_WINDOW_WIDTH, state.startWidth - dx);
+    newLeft = state.startLeft + state.startWidth - newWidth;
+  }
+  if (dir.indexOf('s') !== -1) newHeight = Math.max(MIN_WINDOW_HEIGHT, state.startHeight + dy);
+  if (dir.indexOf('n') !== -1) {
+    newHeight = Math.max(MIN_WINDOW_HEIGHT, state.startHeight - dy);
+    newTop = state.startTop + state.startHeight - newHeight;
+  }
+
+  ghost.style.left = newLeft + 'px';
+  ghost.style.top = newTop + 'px';
+  ghost.style.width = newWidth + 'px';
+  ghost.style.height = newHeight + 'px';
+}
+
+function applyResize(windowEl, ghost) {
+  windowEl.style.left = ghost.style.left;
+  windowEl.style.top = ghost.style.top;
+  windowEl.style.width = ghost.style.width;
+  windowEl.style.height = ghost.style.height;
+}
+
+function initResize(windowEl) {
+  var resizeState = {
+    active: false,
+    direction: '',
+    startX: 0, startY: 0,
+    startLeft: 0, startTop: 0,
+    startWidth: 0, startHeight: 0
+  };
+  var ghostEl = null;
+
+  // Cursor feedback on hover (only when not actively resizing)
+  windowEl.addEventListener('mousemove', function(e) {
+    if (resizeState.active) return;
+    var winId = windowEl.id;
+    var winData = WindowManager.windows.get(winId);
+    if (winData && winData.isMaximized) {
+      windowEl.style.cursor = '';
+      return;
+    }
+    var direction = getResizeDirection(e, windowEl);
+    if (direction) {
+      var cursorMap = {
+        n: 'ns-resize', s: 'ns-resize',
+        e: 'ew-resize', w: 'ew-resize',
+        ne: 'nesw-resize', sw: 'nesw-resize',
+        nw: 'nwse-resize', se: 'nwse-resize'
+      };
+      windowEl.style.cursor = cursorMap[direction];
+    } else {
+      windowEl.style.cursor = '';
+    }
+  });
+
+  // Reset cursor when mouse leaves window
+  windowEl.addEventListener('mouseleave', function() {
+    if (!resizeState.active) {
+      windowEl.style.cursor = '';
+    }
+  });
+
+  // Start resize on mousedown at edge
+  windowEl.addEventListener('mousedown', function(e) {
+    if (e.target.closest('.nt4-titlebar')) return; // Title bar = drag, not resize
+    var winId = windowEl.id;
+    var winData = WindowManager.windows.get(winId);
+    if (winData && winData.isMaximized) return;
+
+    var direction = getResizeDirection(e, windowEl);
+    if (!direction) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    resizeState.active = true;
+    resizeState.direction = direction;
+    resizeState.startX = e.clientX;
+    resizeState.startY = e.clientY;
+    resizeState.startLeft = windowEl.offsetLeft;
+    resizeState.startTop = windowEl.offsetTop;
+    resizeState.startWidth = windowEl.offsetWidth;
+    resizeState.startHeight = windowEl.offsetHeight;
+
+    ghostEl = createGhostOutline(resizeState);
+    document.body.classList.add('resizing');
+    document.body.dataset.resizeDir = direction;
+  });
+
+  // Update ghost on mousemove (document-level for fast drags)
+  document.addEventListener('mousemove', function(e) {
+    if (!resizeState.active) return;
+    updateGhostOutline(ghostEl, resizeState, e);
+  });
+
+  // Apply resize on mouseup
+  document.addEventListener('mouseup', function() {
+    if (!resizeState.active) return;
+    applyResize(windowEl, ghostEl);
+    resizeState.active = false;
+    document.body.classList.remove('resizing');
+    delete document.body.dataset.resizeDir;
+    if (ghostEl) { ghostEl.remove(); ghostEl = null; }
+  });
+
+  // Handle window blur during resize
+  window.addEventListener('blur', function() {
+    if (resizeState.active) {
+      resizeState.active = false;
+      document.body.classList.remove('resizing');
+      delete document.body.dataset.resizeDir;
+      if (ghostEl) { ghostEl.remove(); ghostEl = null; }
+    }
+  });
+}
+
 const WindowManager = {
   windows: new Map(),
   topZIndex: 100,
@@ -159,8 +324,9 @@ const WindowManager = {
     statusBar.appendChild(statusText);
     windowEl.appendChild(statusBar);
 
-    // Attach drag handler
+    // Attach drag and resize handlers
     initDrag(titleBarEl, windowEl);
+    initResize(windowEl);
 
     // Focus on mousedown anywhere in window
     var self = this;
