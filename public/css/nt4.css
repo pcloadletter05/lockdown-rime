@@ -1270,3 +1270,40 @@ body {
 .printqueue-list td {
   white-space: nowrap;
 }
+
+/* === Resize Cursors & Ghost Outline === */
+
+/* Ghost outline shown during resize drag */
+.resize-ghost {
+  position: absolute;
+  border: 2px dotted #000000;
+  pointer-events: none;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+/* Resize body class -- prevents text selection during resize drag */
+.resizing, .resizing * {
+  user-select: none !important;
+}
+
+/* Resize cursor persistence during active drag (body-level, overrides everything) */
+.resizing[data-resize-dir="n"] *,
+.resizing[data-resize-dir="s"] *,
+.resizing[data-resize-dir="n"],
+.resizing[data-resize-dir="s"]  { cursor: url('../assets/cursors/size_ns.cur'), ns-resize !important; }
+
+.resizing[data-resize-dir="e"] *,
+.resizing[data-resize-dir="w"] *,
+.resizing[data-resize-dir="e"],
+.resizing[data-resize-dir="w"]  { cursor: url('../assets/cursors/size_ew.cur'), ew-resize !important; }
+
+.resizing[data-resize-dir="ne"] *,
+.resizing[data-resize-dir="sw"] *,
+.resizing[data-resize-dir="ne"],
+.resizing[data-resize-dir="sw"] { cursor: url('../assets/cursors/size_nesw.cur'), nesw-resize !important; }
+
+.resizing[data-resize-dir="nw"] *,
+.resizing[data-resize-dir="se"] *,
+.resizing[data-resize-dir="nw"],
+.resizing[data-resize-dir="se"] { cursor: url('../assets/cursors/size_nwse.cur'), nwse-resize !important; }
