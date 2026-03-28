@@ -46,11 +46,11 @@ Plans:
   3. Taskbar shows Start button, a button for each open window, and a live clock showing 1999 date/time
   4. Desktop icons are visible in a left-aligned grid and double-clicking one opens the associated application
   5. Start menu opens and shows Programs, Documents, Settings, Shut Down entries
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Window manager (create, drag, minimize, maximize, close, z-stacking)
-- [ ] 02-02: Desktop shell (taskbar, Start menu, desktop icons, system tray clock)
+- [ ] 02-01-PLAN.md -- EventBus, WindowManager core (create, drag, minimize, maximize, close, z-stacking), Phase 2 CSS
+- [ ] 02-02-PLAN.md -- Taskbar, Start menu, desktop icons, system tray clock, app registry with stubs
 
 ### Phase 3: Applications
 **Goal**: Visitor can explore Lisa's files, read her documents, browse her email, and visit 1999 websites
@@ -93,6 +93,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/3 | Planning complete | - |
-| 2. Desktop Environment | 0/2 | Not started | - |
+| 2. Desktop Environment | 0/2 | Planning complete | - |
 | 3. Applications | 0/3 | Not started | - |
 | 4. Narrative Content | 0/2 | Not started | - |
