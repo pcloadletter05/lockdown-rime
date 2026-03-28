@@ -46,6 +46,16 @@ const Taskbar = {
     systemTray.id = 'system-tray';
     systemTray.className = 'well';
 
+    // Printer icon (blinking -- stuck print job)
+    var printerIcon = document.createElement('span');
+    printerIcon.className = 'tray-icon tray-printer-blink';
+    printerIcon.innerHTML = '<img src="assets/icons/16/printer.png" width="16" height="16" alt="Printer" draggable="false" style="image-rendering: pixelated;">';
+    printerIcon.title = 'HP LaserJet 4 - 1 document(s) pending';
+    printerIcon.addEventListener('click', function() {
+      EventBus.emit('app:launch', { appId: 'printqueue' });
+    });
+    systemTray.appendChild(printerIcon);
+
     // Speaker icon (decorative)
     var speakerIcon = document.createElement('span');
     speakerIcon.className = 'tray-icon';

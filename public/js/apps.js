@@ -39,7 +39,8 @@ var AppRegistry = {
     'mycomputer':    { title: 'My Computer',                 icon: iconImg('mycomputer', 16),     width: 500, height: 400 },
     'control-panel': { title: 'Control Panel',               icon: iconImg('control_panel', 16),  width: 450, height: 350 },
     'wordpad':       { title: 'WordPad',                     icon: iconImg('file_doc', 16),       width: 600, height: 450 },
-    'spreadsheet':   { title: 'Microsoft Excel',             icon: iconImg('file_doc', 16),       width: 650, height: 450 }
+    'spreadsheet':   { title: 'Microsoft Excel',             icon: iconImg('file_doc', 16),       width: 650, height: 450 },
+    'printqueue':    { title: 'HP LaserJet 4 - \\\\CALCOM-PS01', icon: iconImg('printer', 16),   width: 550, height: 250 }
   },
 
   launch: function(appId, args) {
@@ -71,6 +72,8 @@ var AppRegistry = {
       title = (args && args.file) ? args.file.name + ' - Excel' : 'Excel';
       width = 650;
       height = 450;
+    } else if (appId === 'printqueue') {
+      content = buildPrintQueueUI(args);
     }
 
     if (app || content) {
@@ -148,6 +151,82 @@ function renderDesktopIcons() {
 
   // Insert before other children so icons are behind windows
   desktop.insertBefore(container, desktop.firstChild);
+}
+
+// ---- Print Queue ----
+
+function buildPrintQueueUI(args) {
+  var container = document.createElement('div');
+  container.className = 'printqueue-app';
+  container.style.display = 'flex';
+  container.style.flexDirection = 'column';
+  container.style.height = '100%';
+
+  // Menu bar
+  var menubar = document.createElement('div');
+  menubar.className = 'app-menubar';
+  ['Printer', 'Document', 'View', 'Help'].forEach(function(label) {
+    var item = document.createElement('span');
+    item.className = 'menu-item';
+    item.textContent = label;
+    menubar.appendChild(item);
+  });
+  container.appendChild(menubar);
+
+  // Job list
+  var content = document.createElement('div');
+  content.className = 'printqueue-content sunken';
+  content.style.flex = '1';
+  content.style.overflow = 'auto';
+  content.style.background = '#FFFFFF';
+  content.style.margin = '2px 4px';
+
+  var table = document.createElement('table');
+  table.className = 'printqueue-list';
+  table.style.width = '100%';
+  table.style.borderCollapse = 'collapse';
+  table.style.fontSize = '11px';
+
+  // Header row
+  var thead = document.createElement('tr');
+  ['Document Name', 'Status', 'Owner', 'Pages', 'Size', 'Submitted'].forEach(function(col) {
+    var th = document.createElement('th');
+    th.textContent = col;
+    th.style.textAlign = 'left';
+    th.style.padding = '2px 6px';
+    th.style.borderBottom = '1px solid #808080';
+    th.style.background = '#C0C0C0';
+    th.style.fontWeight = 'normal';
+    thead.appendChild(th);
+  });
+  table.appendChild(thead);
+
+  // Stuck job row
+  var row = document.createElement('tr');
+  row.style.background = '#000080';
+  row.style.color = '#FFFFFF';
+  ['HORIZON_CATI_SCRIPT_v3.doc', 'Error - Paper Jam', 'l.milavic', '4', '28 KB', '3:47 PM 12/23/1999'].forEach(function(val) {
+    var td = document.createElement('td');
+    td.textContent = val;
+    td.style.padding = '2px 6px';
+    row.appendChild(td);
+  });
+  table.appendChild(row);
+
+  content.appendChild(table);
+  container.appendChild(content);
+
+  // Status bar
+  var status = document.createElement('div');
+  status.className = 'well';
+  status.style.padding = '2px 4px';
+  status.style.fontSize = '11px';
+  status.style.flexShrink = '0';
+  status.style.margin = '2px 4px 4px 4px';
+  status.textContent = '1 document(s) in queue';
+  container.appendChild(status);
+
+  return container;
 }
 
 // ---- Initialization ----
