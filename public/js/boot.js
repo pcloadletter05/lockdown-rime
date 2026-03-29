@@ -91,6 +91,13 @@ function setBootedFlag() {
   }
 }
 
+/* === Password Validation === */
+
+var _k = 'aG9yaXpvbg==';
+function validatePassword(input) {
+  return input === atob(_k);
+}
+
 /* === Memory Count Animation (requestAnimationFrame) === */
 
 function animateMemoryCount(element, targetKB, durationMs) {
@@ -260,6 +267,50 @@ async function ctrlAltDelScreen() {
   clearTimeout(hintTimeout);
 }
 
+/* === Login Helpers === */
+
+function waitForLoginSubmit() {
+  return new Promise(function(resolve) {
+    var passwordField = document.getElementById('login-password');
+    var okButton = document.getElementById('login-ok');
+
+    function submit() {
+      okButton.removeEventListener('click', handleClick);
+      passwordField.removeEventListener('keydown', handleKey);
+      resolve(passwordField.value);
+    }
+    function handleClick() { submit(); }
+    function handleKey(e) { if (e.key === 'Enter') submit(); }
+
+    okButton.addEventListener('click', handleClick);
+    passwordField.addEventListener('keydown', handleKey);
+  });
+}
+
+async function showLogonError() {
+  var overlay = document.createElement('div');
+  overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 1001; background: transparent;';
+  overlay.innerHTML =
+    '<div class="nt4-dialog logon-error" style="width: 420px;">' +
+      '<div class="dialog-titlebar"><span>Logon Message</span></div>' +
+      '<div class="dialog-body" style="display: flex; gap: 12px; align-items: flex-start;">' +
+        '<img src="assets/icons/32/exclamation.png" alt="" class="dialog-icon-img" onerror="this.outerHTML=\'<span class=&quot;dialog-icon&quot;>&#9888;</span>\'">' +
+        '<p style="margin: 0;">The system could not log you on. Make sure your user name and domain are correct, then type your password again. Letters in passwords must be typed using the correct case.<br><br>Make sure that Caps Lock is not accidentally on.</p>' +
+      '</div>' +
+      '<div class="dialog-buttons">' +
+        '<button class="nt4-button" id="error-ok">OK</button>' +
+      '</div>' +
+    '</div>';
+  document.getElementById('boot-screen').appendChild(overlay);
+
+  await new Promise(function(resolve) {
+    document.getElementById('error-ok').addEventListener('click', function() {
+      overlay.remove();
+      resolve();
+    }, { once: true });
+  });
+}
+
 /* === Stage 5: Login Dialog === */
 
 async function loginDialog() {
@@ -287,7 +338,7 @@ async function loginDialog() {
           '</tr>' +
           '<tr>' +
             '<td style="padding: 4px 8px 4px 0; white-space: nowrap;">Password:</td>' +
-            '<td style="padding: 4px 0;"><input type="password" class="nt4-input" value="password" readonly style="width: 100%;"></td>' +
+            '<td style="padding: 4px 0;"><input type="password" class="nt4-input" id="login-password" value="" style="width: 100%;"></td>' +
           '</tr>' +
         '</table>' +
       '</div>' +
@@ -301,10 +352,18 @@ async function loginDialog() {
 
   setBootScreen('boot-login', dialogHTML);
 
-  // Wait for OK button click only (not any click)
-  await new Promise(function(resolve) {
-    document.getElementById('login-ok').addEventListener('click', resolve, { once: true });
-  });
+  // Focus password field and wait for valid login
+  document.getElementById('login-password').focus();
+
+  while (true) {
+    var password = await waitForLoginSubmit();
+    if (validatePassword(password)) {
+      break;
+    }
+    await showLogonError();
+    document.getElementById('login-password').value = '';
+    document.getElementById('login-password').focus();
+  }
 
   // Show loading personal settings
   setBootScreen('boot-loading-settings',
@@ -325,15 +384,21 @@ async function returnVisitorBoot() {
 /* === Main Boot Sequence === */
 
 async function bootSequence() {
-  if (!checkViewport()) return;
-
   await postScreen();
   await bootLoader();
   await startingNT();
   await ctrlAltDelScreen();
   await loginDialog();
+  setBootedFlag();
 
   window.location.href = 'desktop.html';
 }
 
-document.addEventListener('DOMContentLoaded', bootSequence);
+document.addEventListener('DOMContentLoaded', function() {
+  if (!checkViewport()) return;
+  if (isReturnVisitor()) {
+    returnVisitorBoot();
+  } else {
+    bootSequence();
+  }
+});

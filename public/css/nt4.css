@@ -402,6 +402,19 @@ body {
   flex-shrink: 0;
 }
 
+/* === Logon Error Dialog === */
+
+.dialog-icon-img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.logon-error .dialog-body p {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
 /* === Loading Settings Screen (return visitors) === */
 
 .boot-loading-settings {
