@@ -73,23 +73,6 @@ function checkViewport() {
   return true;
 }
 
-/* === Return Visitor Check === */
-
-function isReturnVisitor() {
-  try {
-    return localStorage.getItem('nt4_booted') === '1';
-  } catch (e) {
-    return false;
-  }
-}
-
-function setBootedFlag() {
-  try {
-    localStorage.setItem('nt4_booted', '1');
-  } catch (e) {
-    // Silently fail -- next visit will show boot again
-  }
-}
 
 /* === Password Validation === */
 
@@ -372,15 +355,6 @@ async function loginDialog() {
   await interruptibleSleep(1500);
 }
 
-/* === Return Visitor Flow === */
-
-async function returnVisitorBoot() {
-  setBootScreen('boot-loading-settings',
-    '<p>Loading your personal settings...</p>');
-  await interruptibleSleep(1500);
-  window.location.href = 'desktop.html';
-}
-
 /* === Main Boot Sequence === */
 
 async function bootSequence() {
@@ -389,16 +363,11 @@ async function bootSequence() {
   await startingNT();
   await ctrlAltDelScreen();
   await loginDialog();
-  setBootedFlag();
 
   window.location.href = 'desktop.html';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
   if (!checkViewport()) return;
-  if (isReturnVisitor()) {
-    returnVisitorBoot();
-  } else {
-    bootSequence();
-  }
+  bootSequence();
 });
