@@ -268,6 +268,7 @@ async function loginDialog() {
       '<div class="dialog-titlebar"><span>Logon Information</span></div>' +
       '<div class="dialog-body">' +
         '<div style="background: var(--active-title); color: white; padding: 8px 12px; margin-bottom: 12px; text-align: center; font-weight: bold;">' +
+          '<img src="assets/calcom/calcom_logo.png" width="80" style="display: block; margin: 0 auto 6px; background: white; padding: 3px;">' +
           'Windows NT' +
         '</div>' +
         '<table style="width: 100%;">' +

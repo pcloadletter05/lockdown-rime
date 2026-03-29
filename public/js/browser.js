@@ -8,6 +8,7 @@ var BROWSER_PAGES = {
     content: '<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">' +
       '<tr>' +
         '<td colspan="2" bgcolor="#000080" style="padding: 10px 20px;">' +
+          '<img src="assets/calcom/calcom_logo.png" width="120" style="vertical-align: middle; margin-right: 12px; background: white; padding: 4px;">' +
           '<font color="#FFFFFF" size="5" face="Arial"><b>CalCom Research Services</b></font><br>' +
           '<font color="#CCCCFF" size="2" face="Arial">Internal Network - Authorized Users Only</font>' +
         '</td>' +
@@ -63,6 +64,7 @@ var BROWSER_PAGES = {
     url: 'http://www.calcom.com/',
     content: '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
       '<tr><td bgcolor="#003366" style="padding: 15px 20px;">' +
+        '<img src="assets/calcom/calcom_logo.png" width="140" style="vertical-align: middle; margin-right: 15px; background: white; padding: 4px;">' +
         '<font color="#FFFFFF" size="5" face="Georgia"><b>CalCom</b></font>' +
         '<font color="#99CCFF" size="3" face="Georgia"> Research Services</font>' +
       '</td></tr>' +
