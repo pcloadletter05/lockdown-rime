@@ -103,10 +103,11 @@ var AppRegistry = {
 var DESKTOP_ICONS = [
   { appId: 'mycomputer', label: 'My Computer',           icon: iconImg('mycomputer', 32) },
   { appId: 'network',    label: 'Network Neighborhood', icon: iconImg('network', 32) },
-  { appId: 'recycle',    label: 'Recycle Bin',            icon: iconImg('recycle_bin', 32) },
-  { appId: 'outlook',    label: 'Inbox',                  icon: iconImg('outlook', 32) },
-  { appId: 'iexplore',   label: 'Internet Explorer',    icon: iconImg('iexplore', 32) }
+  { appId: 'iexplore',   label: 'Internet Explorer',    icon: iconImg('iexplore', 32) },
+  { appId: 'outlook',    label: 'Inbox',                  icon: iconImg('outlook', 32) }
 ];
+
+var DESKTOP_ICON_BOTTOM = { appId: 'recycle', label: 'Recycle Bin', icon: iconImg('recycle_bin', 32) };
 
 function renderDesktopIcons() {
   var desktop = document.getElementById('desktop');
@@ -133,8 +134,8 @@ function renderDesktopIcons() {
     // Single click: select
     iconEl.addEventListener('click', function(e) {
       e.stopPropagation();
-      // Deselect all
-      container.querySelectorAll('.desktop-icon.selected').forEach(function(ic) {
+      // Deselect all icons in both containers
+      desktop.querySelectorAll('.desktop-icons .desktop-icon.selected, .desktop-icons-bottom .desktop-icon.selected').forEach(function(ic) {
         ic.classList.remove('selected');
       });
       iconEl.classList.add('selected');
@@ -151,6 +152,40 @@ function renderDesktopIcons() {
 
   // Insert before other children so icons are behind windows
   desktop.insertBefore(container, desktop.firstChild);
+
+  // Bottom-anchored Recycle Bin
+  var bottomContainer = document.createElement('div');
+  bottomContainer.className = 'desktop-icons-bottom';
+
+  var recycleEl = document.createElement('div');
+  recycleEl.className = 'desktop-icon';
+  recycleEl.dataset.appId = DESKTOP_ICON_BOTTOM.appId;
+
+  var recycleImage = document.createElement('div');
+  recycleImage.className = 'desktop-icon-image';
+  recycleImage.innerHTML = DESKTOP_ICON_BOTTOM.icon;
+  recycleEl.appendChild(recycleImage);
+
+  var recycleLabel = document.createElement('span');
+  recycleLabel.className = 'desktop-icon-label';
+  recycleLabel.textContent = DESKTOP_ICON_BOTTOM.label;
+  recycleEl.appendChild(recycleLabel);
+
+  recycleEl.addEventListener('click', function(e) {
+    e.stopPropagation();
+    desktop.querySelectorAll('.desktop-icons .desktop-icon.selected, .desktop-icons-bottom .desktop-icon.selected').forEach(function(ic) {
+      ic.classList.remove('selected');
+    });
+    recycleEl.classList.add('selected');
+  });
+
+  recycleEl.addEventListener('dblclick', function(e) {
+    e.stopPropagation();
+    EventBus.emit('app:launch', { appId: DESKTOP_ICON_BOTTOM.appId });
+  });
+
+  bottomContainer.appendChild(recycleEl);
+  desktop.insertBefore(bottomContainer, desktop.firstChild);
 }
 
 // ---- Print Queue ----

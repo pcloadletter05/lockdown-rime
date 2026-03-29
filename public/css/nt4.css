@@ -455,6 +455,12 @@ body {
   align-content: flex-start;
 }
 
+.desktop-icons-bottom {
+  position: absolute;
+  bottom: 36px;
+  left: 8px;
+}
+
 .desktop-icon {
   width: 80px;
   text-align: center;
