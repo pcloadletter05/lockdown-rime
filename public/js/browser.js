@@ -63,12 +63,12 @@ var BROWSER_PAGES = {
     title: 'CalCom Research Services',
     url: 'http://www.calcom.com/',
     content: '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
-      '<tr><td bgcolor="#003366" style="padding: 15px 20px;">' +
-        '<img src="assets/calcom/calcom_logo.png" width="140" style="vertical-align: middle; margin-right: 15px; background: white; padding: 4px;">' +
-        '<font color="#FFFFFF" size="5" face="Georgia"><b>CalCom</b></font>' +
-        '<font color="#99CCFF" size="3" face="Georgia"> Research Services</font>' +
+      '<tr><td bgcolor="#000080" style="padding: 15px 20px;">' +
+        '<img src="assets/calcom/calcom_logo.png" width="120" style="vertical-align: middle; margin-right: 15px; background: white; padding: 4px;">' +
+        '<font color="#FFFFFF" size="5" face="Arial"><b>CalCom</b></font>' +
+        '<font color="#CCCCFF" size="2" face="Arial"> Research Services</font>' +
       '</td></tr>' +
-      '<tr><td bgcolor="#6699CC" style="padding: 4px 20px;">' +
+      '<tr><td bgcolor="#000080" style="padding: 4px 20px; border-top: 1px solid #4040C0;">' +
         '<font size="2" face="Arial" color="#FFFFFF">' +
           '<a href="#" style="color: #FFFFFF;">Home</a> | ' +
           '<a href="#" style="color: #FFFFFF;">About Us</a> | ' +
@@ -79,7 +79,7 @@ var BROWSER_PAGES = {
       '</td></tr>' +
       '<tr><td style="padding: 20px;">' +
         '<font size="2" face="Arial">' +
-          '<center><font size="4" face="Georgia"><b>Trusted Research Since 1987</b></font></center>' +
+          '<center><font size="4" face="Arial"><b>Trusted Research Since 1987</b></font></center>' +
           '<br>' +
           '<table width="100%" cellpadding="10"><tr>' +
             '<td valign="top" width="50%">' +
@@ -97,7 +97,7 @@ var BROWSER_PAGES = {
             '</td>' +
           '</tr></table>' +
           '<br>' +
-          '<hr size="2" noshade color="#003366">' +
+          '<hr size="1" color="#C0C0C0">' +
           '<center>' +
             '<font size="1" color="#808080">' +
               '&copy; 1998 CalCom Research Services | Roosevelt Island, DC 20002 | (202) 555-0100<br>' +
