@@ -183,6 +183,60 @@ var BROWSER_PAGES = {
     '</table>'
   },
 
+  'ask-jeeves': {
+    title: 'Ask Jeeves!',
+    url: 'http://www.askjeeves.com/',
+    content: '<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">' +
+      '<tr><td bgcolor="#FFFFFF" style="padding: 10px 0; border-bottom: 2px solid #CC0000;">' +
+        '<center>' +
+          '<font size="7" face="Georgia, Times New Roman, serif" color="#003399"><b>Ask Jeeves!</b></font><br>' +
+          '<font size="1" face="Arial" color="#666666">The Butler Knows.</font>' +
+        '</center>' +
+      '</td></tr>' +
+      '<tr><td style="padding: 20px;">' +
+        '<center>' +
+          '<table width="500" cellpadding="0" cellspacing="0" border="0">' +
+            '<tr><td align="center" style="padding: 10px;">' +
+              '<img src="assets/ask-jeeves/jeeves.png" width="80" height="100" alt="Jeeves the Butler" onerror="this.style.display=\'none\'">' +
+            '</td></tr>' +
+            '<tr><td style="padding: 10px;">' +
+              '<font size="3" face="Arial">' +
+                'You may type your question in plain English below.' +
+              '</font><br>' +
+              '<font size="2" face="Arial" color="#666666">' +
+                'For example: <i>Where can I find information about Y2K?</i>' +
+              '</font>' +
+            '</td></tr>' +
+            '<tr><td align="center" style="padding: 10px;">' +
+              '<table cellpadding="0" cellspacing="0" border="0"><tr>' +
+                '<td><input type="text" size="45" value="" style="border: 2px solid #808080; padding: 3px; font-size: 14px;"></td>' +
+                '<td>&nbsp;</td>' +
+                '<td><input type="submit" value="  Ask!  " style="padding: 3px 12px; font-size: 14px; font-weight: bold; background: #CC0000; color: #FFFFFF; border: 2px outset #FF6666; cursor: pointer;"></td>' +
+              '</tr></table>' +
+            '</td></tr>' +
+          '</table>' +
+          '<br>' +
+          '<table width="400" cellpadding="4" cellspacing="0" border="0">' +
+            '<tr><td colspan="2" style="padding-bottom: 6px;">' +
+              '<font size="2" face="Arial"><b>You may also ask:</b></font>' +
+            '</td></tr>' +
+            '<tr><td valign="top"><font size="2" face="Arial">&#8226;</font></td>' +
+              '<td><font size="2" face="Arial"><a href="#" style="color: #0000FF;">What is the weather forecast for New York?</a></font></td></tr>' +
+            '<tr><td valign="top"><font size="2" face="Arial">&#8226;</font></td>' +
+              '<td><font size="2" face="Arial"><a href="#" style="color: #0000FF;">Where can I find free email?</a></font></td></tr>' +
+            '<tr><td valign="top"><font size="2" face="Arial">&#8226;</font></td>' +
+              '<td><font size="2" face="Arial"><a href="#" style="color: #0000FF;">How do I create a web page?</a></font></td></tr>' +
+            '<tr><td valign="top"><font size="2" face="Arial">&#8226;</font></td>' +
+              '<td><font size="2" face="Arial"><a href="#" style="color: #0000FF;">What are the best Christmas gifts for 1998?</a></font></td></tr>' +
+          '</table>' +
+          '<br><br>' +
+          '<hr size="1" color="#C0C0C0" width="80%">' +
+          '<font size="1" face="Arial" color="#808080">Copyright &copy; 1998 Ask Jeeves, Inc. All rights reserved.</font>' +
+        '</center>' +
+      '</td></tr>' +
+    '</table>'
+  },
+
   '404': {
     title: 'The page cannot be displayed',
     url: '',

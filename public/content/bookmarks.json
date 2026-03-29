@@ -46,6 +46,12 @@
       "url": "yahoo-portal",
       "icon": null,
       "children": null
+    },
+    {
+      "name": "Ask Jeeves",
+      "url": "ask-jeeves",
+      "icon": null,
+      "children": null
     }
   ]
 }
