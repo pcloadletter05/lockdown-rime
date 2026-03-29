@@ -34,7 +34,7 @@ var BROWSER_PAGES = {
                 '<font size="2" face="Arial">' +
                   '<b>&#128227; Announcements</b><br><br>' +
                   '<b>Dec 22</b> - Holiday party this Friday! Conference Room B, 14th floor. 5:00 PM. See Lisa W. for details.<br><br>' +
-                  '<b>Dec 21</b> - Y2K preparedness checklist due by Dec 28. Contact Margaret Sullivan with questions.<br><br>' +
+                  '<b>Dec 21</b> - Y2K assessment survey -- please complete by Jan 15. Contact Margaret Sullivan.<br><br>' +
                   '<b>Dec 20</b> - Q4 survey on track: 847/1200 interviews completed.<br><br>' +
                   '<b>Dec 15</b> - New phone system training: Sign up at front desk.<br><br>' +
                 '</font>' +
@@ -52,7 +52,7 @@ var BROWSER_PAGES = {
             '</tr>' +
           '</table>' +
           '<hr size="1" color="#C0C0C0">' +
-          '<center><font size="1" face="Arial" color="#808080">CalCom Research Services &copy; 1999 | Internal Use Only | <a href="#" style="color: #808080;">Privacy Policy</a></font></center>' +
+          '<center><font size="1" face="Arial" color="#808080">CalCom Research Services &copy; 1998 | Internal Use Only | <a href="#" style="color: #808080;">Privacy Policy</a></font></center>' +
         '</td>' +
       '</tr>' +
     '</table>'
@@ -98,7 +98,7 @@ var BROWSER_PAGES = {
           '<hr size="2" noshade color="#003366">' +
           '<center>' +
             '<font size="1" color="#808080">' +
-              '&copy; 1999 CalCom Research Services | Roosevelt Island, NY 10044 | (212) 555-0100<br>' +
+              '&copy; 1998 CalCom Research Services | Roosevelt Island, NY 10044 | (212) 555-0100<br>' +
               '<img src="" width="1" height="5"><br>' +
               'You are visitor number <b>12,847</b><br>' +
               '<font size="1">Best viewed in Internet Explorer 4.0 or higher at 800x600</font>' +
@@ -176,7 +176,7 @@ var BROWSER_PAGES = {
         '</tr></table>' +
         '<hr size="1" color="#C0C0C0">' +
         '<center><font size="1" face="Arial" color="#808080">' +
-          'Copyright &copy; 1999 Yahoo! Inc. All rights reserved.<br>' +
+          'Copyright &copy; 1998 Yahoo! Inc. All rights reserved.<br>' +
           '<a href="#" style="color: #808080;">Privacy Policy</a> - <a href="#" style="color: #808080;">Terms of Service</a>' +
         '</font></center>' +
       '</td></tr>' +
