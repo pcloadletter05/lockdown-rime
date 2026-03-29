@@ -189,22 +189,30 @@ var BROWSER_PAGES = {
     title: 'Ask Jeeves!',
     url: 'http://www.askjeeves.com/',
     content: '<div style="width:100%;overflow:hidden;">' +
-    '<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FEFECC" style="table-layout:fixed;">' +
+    '<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#E8E0F0" style="table-layout:fixed;">' +
       /* === TOP NAV BAR === */
-      '<tr><td bgcolor="#663333" style="padding: 3px 10px;">' +
-        '<font size="1" face="Arial, Helvetica, sans-serif">' +
-          '<a href="#" style="color:#FFFFFF;text-decoration:none;">Home</a> &#8226; ' +
-          '<a href="#" style="color:#FFFFFF;text-decoration:none;">About</a> &#8226; ' +
-          '<a href="#" style="color:#FFFFFF;text-decoration:none;">Help</a> &#8226; ' +
-          '<a href="#" style="color:#FFFFFF;text-decoration:none;">Corporate Services</a>' +
-        '</font>' +
+      '<tr><td bgcolor="#660033" style="padding: 3px 10px;">' +
+        '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
+          '<tr>' +
+            '<td>' +
+              '<font size="1" face="Arial, Helvetica, sans-serif">' +
+                '<a href="#" style="color:#FFFFFF;text-decoration:none;">Home</a> &#8226; ' +
+                '<a href="#" style="color:#FFFFFF;text-decoration:none;">About</a> &#8226; ' +
+                '<a href="#" style="color:#FFFFFF;text-decoration:none;">Help</a>' +
+              '</font>' +
+            '</td>' +
+            '<td align="right">' +
+              '<font size="1" face="Arial, Helvetica, sans-serif" color="#FFFFFF">Ask about <b>CORPORATE SERVICES</b></font>' +
+            '</td>' +
+          '</tr>' +
+        '</table>' +
       '</td></tr>' +
       /* === MAIN BODY === */
-      '<tr><td bgcolor="#FEFECC">' +
+      '<tr><td bgcolor="#E8E0F0">' +
         '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
           '<tr>' +
             /* --- LEFT SIDEBAR --- */
-            '<td width="145" valign="top" bgcolor="#F5EED8" style="border-right: 1px solid #D4C89E;">' +
+            '<td width="145" valign="top" bgcolor="#F0E8D0" style="border-right: 1px solid #D4C89E;">' +
               '<table width="145" cellpadding="0" cellspacing="0" border="0">' +
                 /* May I Suggest header */
                 '<tr><td bgcolor="#CC9966" style="padding: 4px 8px;">' +
@@ -227,12 +235,12 @@ var BROWSER_PAGES = {
                     '&nbsp;&nbsp;&nbsp;<font size="1"><i>Just<br>&nbsp;&nbsp;&nbsp;Curious,<br>&nbsp;&nbsp;&nbsp;Jeeves</i></font>' +
                   '</font>' +
                 '</td></tr>' +
-                /* Taxing Questions ad */
+                /* MyFamily.com ad */
                 '<tr><td style="padding: 6px 8px; border-top: 1px solid #D4C89E;">' +
-                  '<table width="100%" cellpadding="3" cellspacing="0" border="1" bordercolor="#CC0000" bgcolor="#FFFFFF">' +
+                  '<table width="100%" cellpadding="4" cellspacing="0" border="1" bordercolor="#336699" bgcolor="#FFFFFF">' +
                     '<tr><td align="center">' +
-                      '<font size="1" face="Arial, Helvetica, sans-serif" color="#CC0000"><b>TAXING<br>Questions?</b></font>' +
-                      '<font size="1" face="Arial" color="#333333"><br>Tax Guide<br><i>to the rescue!</i></font>' +
+                      '<font size="1" face="Arial, Helvetica, sans-serif" color="#336699"><b>MyFamily.com</b></font><br>' +
+                      '<font size="1" face="Arial" color="#333333">Build Your<br>Family Website<br><i>Free!</i></font>' +
                     '</td></tr>' +
                   '</table>' +
                 '</td></tr>' +
@@ -242,15 +250,14 @@ var BROWSER_PAGES = {
             '<td valign="top" style="padding: 8px 12px 8px 8px;">' +
               '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
                 '<tr>' +
-                  /* Jeeves butler + logo image */
+                  /* Jeeves butler image */
                   '<td width="170" valign="top" align="center" rowspan="2">' +
                     '<img src="assets/brands/ask-jeeves.webp" width="160" alt="Ask Jeeves" style="display:block;max-width:100%;">' +
-                    '<font size="1" face="Arial" color="#666666">Ask.com</font>' +
                   '</td>' +
                   /* "Have a Question?" heading */
                   '<td valign="top" align="right" style="padding-left:8px;">' +
                     '<font size="1" face="Arial, Helvetica, sans-serif" color="#333333">Have a</font><br>' +
-                    '<font face="Georgia, Times New Roman, serif" size="5" color="#CC0000"><b>Question?</b></font><br>' +
+                    '<font color="#CC0000" face="Georgia, Times New Roman, serif" size="5"><b>Question?</b></font><br>' +
                     '<font size="1" face="Arial, Helvetica, sans-serif" color="#333333">Just type it in</font><br>' +
                     '<font size="1" face="Arial, Helvetica, sans-serif" color="#333333">and click </font>' +
                     '<font face="Georgia, Times New Roman, serif" size="4" color="#000080"><b>Ask!</b></font>' +
@@ -262,8 +269,8 @@ var BROWSER_PAGES = {
                     '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
                       '<tr>' +
                         '<td><input type="text" size="40" value="" style="width:100%;border:2px inset #C0C0C0;padding:2px;font-size:13px;font-family:Arial,sans-serif;"></td>' +
-                        '<td width="45" align="right">' +
-                          '<font face="Arial" size="2" color="#CC0000" style="cursor:pointer;"><b>Ask!</b></font>' +
+                        '<td width="55" align="right">' +
+                          '<span style="background:#CC0000;color:#FFFFFF;border-radius:12px;padding:2px 12px;font-weight:bold;font-family:Georgia,serif;font-size:14px;cursor:pointer;display:inline-block;">Ask!</span>' +
                         '</td>' +
                       '</tr>' +
                     '</table>' +
@@ -280,8 +287,8 @@ var BROWSER_PAGES = {
                             '<option></option>' +
                           '</select>' +
                         '</td>' +
-                        '<td width="45" valign="top" align="right">' +
-                          '<font face="Arial" size="2" color="#CC0000" style="cursor:pointer;"><b>Ask!</b></font>' +
+                        '<td width="55" valign="top" align="right">' +
+                          '<span style="background:#CC0000;color:#FFFFFF;border-radius:12px;padding:2px 12px;font-weight:bold;font-family:Georgia,serif;font-size:14px;cursor:pointer;display:inline-block;">Ask!</span>' +
                         '</td>' +
                       '</tr>' +
                     '</table>' +
@@ -297,16 +304,20 @@ var BROWSER_PAGES = {
         '</table>' +
       '</td></tr>' +
       /* === GOLD FOOTER BAR === */
-      '<tr><td bgcolor="#CC9933" style="padding: 5px 10px;">' +
+      '<tr><td bgcolor="#B8A040" style="padding: 5px 10px;">' +
         '<center>' +
           '<font size="1" face="Arial, Helvetica, sans-serif">' +
-            '<b><a href="#" style="color:#000080;text-decoration:none;">Make Jeeves Your Homepage</a></b> &#8226; ' +
-            '<b><a href="#" style="color:#000080;text-decoration:none;">Ask Jeeves U.K.</a></b> &#8226; ' +
-            '<b><a href="#" style="color:#000080;text-decoration:none;">Advertise On Jeeves</a></b> &#8226; ' +
-            '<b><a href="#" style="color:#000080;text-decoration:none;">Become an Affiliate</a></b> &#8226; ' +
-            '<b><a href="#" style="color:#000080;text-decoration:none;">Investor Relations</a></b>' +
+            '<b><a href="#" style="color:#000080;text-decoration:none;">Make Jeeves Your Homepage</a></b> &#9670; ' +
+            '<b><a href="#" style="color:#000080;text-decoration:none;">Ask Jeeves U.K.</a></b> &#9670; ' +
+            '<b><a href="#" style="color:#000080;text-decoration:none;">Advertise On Jeeves</a></b>' +
           '</font>' +
         '</center>' +
+      '</td></tr>' +
+      /* === COPYRIGHT === */
+      '<tr><td style="padding: 4px 10px; text-align: center; background: #E8E0F0;">' +
+        '<font size="1" face="Arial, Helvetica, sans-serif" color="#666666">' +
+          '&copy;1996-1999 Ask Jeeves, Inc. All Rights Reserved.' +
+        '</font>' +
       '</td></tr>' +
     '</table></div>'
   },
