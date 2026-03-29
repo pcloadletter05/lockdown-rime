@@ -205,7 +205,7 @@ function buildPrintQueueUI(args) {
   var row = document.createElement('tr');
   row.style.background = '#000080';
   row.style.color = '#FFFFFF';
-  ['HORIZON_CATI_SCRIPT_v3.doc', 'Error - Paper Jam', 'l.milavic', '4', '28 KB', '3:47 PM 12/23/1998'].forEach(function(val) {
+  ['HORIZON_CATI_SCRIPT_v3.doc', 'Error: PC LOAD LETTER', 'l.milavic', '4', '28 KB', '3:47 PM 12/23/1998'].forEach(function(val) {
     var td = document.createElement('td');
     td.textContent = val;
     td.style.padding = '2px 6px';
