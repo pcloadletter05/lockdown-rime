@@ -152,10 +152,24 @@
       "cc": null,
       "date": "1998-12-23T17:30:00",
       "subject": "URGENT: Network maintenance tonight",
-      "body": "Attention all staff,\n\nWe will be performing emergency network maintenance tonight beginning at 8:00 PM. All workstations on floors 12-15 will be affected.\n\nPlease save your work and log off before 7:45 PM.\n\nWe apologize for the short notice. This maintenance is part of our initial Y2K systems assessment.\n\n-- CalCom IT Support --",
+      "body": "Attention all staff,\n\nWe will be performing emergency network maintenance tonight beginning at 8:00 PM. All workstations on floors 12-15 will be affected.\n\nPlease save your work and log off before 7:45 PM.\n\nWe apologize for the short notice. This maintenance is part of our initial Y2K systems assessment.\n\nCalCom IT Support",
       "attachments": [],
       "read": false,
       "deliver_at": "1998-12-23T17:30:00",
+      "in_reply_to": null
+    },
+    {
+      "id": "msg-011",
+      "folder": "Inbox",
+      "from": "Gina Ventimiglia <gventimiglia@greenfieldonline.com>",
+      "to": "Lisa Milavic <l.milavic@calcom.com>",
+      "cc": null,
+      "date": "1999-01-02T11:07:00",
+      "subject": "FW: thought of you -- wireless industry paper (preprint)",
+      "body": "Lisa!!\n\nHappy new year!! Ok so I know it's been forever and I'm the worst at keeping in touch but I literally thought of you the second I saw this. One of our analysts got ahold of a preprint -- it's an academic paper about the economics of the US wireless industry and how all the new PCS providers are shaking up the market. It hasn't been published yet (supposed to come out in Telematics and Informatics later this year) but the findings are already making the rounds. Very dry in places (it IS an academic paper lol) but some of it is wild.\n\nThe short version: the FCC auctioned off all this new wireless spectrum and it was supposed to create competition, but what's actually happening is all the big players are just buying each other. AT&T bought McCaw, Bell Atlantic is merging with GTE, SBC is gobbling up Ameritech -- it's like watching Pac-Man. The paper says horizontal concentration is the most prominent structural change in the whole industry. So much for competition right??\n\nAlso there's this whole section about how the new PCS entrants spent $20 BILLION on spectrum licenses alone and some of them are already going bankrupt because they can't afford to actually build the networks. And then there's the standards war -- CDMA vs TDMA vs GSM -- and if you pick the wrong one you're basically stranded.\n\nAnyway I thought of you because you guys are right in the middle of all this with CalCom. Isn't the Horizon launch coming up? I keep seeing the ads. This paper basically describes the exact market you're launching into. Billions of dollars flying around, everyone merging, subscriber counts exploding (69 million wireless customers now!!), and average bills dropping to like $39/month because of flat-rate pricing wars.\n\nI attached the preprint draft -- our analyst scribbled some margin notes on it but it's totally readable. Don't tell anyone I sent it lol, it's not officially out yet.\n\nHow are you?? How's Roosevelt Island? Are you still in that apartment with the radiator that sounds like a dying cat? We need to get lunch when I'm in DC next -- probably mid-January. I'll email you.\n\nMiss you!! Hope Y2K didn't eat your computer :)\nGina\n\n--\nGina Ventimiglia\nResearch Associate\nGreenfield Online, Inc.\nWestport, CT\n(203) 555-0283",
+      "attachments": ["wireless_industry_analysis_draft.pdf"],
+      "read": false,
+      "deliver_at": "1999-01-02T11:07:00",
       "in_reply_to": null
     }
   ]

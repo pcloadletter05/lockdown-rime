@@ -188,55 +188,127 @@ var BROWSER_PAGES = {
   'ask-jeeves': {
     title: 'Ask Jeeves!',
     url: 'http://www.askjeeves.com/',
-    content: '<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">' +
-      '<tr><td bgcolor="#FFFFFF" style="padding: 10px 0; border-bottom: 2px solid #CC0000;">' +
+    content: '<div style="width:100%;overflow:hidden;">' +
+    '<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FEFECC" style="table-layout:fixed;">' +
+      /* === TOP NAV BAR === */
+      '<tr><td bgcolor="#663333" style="padding: 3px 10px;">' +
+        '<font size="1" face="Arial, Helvetica, sans-serif">' +
+          '<a href="#" style="color:#FFFFFF;text-decoration:none;">Home</a> &#8226; ' +
+          '<a href="#" style="color:#FFFFFF;text-decoration:none;">About</a> &#8226; ' +
+          '<a href="#" style="color:#FFFFFF;text-decoration:none;">Help</a> &#8226; ' +
+          '<a href="#" style="color:#FFFFFF;text-decoration:none;">Corporate Services</a>' +
+        '</font>' +
+      '</td></tr>' +
+      /* === MAIN BODY === */
+      '<tr><td bgcolor="#FEFECC">' +
+        '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
+          '<tr>' +
+            /* --- LEFT SIDEBAR --- */
+            '<td width="145" valign="top" bgcolor="#F5EED8" style="border-right: 1px solid #D4C89E;">' +
+              '<table width="145" cellpadding="0" cellspacing="0" border="0">' +
+                /* May I Suggest header */
+                '<tr><td bgcolor="#CC9966" style="padding: 4px 8px;">' +
+                  '<font size="2" face="Arial, Helvetica, sans-serif" color="#FFFFFF"><i><b>May I Suggest:</b></i></font>' +
+                '</td></tr>' +
+                /* Category links */
+                '<tr><td style="padding: 6px 8px; line-height: 1.6;">' +
+                  '<font size="1" face="Arial, Helvetica, sans-serif">' +
+                    '&#8226; <a href="#" style="color:#000080;text-decoration:none;font-weight:bold;">PERSONAL<br>&nbsp;&nbsp;Jeeves</a><br>' +
+                    '&#8226; <a href="#" style="color:#000080;text-decoration:none;font-weight:bold;">ANSWER POINT</a><br>' +
+                    '&#8226; <a href="#" style="color:#000080;text-decoration:none;font-weight:bold;">MONEY</a><br>' +
+                    '&#8226; <a href="#" style="color:#000080;text-decoration:none;font-weight:bold;">TRAVEL</a><br>' +
+                    '&#8226; <a href="#" style="color:#000080;text-decoration:none;font-weight:bold;">HEALTH</a><br>' +
+                    '&#8226; <a href="#" style="color:#000080;text-decoration:none;font-weight:bold;">COMPUTERS</a><br>' +
+                    '&#8226; <a href="#" style="color:#000080;text-decoration:none;font-weight:bold;">ENTERTAINMENT</a><br>' +
+                    '&#8226; <a href="#" style="color:#000080;text-decoration:none;font-weight:bold;">HOME &amp; FAMILY</a><br>' +
+                    '&#8226; <a href="#" style="color:#000080;text-decoration:none;font-weight:bold;">SHOPPING</a><br>' +
+                    '&nbsp;&nbsp;ASK JEEVES<br>' +
+                    '&nbsp;&nbsp;FOR <font color="#CC0000" size="2"><b>Kids!</b></font><br><br>' +
+                    '&nbsp;&nbsp;&nbsp;<font size="1"><i>Just<br>&nbsp;&nbsp;&nbsp;Curious,<br>&nbsp;&nbsp;&nbsp;Jeeves</i></font>' +
+                  '</font>' +
+                '</td></tr>' +
+                /* Taxing Questions ad */
+                '<tr><td style="padding: 6px 8px; border-top: 1px solid #D4C89E;">' +
+                  '<table width="100%" cellpadding="3" cellspacing="0" border="1" bordercolor="#CC0000" bgcolor="#FFFFFF">' +
+                    '<tr><td align="center">' +
+                      '<font size="1" face="Arial, Helvetica, sans-serif" color="#CC0000"><b>TAXING<br>Questions?</b></font>' +
+                      '<font size="1" face="Arial" color="#333333"><br>Tax Guide<br><i>to the rescue!</i></font>' +
+                    '</td></tr>' +
+                  '</table>' +
+                '</td></tr>' +
+              '</table>' +
+            '</td>' +
+            /* --- MAIN CONTENT AREA --- */
+            '<td valign="top" style="padding: 8px 12px 8px 8px;">' +
+              '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
+                '<tr>' +
+                  /* Jeeves butler + logo image */
+                  '<td width="170" valign="top" align="center" rowspan="2">' +
+                    '<img src="assets/brands/ask-jeeves.webp" width="160" alt="Ask Jeeves" style="display:block;max-width:100%;">' +
+                    '<font size="1" face="Arial" color="#666666">Ask.com</font>' +
+                  '</td>' +
+                  /* "Have a Question?" heading */
+                  '<td valign="top" align="right" style="padding-left:8px;">' +
+                    '<font size="1" face="Arial, Helvetica, sans-serif" color="#333333">Have a</font><br>' +
+                    '<font face="Georgia, Times New Roman, serif" size="5" color="#CC0000"><b>Question?</b></font><br>' +
+                    '<font size="1" face="Arial, Helvetica, sans-serif" color="#333333">Just type it in</font><br>' +
+                    '<font size="1" face="Arial, Helvetica, sans-serif" color="#333333">and click </font>' +
+                    '<font face="Georgia, Times New Roman, serif" size="4" color="#000080"><b>Ask!</b></font>' +
+                  '</td>' +
+                '</tr>' +
+                '<tr>' +
+                  '<td valign="top" style="padding-left:8px;padding-top:8px;">' +
+                    /* Search box row */
+                    '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
+                      '<tr>' +
+                        '<td><input type="text" size="40" value="" style="width:100%;border:2px inset #C0C0C0;padding:2px;font-size:13px;font-family:Arial,sans-serif;"></td>' +
+                        '<td width="45" align="right">' +
+                          '<font face="Arial" size="2" color="#CC0000" style="cursor:pointer;"><b>Ask!</b></font>' +
+                        '</td>' +
+                      '</tr>' +
+                    '</table>' +
+                    /* Most Recent Questions */
+                    '<div style="margin-top: 12px;">' +
+                      '<font size="2" face="Arial, Helvetica, sans-serif">Most Recent Questions About <b>Business</b>:</font>' +
+                    '</div>' +
+                    '<table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:4px;">' +
+                      '<tr>' +
+                        '<td>' +
+                          '<select size="3" style="width:100%;font-size:12px;font-family:Courier New,monospace;border:2px inset #C0C0C0;background:#FFFFFF;">' +
+                            '<option>Where can I find a currency</option>' +
+                            '<option>converter?</option>' +
+                            '<option></option>' +
+                          '</select>' +
+                        '</td>' +
+                        '<td width="45" valign="top" align="right">' +
+                          '<font face="Arial" size="2" color="#CC0000" style="cursor:pointer;"><b>Ask!</b></font>' +
+                        '</td>' +
+                      '</tr>' +
+                    '</table>' +
+                    /* "What are people asking RIGHT NOW?" */
+                    '<div style="margin-top: 10px; text-align: right;">' +
+                      '<font size="2" face="Arial, Helvetica, sans-serif">What are people asking <a href="#" style="color:#CC0000;font-weight:bold;text-decoration:none;">RIGHT NOW?</a> &#8594;</font>' +
+                    '</div>' +
+                  '</td>' +
+                '</tr>' +
+              '</table>' +
+            '</td>' +
+          '</tr>' +
+        '</table>' +
+      '</td></tr>' +
+      /* === GOLD FOOTER BAR === */
+      '<tr><td bgcolor="#CC9933" style="padding: 5px 10px;">' +
         '<center>' +
-          '<font size="7" face="Georgia, Times New Roman, serif" color="#003399"><b>Ask Jeeves!</b></font><br>' +
-          '<font size="1" face="Arial" color="#666666">The Butler Knows.</font>' +
+          '<font size="1" face="Arial, Helvetica, sans-serif">' +
+            '<b><a href="#" style="color:#000080;text-decoration:none;">Make Jeeves Your Homepage</a></b> &#8226; ' +
+            '<b><a href="#" style="color:#000080;text-decoration:none;">Ask Jeeves U.K.</a></b> &#8226; ' +
+            '<b><a href="#" style="color:#000080;text-decoration:none;">Advertise On Jeeves</a></b> &#8226; ' +
+            '<b><a href="#" style="color:#000080;text-decoration:none;">Become an Affiliate</a></b> &#8226; ' +
+            '<b><a href="#" style="color:#000080;text-decoration:none;">Investor Relations</a></b>' +
+          '</font>' +
         '</center>' +
       '</td></tr>' +
-      '<tr><td style="padding: 20px;">' +
-        '<center>' +
-          '<table width="500" cellpadding="0" cellspacing="0" border="0">' +
-            '<tr><td align="center" style="padding: 10px;">' +
-              '<img src="assets/ask-jeeves/jeeves.png" width="80" height="100" alt="Jeeves the Butler" onerror="this.style.display=\'none\'">' +
-            '</td></tr>' +
-            '<tr><td style="padding: 10px;">' +
-              '<font size="3" face="Arial">' +
-                'You may type your question in plain English below.' +
-              '</font><br>' +
-              '<font size="2" face="Arial" color="#666666">' +
-                'For example: <i>Where can I find information about Y2K?</i>' +
-              '</font>' +
-            '</td></tr>' +
-            '<tr><td align="center" style="padding: 10px;">' +
-              '<table cellpadding="0" cellspacing="0" border="0"><tr>' +
-                '<td><input type="text" size="45" value="" style="border: 2px solid #808080; padding: 3px; font-size: 14px;"></td>' +
-                '<td>&nbsp;</td>' +
-                '<td><input type="submit" value="  Ask!  " style="padding: 3px 12px; font-size: 14px; font-weight: bold; background: #CC0000; color: #FFFFFF; border: 2px outset #FF6666; cursor: pointer;"></td>' +
-              '</tr></table>' +
-            '</td></tr>' +
-          '</table>' +
-          '<br>' +
-          '<table width="400" cellpadding="4" cellspacing="0" border="0">' +
-            '<tr><td colspan="2" style="padding-bottom: 6px;">' +
-              '<font size="2" face="Arial"><b>You may also ask:</b></font>' +
-            '</td></tr>' +
-            '<tr><td valign="top"><font size="2" face="Arial">&#8226;</font></td>' +
-              '<td><font size="2" face="Arial"><a href="#" style="color: #0000FF;">What is the weather forecast for New York?</a></font></td></tr>' +
-            '<tr><td valign="top"><font size="2" face="Arial">&#8226;</font></td>' +
-              '<td><font size="2" face="Arial"><a href="#" style="color: #0000FF;">Where can I find free email?</a></font></td></tr>' +
-            '<tr><td valign="top"><font size="2" face="Arial">&#8226;</font></td>' +
-              '<td><font size="2" face="Arial"><a href="#" style="color: #0000FF;">How do I create a web page?</a></font></td></tr>' +
-            '<tr><td valign="top"><font size="2" face="Arial">&#8226;</font></td>' +
-              '<td><font size="2" face="Arial"><a href="#" style="color: #0000FF;">What are the best Christmas gifts for 1998?</a></font></td></tr>' +
-          '</table>' +
-          '<br><br>' +
-          '<hr size="1" color="#C0C0C0" width="80%">' +
-          '<font size="1" face="Arial" color="#808080">Copyright &copy; 1998 Ask Jeeves, Inc. All rights reserved.</font>' +
-        '</center>' +
-      '</td></tr>' +
-    '</table>'
+    '</table></div>'
   },
 
   '404': {

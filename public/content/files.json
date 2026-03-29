@@ -321,7 +321,7 @@
             "size": "12 KB",
             "modified": "11/15/1998 4:30 PM",
             "content_key": "resume-draft",
-            "content": "<h2>Lisa Milavic</h2><p>142 Main Street, Apt 3B<br>Roosevelt Island, Washington, DC 20044<br>(202) 555-0147</p><h3>Objective</h3><p>Experienced survey research professional seeking senior CATI supervisor position.</p><h3>Experience</h3><p><strong>CalCom Research Services</strong> -- CATI Interviewer/Supervisor<br><em>March 1997 - Present</em></p><ul><li>Conduct computer-assisted telephone interviews for market research studies</li><li>Train and supervise team of 6 junior interviewers</li><li>Maintain 98.2% quality compliance rating</li><li>Manage call scheduling and quota fulfillment</li></ul><p><strong>DataLine Associates</strong> -- Phone Surveyor<br><em>June 1995 - February 1997</em></p><ul><li>Completed 200+ surveys monthly across multiple studies</li><li>Achieved highest completion rate in department (Q3 1996)</li></ul>"
+            "content": "<h2>Lisa Milavic</h2><p>142 Main Street, Apt 3B<br>Roosevelt Island, Washington, DC 20044<br>(202) 555-0147</p><h3>Objective</h3><p>Experienced survey research professional seeking senior CATI supervisor position.</p><h3>Experience</h3><p><strong>CalCom Research Services</strong> -- CATI Interviewer/Supervisor<br><em>March 1997 - Present</em></p><ul><li>Conduct computer-assisted telephone interviews for market research studies</li><li>Train and supervise team of 6 junior interviewers</li><li>Maintain 98.2% quality compliance rating</li><li>Manage call scheduling and quota fulfillment</li></ul><p><strong>Greenfield Online, Inc.</strong> -- Research Intern<br><em>Summer 1996</em></p><ul><li>Assisted with online survey panel recruitment and data quality analysis</li><li>Compiled respondent demographic profiles for client deliverables</li><li>Supported project managers on telecom and consumer technology studies</li></ul><h3>Education</h3><p><strong>Roosevelt Metropolitan University (RMU)</strong> -- B.A. Communications, Minor in Sociology<br><em>1992 - 1996</em></p>"
           }
         ]
       },
@@ -331,16 +331,3 @@
         "icon": "folder",
         "children": [
           { "name": "Microsoft Office", "type": "folder", "icon": "folder", "children": [] },
-          { "name": "Internet Explorer", "type": "folder", "icon": "folder", "children": [] },
-          { "name": "Accessories", "type": "folder", "icon": "folder", "children": [] }
-        ]
-      },
-      {
-        "name": "WINDOWS",
-        "type": "folder",
-        "icon": "folder",
-        "children": []
-      }
-    ]
-  }
-}
