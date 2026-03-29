@@ -76,7 +76,7 @@ function checkViewport() {
 
 /* === Password Validation === */
 
-var _k = 'aG9yaXpvbg==';
+var _k = 'ZG92ZXRhaWw=';
 function validatePassword(input) {
   return input === atob(_k);
 }
