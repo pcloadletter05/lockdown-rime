@@ -43,7 +43,7 @@ var BROWSER_PAGES = {
               '<td valign="top" bgcolor="#F5F5F5" style="border: 1px solid #C0C0C0; padding: 10px;">' +
                 '<font size="2" face="Arial">' +
                   '<b>Building Info</b><br>' +
-                  '<font size="1">CalCom Tower<br>Roosevelt Island, NY<br>Floors 12-15</font><br><br>' +
+                  '<font size="1">CalCom Tower<br>Roosevelt Island, DC<br>Floors 12-15</font><br><br>' +
                   '<b>Hours</b><br>' +
                   '<font size="1">Mon-Fri: 7AM - 9PM<br>Sat: 8AM - 5PM<br>Sun: Closed</font><br><br>' +
                   '<b>IT Support</b><br>' +
@@ -85,7 +85,7 @@ var BROWSER_PAGES = {
             '<td valign="top" width="50%">' +
               '<b>Who We Are</b><br><br>' +
               'CalCom Research Services is a leading provider of CATI (Computer-Assisted Telephone Interviewing) solutions for market research, public opinion polling, and consumer behavior studies.<br><br>' +
-              'Founded in 1987 and headquartered on Roosevelt Island, New York, we serve clients across government, healthcare, and Fortune 500 companies.' +
+              'Founded in 1987 and headquartered on Roosevelt Island, Washington DC, we serve clients across government, healthcare, and Fortune 500 companies.' +
             '</td>' +
             '<td valign="top" width="50%" bgcolor="#F0F0F0" style="border: 1px solid #C0C0C0;">' +
               '<b>Our Services</b><br><br>' +
@@ -100,7 +100,7 @@ var BROWSER_PAGES = {
           '<hr size="2" noshade color="#003366">' +
           '<center>' +
             '<font size="1" color="#808080">' +
-              '&copy; 1998 CalCom Research Services | Roosevelt Island, NY 10044 | (212) 555-0100<br>' +
+              '&copy; 1998 CalCom Research Services | Roosevelt Island, DC 20002 | (202) 555-0100<br>' +
               '<img src="" width="1" height="5"><br>' +
               'You are visitor number <b>12,847</b><br>' +
               '<font size="1">Best viewed in Internet Explorer 4.0 or higher at 800x600</font>' +
