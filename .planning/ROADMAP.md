@@ -88,7 +88,7 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -96,14 +96,26 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 2. Desktop Environment | 2/2 | Complete   | 2026-03-28 |
 | 3. Applications | 0/3 | Planning complete | - |
 | 4. Narrative Content | 2/2 | Complete   | 2026-03-28 |
-| 5. Add resizable windows | 0/1 | Planning complete | - |
+| 5. Add resizable windows | 1/1 | Complete   | 2026-03-28 |
+| 6. Date shift, Ask Jeeves, CalCom branding | 0/2 | Planning complete | - |
 
 ### Phase 5: Add resizable windows
 
 **Goal:** Visitor can resize any window by dragging edges or corners, with authentic NT4 ghost outline feedback and period-correct cursor files
 **Requirements**: V2-11
 **Depends on:** Phase 4
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] 05-01-PLAN.md -- Resize CSS styles, NT4 cursor files, initResize() function, ghost outline, createWindow() integration
+
+### Phase 6: December 1998 date shift, Ask Jeeves browser, CalCom logo and intranet branding fixes
+
+**Goal:** All dates shift from December 1999 to December 1998 with Y2K content rewritten to early-buzz tone, Ask Jeeves browser page added as period dressing, and CalCom logo embedded in intranet, corporate, and login UI
+**Requirements**: DATE-01, DATE-02, DATE-03, AJ-01, BRAND-01, BRAND-02, BRAND-03
+**Depends on:** Phase 5
+**Plans:** 2 plans
+
+Plans:
+- [ ] 06-01-PLAN.md -- Date shift from 1999 to 1998 across all JS and JSON files, Y2K tone rewrite to early-planning mode
+- [ ] 06-02-PLAN.md -- Ask Jeeves static browser page with bookmark, CalCom logo in intranet/corporate/login headers
