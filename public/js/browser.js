@@ -9,7 +9,7 @@ var BROWSER_PAGES = {
       '<tr>' +
         '<td colspan="2" bgcolor="#000080" style="padding: 10px 20px;">' +
           '<img src="assets/calcom/calcom_logo.png" width="120" style="vertical-align: middle; margin-right: 12px; background: white; padding: 4px;">' +
-          '<font color="#FFFFFF" size="5" face="Arial"><b>CalCom Research Services</b></font><br>' +
+          '<font color="#FFFFFF" size="5" face="Arial"><b>CalCom</b></font><br>' +
           '<font color="#CCCCFF" size="2" face="Arial">Internal Network - Authorized Users Only</font>' +
         '</td>' +
       '</tr>' +
