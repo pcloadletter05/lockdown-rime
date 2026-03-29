@@ -331,3 +331,16 @@
         "icon": "folder",
         "children": [
           { "name": "Microsoft Office", "type": "folder", "icon": "folder", "children": [] },
+          { "name": "Internet Explorer", "type": "folder", "icon": "folder", "children": [] },
+          { "name": "Accessories", "type": "folder", "icon": "folder", "children": [] }
+        ]
+      },
+      {
+        "name": "WINDOWS",
+        "type": "folder",
+        "icon": "folder",
+        "children": []
+      }
+    ]
+  }
+}
