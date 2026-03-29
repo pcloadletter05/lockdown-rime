@@ -21,7 +21,7 @@ Full details: milestones/v1.0-ROADMAP.md
 
 ### Unassigned Phases (Next Milestone)
 
-- [ ] Phase 6: December 1998 date shift, Ask Jeeves browser, CalCom logo and intranet branding fixes (2 plans)
+- [x] Phase 6: December 1998 date shift, Ask Jeeves browser, CalCom logo and intranet branding fixes (2/2 plans) -- completed 2026-03-29
 - [ ] Phase 7: Add password authentication system (0 plans — not yet planned)
 
 ## Progress
@@ -33,5 +33,5 @@ Full details: milestones/v1.0-ROADMAP.md
 | 3. Applications | v1.0 | 3/3 | Complete | 2026-03-28 |
 | 4. Narrative Content | v1.0 | 2/2 | Complete | 2026-03-28 |
 | 5. Add resizable windows | v1.0 | 1/1 | Complete | 2026-03-28 |
-| 6. Date shift, Ask Jeeves, branding | — | 0/2 | Planning complete | - |
+| 6. Date shift, Ask Jeeves, branding | — | 2/2 | Complete | 2026-03-29 |
 | 7. Password authentication | — | 0/0 | Not started | - |
