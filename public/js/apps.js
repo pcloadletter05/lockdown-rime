@@ -107,8 +107,8 @@ var AppRegistry = {
     'mycomputer':    { title: 'My Computer',                 icon: iconImg('mycomputer', 16),     width: 500, height: 400 },
     'control-panel': { title: 'Control Panel',               icon: iconImg('control_panel', 16),  width: 450, height: 350 },
     'wordpad':       { title: 'WordPad',                     icon: iconImg('file_doc', 16),       width: 600, height: 450 },
-    'spreadsheet':   { title: 'Microsoft Excel',             icon: iconImg('file_doc', 16),       width: 650, height: 450 },
-    'acrobat':       { title: 'Adobe Acrobat Reader',        icon: iconImg('file_doc', 16),       width: 680, height: 520 },
+    'spreadsheet':   { title: 'Microsoft Excel',             icon: iconImg('file_xls', 16),       width: 650, height: 450 },
+    'acrobat':       { title: 'Adobe Acrobat Reader',        icon: iconImg('file_pdf', 16),       width: 680, height: 520 },
     'printqueue':    { title: 'HP LaserJet 4 - \\\\CALCOM-PS01', icon: iconImg('printer', 16),   width: 550, height: 250 }
   },
 
