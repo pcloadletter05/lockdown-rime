@@ -1159,8 +1159,10 @@ body {
 
 .email-preview-body {
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.4;
   white-space: pre-wrap;
+  padding: 8px;
+  background: #FFFFFF;
 }
 
 .email-attachment-bar {
