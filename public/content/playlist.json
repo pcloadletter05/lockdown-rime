@@ -1,0 +1,35 @@
+{
+  "lastPlaying": 0,
+  "tracks": [
+    {
+      "id": 1,
+      "title": "Building a Mystery",
+      "artist": "Sarah McLachlan",
+      "album": "Surfacing",
+      "year": 1997,
+      "filename": "building-a-mystery.mp3",
+      "duration": 247,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "title": "Criminal",
+      "artist": "Fiona Apple",
+      "album": "Tidal",
+      "year": 1996,
+      "filename": "criminal.mp3",
+      "duration": 220,
+      "order": 2
+    },
+    {
+      "id": 3,
+      "title": "You Learn",
+      "artist": "Alanis Morissette",
+      "album": "Jagged Little Pill",
+      "year": 1995,
+      "filename": "you-learn.mp3",
+      "duration": 239,
+      "order": 3
+    }
+  ]
+}
