@@ -1350,21 +1350,80 @@ body {
 
 /* Resize cursor persistence during active drag (body-level, overrides everything) */
 .resizing[data-resize-dir="n"] *,
-.resizing[data-resize-dir="s"] *,
-.resizing[data-resize-dir="n"],
-.resizing[data-resize-dir="s"]  { cursor: url('../assets/cursors/size_ns.cur'), ns-resize !important; }
-
+.resizing[data-resize-dir="s"] * { cursor: ns-resize !important; }
 .resizing[data-resize-dir="e"] *,
-.resizing[data-resize-dir="w"] *,
-.resizing[data-resize-dir="e"],
-.resizing[data-resize-dir="w"]  { cursor: url('../assets/cursors/size_ew.cur'), ew-resize !important; }
-
+.resizing[data-resize-dir="w"] * { cursor: ew-resize !important; }
 .resizing[data-resize-dir="ne"] *,
-.resizing[data-resize-dir="sw"] *,
-.resizing[data-resize-dir="ne"],
-.resizing[data-resize-dir="sw"] { cursor: url('../assets/cursors/size_nesw.cur'), nesw-resize !important; }
-
+.resizing[data-resize-dir="sw"] * { cursor: nesw-resize !important; }
 .resizing[data-resize-dir="nw"] *,
-.resizing[data-resize-dir="se"] *,
-.resizing[data-resize-dir="nw"],
-.resizing[data-resize-dir="se"] { cursor: url('../assets/cursors/size_nwse.cur'), nwse-resize !important; }
+.resizing[data-resize-dir="se"] * { cursor: nwse-resize !important; }
+
+
+/* ============================================================
+   Adobe Acrobat Reader 4.0 — PDF Viewer
+   ============================================================ */
+
+.acrobat-app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.acrobat-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  gap: 4px;
+  min-height: 28px;
+  flex-shrink: 0;
+}
+
+.acrobat-nav-cluster,
+.acrobat-zoom-cluster,
+.acrobat-tool-cluster {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.acrobat-page-input {
+  width: 36px;
+  text-align: center;
+  font-size: 10px;
+  height: 18px;
+  margin: 0 2px;
+}
+
+.acrobat-page-label {
+  font-size: 10px;
+  white-space: nowrap;
+  margin-right: 4px;
+}
+
+.acrobat-zoom-select {
+  font-size: 10px;
+  height: 20px;
+  margin: 0 2px;
+  min-width: 80px;
+}
+
+.acrobat-tool-active {
+  box-shadow: inset -1px -1px var(--button-highlight),
+              inset  1px  1px var(--button-shadow),
+              inset -2px -2px var(--button-light),
+              inset  2px  2px var(--button-dk-shadow) !important;
+}
+
+.acrobat-viewer {
+  flex: 1;
+  overflow: hidden;
+  background: var(--app-workspace);
+  position: relative;
+}
+
+.acrobat-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
