@@ -287,9 +287,9 @@
                 "icon": "file_txt",
                 "file_type": "txt",
                 "size": "1 KB",
-                "modified": "12/22/1998 8:45 AM",
+                "modified": "12/22/1999 8:45 AM",
                 "content_key": "grocery-list",
-                "content": "Grocery List\n============\n- Milk\n- Bread (whole wheat)\n- Coffee (Folgers)\n- Orange juice\n- Chicken breasts\n- Rice\n- Broccoli\n- Advil (running low again)\n- Cat food (Fancy Feast, tuna)\n- Paper towels"
+                "content": "Grocery List\n============\n- Milk\n- Bread (whole wheat)\n- Coffee (Folgers)\n- Orange juice\n- Chicken\n- Rice\n- Broccoli\n- Advil\n- Paper towels"
               },
               {
                 "name": "notes.txt",
@@ -297,9 +297,9 @@
                 "icon": "file_txt",
                 "file_type": "txt",
                 "size": "2 KB",
-                "modified": "12/23/1998 5:30 PM",
+                "modified": "12/23/1999 5:30 PM",
                 "content_key": "lisa-notes",
-                "content": "notes - 12/23\n==============\n\nTODAY:\n- Finish callbacks: Mrs. Chen (after 2pm), Mr. Okafor (morning), Debra K (any time)\n- Update quota sheet before Margaret asks\n- Send Jim the PM shift schedule\n- Print survey script for Karen (printer jammed AGAIN)\n\nREMINDERS:\n- Rent due Jan 1 -- $1,340 (!!!)\n- Cat food -- Fancy Feast tuna (NOT the chicken, she won't eat it)\n- Dave's extension: x4217\n- Network password: Whiskers99! (change before Dec 30!!)\n- Building super: (202) 555-0193\n- Mom's new number: (202) 555-0284\n\nRANDOM:\n- Ask Karen if she still has Advil, I'm out again\n- Look into that new Thai place on Main St for lunch\n- Three people today mentioned headaches. Is something going around?\n- Weird that the printer jammed on the survey script. Third time this week.\n- Tom from Engineering stopped by, seemed nervous. Asked if I'd gotten any 'unusual calls.' What does that even mean?"
+                "content": "notes - 12/23\n==============\n\nTODAY:\n- Finish callbacks: Mrs. Chen (after 2pm), Mr. Okafor (morning), Debra K (any time)\n- Update quota sheet before Margaret asks\n- Send Jim the PM shift schedule\n- Print survey script for Karen (printer jammed AGAIN)\n\nREMINDERS:\n- Rent due Jan 1\n- Dave's extension: x4217\n- Network password: Whiskers99! (change before Dec 30!!)\n- Building super: (202) 555-0193\n- Mom's new number: (202) 555-0284\n\nRANDOM:\n- Look into that new Thai place on Main St for lunch\n- Weird that the printer jammed on the survey script. Third time this week.\n- Tom from Engineering stopped by, seemed nervous. Asked if I'd gotten any 'unusual calls.' What does that even mean?"
               },
               {
                 "name": "HZN_RF_Emissions_Test_Results.doc",
