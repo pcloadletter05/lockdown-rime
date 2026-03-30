@@ -189,7 +189,7 @@ var BROWSER_PAGES = {
     title: 'Ask Jeeves!',
     url: 'http://www.askjeeves.com/',
     content: '<div style="width:100%;overflow:hidden;">' +
-    '<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#E8E0F0" style="table-layout:fixed;">' +
+    '<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#fefecd" style="table-layout:fixed;">' +
       /* === TOP NAV BAR === */
       '<tr><td bgcolor="#660033" style="padding: 3px 10px;">' +
         '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
@@ -208,7 +208,7 @@ var BROWSER_PAGES = {
         '</table>' +
       '</td></tr>' +
       /* === MAIN BODY === */
-      '<tr><td bgcolor="#E8E0F0">' +
+      '<tr><td bgcolor="#fefecd">' +
         '<table width="100%" cellpadding="0" cellspacing="0" border="0">' +
           '<tr>' +
             /* --- LEFT SIDEBAR --- */
@@ -314,7 +314,7 @@ var BROWSER_PAGES = {
         '</center>' +
       '</td></tr>' +
       /* === COPYRIGHT === */
-      '<tr><td style="padding: 4px 10px; text-align: center; background: #E8E0F0;">' +
+      '<tr><td style="padding: 4px 10px; text-align: center; background: #fefecd;">' +
         '<font size="1" face="Arial, Helvetica, sans-serif" color="#666666">' +
           '&copy;1996-1999 Ask Jeeves, Inc. All Rights Reserved.' +
         '</font>' +
