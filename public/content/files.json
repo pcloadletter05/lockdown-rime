@@ -21,12 +21,12 @@
       {
         "name": "My Documents",
         "type": "folder",
-        "icon": "folder",
+        "icon": "folder_closed",
         "children": [
           {
             "name": "Surveys",
             "type": "folder",
-            "icon": "folder",
+            "icon": "folder_closed",
             "children": [
               {
                 "name": "Q4 Status Report.doc",
@@ -524,7 +524,7 @@
               {
                 "name": "Respondents",
                 "type": "folder",
-                "icon": "folder",
+                "icon": "folder_closed",
                 "children": [
                   {
                     "name": "H-1247.doc",
@@ -613,7 +613,7 @@
           {
             "name": "Personal",
             "type": "folder",
-            "icon": "folder",
+            "icon": "folder_closed",
             "children": [
               {
                 "name": "Holiday Party Notes.doc",
@@ -682,24 +682,24 @@
       {
         "name": "Program Files",
         "type": "folder",
-        "icon": "folder",
+        "icon": "folder_closed",
         "children": [
           {
             "name": "Microsoft Office",
             "type": "folder",
-            "icon": "folder",
+            "icon": "folder_closed",
             "children": []
           },
           {
             "name": "Internet Explorer",
             "type": "folder",
-            "icon": "folder",
+            "icon": "folder_closed",
             "children": []
           },
           {
             "name": "Accessories",
             "type": "folder",
-            "icon": "folder",
+            "icon": "folder_closed",
             "children": []
           }
         ]
@@ -707,7 +707,7 @@
       {
         "name": "WINDOWS",
         "type": "folder",
-        "icon": "folder",
+        "icon": "folder_closed",
         "children": []
       }
     ]

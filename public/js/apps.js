@@ -1312,59 +1312,7 @@ function escHtml(str) {
 }
 
 
-// ============================================================
-//  Browser (IE5) — stub, filled in Phase 4
-// ============================================================
-
-function buildBrowserUI(args) {
-  var container = document.createElement('div');
-  container.className = 'browser-app';
-
-  var menubar = document.createElement('div');
-  menubar.className = 'app-menubar';
-  ['File', 'Edit', 'View', 'Go', 'Favorites', 'Help'].forEach(function(label) {
-    var item = document.createElement('span');
-    item.className = 'menu-item';
-    item.textContent = label;
-    menubar.appendChild(item);
-  });
-  container.appendChild(menubar);
-
-  var toolbar = document.createElement('div');
-  toolbar.className = 'app-toolbar raised browser-toolbar';
-  ['Back', 'Forward', 'Stop', 'Refresh', 'Home'].forEach(function(label) {
-    var btn = document.createElement('button');
-    btn.className = 'toolbar-btn-text raised';
-    btn.textContent = label;
-    btn.disabled = true;
-    toolbar.appendChild(btn);
-  });
-  container.appendChild(toolbar);
-
-  var addressBar = document.createElement('div');
-  addressBar.className = 'browser-address-bar';
-  var addrLabel = document.createElement('span');
-  addrLabel.className = 'address-label';
-  addrLabel.textContent = 'Address:';
-  addressBar.appendChild(addrLabel);
-  var addrInput = document.createElement('input');
-  addrInput.className = 'nt4-input';
-  addrInput.type = 'text';
-  addrInput.value = 'about:blank';
-  addrInput.style.flex = '1';
-  addressBar.appendChild(addrInput);
-  container.appendChild(addressBar);
-
-  var content = document.createElement('div');
-  content.className = 'browser-content';
-  content.innerHTML = '<div style="padding: 20px; text-align: center; color: #808080;">' +
-    '<p style="font-size: 14px; margin-bottom: 8px;"><b>Microsoft Internet Explorer 5</b></p>' +
-    '<p>This page cannot be displayed.</p>' +
-    '</div>';
-  container.appendChild(content);
-
-  return container;
-}
+// Browser (IE5) — real implementation lives in browser.js
 
 
 // ============================================================
@@ -1421,7 +1369,7 @@ function buildPrintQueueUI(args) {
   var jobRow = document.createElement('tr');
   var jobData = [
     'HORIZON_CATI_Script_v3.doc',
-    'Error - Paper Jam',
+    'Error: PC LOAD LETTER',
     'l.milavic',
     '3/7',
     '28 KB',
@@ -1431,7 +1379,7 @@ function buildPrintQueueUI(args) {
     var td = document.createElement('td');
     td.textContent = val;
     td.style.padding = '2px 6px';
-    if (val === 'Error - Paper Jam') {
+    if (val === 'Error: PC LOAD LETTER') {
       td.style.color = '#FF0000';
     }
     jobRow.appendChild(td);

@@ -1350,13 +1350,24 @@ body {
 
 /* Resize cursor persistence during active drag (body-level, overrides everything) */
 .resizing[data-resize-dir="n"] *,
-.resizing[data-resize-dir="s"] * { cursor: ns-resize !important; }
+.resizing[data-resize-dir="s"] *,
+.resizing[data-resize-dir="n"],
+.resizing[data-resize-dir="s"]  { cursor: url('../assets/cursors/size_ns.cur'), ns-resize !important; }
+
 .resizing[data-resize-dir="e"] *,
-.resizing[data-resize-dir="w"] * { cursor: ew-resize !important; }
+.resizing[data-resize-dir="w"] *,
+.resizing[data-resize-dir="e"],
+.resizing[data-resize-dir="w"]  { cursor: url('../assets/cursors/size_ew.cur'), ew-resize !important; }
+
 .resizing[data-resize-dir="ne"] *,
-.resizing[data-resize-dir="sw"] * { cursor: nesw-resize !important; }
+.resizing[data-resize-dir="sw"] *,
+.resizing[data-resize-dir="ne"],
+.resizing[data-resize-dir="sw"] { cursor: url('../assets/cursors/size_nesw.cur'), nesw-resize !important; }
+
 .resizing[data-resize-dir="nw"] *,
-.resizing[data-resize-dir="se"] * { cursor: nwse-resize !important; }
+.resizing[data-resize-dir="se"] *,
+.resizing[data-resize-dir="nw"],
+.resizing[data-resize-dir="se"] { cursor: url('../assets/cursors/size_nwse.cur'), nwse-resize !important; }
 
 
 /* ============================================================
