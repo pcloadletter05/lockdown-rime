@@ -160,7 +160,7 @@ async function postScreen() {
     'Detecting Secondary Slave  ... None',
     '',
     'Press DEL to enter SETUP',
-    '12/23/1998-i440BX-W977-2A69KA0CC-00'
+    '12/23/1999-i440BX-W977-2A69KA0CC-00'
   ];
 
   for (var i = 0; i < remainingLines.length; i++) {

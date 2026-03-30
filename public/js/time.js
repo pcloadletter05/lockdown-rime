@@ -1,8 +1,8 @@
-// TimeEngine -- maps real-world time to December 23, 1998
-// 1:1 mapping: current hour/minute/second maps to same time on Dec 23, 1998
+// TimeEngine -- maps real-world time to December 23, 1999
+// 1:1 mapping: current hour/minute/second maps to same time on Dec 23, 1999
 
 const TimeEngine = {
-  ANCHOR_YEAR: 1998,
+  ANCHOR_YEAR: 1999,
   ANCHOR_MONTH: 11, // December (0-indexed)
   ANCHOR_DAY: 23,
 
