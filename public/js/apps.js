@@ -1443,3 +1443,15 @@ function buildPrintQueueUI(args) {
 
   return container;
 }
+
+
+// ============================================================
+//  Initialization — render desktop icons & wire app:launch
+// ============================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  renderDesktopIcons();
+  EventBus.on('app:launch', function(detail) {
+    AppRegistry.launch(detail.appId, detail.args);
+  });
+});
