@@ -312,6 +312,39 @@ function buildEmailUI(args) {
 
     preview.appendChild(headers);
 
+    // Attachment bar (between headers and separator)
+    if (email.attachments && email.attachments.length > 0) {
+      var attachBar = document.createElement('div');
+      attachBar.className = 'email-attachment-bar';
+      email.attachments.forEach(function(filename) {
+        var item = document.createElement('span');
+        var hasContent = email.attachment_contents && email.attachment_contents[filename];
+        if (hasContent) {
+          item.className = 'email-attachment-link';
+          item.innerHTML = iconImg('file_doc', 16) + ' ';
+          var nameSpan = document.createElement('span');
+          nameSpan.textContent = filename;
+          item.appendChild(nameSpan);
+          item.style.cursor = 'pointer';
+          item.addEventListener('click', function() {
+            var meta = email.attachment_contents[filename];
+            AppRegistry.launch('wordpad', {
+              file: { name: meta.name || filename, content: meta.content }
+            });
+          });
+        } else {
+          // No content available -- show as non-clickable grey text
+          item.className = 'email-attachment-link disabled';
+          item.innerHTML = iconImg('file_doc', 16) + ' ';
+          var nameSpan = document.createElement('span');
+          nameSpan.textContent = filename;
+          item.appendChild(nameSpan);
+        }
+        attachBar.appendChild(item);
+      });
+      preview.appendChild(attachBar);
+    }
+
     // Separator
     var hr = document.createElement('hr');
     hr.style.border = 'none';

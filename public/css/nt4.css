@@ -1163,6 +1163,34 @@ body {
   white-space: pre-wrap;
 }
 
+.email-attachment-bar {
+  background: #F0F0F0;
+  border: 1px solid #C0C0C0;
+  padding: 4px 8px;
+  margin: 4px 0;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.email-attachment-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+}
+
+.email-attachment-link:not(.disabled):hover {
+  background: #000080;
+  color: white;
+}
+
+.email-attachment-link.disabled {
+  color: #808080;
+  cursor: default;
+}
+
 .email-quoted {
   color: #808080;
   border-left: 2px solid #808080;
