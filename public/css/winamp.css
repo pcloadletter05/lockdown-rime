@@ -1366,6 +1366,7 @@
 .webamp {
   position: relative;
   width: 275px;
+  height: 116px;
   transform: scale(2);
   transform-origin: top left;
   image-rendering: pixelated;
