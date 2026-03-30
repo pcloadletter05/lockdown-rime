@@ -319,9 +319,31 @@ function buildEmailUI(args) {
       email.attachments.forEach(function(filename) {
         var item = document.createElement('span');
         var hasContent = email.attachment_contents && email.attachment_contents[filename];
-        if (hasContent) {
+        var hasPath = email.attachment_paths && email.attachment_paths[filename];
+
+        // Determine the right icon based on file extension
+        var ext = filename.split('.').pop().toLowerCase();
+        var attachIcon = 'file_doc';
+        if (ext === 'pdf') attachIcon = 'file_pdf';
+        else if (ext === 'xls') attachIcon = 'file_xls';
+        else if (ext === 'txt') attachIcon = 'file_doc';
+
+        if (hasPath) {
+          // File path available — open via FileRouter (PDF, etc.)
           item.className = 'email-attachment-link';
-          item.innerHTML = iconImg('file_doc', 16) + ' ';
+          item.innerHTML = iconImg(attachIcon, 16) + ' ';
+          var nameSpan = document.createElement('span');
+          nameSpan.textContent = filename;
+          item.appendChild(nameSpan);
+          item.style.cursor = 'pointer';
+          (function(fn, fp) {
+            item.addEventListener('click', function() {
+              FileRouter.openAttachment(fn, fp);
+            });
+          })(filename, email.attachment_paths[filename]);
+        } else if (hasContent) {
+          item.className = 'email-attachment-link';
+          item.innerHTML = iconImg(attachIcon, 16) + ' ';
           var nameSpan = document.createElement('span');
           nameSpan.textContent = filename;
           item.appendChild(nameSpan);
@@ -335,7 +357,7 @@ function buildEmailUI(args) {
         } else {
           // No content available -- show as non-clickable grey text
           item.className = 'email-attachment-link disabled';
-          item.innerHTML = iconImg('file_doc', 16) + ' ';
+          item.innerHTML = iconImg(attachIcon, 16) + ' ';
           var nameSpan = document.createElement('span');
           nameSpan.textContent = filename;
           item.appendChild(nameSpan);

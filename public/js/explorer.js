@@ -6,13 +6,15 @@ var _filesCache = null;
 var FILE_TYPE_VIEWERS = {
   'doc': 'wordpad',
   'txt': 'notepad',
-  'xls': 'spreadsheet'
+  'xls': 'spreadsheet',
+  'pdf': 'acrobat'
 };
 
 var FILE_TYPE_NAMES = {
   'doc': 'WordPad Document',
   'txt': 'Text Document',
-  'xls': 'Excel Spreadsheet'
+  'xls': 'Excel Spreadsheet',
+  'pdf': 'Adobe Acrobat Document'
 };
 
 function loadFiles() {
