@@ -323,9 +323,13 @@ function buildWinampUI(args) {
 
   // Visualizer
   var visualizer = wDiv('visualizer');
-  visualizer.style.width = '76px';
-  visualizer.style.height = '16px';
-  visualizer.style.background = '#000';
+  var visCanvas = document.createElement('canvas');
+  visCanvas.width = 76;
+  visCanvas.height = 16;
+  visCanvas.style.width = '76px';
+  visCanvas.style.height = '16px';
+  visCanvas.style.background = '#000';
+  visualizer.appendChild(visCanvas);
   mainWindow.appendChild(visualizer);
 
   // Marquee
@@ -473,6 +477,7 @@ function buildWinampUI(args) {
   // ===== Wire Audio Events =====
 
   audio.addEventListener('timeupdate', function() {
+    if (isDragging) return; // Don't override LCD preview during seek drag
     var elapsed = Math.floor(audio.currentTime);
     updateTimeDisplay(webampEl, elapsed);
     var duration = audio.duration;
@@ -609,9 +614,11 @@ function buildWinampUI(args) {
   });
 
   // Seek slider
+  var isDragging = false;
   var wasDraggingWhilePlaying = false;
 
   position.addEventListener('mousedown', function() {
+    isDragging = true;
     if (WinampState.playState === 'play') {
       WinampPlayer.audio.pause();
       wasDraggingWhilePlaying = true;
@@ -620,9 +627,9 @@ function buildWinampUI(args) {
 
   position.addEventListener('input', function() {
     WinampState.seekPercent = parseInt(position.value, 10);
-    // Live time preview during drag
+    // Live LCD preview during drag
     var track = WinampState.tracks[WinampState.selectedTrack];
-    if (track) {
+    if (track && isDragging) {
       var pct = parseInt(position.value, 10) / 100;
       updateTimeDisplay(webampEl, Math.floor(pct * track.duration));
     }
@@ -633,9 +640,24 @@ function buildWinampUI(args) {
     if (WinampPlayer.audio.duration && isFinite(WinampPlayer.audio.duration)) {
       WinampPlayer.audio.currentTime = pct * WinampPlayer.audio.duration;
     }
+    isDragging = false;
     if (wasDraggingWhilePlaying) {
       WinampPlayer.audio.play();
       wasDraggingWhilePlaying = false;
+    }
+  });
+
+  // Fallback for mouseup in case change doesn't fire (browser compat)
+  position.addEventListener('mouseup', function() {
+    if (isDragging) {
+      isDragging = false;
+      if (!WinampPlayer.audio || !WinampPlayer.audio.duration) return;
+      var pct = parseInt(position.value, 10) / 100;
+      WinampPlayer.audio.currentTime = pct * WinampPlayer.audio.duration;
+      if (wasDraggingWhilePlaying) {
+        WinampPlayer.audio.play();
+        wasDraggingWhilePlaying = false;
+      }
     }
   });
 
