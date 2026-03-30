@@ -109,7 +109,8 @@ var AppRegistry = {
     'wordpad':       { title: 'WordPad',                     icon: iconImg('file_doc', 16),       width: 600, height: 450 },
     'spreadsheet':   { title: 'Microsoft Excel',             icon: iconImg('file_xls', 16),       width: 650, height: 450 },
     'acrobat':       { title: 'Adobe Acrobat Reader',        icon: iconImg('file_pdf', 16),       width: 680, height: 520 },
-    'printqueue':    { title: 'HP LaserJet 4 - \\\\CALCOM-PS01', icon: iconImg('printer', 16),   width: 550, height: 250 }
+    'printqueue':    { title: 'HP LaserJet 4 - \\\\CALCOM-PS01', icon: iconImg('printer', 16),   width: 550, height: 250 },
+    'winamp':        { title: 'Winamp',                        icon: iconImg('winamp', 16),     width: 550, height: 254 }
   },
 
   launch: function(appId, args) {
@@ -148,16 +149,28 @@ var AppRegistry = {
       height = 520;
     } else if (appId === 'printqueue') {
       content = buildPrintQueueUI(args);
+    } else if (appId === 'winamp') {
+      var winampResult = buildWinampUI(args);
+      content = winampResult.element;
     }
 
     if (app || content) {
-      WindowManager.createWindow({
+      var winOpts = {
         title: title || (app ? app.title : appId),
         icon: app ? app.icon : iconImg('file_doc', 16),
         width: width || (app ? app.width : 400),
         height: height || (app ? app.height : 300),
         content: content
-      });
+      };
+      if (appId === 'winamp') {
+        winOpts.statusBar = false;
+        winOpts.resizable = false;
+        winOpts.maximizable = false;
+      }
+      var winId = WindowManager.createWindow(winOpts);
+      if (appId === 'winamp') {
+        WinampPlayer.windowId = winId;
+      }
     } else {
       // Fallback for unregistered apps (Network Neighborhood, Recycle Bin, etc.)
       var icon16 = getIcon(appId, 16);
@@ -179,7 +192,8 @@ var DESKTOP_ICONS = [
   { appId: 'mycomputer', label: 'My Computer',           icon: iconImg('mycomputer', 32) },
   { appId: 'network',    label: 'Network Neighborhood', icon: iconImg('network', 32) },
   { appId: 'iexplore',   label: 'Internet Explorer',    icon: iconImg('iexplore', 32) },
-  { appId: 'outlook',    label: 'Inbox',                  icon: iconImg('outlook', 32) }
+  { appId: 'outlook',    label: 'Inbox',                  icon: iconImg('outlook', 32) },
+  { appId: 'winamp',     label: 'Winamp',                 icon: iconImg('winamp', 32) }
 ];
 
 var DESKTOP_ICON_BOTTOM = { appId: 'recycle', label: 'Recycle Bin', icon: iconImg('recycle_bin', 32) };

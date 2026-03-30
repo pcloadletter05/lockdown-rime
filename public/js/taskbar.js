@@ -104,7 +104,8 @@ const Taskbar = {
       { label: 'Windows Explorer', appId: 'explorer', iconName: 'explorer' },
       { label: 'Outlook', appId: 'outlook', iconName: 'outlook' },
       { label: 'Internet Explorer', appId: 'iexplore', iconName: 'iexplore' },
-      { label: 'Notepad', appId: 'notepad', iconName: 'notepad' }
+      { label: 'Notepad', appId: 'notepad', iconName: 'notepad' },
+      { label: 'Winamp', appId: 'winamp', iconName: 'winamp' }
     ];
 
     var self = this;

@@ -289,9 +289,14 @@ const WindowManager = {
 
     var maxBtn = document.createElement('button');
     maxBtn.className = 'nt4-titlebar-btn maximize';
-    maxBtn.addEventListener('click', function() {
-      WindowManager.maximizeWindow(id);
-    });
+    if (opts.maximizable !== false) {
+      maxBtn.addEventListener('click', function() {
+        WindowManager.maximizeWindow(id);
+      });
+    } else {
+      maxBtn.disabled = true;
+      maxBtn.classList.add('disabled');
+    }
 
     var closeBtn = document.createElement('button');
     closeBtn.className = 'nt4-titlebar-btn close';
@@ -316,17 +321,21 @@ const WindowManager = {
     }
     windowEl.appendChild(contentEl);
 
-    // Status bar
-    var statusBar = document.createElement('div');
-    statusBar.className = 'window-statusbar well';
-    var statusText = document.createElement('span');
-    statusText.textContent = 'Ready';
-    statusBar.appendChild(statusText);
-    windowEl.appendChild(statusBar);
+    // Status bar (optional, defaults to shown)
+    if (opts.statusBar !== false) {
+      var statusBar = document.createElement('div');
+      statusBar.className = 'window-statusbar well';
+      var statusText = document.createElement('span');
+      statusText.textContent = 'Ready';
+      statusBar.appendChild(statusText);
+      windowEl.appendChild(statusBar);
+    }
 
     // Attach drag and resize handlers
     initDrag(titleBarEl, windowEl);
-    initResize(windowEl);
+    if (opts.resizable !== false) {
+      initResize(windowEl);
+    }
 
     // Focus on mousedown anywhere in window
     var self = this;
