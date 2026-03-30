@@ -309,6 +309,19 @@ body {
   overflow: hidden;
 }
 
+#desktop-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  opacity: 0.15;
+  filter: brightness(0) invert(1);
+  pointer-events: none;
+  user-select: none;
+  image-rendering: auto;
+}
+
 /* === Boot Screen Backgrounds === */
 
 #boot-screen {
