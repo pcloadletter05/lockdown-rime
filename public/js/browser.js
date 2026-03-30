@@ -33,8 +33,8 @@ var BROWSER_PAGES = {
             '<tr>' +
               '<td valign="top" width="60%">' +
                 '<font size="2" face="Arial">' +
-                  '<b>&#128227; Announcements</b><br><br>' +
-                  '<b>Dec 22</b> - Holiday party this Friday! Conference Room B, 14th floor. 5:00 PM. See Lisa W. for details.<br><br>' +
+                  '<b>Announcements</b><br><br>' +
+                  '<b>Dec 22</b> - Holiday party this Friday! Conference Room B, 14th floor 5:00 PM.<br><br>' +
                   '<b>Dec 21</b> - Y2K assessment survey -- please complete by Jan 15. Contact Margaret Sullivan.<br><br>' +
                   '<b>Dec 20</b> - Q4 survey on track: 847/1200 interviews completed.<br><br>' +
                   '<b>Dec 15</b> - New phone system training: Sign up at front desk.<br><br>' +
