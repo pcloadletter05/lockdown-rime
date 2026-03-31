@@ -1,0 +1,704 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Network Neighborhood tree for CALCOM domain",
+    "schema": {
+      "name": "string - machine, share, folder, or file name",
+      "type": "string - server|workstation|domain|workgroup|folder|file|printer",
+      "icon": "string - icon identifier",
+      "machine_type": "string|null - server|workstation (machines only)",
+      "description": "string|null - machine description",
+      "access": "string|null - open|denied (default open if absent)",
+      "intermittent": "boolean|null - machine appears/disappears from browse list",
+      "status": "string|null - printer status text",
+      "file_type": "string|null - doc|xls|txt|bmp|jpg|pdf|ppt|pst|mp3|ra|m3u",
+      "size": "string|null - file size display",
+      "modified": "string|null - last modified date",
+      "children": "array|null - child nodes",
+      "shares": "array|null - machine share list"
+    }
+  },
+  "default_domain": "CALCOM",
+  "entire_network": [
+    { "name": "CALCOM", "type": "domain", "icon": "network" },
+    { "name": "CALCOM_LAB", "type": "workgroup", "icon": "network" },
+    { "name": "WORKGROUP", "type": "workgroup", "icon": "network" }
+  ],
+  "domains": {
+    "CALCOM": {
+      "machines": ["CALCOM-FS01", "CALCOM-FS02", "CALCOM-INTRA", "CALCOM-PS01",
+                    "LISA-PC", "DMORALES-PC", "JCHEN-PC", "BKOZLOW-PC", "MTHOMPSON-PC"]
+    },
+    "CALCOM_LAB": {
+      "machines": ["LAB-WS01"]
+    },
+    "WORKGROUP": {
+      "machines": ["YOURISH-LAPTOP", "TESTBOX-04"]
+    }
+  },
+  "machines": [
+    {
+      "name": "CALCOM-FS01",
+      "type": "server",
+      "icon": "server",
+      "description": "Main File Server",
+      "shares": [
+        {
+          "name": "Public",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "READ_ME.txt", "type": "file", "icon": "file_txt", "file_type": "txt", "size": "2 KB", "modified": "03/15/1997 9:00 AM" },
+            { "name": "Holiday_Party_Signup_1998.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "36 KB", "modified": "11/02/1998 2:14 PM" },
+            { "name": "Holiday_Party_Signup_1999.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "42 KB", "modified": "11/08/1999 10:33 AM" },
+            { "name": "CalCom_Logo_FINAL.bmp", "type": "file", "icon": "file_doc", "file_type": "bmp", "size": "148 KB", "modified": "06/22/1997 3:30 PM" },
+            { "name": "CalCom_Logo_FINAL2.bmp", "type": "file", "icon": "file_doc", "file_type": "bmp", "size": "152 KB", "modified": "09/10/1997 11:15 AM" },
+            { "name": "CalCom_Logo_USE_THIS_ONE.bmp", "type": "file", "icon": "file_doc", "file_type": "bmp", "size": "156 KB", "modified": "01/14/1998 4:22 PM" },
+            { "name": "Parking_Lot_Map.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "48 KB", "modified": "04/03/1998 8:45 AM" },
+            { "name": "Lost_and_Found_Dec99.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "18 KB", "modified": "12/05/1999 1:20 PM" },
+            {
+              "name": "DILBERT_PRINTS",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "dilbert_meeting.jpg", "type": "file", "icon": "file_doc", "file_type": "jpg", "size": "64 KB", "modified": "08/14/1998 10:30 AM" },
+                { "name": "dilbert_cubicle.jpg", "type": "file", "icon": "file_doc", "file_type": "jpg", "size": "58 KB", "modified": "08/14/1998 10:31 AM" },
+                { "name": "dilbert_printer.jpg", "type": "file", "icon": "file_doc", "file_type": "jpg", "size": "72 KB", "modified": "09/22/1998 3:15 PM" }
+              ]
+            },
+            {
+              "name": "Karens_Recipes",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Crockpot_Chili.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "14 KB", "modified": "02/18/1998 12:10 PM" },
+                { "name": "Pumpkin_Bread.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "12 KB", "modified": "10/28/1997 9:45 AM" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Marketing",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "Brand_Guidelines_1997.pdf", "type": "file", "icon": "file_pdf", "file_type": "pdf", "size": "384 KB", "modified": "05/12/1997 2:00 PM" },
+            { "name": "Horizon_Launch_Timeline.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "68 KB", "modified": "10/15/1999 4:30 PM" },
+            { "name": "Q4_Targets.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "44 KB", "modified": "10/01/1999 9:00 AM" },
+            { "name": "Horizon_Press_Kit.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "72 KB", "modified": "11/20/1999 11:45 AM" },
+            {
+              "name": "Survey_Templates",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Customer_Sat_Template.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "36 KB", "modified": "03/22/1998 10:00 AM" },
+                { "name": "Awareness_Tracking_Template.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "32 KB", "modified": "04/15/1998 1:30 PM" }
+              ]
+            },
+            {
+              "name": "DRAFTS",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Horizon_Awareness_Report_DRAFT.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "56 KB", "modified": "12/10/1999 3:15 PM" },
+                { "name": "Q3_Satisfaction_Summary_INCOMPLETE.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "44 KB", "modified": "11/28/1999 5:00 PM" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Research",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            {
+              "name": "Focus_Groups",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Horizon_FG_Summary_Oct99.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "48 KB", "modified": "10/28/1999 4:15 PM" },
+                { "name": "Horizon_FG_Summary_Nov99.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "52 KB", "modified": "11/22/1999 2:30 PM" },
+                { "name": "Participant_Screener.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "28 KB", "modified": "09/15/1999 10:00 AM" }
+              ]
+            },
+            {
+              "name": "Competitive_Analysis",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Motorola_StarTAC_Comparison.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "64 KB", "modified": "08/20/1999 11:30 AM" },
+                { "name": "Nokia_Market_Position_1999.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "58 KB", "modified": "09/05/1999 3:45 PM" }
+              ]
+            },
+            {
+              "name": "TABS_FINAL",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Horizon_Satisfaction_Tabs_v1.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "96 KB", "modified": "10/05/1999 9:30 AM" },
+                { "name": "Horizon_Satisfaction_Tabs_v2.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "104 KB", "modified": "11/12/1999 1:00 PM" },
+                { "name": "Horizon_Satisfaction_Tabs_FINAL_FINAL_v2.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "112 KB", "modified": "12/02/1999 4:45 PM" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Telecom_Engineering",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            {
+              "name": "Documentation",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Horizon_User_Manual_Draft.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "88 KB", "modified": "11/30/1999 2:00 PM" }
+              ]
+            },
+            {
+              "name": "Test_Reports",
+              "type": "folder",
+              "icon": "folder_closed",
+              "access": "denied"
+            },
+            {
+              "name": "Signal_Data",
+              "type": "folder",
+              "icon": "folder_closed",
+              "access": "denied"
+            }
+          ]
+        },
+        {
+          "name": "Electrical_Engineering",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            {
+              "name": "Component_Specs",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Horizon_Battery_Spec_Sheet.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "42 KB", "modified": "07/18/1999 10:15 AM" }
+              ]
+            },
+            {
+              "name": "Thermal_Reports",
+              "type": "folder",
+              "icon": "folder_closed",
+              "access": "denied"
+            },
+            { "name": "Manufacturing_Notes.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "36 KB", "modified": "08/25/1999 3:30 PM" }
+          ]
+        },
+        {
+          "name": "Executive",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "denied"
+        },
+        {
+          "name": "HR",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "Employee_Handbook_1998.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "96 KB", "modified": "01/15/1998 9:00 AM" },
+            { "name": "Benefits_Enrollment_2000.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "64 KB", "modified": "11/01/1999 8:30 AM" },
+            { "name": "Holiday_Schedule_1999.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "18 KB", "modified": "01/04/1999 10:00 AM" },
+            { "name": "Org_Chart_June1999.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "52 KB", "modified": "06/15/1999 2:45 PM" },
+            { "name": "Parking_Policy.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "24 KB", "modified": "03/20/1998 11:00 AM" },
+            {
+              "name": "Termination_Procedures",
+              "type": "folder",
+              "icon": "folder_closed",
+              "access": "denied"
+            }
+          ]
+        },
+        {
+          "name": "Templates",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "CalCom_Memo_Template.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "28 KB", "modified": "02/10/1997 9:00 AM" },
+            { "name": "Fax_Cover_Sheet.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "22 KB", "modified": "02/10/1997 9:05 AM" },
+            { "name": "Expense_Report.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "34 KB", "modified": "03/18/1997 1:30 PM" },
+            { "name": "Presentation_Template.ppt", "type": "file", "icon": "file_doc", "file_type": "ppt", "size": "512 KB", "modified": "06/05/1997 4:00 PM" }
+          ]
+        },
+        {
+          "name": "IT",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "READ_BEFORE_CALLING_SUPPORT.txt", "type": "file", "icon": "file_txt", "file_type": "txt", "size": "4 KB", "modified": "05/22/1998 8:00 AM" },
+            { "name": "Acceptable_Use_Policy.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "32 KB", "modified": "01/10/1998 9:30 AM" },
+            { "name": "Helpdesk_Request_Form.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "26 KB", "modified": "04/12/1998 2:00 PM" },
+            { "name": "Y2K_Readiness_Checklist.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "48 KB", "modified": "09/30/1999 4:30 PM" },
+            { "name": "Password_Reset_Instructions.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "14 KB", "modified": "07/08/1999 11:00 AM" },
+            { "name": "Network_Drive_Mapping_Guide.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "20 KB", "modified": "08/15/1998 3:15 PM" }
+          ]
+        },
+        {
+          "name": "Legal_and_Compliance",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "denied"
+        },
+        {
+          "name": "Finance",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "denied"
+        },
+        {
+          "name": "Sales_and_Partnerships",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "Trade_Show_Schedule_2000.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "38 KB", "modified": "12/01/1999 10:00 AM" },
+            {
+              "name": "Press_Kit",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "CalCom_Fact_Sheet.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "28 KB", "modified": "06/20/1999 1:00 PM" },
+                { "name": "Executive_Bios.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "44 KB", "modified": "08/10/1999 3:30 PM" }
+              ]
+            },
+            {
+              "name": "Partner_Contacts",
+              "type": "folder",
+              "icon": "folder_closed",
+              "access": "denied"
+            }
+          ]
+        },
+        {
+          "name": "Customer_Support",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "FAQ_Master_List.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "56 KB", "modified": "11/15/1999 9:30 AM" },
+            { "name": "Escalation_Procedures.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "32 KB", "modified": "05/20/1999 2:00 PM" },
+            { "name": "Hold_Script_Holiday.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "16 KB", "modified": "12/15/1999 8:45 AM" },
+            { "name": "Angry_Caller_Tips.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "22 KB", "modified": "07/30/1999 4:15 PM" }
+          ]
+        },
+        {
+          "name": "Product_Testing",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "Test_Schedule_Q4.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "42 KB", "modified": "10/03/1999 9:00 AM" },
+            { "name": "Bug_Tracker_Instructions.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "28 KB", "modified": "08/12/1999 11:30 AM" },
+            {
+              "name": "Test_Results",
+              "type": "folder",
+              "icon": "folder_closed",
+              "access": "denied"
+            }
+          ]
+        },
+        {
+          "name": "Software_Development",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "denied"
+        },
+        {
+          "name": "Data_Systems",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "denied"
+        },
+        {
+          "name": "Facilities",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            {
+              "name": "Floor_Plans",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Floor_12.bmp", "type": "file", "icon": "file_doc", "file_type": "bmp", "size": "196 KB", "modified": "03/10/1998 10:00 AM" },
+                { "name": "Floor_13.bmp", "type": "file", "icon": "file_doc", "file_type": "bmp", "size": "204 KB", "modified": "03/10/1998 10:05 AM" },
+                { "name": "Floor_14.bmp", "type": "file", "icon": "file_doc", "file_type": "bmp", "size": "188 KB", "modified": "03/10/1998 10:10 AM" }
+              ]
+            },
+            { "name": "Maintenance_Request_Form.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "24 KB", "modified": "06/08/1998 9:00 AM" },
+            { "name": "Vending_Machine_Complaint_Log.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "56 KB", "modified": "12/18/1999 3:30 PM" },
+            { "name": "Elevator_Maintenance_Schedule.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "18 KB", "modified": "09/01/1999 8:00 AM" },
+            { "name": "Conference_Room_Booking.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "30 KB", "modified": "11/20/1999 10:15 AM" }
+          ]
+        },
+        {
+          "name": "Corporate_Security",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "denied"
+        },
+        {
+          "name": "Procurement",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "Approved_Vendor_List.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "68 KB", "modified": "10/22/1999 1:45 PM" },
+            { "name": "Purchase_Order_Template.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "26 KB", "modified": "04/15/1998 10:30 AM" }
+          ]
+        },
+        {
+          "name": "Public_Relations",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "Media_Contact_List.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "44 KB", "modified": "11/05/1999 2:00 PM" },
+            { "name": "Press_Release_Template.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "22 KB", "modified": "05/30/1998 9:00 AM" },
+            { "name": "Horizon_Launch_Press_Release_DRAFT.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "38 KB", "modified": "12/08/1999 4:30 PM" }
+          ]
+        },
+        {
+          "name": "R_and_D",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "Patent_Tracking.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "84 KB", "modified": "11/18/1999 11:00 AM" },
+            {
+              "name": "Lab_Projects",
+              "type": "folder",
+              "icon": "folder_closed",
+              "access": "denied"
+            }
+          ]
+        },
+        {
+          "name": "General_Nerds",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "LAN_Party_Signup_Nov99.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "16 KB", "modified": "11/02/1999 12:30 PM" },
+            { "name": "Quake_Server_Config.txt", "type": "file", "icon": "file_txt", "file_type": "txt", "size": "3 KB", "modified": "10/20/1999 6:15 PM" },
+            { "name": "Linux_Install_Notes.txt", "type": "file", "icon": "file_txt", "file_type": "txt", "size": "6 KB", "modified": "09/14/1999 7:30 PM" },
+            { "name": "Who_Broke_The_Coffee_Machine.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "12 KB", "modified": "12/12/1999 8:45 AM" }
+          ]
+        },
+        {
+          "name": "Training_and_Recruitment",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "New_Hire_Orientation_Checklist.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "34 KB", "modified": "02/28/1999 9:00 AM" },
+            { "name": "RMU_Career_Fair_Flyer_Spring2000.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "42 KB", "modified": "12/01/1999 3:00 PM" },
+            {
+              "name": "Department_Orientation",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Marketing_Orientation.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "38 KB", "modified": "01/20/1999 10:30 AM" },
+                { "name": "IT_Orientation.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "32 KB", "modified": "01/20/1999 10:35 AM" },
+                { "name": "Research_Orientation.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "36 KB", "modified": "01/20/1999 10:40 AM" }
+              ]
+            },
+            {
+              "name": "CATI_Training",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "CATI_Training_Manual.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "78 KB", "modified": "03/15/1999 2:00 PM" },
+                { "name": "Refusal_Handling_Tips.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "24 KB", "modified": "03/15/1999 2:05 PM" },
+                { "name": "Compliance_Reminders.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "18 KB", "modified": "03/15/1999 2:10 PM" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CALCOM-FS02",
+      "type": "server",
+      "icon": "server",
+      "description": "Archive / Overflow Server",
+      "shares": [
+        {
+          "name": "Archive",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            {
+              "name": "1995",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Annual_Report_1995.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "88 KB", "modified": "02/15/1996 10:00 AM" }
+              ]
+            },
+            {
+              "name": "1996",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Annual_Report_1996.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "92 KB", "modified": "02/20/1997 9:30 AM" }
+              ]
+            },
+            {
+              "name": "1997",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Annual_Report_1997.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "96 KB", "modified": "02/18/1998 10:15 AM" },
+                { "name": "Roosevelt_Bridge_Incident_Memo.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "24 KB", "modified": "09/03/1997 4:00 PM" }
+              ]
+            },
+            {
+              "name": "1998",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Annual_Report_1998.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "104 KB", "modified": "02/22/1999 11:00 AM" },
+                {
+                  "name": "Pre_Horizon_Research",
+                  "type": "folder",
+                  "icon": "folder_closed",
+                  "children": [
+                    { "name": "Market_Feasibility_Study.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "72 KB", "modified": "06/10/1998 3:00 PM" },
+                    { "name": "Early_Prototype_Feedback.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "48 KB", "modified": "08/22/1998 1:30 PM" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Y2K_Compliance",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Y2K_Remediation_Plan.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "56 KB", "modified": "04/15/1999 10:00 AM" },
+                { "name": "Y2K_Vendor_Certification.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "84 KB", "modified": "08/30/1999 2:30 PM" },
+                { "name": "Y2K_Test_Results_Summary.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "44 KB", "modified": "10/15/1999 4:00 PM" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Temp",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "meeting_notes_oct14.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "18 KB", "modified": "10/14/1999 5:30 PM" },
+            { "name": "REYNOLDS_RESUME_DRAFT.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "36 KB", "modified": "11/22/1999 7:45 PM" },
+            { "name": "budget_projections_DONOTSHARE.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "156 KB", "modified": "12/02/1999 9:15 AM" },
+            {
+              "name": "horizon_photo_assets",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "horizon_front.jpg", "type": "file", "icon": "file_doc", "file_type": "jpg", "size": "96 KB", "modified": "09/28/1999 2:00 PM" },
+                { "name": "horizon_back.jpg", "type": "file", "icon": "file_doc", "file_type": "jpg", "size": "88 KB", "modified": "09/28/1999 2:05 PM" },
+                { "name": "horizon_lifestyle_shoot.jpg", "type": "file", "icon": "file_doc", "file_type": "jpg", "size": "128 KB", "modified": "10/05/1999 11:00 AM" }
+              ]
+            },
+            {
+              "name": "DO_NOT_OPEN",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "surprise_party_planning.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "22 KB", "modified": "12/10/1999 12:00 PM" }
+              ]
+            },
+            { "name": "old_outlook_backup.pst", "type": "file", "icon": "file_doc", "file_type": "pst", "size": "2048 KB", "modified": "07/14/1999 4:00 PM" },
+            { "name": "daves_mixtape_tracklist.txt", "type": "file", "icon": "file_txt", "file_type": "txt", "size": "2 KB", "modified": "11/08/1999 6:30 PM" },
+            {
+              "name": "unnamed_folder",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "notes.txt", "type": "file", "icon": "file_txt", "file_type": "txt", "size": "1 KB", "modified": "08/20/1999 3:15 PM" }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Training",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "New_Hire_Orientation.ppt", "type": "file", "icon": "file_doc", "file_type": "ppt", "size": "768 KB", "modified": "01/10/1999 9:00 AM" },
+            { "name": "IT_Acceptable_Use_Policy.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "28 KB", "modified": "01/10/1998 9:30 AM" },
+            { "name": "Telephone_System_Guide.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "34 KB", "modified": "05/20/1998 2:00 PM" },
+            {
+              "name": "Market_Research_Onboarding",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "CATI_Training_Manual.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "78 KB", "modified": "03/15/1999 2:00 PM" },
+                { "name": "Refusal_Handling_Tips.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "24 KB", "modified": "03/15/1999 2:05 PM" },
+                { "name": "Compliance_Reminders.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "18 KB", "modified": "03/15/1999 2:10 PM" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CALCOM-INTRA",
+      "type": "server",
+      "icon": "server",
+      "description": "Intranet Web Server",
+      "shares": [
+        {
+          "name": "wwwroot",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "denied"
+        }
+      ]
+    },
+    {
+      "name": "CALCOM-PS01",
+      "type": "server",
+      "icon": "server",
+      "description": "Print Server",
+      "shares": [
+        { "name": "HP LaserJet 4 - 14th Floor", "type": "printer", "icon": "printer", "status": "Error: PC LOAD LETTER" },
+        { "name": "HP LaserJet 4 - 12th Floor", "type": "printer", "icon": "printer", "status": "Ready", "access": "denied" },
+        { "name": "Xerox Copier - 14th Floor", "type": "printer", "icon": "printer", "status": "Error - Call Service" },
+        { "name": "HP DeskJet 670C - Reception", "type": "printer", "icon": "printer", "status": "Ready" }
+      ]
+    },
+    {
+      "name": "LISA-PC",
+      "type": "workstation",
+      "icon": "mycomputer",
+      "description": "Lisa Milavic",
+      "shares": []
+    },
+    {
+      "name": "DMORALES-PC",
+      "type": "workstation",
+      "icon": "mycomputer",
+      "description": "Diana Morales",
+      "shares": [
+        {
+          "name": "Shared_With_Team",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "Weekly_Call_Schedule.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "32 KB", "modified": "12/20/1999 8:00 AM" },
+            { "name": "Team_Meeting_Notes_Dec99.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "28 KB", "modified": "12/17/1999 4:30 PM" },
+            { "name": "Q4_Quota_Updates.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "24 KB", "modified": "10/08/1999 11:00 AM" },
+            { "name": "Holiday_Coverage_Assignments.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "18 KB", "modified": "12/15/1999 2:15 PM" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JCHEN-PC",
+      "type": "workstation",
+      "icon": "mycomputer",
+      "description": "Julie Chen",
+      "shares": [
+        {
+          "name": "Music",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "Smash_Mouth_All_Star.mp3", "type": "file", "icon": "file_doc", "file_type": "mp3", "size": "3840 KB", "modified": "06/15/1999 7:30 PM" },
+            { "name": "TLC_No_Scrubs.mp3", "type": "file", "icon": "file_doc", "file_type": "mp3", "size": "4200 KB", "modified": "04/22/1999 8:00 PM" },
+            { "name": "Backstreet_Boys_I_Want_It_That_Way.ra", "type": "file", "icon": "file_doc", "file_type": "ra", "size": "980 KB", "modified": "05/10/1999 6:45 PM" },
+            { "name": "Blink182_All_The_Small_Things.mp3", "type": "file", "icon": "file_doc", "file_type": "mp3", "size": "3600 KB", "modified": "09/30/1999 9:15 PM" },
+            { "name": "playlist.m3u", "type": "file", "icon": "file_doc", "file_type": "m3u", "size": "1 KB", "modified": "10/05/1999 7:00 PM" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BKOZLOW-PC",
+      "type": "workstation",
+      "icon": "mycomputer",
+      "description": "Boris Kozlow",
+      "intermittent": true,
+      "shares": []
+    },
+    {
+      "name": "MTHOMPSON-PC",
+      "type": "workstation",
+      "icon": "mycomputer",
+      "description": "Marvin Thompson",
+      "shares": [
+        {
+          "name": "My_Files",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "open",
+          "children": [
+            { "name": "Mr_Whiskers_01.jpg", "type": "file", "icon": "file_doc", "file_type": "jpg", "size": "48 KB", "modified": "11/05/1999 6:30 PM" },
+            { "name": "Mr_Whiskers_02.jpg", "type": "file", "icon": "file_doc", "file_type": "jpg", "size": "52 KB", "modified": "11/05/1999 6:32 PM" },
+            { "name": "Mr_Whiskers_Sleeping.jpg", "type": "file", "icon": "file_doc", "file_type": "jpg", "size": "44 KB", "modified": "11/12/1999 8:15 PM" },
+            { "name": "Banana_Bread_Recipe.txt", "type": "file", "icon": "file_txt", "file_type": "txt", "size": "3 KB", "modified": "09/22/1999 12:00 PM" },
+            {
+              "name": "Desk_Move_Complaints",
+              "type": "folder",
+              "icon": "folder_closed",
+              "children": [
+                { "name": "Draft_To_HR_Nov12.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "16 KB", "modified": "11/12/1999 5:45 PM" },
+                { "name": "Draft_To_HR_Nov19.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "18 KB", "modified": "11/19/1999 6:00 PM" },
+                { "name": "Draft_To_HR_Dec03.doc", "type": "file", "icon": "file_doc", "file_type": "doc", "size": "22 KB", "modified": "12/03/1999 5:30 PM" }
+              ]
+            },
+            { "name": "HORIZON_RF_EMISSIONS_TEST_BATCH7.xls", "type": "file", "icon": "file_xls", "file_type": "xls", "size": "142 KB", "modified": "12/14/1999 2:00 AM" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LAB-WS01",
+      "type": "workstation",
+      "icon": "mycomputer",
+      "description": "Lab Workstation 01",
+      "shares": [
+        {
+          "name": "Lab_Data",
+          "type": "folder",
+          "icon": "folder_closed",
+          "access": "denied"
+        }
+      ]
+    },
+    {
+      "name": "YOURISH-LAPTOP",
+      "type": "workstation",
+      "icon": "mycomputer",
+      "description": "A. Yourish - Contractor",
+      "shares": []
+    },
+    {
+      "name": "TESTBOX-04",
+      "type": "workstation",
+      "icon": "mycomputer",
+      "description": "Test Machine",
+      "shares": []
+    }
+  ]
+}
