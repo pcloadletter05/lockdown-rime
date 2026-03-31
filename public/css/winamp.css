@@ -1417,6 +1417,17 @@
   background: #000080;
 }
 
+/* Playing track indicator -- arrow prefix is in text content */
+.playlist-tracks .track-cell.playing {
+  color: #FFFFFF;
+}
+
+/* Playing + selected stacks: blue bg + white text + arrow */
+.playlist-tracks .track-cell.playing.selected {
+  color: #FFFFFF;
+  background: #000080;
+}
+
 /* Playlist status bar text */
 .playlist-status-text {
   color: #00FF00;

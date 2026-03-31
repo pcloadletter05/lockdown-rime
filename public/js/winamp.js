@@ -9,6 +9,7 @@ var WinampState = {
   repeat: false,
   playlistOpen: false,
   selectedTrack: 0,
+  playingTrack: -1,
   tracks: [],
   playState: 'stop'
 };
@@ -59,11 +60,19 @@ function renderPlaylistTracks(playlistEl, tracks, selectedIndex) {
     if (i === selectedIndex) {
       cell.classList.add('selected');
     }
+    // Playing indicator: show arrow for the track loaded in audio engine
+    var isPlaying = (i === WinampState.playingTrack && WinampState.playState !== 'stop');
+    if (isPlaying) {
+      cell.classList.add('playing');
+    }
 
     var secs = track.duration % 60;
     var mins = Math.floor(track.duration / 60);
     var timeStr = mins + ':' + (secs < 10 ? '0' : '') + secs;
-    cell.textContent = track.order + '. ' + track.artist + ' - ' + track.title + '  ' + timeStr;
+
+    // Arrow prefix for currently playing track (Unicode black right-pointing triangle)
+    var prefix = isPlaying ? '\u25B6 ' : '';
+    cell.textContent = prefix + track.order + '. ' + track.artist + ' - ' + track.title + '  ' + timeStr;
 
     cell.addEventListener('click', function() {
       WinampState.selectedTrack = i;
@@ -129,6 +138,7 @@ function loadTrack(index) {
   var track = WinampState.tracks[index];
   if (!track) return;
   WinampState.selectedTrack = index;
+  WinampState.playingTrack = index;
   WinampPlayer.audio.src = 'assets/music/' + track.filename;
   setupTicker(WinampPlayer.webampEl, track.order + '. ' + track.artist + ' - ' + track.title);
   updateTimeDisplay(WinampPlayer.webampEl, 0);
@@ -203,6 +213,11 @@ function winampStop() {
     // Reset seek bar
     var pos = WinampPlayer.webampEl.querySelector('#position');
     if (pos) pos.value = '0';
+    // Re-render playlist to remove playing indicator
+    var plWin = WinampPlayer.webampEl.querySelector('#playlist-window');
+    if (plWin && WinampState.tracks.length) {
+      renderPlaylistTracks(plWin, WinampState.tracks, WinampState.selectedTrack);
+    }
   }
 
   updateNT4Title('Winamp');
@@ -587,6 +602,13 @@ function buildWinampUI(args) {
     });
   }
 
+  // Playlist menu buttons -- decorative press sprites only
+  ['playlist-add-menu', 'playlist-remove-menu', 'playlist-selection-menu',
+   'playlist-misc-menu', 'playlist-list-menu'].forEach(function(id) {
+    var btn = webampEl.querySelector('#' + id);
+    if (btn) addPressInteraction(btn);
+  });
+
   // Volume slider
   volInput.addEventListener('input', function() {
     WinampState.volume = parseInt(volInput.value, 10);
@@ -737,6 +759,7 @@ EventBus.on('window:closed', function(data) {
     WinampState.repeat = false;
     WinampState.playlistOpen = false;
     WinampState.selectedTrack = 0;
+    WinampState.playingTrack = -1;
     WinampState.playState = 'stop';
   }
 });
