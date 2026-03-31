@@ -1449,3 +1449,40 @@ body {
   border: none;
   display: block;
 }
+
+/* Network Neighborhood — Icon Grid View */
+.network-icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px;
+  align-content: flex-start;
+  min-height: 100%;
+}
+
+.network-icon-item {
+  width: 80px;
+  padding: 4px;
+  text-align: center;
+  cursor: default;
+  font-size: 11px;
+  word-wrap: break-word;
+}
+
+.network-icon-item.selected {
+  background: var(--highlight);
+  color: var(--highlight-text);
+}
+
+.network-icon-label {
+  margin-top: 2px;
+}
+
+.network-icon-img img {
+  image-rendering: pixelated;
+}
+
+/* Network Neighborhood — Printer Status */
+.network-printer-status {
+  color: var(--disabled-text);
+}

@@ -110,7 +110,8 @@ var AppRegistry = {
     'spreadsheet':   { title: 'Microsoft Excel',             icon: iconImg('file_xls', 16),       width: 650, height: 450 },
     'acrobat':       { title: 'Adobe Acrobat Reader',        icon: iconImg('file_pdf', 16),       width: 680, height: 520 },
     'printqueue':    { title: 'HP LaserJet 4 - \\\\CALCOM-PS01', icon: iconImg('printer', 16),   width: 550, height: 250 },
-    'winamp':        { title: 'Winamp',                        icon: iconImg('winamp', 16),     width: 275, height: 'auto' }
+    'winamp':        { title: 'Winamp',                        icon: iconImg('winamp', 16),     width: 275, height: 'auto' },
+    'network':       { title: 'Network Neighborhood',          icon: iconImg('network', 16),    width: 640, height: 480 }
   },
 
   launch: function(appId, args) {
@@ -164,6 +165,8 @@ var AppRegistry = {
     } else if (appId === 'winamp') {
       var winampResult = buildWinampUI(args);
       content = winampResult.element;
+    } else if (appId === 'network') {
+      content = buildNetworkUI(args);
     }
 
     if (app || content) {
@@ -1058,6 +1061,471 @@ function buildExplorerUI(args) {
     } else {
       navigateTo(rootNode, '');
     }
+  });
+
+  return container;
+}
+
+
+// ============================================================
+//  Network Neighborhood — Explorer shell for network browsing
+// ============================================================
+
+var _networkData = null;
+
+function loadNetworkData(callback) {
+  if (_networkData) { callback(_networkData); return; }
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'content/network.json', true);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      _networkData = JSON.parse(xhr.responseText);
+      callback(_networkData);
+    }
+  };
+  xhr.send();
+}
+
+function findMachine(data, name) {
+  for (var i = 0; i < data.machines.length; i++) {
+    if (data.machines[i].name === name) return data.machines[i];
+  }
+  return null;
+}
+
+function showAccessDenied(path) {
+  var overlay = document.createElement('div');
+  overlay.className = 'dialog-overlay';
+  overlay.innerHTML =
+    '<div class="nt4-dialog" style="width: 340px;">' +
+      '<div class="dialog-titlebar">' + path + '</div>' +
+      '<div class="dialog-body" style="display: flex; align-items: center; gap: 12px;">' +
+        '<img src="assets/icons/32/exclamation.png" width="32" height="32" style="image-rendering: pixelated;">' +
+        '<span>' + path + ' is not accessible.<br><br>Access is denied.</span>' +
+      '</div>' +
+      '<div class="dialog-buttons">' +
+        '<button class="nt4-btn" style="min-width: 75px;">OK</button>' +
+      '</div>' +
+    '</div>';
+  overlay.querySelector('.nt4-btn').onclick = function() { overlay.remove(); };
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+}
+
+function buildNetworkUI(args) {
+  var container = document.createElement('div');
+  container.className = 'explorer-app';
+
+  // Menu bar
+  var menubar = document.createElement('div');
+  menubar.className = 'app-menubar';
+  ['File', 'Edit', 'View', 'Tools', 'Help'].forEach(function(label) {
+    var item = document.createElement('span');
+    item.className = 'menu-item';
+    item.textContent = label;
+    menubar.appendChild(item);
+  });
+  container.appendChild(menubar);
+
+  // Toolbar
+  var toolbar = document.createElement('div');
+  toolbar.className = 'app-toolbar raised';
+  var btnBack = document.createElement('button');
+  btnBack.className = 'toolbar-btn-text raised';
+  btnBack.textContent = 'Back';
+  btnBack.disabled = true;
+  toolbar.appendChild(btnBack);
+  var btnUp = document.createElement('button');
+  btnUp.className = 'toolbar-btn-text raised';
+  btnUp.textContent = 'Up';
+  btnUp.disabled = true;
+  toolbar.appendChild(btnUp);
+  container.appendChild(toolbar);
+
+  // Address bar
+  var addressBar = document.createElement('div');
+  addressBar.className = 'explorer-address';
+  var addrLabel = document.createElement('span');
+  addrLabel.className = 'address-label';
+  addrLabel.textContent = 'Address:';
+  addressBar.appendChild(addrLabel);
+  var addrPath = document.createElement('span');
+  addrPath.className = 'address-path';
+  addrPath.textContent = 'Network Neighborhood';
+  addressBar.appendChild(addrPath);
+  container.appendChild(addressBar);
+
+  // Body — NO tree pane, just the file/content area
+  var body = document.createElement('div');
+  body.className = 'explorer-body';
+  var filePane = document.createElement('div');
+  filePane.className = 'explorer-files sunken';
+  filePane.style.flex = '1';
+  body.appendChild(filePane);
+  container.appendChild(body);
+
+  // Status bar
+  var statusBar = document.createElement('div');
+  statusBar.className = 'explorer-statusbar well';
+  statusBar.textContent = 'Loading...';
+  container.appendChild(statusBar);
+
+  // Navigation state
+  var navState = {
+    level: 'root',
+    domain: null,
+    machine: null,
+    path: [],
+    history: []
+  };
+
+  // Type name map
+  var typeNames = {
+    'doc': 'Word Document', 'txt': 'Text Document', 'xls': 'Excel Spreadsheet',
+    'pdf': 'Adobe Acrobat Document', 'bmp': 'Bitmap Image', 'jpg': 'JPEG Image',
+    'ppt': 'PowerPoint Presentation', 'pst': 'Outlook Data File',
+    'mp3': 'MP3 Audio', 'ra': 'RealAudio File', 'm3u': 'Playlist File'
+  };
+
+  function buildUNCPath(state) {
+    if (state.level === 'root') return 'Network Neighborhood';
+    if (state.level === 'entire_network') return 'Entire Network';
+    if (state.level === 'domain') return state.domain;
+    if (state.level === 'machine') return '\\\\' + state.machine;
+    return '\\\\' + state.machine + '\\' + state.path.join('\\');
+  }
+
+  // --- ICON GRID RENDERER (for root, entire_network, domain levels) ---
+  function renderIconGrid(items, gridContainer) {
+    gridContainer.innerHTML = '';
+    gridContainer.className = 'explorer-files sunken';
+    var grid = document.createElement('div');
+    grid.className = 'network-icon-grid';
+
+    items.forEach(function(item) {
+      var iconDiv = document.createElement('div');
+      iconDiv.className = 'network-icon-item';
+      var iconSize = item.iconSize || 32;
+      var iconName = item.icon || 'mycomputer';
+      iconDiv.innerHTML =
+        '<div class="network-icon-img">' + iconImg(iconName, iconSize) + '</div>' +
+        '<div class="network-icon-label">' + item.name + '</div>';
+
+      iconDiv.addEventListener('click', function(e) {
+        e.stopPropagation();
+        grid.querySelectorAll('.network-icon-item.selected').forEach(function(el) {
+          el.classList.remove('selected');
+        });
+        iconDiv.classList.add('selected');
+      });
+
+      if (item.onDblClick) {
+        iconDiv.addEventListener('dblclick', function(e) {
+          e.stopPropagation();
+          item.onDblClick();
+        });
+      }
+
+      grid.appendChild(iconDiv);
+    });
+
+    grid.addEventListener('click', function() {
+      grid.querySelectorAll('.network-icon-item.selected').forEach(function(el) {
+        el.classList.remove('selected');
+      });
+    });
+
+    gridContainer.innerHTML = '';
+    gridContainer.appendChild(grid);
+  }
+
+  // --- LIST VIEW RENDERER (for machine, folder levels) ---
+  function renderListView(children, listContainer) {
+    listContainer.innerHTML = '';
+    listContainer.className = 'explorer-files sunken';
+
+    var header = document.createElement('div');
+    header.className = 'file-list-header';
+    var isPrinterList = children.length > 0 && children[0].type === 'printer';
+
+    if (isPrinterList) {
+      var nameH = document.createElement('span');
+      nameH.className = 'file-list-col';
+      nameH.style.flex = '1';
+      nameH.textContent = 'Name';
+      header.appendChild(nameH);
+      var statusH = document.createElement('span');
+      statusH.className = 'file-list-col';
+      statusH.style.flex = '1';
+      statusH.textContent = 'Status';
+      header.appendChild(statusH);
+    } else {
+      ['Name', 'Size', 'Type', 'Modified'].forEach(function(col, i) {
+        var h = document.createElement('span');
+        h.className = 'file-list-col';
+        if (i === 0) h.style.flex = '1';
+        else if (i === 1) h.style.width = '80px';
+        else h.style.width = '140px';
+        h.textContent = col;
+        header.appendChild(h);
+      });
+    }
+    listContainer.appendChild(header);
+
+    var sorted = children.slice().sort(function(a, b) {
+      if (a.type === 'folder' && b.type !== 'folder') return -1;
+      if (a.type !== 'folder' && b.type === 'folder') return 1;
+      return a.name.localeCompare(b.name);
+    });
+
+    sorted.forEach(function(child) {
+      var row = document.createElement('div');
+      row.className = 'file-list-item';
+
+      if (isPrinterList) {
+        var nameCol = document.createElement('span');
+        nameCol.className = 'file-list-col';
+        nameCol.style.flex = '1';
+        nameCol.style.display = 'flex';
+        nameCol.style.alignItems = 'center';
+        nameCol.style.gap = '4px';
+        nameCol.innerHTML = iconImg('printer', 16) + ' ' + child.name;
+        row.appendChild(nameCol);
+
+        var statusCol = document.createElement('span');
+        statusCol.className = 'file-list-col network-printer-status';
+        statusCol.style.flex = '1';
+        statusCol.textContent = child.status || '';
+        row.appendChild(statusCol);
+      } else {
+        var nameCol = document.createElement('span');
+        nameCol.className = 'file-list-col';
+        nameCol.style.flex = '1';
+        nameCol.style.display = 'flex';
+        nameCol.style.alignItems = 'center';
+        nameCol.style.gap = '4px';
+        var iconName = child.icon || (child.type === 'folder' ? 'folder_closed' : 'file_doc');
+        nameCol.innerHTML = iconImg(iconName, 16) + ' ' + child.name;
+        row.appendChild(nameCol);
+
+        var sizeCol = document.createElement('span');
+        sizeCol.className = 'file-list-col';
+        sizeCol.style.width = '80px';
+        sizeCol.textContent = child.size || '';
+        row.appendChild(sizeCol);
+
+        var typeCol = document.createElement('span');
+        typeCol.className = 'file-list-col';
+        typeCol.style.width = '140px';
+        if (child.type === 'folder') {
+          typeCol.textContent = 'File Folder';
+        } else if (child.type === 'printer') {
+          typeCol.textContent = 'Printer';
+        } else {
+          typeCol.textContent = typeNames[child.file_type] || 'File';
+        }
+        row.appendChild(typeCol);
+
+        var modCol = document.createElement('span');
+        modCol.className = 'file-list-col';
+        modCol.style.width = '140px';
+        modCol.textContent = child.modified || '';
+        row.appendChild(modCol);
+      }
+
+      row.addEventListener('click', function(e) {
+        e.stopPropagation();
+        listContainer.querySelectorAll('.file-list-item.selected').forEach(function(el) {
+          el.classList.remove('selected');
+        });
+        row.classList.add('selected');
+      });
+
+      row.addEventListener('dblclick', function(e) {
+        e.stopPropagation();
+        if (child.access === 'denied') {
+          showAccessDenied(buildUNCPath(navState) + '\\' + child.name);
+          return;
+        }
+        if (child.type === 'folder' && child.children) {
+          navState.history.push({
+            level: navState.level,
+            domain: navState.domain,
+            machine: navState.machine,
+            path: navState.path.slice()
+          });
+          navState.path.push(child.name);
+          navState.level = 'folder';
+          render(data);
+        }
+      });
+
+      listContainer.appendChild(row);
+    });
+  }
+
+  // --- MAIN NAVIGATION FUNCTION ---
+  var data = null;
+
+  function render(netData) {
+    data = netData;
+    addrPath.textContent = buildUNCPath(navState);
+
+    btnUp.disabled = (navState.level === 'root');
+    btnBack.disabled = (navState.history.length === 0);
+
+    if (navState.level === 'root') {
+      var domain = netData.domains[netData.default_domain];
+      var items = [
+        { name: 'Entire Network', icon: 'network', onDblClick: function() {
+          navState.history.push({ level: 'root', domain: null, machine: null, path: [] });
+          navState.level = 'entire_network';
+          render(netData);
+        }}
+      ];
+      domain.machines.forEach(function(machineName) {
+        var m = findMachine(netData, machineName);
+        if (m) {
+          items.push({
+            name: m.name,
+            icon: m.icon || (m.type === 'server' ? 'server' : 'mycomputer'),
+            onDblClick: function() {
+              navState.history.push({ level: 'root', domain: netData.default_domain, machine: null, path: [] });
+              navState.machine = m.name;
+              navState.level = 'machine';
+              render(netData);
+            }
+          });
+        }
+      });
+      renderIconGrid(items, filePane);
+      statusBar.textContent = items.length + ' object(s)';
+
+    } else if (navState.level === 'entire_network') {
+      var items = netData.entire_network.map(function(entry) {
+        return {
+          name: entry.name,
+          icon: entry.icon || 'network',
+          onDblClick: function() {
+            if (netData.domains[entry.name]) {
+              navState.history.push({ level: 'entire_network', domain: null, machine: null, path: [] });
+              navState.level = 'domain';
+              navState.domain = entry.name;
+              render(netData);
+            }
+          }
+        };
+      });
+      renderIconGrid(items, filePane);
+      statusBar.textContent = items.length + ' object(s)';
+
+    } else if (navState.level === 'domain') {
+      var domainData = netData.domains[navState.domain];
+      var items = domainData.machines.map(function(machineName) {
+        var m = findMachine(netData, machineName);
+        return {
+          name: m ? m.name : machineName,
+          icon: m ? (m.icon || 'mycomputer') : 'mycomputer',
+          onDblClick: function() {
+            navState.history.push({ level: 'domain', domain: navState.domain, machine: null, path: [] });
+            navState.machine = machineName;
+            navState.level = 'machine';
+            render(netData);
+          }
+        };
+      });
+      renderIconGrid(items, filePane);
+      statusBar.textContent = items.length + ' object(s)';
+
+    } else if (navState.level === 'machine') {
+      var m = findMachine(netData, navState.machine);
+      var shares = m ? m.shares : [];
+      renderListView(shares, filePane);
+      statusBar.textContent = shares.length + ' object(s)';
+
+    } else if (navState.level === 'folder') {
+      var m = findMachine(netData, navState.machine);
+      var node = null;
+      if (m && m.shares) {
+        var current = m.shares;
+        for (var i = 0; i < navState.path.length; i++) {
+          var found = null;
+          for (var j = 0; j < current.length; j++) {
+            if (current[j].name === navState.path[i]) {
+              found = current[j];
+              break;
+            }
+          }
+          if (found && i < navState.path.length - 1) {
+            current = found.children || [];
+          } else {
+            node = found;
+          }
+        }
+      }
+      var children = (node && node.children) ? node.children : [];
+      renderListView(children, filePane);
+      statusBar.textContent = children.length + ' object(s)';
+    }
+  }
+
+  // Up button handler
+  btnUp.onclick = function() {
+    if (navState.level === 'folder' && navState.path.length > 1) {
+      navState.history.push({
+        level: navState.level, domain: navState.domain,
+        machine: navState.machine, path: navState.path.slice()
+      });
+      navState.path.pop();
+      render(data);
+    } else if (navState.level === 'folder' && navState.path.length === 1) {
+      navState.history.push({
+        level: navState.level, domain: navState.domain,
+        machine: navState.machine, path: navState.path.slice()
+      });
+      navState.path = [];
+      navState.level = 'machine';
+      render(data);
+    } else if (navState.level === 'machine') {
+      navState.history.push({
+        level: navState.level, domain: navState.domain,
+        machine: navState.machine, path: []
+      });
+      navState.machine = null;
+      navState.level = navState.domain ? 'domain' : 'root';
+      render(data);
+    } else if (navState.level === 'domain') {
+      navState.history.push({
+        level: navState.level, domain: navState.domain,
+        machine: null, path: []
+      });
+      navState.domain = null;
+      navState.level = 'entire_network';
+      render(data);
+    } else if (navState.level === 'entire_network') {
+      navState.history.push({
+        level: navState.level, domain: null, machine: null, path: []
+      });
+      navState.level = 'root';
+      render(data);
+    }
+  };
+
+  // Back button handler
+  btnBack.onclick = function() {
+    if (navState.history.length > 0) {
+      var prev = navState.history.pop();
+      navState.level = prev.level;
+      navState.domain = prev.domain;
+      navState.machine = prev.machine;
+      navState.path = prev.path;
+      render(data);
+    }
+  };
+
+  // Load data and render
+  loadNetworkData(function(netData) {
+    render(netData);
   });
 
   return container;
