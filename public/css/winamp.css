@@ -1383,30 +1383,19 @@
   width: 275px;
 }
 
-/* Ticker animation — starts off-screen right (100%), scrolls left past the
-   left edge (-100%). This matches authentic Winamp ticker behavior where text
-   enters from the right. RESEARCH.md shows a 0%->-100% variant, but that
-   starts text already visible — the 100%->-100% version is intentionally
-   chosen for the scroll-in-from-right effect. */
-@keyframes ticker-scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-.ticker-text {
-  white-space: nowrap;
-  animation: ticker-scroll 8s linear 2s infinite;
-  color: #00FF00;
-  font-size: 6px;
-  line-height: 6px;
+/* Ticker is now canvas-based (pixel font renderer in winamp.js) */
+.webamp #marquee canvas {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
 }
 
 /* Playlist track styles */
 .playlist-tracks .track-cell {
-  font-size: 7px;
-  height: 11px;
-  line-height: 11px;
-  letter-spacing: 0.3px;
+  font-size: 9px;
+  height: 13px;
+  line-height: 13px;
+  letter-spacing: 0.5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
