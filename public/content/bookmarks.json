@@ -18,10 +18,10 @@
     { "name": "Yahoo!", "url": "yahoo-portal", "icon": null, "children": null },
     { "name": "Ask Jeeves", "url": "ask-jeeves", "icon": null, "children": null },
     {
-      "name": "Wikipedia",
-      "url": "ext:wikipedia",
-      "displayUrl": "http://www.wikipedia.org/",
-      "src": "https://www.wikipedia.org/",
+      "name": "I Spy Riddles",
+      "url": "ext:ispyriddles",
+      "displayUrl": "http://ispyriddles.neocities.org/",
+      "src": "https://ispyriddles.neocities.org/",
       "mode": "iframe",
       "icon": null,
       "children": null
