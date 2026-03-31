@@ -155,9 +155,9 @@ async function postScreen() {
   var remainingLines = [
     '',
     'Detecting Primary Master   ... WDC AC28400R',
-    'Detecting Primary Slave    ... ATAPI CD-ROM',
+    'Detecting Primary Helper    ... ATAPI CD-ROM',
     'Detecting Secondary Master ... None',
-    'Detecting Secondary Slave  ... None',
+    'Detecting Secondary Helper  ... None',
     '',
     'Press DEL to enter SETUP',
     '12/23/1999-i440BX-W977-2A69KA0CC-00'
