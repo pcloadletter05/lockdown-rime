@@ -1192,7 +1192,15 @@ function buildNetworkUI(args) {
     if (state.level === 'entire_network') return 'Entire Network';
     if (state.level === 'domain') return state.domain;
     if (state.level === 'machine') return '\\\\' + state.machine;
+    // Folder level: \\MACHINE\share\subfolder (no trailing backslash)
     return '\\\\' + state.machine + '\\' + state.path.join('\\');
+  }
+
+  // Address bar display adds trailing backslash at folder level
+  function buildAddressPath(state) {
+    var p = buildUNCPath(state);
+    if (state.level === 'folder') p += '\\';
+    return p;
   }
 
   // --- ICON GRID RENDERER (for root, entire_network, domain levels) ---
@@ -1369,7 +1377,7 @@ function buildNetworkUI(args) {
 
   function render(netData) {
     data = netData;
-    addrPath.textContent = buildUNCPath(navState);
+    addrPath.textContent = buildAddressPath(navState);
 
     btnUp.disabled = (navState.level === 'root');
     btnBack.disabled = (navState.history.length === 0);
