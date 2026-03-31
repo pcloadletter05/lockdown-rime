@@ -174,10 +174,15 @@ function winampPlay() {
   WinampPlayer.audio.play();
 
   WinampState.playState = 'play';
+  WinampState.playingTrack = WinampState.selectedTrack;
   var mw = WinampPlayer.webampEl.querySelector('#main-window');
   if (mw) mw.className = 'window play';
 
   updateNT4Title(track.artist + ' - ' + track.title + ' - Winamp');
+
+  // Re-render playlist to show playing indicator
+  var plWin = WinampPlayer.webampEl.querySelector('#playlist-window');
+  if (plWin) renderPlaylistTracks(plWin, WinampState.tracks, WinampState.selectedTrack);
 
   // Start visualizer if canvas exists
   var canvas = WinampPlayer.webampEl.querySelector('#visualizer canvas');
