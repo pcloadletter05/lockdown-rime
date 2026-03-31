@@ -1,18 +1,30 @@
 {
   "meta": {
-    "version": 1,
+    "version": 2,
     "description": "Browser bookmarks/favorites for IE5 client",
     "schema": {
       "name": "string - bookmark display name",
-      "url": "string - internal page key",
+      "url": "string - page key (internal key or ext:key for external)",
       "icon": "string|null - favicon identifier",
-      "children": "array|null - subfolder contents"
+      "children": "array|null - subfolder contents",
+      "mode": "string|null - 'iframe' or 'linkout' (external bookmarks only)",
+      "src": "string|null - real URL for iframe/linkout (external bookmarks only)",
+      "displayUrl": "string|null - period-accurate URL for address bar (external bookmarks only)"
     }
   },
   "items": [
     { "name": "CalCom Intranet", "url": "calcom-intranet", "icon": null, "children": null },
     { "name": "CalCom Research Services", "url": "calcom-corporate", "icon": null, "children": null },
     { "name": "Yahoo!", "url": "yahoo-portal", "icon": null, "children": null },
-    { "name": "Ask Jeeves", "url": "ask-jeeves", "icon": null, "children": null }
+    { "name": "Ask Jeeves", "url": "ask-jeeves", "icon": null, "children": null },
+    {
+      "name": "Wikipedia",
+      "url": "ext:wikipedia",
+      "displayUrl": "http://www.wikipedia.org/",
+      "src": "https://www.wikipedia.org/",
+      "mode": "iframe",
+      "icon": null,
+      "children": null
+    }
   ]
 }

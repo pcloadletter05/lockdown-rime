@@ -331,11 +331,44 @@ var BROWSER_PAGES = {
       '<hr>' +
       '<p style="font-size: 11px;">Internet Explorer</p>' +
     '</div>'
+  },
+
+  'dns-error': {
+    title: 'Cannot find server',
+    url: '',
+    content: '<div style="padding: 20px; font-family: Arial, sans-serif;">' +
+      '<h2 style="font-weight: normal;">The page cannot be displayed</h2>' +
+      '<p style="font-size: 12px;">There is a problem with the page you are trying to reach and it cannot be displayed.</p>' +
+      '<hr size="1" color="#C0C0C0">' +
+      '<p style="font-size: 12px;"><b>Cannot find server or DNS Error</b></p>' +
+      '<p style="font-size: 11px;">Internet Explorer</p>' +
+    '</div>'
   }
 };
 
 // Bookmarks cache (shared across browser instances)
 var _bookmarksCache = null;
+
+var _externalPages = {};
+
+function buildExternalRegistry(items) {
+  items.forEach(function(item) {
+    if (item.mode && item.url) {
+      _externalPages[item.url] = item;
+    }
+    if (item.children) {
+      buildExternalRegistry(item.children);
+    }
+  });
+}
+
+function isExternalPage(key) {
+  return !!_externalPages[key];
+}
+
+function getExternalPage(key) {
+  return _externalPages[key];
+}
 
 function buildBrowserUI(args) {
   var container = document.createElement('div');
@@ -410,6 +443,12 @@ function buildBrowserUI(args) {
     }
     // Also try matching directly as a page key
     if (BROWSER_PAGES[lower]) return lower;
+    // Check external pages by displayUrl
+    var extKeys = Object.keys(_externalPages);
+    for (var j = 0; j < extKeys.length; j++) {
+      var ext = _externalPages[extKeys[j]];
+      if (ext.displayUrl && ext.displayUrl.toLowerCase() === lower) return extKeys[j];
+    }
     return null;
   }
 
@@ -506,7 +545,7 @@ function buildBrowserUI(args) {
       if (key) {
         navigateTo(key);
       } else {
-        navigateTo('404');
+        navigateTo('dns-error');
       }
     }
   });
@@ -520,7 +559,7 @@ function buildBrowserUI(args) {
     if (key) {
       navigateTo(key);
     } else {
-      navigateTo('404');
+      navigateTo('dns-error');
     }
   });
   addressBar.appendChild(goBtn);
@@ -631,6 +670,7 @@ function buildBrowserUI(args) {
 
   function loadBookmarks() {
     if (_bookmarksCache) {
+      buildExternalRegistry(_bookmarksCache.items);
       renderBookmarks(_bookmarksCache.items, favList, 0);
       return;
     }
@@ -638,6 +678,7 @@ function buildBrowserUI(args) {
       .then(function(res) { return res.json(); })
       .then(function(data) {
         _bookmarksCache = data;
+        buildExternalRegistry(data.items);
         renderBookmarks(data.items, favList, 0);
       })
       .catch(function(err) {
