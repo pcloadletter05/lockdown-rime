@@ -378,26 +378,115 @@ function buildBrowserUI(args) {
   var history = { stack: ['calcom-intranet'], position: 0 };
 
   // References to DOM elements (assigned after creation)
-  var backBtn, fwdBtn, addressInput, contentArea, favoritesPanel;
+  var backBtn, fwdBtn, addressInput, contentArea, favoritesPanel, statusBar;
+  var throbber, throbberTimer = null;
 
   // ---- Navigation functions ----
 
+  function startThrobber() {
+    if (throbber) throbber.classList.add('loading');
+    if (statusBar) statusBar.textContent = 'Opening page...';
+  }
+
+  function stopThrobber() {
+    if (throbber) throbber.classList.remove('loading');
+    if (throbberTimer) {
+      clearTimeout(throbberTimer);
+      throbberTimer = null;
+    }
+    if (statusBar) statusBar.textContent = 'Done';
+  }
+
+  function showLinkOutDialog(ext) {
+    var overlay = document.createElement('div');
+    overlay.className = 'dialog-overlay';
+    overlay.innerHTML =
+      '<div class="nt4-dialog" style="width: 380px;">' +
+        '<div class="dialog-titlebar">Microsoft Internet Explorer</div>' +
+        '<div class="dialog-body" style="display: flex; align-items: center; gap: 12px;">' +
+          '<img src="assets/icons/32/iexplore.png" width="32" height="32" style="image-rendering: pixelated;">' +
+          '<span>This link will open in your web browser.<br><br>Continue?</span>' +
+        '</div>' +
+        '<div class="dialog-buttons">' +
+          '<button class="nt4-btn ok-btn" style="min-width: 75px;">OK</button>' +
+          '<button class="nt4-btn cancel-btn" style="min-width: 75px;">Cancel</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(overlay);
+    overlay.querySelector('.ok-btn').addEventListener('click', function() {
+      window.open(ext.src, '_blank');
+      overlay.remove();
+    });
+    overlay.querySelector('.cancel-btn').addEventListener('click', function() {
+      overlay.remove();
+    });
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) overlay.remove();
+    });
+  }
+
   function renderPage(pageKey) {
-    var page = BROWSER_PAGES[pageKey] || BROWSER_PAGES['404'];
-    contentArea.innerHTML = page.content;
-    addressInput.value = page.url;
+    // Clear any existing iframe
+    var existingIframe = contentArea.querySelector('iframe');
+    if (existingIframe) existingIframe.remove();
+    stopThrobber();
+
+    if (isExternalPage(pageKey)) {
+      var ext = getExternalPage(pageKey);
+      if (ext.mode === 'iframe') {
+        contentArea.innerHTML = '';
+        var iframe = document.createElement('iframe');
+        iframe.src = ext.src;
+        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups');
+        contentArea.appendChild(iframe);
+        addressInput.value = ext.displayUrl;
+        startThrobber();
+        iframe.addEventListener('load', function() { stopThrobber(); });
+        throbberTimer = setTimeout(function() {
+          if (throbber && throbber.classList.contains('loading')) {
+            stopThrobber();
+            contentArea.innerHTML = '';
+            var errPage = BROWSER_PAGES['dns-error'];
+            contentArea.innerHTML = errPage.content;
+          }
+        }, 15000);
+      } else {
+        // linkout -- should not reach here via renderPage (handled in navigateTo)
+        // but as a safety fallback, show the dialog
+        showLinkOutDialog(ext);
+        return;
+      }
+    } else {
+      var page = BROWSER_PAGES[pageKey] || BROWSER_PAGES['dns-error'];
+      contentArea.innerHTML = page.content;
+      addressInput.value = page.url;
+    }
 
     // Update window title
     var windowEl = container.closest('.nt4-window');
     if (windowEl) {
       var titleEl = windowEl.querySelector('.titlebar-title');
       if (titleEl) {
-        titleEl.textContent = page.title + ' - Microsoft Internet Explorer';
+        var title;
+        if (isExternalPage(pageKey)) {
+          title = getExternalPage(pageKey).name;
+        } else {
+          title = (BROWSER_PAGES[pageKey] || BROWSER_PAGES['dns-error']).title;
+        }
+        titleEl.textContent = title + ' - Microsoft Internet Explorer';
       }
     }
   }
 
   function navigateTo(pageKey) {
+    // Check for link-out before adding to history
+    if (isExternalPage(pageKey)) {
+      var ext = getExternalPage(pageKey);
+      if (ext.mode === 'linkout') {
+        showLinkOutDialog(ext);
+        return; // Do NOT add to history
+      }
+    }
     // Truncate forward history
     history.stack = history.stack.slice(0, history.position + 1);
     history.stack.push(pageKey);
@@ -492,11 +581,22 @@ function buildBrowserUI(args) {
   var stopBtn = document.createElement('button');
   stopBtn.className = 'toolbar-btn raised';
   stopBtn.textContent = 'X';
+  stopBtn.addEventListener('click', function() {
+    var iframe = contentArea.querySelector('iframe');
+    if (iframe) {
+      iframe.src = 'about:blank';
+    }
+    stopThrobber();
+  });
   toolbar.appendChild(stopBtn);
 
   var refreshBtn = document.createElement('button');
   refreshBtn.className = 'toolbar-btn raised';
   refreshBtn.textContent = 'R';
+  refreshBtn.addEventListener('click', function() {
+    var currentKey = history.stack[history.position];
+    renderPage(currentKey);
+  });
   toolbar.appendChild(refreshBtn);
 
   var homeBtn = document.createElement('button');
@@ -522,6 +622,10 @@ function buildBrowserUI(args) {
     }
   });
   toolbar.appendChild(favToggleBtn);
+
+  throbber = document.createElement('div');
+  throbber.className = 'browser-throbber';
+  toolbar.appendChild(throbber);
 
   container.appendChild(toolbar);
 
@@ -621,7 +725,7 @@ function buildBrowserUI(args) {
 
   // ---- Status bar ----
 
-  var statusBar = document.createElement('div');
+  statusBar = document.createElement('div');
   statusBar.className = 'well';
   statusBar.textContent = 'Done';
   statusBar.style.padding = '2px 4px';
