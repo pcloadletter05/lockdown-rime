@@ -110,7 +110,7 @@ var AppRegistry = {
     'spreadsheet':   { title: 'Microsoft Excel',             icon: iconImg('file_xls', 16),       width: 650, height: 450 },
     'acrobat':       { title: 'Adobe Acrobat Reader',        icon: iconImg('file_pdf', 16),       width: 680, height: 520 },
     'printqueue':    { title: 'HP LaserJet 4 - \\\\CALCOM-PS01', icon: iconImg('printer', 16),   width: 550, height: 250 },
-    'winamp':        { title: 'Winamp',                        icon: iconImg('winamp', 16),     width: 550, height: 254 }
+    'winamp':        { title: 'Winamp',                        icon: iconImg('winamp', 16),     width: 275, height: 'auto' }
   },
 
   launch: function(appId, args) {
@@ -178,6 +178,7 @@ var AppRegistry = {
         winOpts.statusBar = false;
         winOpts.resizable = false;
         winOpts.maximizable = false;
+        winOpts.chromeless = true;
       }
       var winId = WindowManager.createWindow(winOpts);
       if (appId === 'winamp') {
@@ -204,8 +205,7 @@ var DESKTOP_ICONS = [
   { appId: 'mycomputer', label: 'My Computer',           icon: iconImg('mycomputer', 32) },
   { appId: 'network',    label: 'Network Neighborhood', icon: iconImg('network', 32) },
   { appId: 'iexplore',   label: 'Internet Explorer',    icon: iconImg('iexplore', 32) },
-  { appId: 'outlook',    label: 'Inbox',                  icon: iconImg('outlook', 32) },
-  { appId: 'winamp',     label: 'Winamp',                 icon: iconImg('winamp', 32) }
+  { appId: 'outlook',    label: 'Inbox',                  icon: iconImg('outlook', 32) }
 ];
 
 var DESKTOP_ICON_BOTTOM = { appId: 'recycle', label: 'Recycle Bin', icon: iconImg('recycle_bin', 32) };

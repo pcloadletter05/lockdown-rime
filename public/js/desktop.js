@@ -245,71 +245,74 @@ const WindowManager = {
 
     // Build window DOM
     var windowEl = document.createElement('div');
-    windowEl.className = 'nt4-window';
+    windowEl.className = opts.chromeless ? 'nt4-window chromeless' : 'nt4-window';
     windowEl.id = id;
     windowEl.style.left = x + 'px';
     windowEl.style.top = y + 'px';
-    windowEl.style.width = width + 'px';
-    windowEl.style.height = height + 'px';
+    windowEl.style.width = typeof width === 'number' ? width + 'px' : width;
+    windowEl.style.height = typeof height === 'number' ? height + 'px' : height;
 
-    // Title bar
-    var titleBarEl = document.createElement('div');
-    titleBarEl.className = 'nt4-titlebar';
+    // Title bar (skipped for chromeless windows)
+    var titleBarEl = null;
+    if (!opts.chromeless) {
+      titleBarEl = document.createElement('div');
+      titleBarEl.className = 'nt4-titlebar';
 
-    if (icon) {
-      var iconEl = document.createElement('span');
-      iconEl.className = 'titlebar-icon';
-      iconEl.style.width = '16px';
-      iconEl.style.height = '16px';
-      iconEl.style.flexShrink = '0';
-      iconEl.style.display = 'inline-flex';
-      iconEl.style.alignItems = 'center';
-      iconEl.style.marginRight = '4px';
-      iconEl.innerHTML = icon;
-      titleBarEl.appendChild(iconEl);
-    }
+      if (icon) {
+        var iconEl = document.createElement('span');
+        iconEl.className = 'titlebar-icon';
+        iconEl.style.width = '16px';
+        iconEl.style.height = '16px';
+        iconEl.style.flexShrink = '0';
+        iconEl.style.display = 'inline-flex';
+        iconEl.style.alignItems = 'center';
+        iconEl.style.marginRight = '4px';
+        iconEl.innerHTML = icon;
+        titleBarEl.appendChild(iconEl);
+      }
 
-    var titleEl = document.createElement('span');
-    titleEl.className = 'titlebar-title';
-    titleEl.textContent = title;
-    titleEl.style.flex = '1';
-    titleEl.style.overflow = 'hidden';
-    titleEl.style.textOverflow = 'ellipsis';
-    titleEl.style.whiteSpace = 'nowrap';
-    titleBarEl.appendChild(titleEl);
+      var titleEl = document.createElement('span');
+      titleEl.className = 'titlebar-title';
+      titleEl.textContent = title;
+      titleEl.style.flex = '1';
+      titleEl.style.overflow = 'hidden';
+      titleEl.style.textOverflow = 'ellipsis';
+      titleEl.style.whiteSpace = 'nowrap';
+      titleBarEl.appendChild(titleEl);
 
-    var buttonsEl = document.createElement('div');
-    buttonsEl.className = 'nt4-titlebar-buttons';
+      var buttonsEl = document.createElement('div');
+      buttonsEl.className = 'nt4-titlebar-buttons';
 
-    var minBtn = document.createElement('button');
-    minBtn.className = 'nt4-titlebar-btn minimize';
-    minBtn.addEventListener('click', function() {
-      WindowManager.minimizeWindow(id);
-    });
-
-    var maxBtn = document.createElement('button');
-    maxBtn.className = 'nt4-titlebar-btn maximize';
-    if (opts.maximizable !== false) {
-      maxBtn.addEventListener('click', function() {
-        WindowManager.maximizeWindow(id);
+      var minBtn = document.createElement('button');
+      minBtn.className = 'nt4-titlebar-btn minimize';
+      minBtn.addEventListener('click', function() {
+        WindowManager.minimizeWindow(id);
       });
-    } else {
-      maxBtn.disabled = true;
-      maxBtn.classList.add('disabled');
+
+      var maxBtn = document.createElement('button');
+      maxBtn.className = 'nt4-titlebar-btn maximize';
+      if (opts.maximizable !== false) {
+        maxBtn.addEventListener('click', function() {
+          WindowManager.maximizeWindow(id);
+        });
+      } else {
+        maxBtn.disabled = true;
+        maxBtn.classList.add('disabled');
+      }
+
+      var closeBtn = document.createElement('button');
+      closeBtn.className = 'nt4-titlebar-btn close';
+      closeBtn.addEventListener('click', function() {
+        WindowManager.closeWindow(id);
+      });
+
+      buttonsEl.appendChild(minBtn);
+      buttonsEl.appendChild(maxBtn);
+      buttonsEl.appendChild(closeBtn);
+      titleBarEl.appendChild(buttonsEl);
+
+      windowEl.appendChild(titleBarEl);
     }
-
-    var closeBtn = document.createElement('button');
-    closeBtn.className = 'nt4-titlebar-btn close';
-    closeBtn.addEventListener('click', function() {
-      WindowManager.closeWindow(id);
-    });
-
-    buttonsEl.appendChild(minBtn);
-    buttonsEl.appendChild(maxBtn);
-    buttonsEl.appendChild(closeBtn);
-    titleBarEl.appendChild(buttonsEl);
-
-    windowEl.appendChild(titleBarEl);
 
     // Content area
     var contentEl = document.createElement('div');
@@ -332,7 +335,10 @@ const WindowManager = {
     }
 
     // Attach drag and resize handlers
-    initDrag(titleBarEl, windowEl);
+    // Chromeless windows handle their own drag via app-specific elements
+    if (titleBarEl) {
+      initDrag(titleBarEl, windowEl);
+    }
     if (opts.resizable !== false) {
       initResize(windowEl);
     }

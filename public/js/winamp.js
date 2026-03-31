@@ -269,11 +269,24 @@ function startVisualizer(canvas) {
   var analyser = WinampPlayer.analyser;
   var bufLen = analyser.frequencyBinCount;
   var dataArray = new Uint8Array(bufLen);
+  var isTainted = false;
+  var taintChecked = false;
+  var phase = 0;
 
   function draw() {
     if (WinampState.playState !== 'play') return;
     WinampPlayer.animFrameId = requestAnimationFrame(draw);
     analyser.getByteTimeDomainData(dataArray);
+
+    // Detect CORS-tainted silence after a few frames of playback
+    if (!taintChecked && WinampPlayer.audio.currentTime > 0.5) {
+      var allSame = true;
+      for (var j = 1; j < bufLen; j++) {
+        if (Math.abs(dataArray[j] - dataArray[0]) > 1) { allSame = false; break; }
+      }
+      isTainted = allSame;
+      taintChecked = true;
+    }
 
     ctx.fillStyle = '#000';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -281,12 +294,26 @@ function startVisualizer(canvas) {
     ctx.lineWidth = 1;
     ctx.beginPath();
 
-    var sliceW = canvas.width / bufLen;
-    for (var i = 0; i < bufLen; i++) {
-      var v = dataArray[i] / 128.0;
-      var y = (v * canvas.height) / 2;
-      if (i === 0) ctx.moveTo(0, y);
-      else ctx.lineTo(i * sliceW, y);
+    if (isTainted) {
+      // Simulated oscilloscope when real data is unavailable
+      phase += 0.03;
+      for (var i = 0; i < canvas.width; i++) {
+        var t = i / canvas.width;
+        var wave = Math.sin(t * 8 + phase) * 0.25
+                 + Math.sin(t * 3.7 + phase * 0.4) * 0.12
+                 + Math.sin(t * 13 + phase * 0.6) * 0.06;
+        var y = (0.5 + wave * 0.5) * canvas.height;
+        if (i === 0) ctx.moveTo(0, y);
+        else ctx.lineTo(i, y);
+      }
+    } else {
+      var sliceW = canvas.width / bufLen;
+      for (var i = 0; i < bufLen; i++) {
+        var v = dataArray[i] / 128.0;
+        var y = (v * canvas.height) / 2;
+        if (i === 0) ctx.moveTo(0, y);
+        else ctx.lineTo(i * sliceW, y);
+      }
     }
     ctx.stroke();
   }
@@ -482,9 +509,6 @@ function buildWinampUI(args) {
   playlistWindow.appendChild(wDiv('playlist-close-button'));
   playlistWindow.appendChild(wDiv('playlist-shade-button'));
 
-  // Playlist status
-  var plStatus = wDiv(null, 'playlist-status');
-  playlistWindow.appendChild(plStatus);
 
   webampEl.appendChild(playlistWindow);
 
@@ -583,16 +607,7 @@ function buildWinampUI(args) {
       playlistWindow.style.display = 'none';
     }
 
-    // Adjust NT4 window height
-    var nt4Window = webampEl.closest('.nt4-window');
-    if (nt4Window) {
-      nt4Window.style.transition = 'height 200ms ease-out';
-      if (WinampState.playlistOpen) {
-        nt4Window.style.height = '454px';
-      } else {
-        nt4Window.style.height = '254px';
-      }
-    }
+    // NT4 window height adjusts automatically via auto height
   }
 
   plButton.addEventListener('click', togglePlaylist);
@@ -702,6 +717,16 @@ function buildWinampUI(args) {
     }
   });
 
+  // Skin title bar drag — wire up after window creation via WinampPlayer.windowId
+  setTimeout(function() {
+    if (WinampPlayer.windowId) {
+      var nt4Win = document.getElementById(WinampPlayer.windowId);
+      if (nt4Win && typeof initDrag === 'function') {
+        initDrag(titleBar, nt4Win);
+      }
+    }
+  }, 0);
+
   // ===== Initialize displays =====
 
   // LCD time to 0:00
@@ -719,11 +744,6 @@ function buildWinampUI(args) {
       var track = data.tracks[WinampState.selectedTrack];
       setupTicker(webampEl, track.order + '. ' + track.artist + ' - ' + track.title);
       renderPlaylistTracks(playlistWindow, data.tracks, WinampState.selectedTrack);
-      // Calculate and display status text
-      var totalSecs = data.tracks.reduce(function(sum, t) { return sum + t.duration; }, 0);
-      var mins = Math.floor(totalSecs / 60);
-      var secs = totalSecs % 60;
-      plStatus.textContent = data.tracks.length + ' tracks ~ ' + mins + ':' + (secs < 10 ? '0' : '') + secs;
     })
     .catch(function() {
       setupTicker(webampEl, '*** Playlist error ***');

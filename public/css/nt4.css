@@ -140,6 +140,17 @@ body {
   flex-direction: column;
 }
 
+.nt4-window.chromeless {
+  background: transparent;
+  box-shadow: none;
+}
+
+.nt4-window.chromeless .window-content {
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+}
+
 .nt4-titlebar {
   background: var(--active-title);
   color: var(--active-title-text);

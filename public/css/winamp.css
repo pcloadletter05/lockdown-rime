@@ -1363,16 +1363,18 @@
    NT4 Integration Overrides
    ============================================ */
 
-/* Container scaling: native 275x116 displayed at 2x inside 550x232 content area */
+/* Container: native 275px wide, height grows with content */
 .webamp {
   position: relative;
   width: 275px;
-  height: 116px;
-  transform: scale(2);
-  transform-origin: top left;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-optimize-contrast;
+}
+
+/* Main window: relative positioning so playlist stacks below */
+.webamp #main-window {
+  position: relative;
 }
 
 /* Playlist container also needs scaling */
@@ -1430,9 +1432,3 @@
 }
 
 /* Playlist status bar text */
-.playlist-status-text {
-  color: #00FF00;
-  font-size: 7px;
-  line-height: 11px;
-  padding: 0 4px;
-}
