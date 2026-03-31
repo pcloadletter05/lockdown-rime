@@ -678,7 +678,6 @@ function buildBrowserUI(args) {
   // Favorites sidebar
   favoritesPanel = document.createElement('div');
   favoritesPanel.className = 'browser-favorites sunken';
-  favoritesPanel.style.display = 'none';
 
   var favHeader = document.createElement('div');
   favHeader.className = 'browser-favorites-header';
