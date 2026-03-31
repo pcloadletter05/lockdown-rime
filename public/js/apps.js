@@ -115,6 +115,18 @@ var AppRegistry = {
 
   launch: function(appId, args) {
     var app = this.apps[appId];
+
+    // Singleton enforcement for Winamp
+    if (appId === 'winamp' && WinampPlayer.windowId !== null && WindowManager.windows.has(WinampPlayer.windowId)) {
+      var winData = WindowManager.windows.get(WinampPlayer.windowId);
+      if (winData.isMinimized) {
+        WindowManager.restoreWindow(WinampPlayer.windowId);
+      } else {
+        WindowManager.focusWindow(WinampPlayer.windowId);
+      }
+      return;
+    }
+
     var content = null;
     var title = null;
     var width = null;
