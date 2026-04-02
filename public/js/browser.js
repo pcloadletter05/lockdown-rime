@@ -381,6 +381,75 @@ function buildBrowserUI(args) {
   var backBtn, fwdBtn, addressInput, contentArea, favoritesPanel, statusBar;
   var throbber, throbberTimer = null;
 
+  // ---- Popup Ad System ----
+  var POPUP_TRIGGER_PAGES = ['yahoo-portal'];
+  var POPUP_DELAY_MS = 3000;
+  var popupState = {
+    triggeredPages: {},    // Object used as set -- keys are page keys that already fired
+    pendingTimer: null,    // Active setTimeout ID for cleanup
+    adsRegistry: null      // Loaded from popup-ads.json
+  };
+
+  function checkPopupTrigger(pageKey) {
+    // Clear any pending timer from previous navigation
+    if (popupState.pendingTimer) {
+      clearTimeout(popupState.pendingTimer);
+      popupState.pendingTimer = null;
+    }
+    // Only trigger on whitelisted pages
+    if (POPUP_TRIGGER_PAGES.indexOf(pageKey) === -1) return;
+    // Only trigger once per session per page
+    if (popupState.triggeredPages[pageKey]) return;
+
+    popupState.triggeredPages[pageKey] = true;
+    popupState.pendingTimer = setTimeout(function() {
+      popupState.pendingTimer = null;
+      spawnPopupAd();
+    }, POPUP_DELAY_MS);
+  }
+
+  function spawnPopupAd() {
+    if (!popupState.adsRegistry || popupState.adsRegistry.length === 0) return;
+
+    // Random selection from available ads
+    var ad = popupState.adsRegistry[Math.floor(Math.random() * popupState.adsRegistry.length)];
+
+    // Save currently active window for pop-under restoration
+    var previousActiveId = WindowManager.activeWindowId;
+
+    // Fetch the ad HTML snippet
+    fetch('content/ads/' + ad.file)
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        // Random position within desktop bounds
+        var maxX = Math.max(0, window.innerWidth - ad.width - 20);
+        var maxY = Math.max(0, window.innerHeight - 28 - ad.height - 20);
+        var randX = Math.floor(Math.random() * maxX);
+        var randY = Math.floor(Math.random() * maxY);
+
+        WindowManager.createWindow({
+          title: ad.titleBar,
+          width: ad.width,
+          height: ad.height,
+          content: html,
+          icon: '<img src="assets/icons/16/iexplore.png" width="16" height="16">',
+          maximizable: false,
+          minimizable: false,
+          resizable: false,
+          statusBar: false,
+          position: { x: randX, y: randY }
+        });
+
+        // Pop-under: restore focus to the previously active window
+        if (ad.zOrder === 'pop-under' && previousActiveId) {
+          WindowManager.focusWindow(previousActiveId);
+        }
+      })
+      .catch(function(err) {
+        console.warn('Failed to load popup ad:', err);
+      });
+  }
+
   // ---- Navigation functions ----
 
   function startThrobber() {
@@ -493,6 +562,7 @@ function buildBrowserUI(args) {
     history.position = history.stack.length - 1;
     renderPage(pageKey);
     updateNavButtons();
+    checkPopupTrigger(pageKey);
   }
 
   function goBack() {
@@ -790,6 +860,16 @@ function buildBrowserUI(args) {
   }
 
   loadBookmarks();
+
+  // Load popup ads registry
+  fetch('content/popup-ads.json')
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      popupState.adsRegistry = data;
+    })
+    .catch(function(err) {
+      console.warn('Failed to load popup ads:', err);
+    });
 
   // ---- Render initial page ----
   // Use setTimeout so the DOM is attached first (needed for closest('.nt4-window'))
