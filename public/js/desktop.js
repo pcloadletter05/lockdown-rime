@@ -243,6 +243,12 @@ const WindowManager = {
     }
     this.cascadeOffset++;
 
+    // Custom position override (for popup windows)
+    if (opts.position) {
+      x = opts.position.x;
+      y = opts.position.y;
+    }
+
     // Build window DOM
     var windowEl = document.createElement('div');
     windowEl.className = opts.chromeless ? 'nt4-window chromeless' : 'nt4-window';
@@ -285,9 +291,13 @@ const WindowManager = {
 
       var minBtn = document.createElement('button');
       minBtn.className = 'nt4-titlebar-btn minimize';
-      minBtn.addEventListener('click', function() {
-        WindowManager.minimizeWindow(id);
-      });
+      if (opts.minimizable !== false) {
+        minBtn.addEventListener('click', function() {
+          WindowManager.minimizeWindow(id);
+        });
+      } else {
+        minBtn.style.display = 'none';
+      }
 
       var maxBtn = document.createElement('button');
       maxBtn.className = 'nt4-titlebar-btn maximize';
@@ -296,8 +306,12 @@ const WindowManager = {
           WindowManager.maximizeWindow(id);
         });
       } else {
-        maxBtn.disabled = true;
-        maxBtn.classList.add('disabled');
+        if (opts.minimizable === false) {
+          maxBtn.style.display = 'none';
+        } else {
+          maxBtn.disabled = true;
+          maxBtn.classList.add('disabled');
+        }
       }
 
       var closeBtn = document.createElement('button');
