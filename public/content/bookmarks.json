@@ -25,6 +25,15 @@
       "mode": "iframe",
       "icon": null,
       "children": null
+    },
+    {
+      "name": "Rave Wars",
+      "url": "ext:ravewars",
+      "displayUrl": "http://jazzmonroe.neocities.org/ravewars",
+      "src": "https://jazzmonroe.neocities.org/ravewars",
+      "mode": "iframe",
+      "icon": null,
+      "children": null
     }
   ]
 }
