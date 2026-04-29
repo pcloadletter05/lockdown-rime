@@ -527,7 +527,7 @@
                 "icon": "file_xls",
                 "file_type": "xls",
                 "size": "8 KB",
-                "modified": "1/9/2000 5:30 PM",
+                "modified": "1/9/2000 11:15 PM",
                 "content_key": "call-disposition-log-0109",
                 "content": {
                   "columns": [
@@ -611,6 +611,33 @@
                       "23 min",
                       "L. Milavic",
                       "H-0002 Bergmeier (title unconfirmed)"
+                    ],
+                    [
+                      "1/9/2000",
+                      "10:55 PM",
+                      "202-555-3553",
+                      "Hangup",
+                      "<1 min",
+                      "L. Milavic",
+                      "Retry of #1. Respondent: 'I'm watching a movie.' Hung up."
+                    ],
+                    [
+                      "1/9/2000",
+                      "11:02 PM",
+                      "202-555-1880",
+                      "Hangup",
+                      "<1 min",
+                      "L. Milavic",
+                      "Off-shift retry of 1:55 PM VM. Picked up, said 'I'm at work!', hung up."
+                    ],
+                    [
+                      "1/9/2000",
+                      "11:03 PM",
+                      "202-555-1880",
+                      "Complete (text)",
+                      "14 min",
+                      "L. Milavic",
+                      "H-0003; SMS survey; respondent declined name"
                     ]
                   ]
                 }
