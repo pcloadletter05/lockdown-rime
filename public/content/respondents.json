@@ -309,6 +309,36 @@
         "D3": "19103"
       },
       "lisa_notes": "Polite and patient. Last call of my shift. Title unconfirmed: he answered to Senator without correcting me but said 'Rep. Bergmeier' once. Coded as Bergmeier (title unconfirmed). He blames himself for the device being hard, twice. Asked about confidentiality before answering anything. I told him 'this is an unrecorded line' and now I am not sure if that was right. Need to ask Margaret tomorrow. Why does a Philadelphia resident have a Horizon with a 202 number? Off-island distribution channel, presumably. Margaret authorized the number but never said why."
+    },
+    {
+      "respondent_id": "H-0003",
+      "interview_date": "2000-01-09",
+      "interview_time": "11:03 PM",
+      "phone": "202-555-1880",
+      "disposition": "COMPLETE (TEXT)",
+      "channel": "SMS",
+      "duration": 14,
+      "demographics": {
+        "age_range": "18-24",
+        "gender": "F",
+        "household_size": 1,
+        "zip": "20044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "1",
+        "Q1": "5",
+        "Q2": "5",
+        "Q3": "5",
+        "Q4": "Spam. (Respondent declined to elaborate.)",
+        "Q5": "10",
+        "Q6": "Reports unsolicited texts on her Horizon. Asked whether we could send a replacement device.",
+        "D1": "1",
+        "D2": "1",
+        "D3": "20044"
+      },
+      "lisa_notes": "Off-shift retry of the 1:55 PM voicemail. Picked up at 11:02 PM with what sounded like a Scandinavian 'Hei-hei?' and as soon as I started the intro she said 'I'm at work!' and hung up. Coded that one as Hangup. I texted her at 11:03 PM offering text instead and she said yes immediately. Ran the whole survey by SMS, ~14 min. I entered her answers into the standard record as if it had been a voice call, which is what I always do. The literal text shorthand stays in my head and in this notes box; the responses table is the cleaned version. Roosevelt resident. Refused to give a name for follow-up. Reported 'spam' on Q4 and asked for a new phone on Q6. The irony of a respondent telling a CalCom interviewer over text that someone keeps texting her on her CalCom Horizon was not lost on me. Connection on my console drifted from 92 to 87 percent over the SMS session, same downward shape as Madison's voice call this afternoon. Two for two on Roosevelt. After I sent the closing thank-you I stayed in the thread and asked her about her cat (she had asked if cats counted toward household size) and she called it weird, which it was. I panicked and sent a fake 'this number is disconnected' message to back out. Adding to the Margaret list along with the Bergmeier 'unrecorded line' thing. Open question for Margaret: is text-mode an allowed channel? Does it count toward the daily complete quota? Is the SMS thread saved server-side? The CATI flipbook does not cover any of this."
     }
   ]
 }
