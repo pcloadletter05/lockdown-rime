@@ -100,10 +100,17 @@ var FileRouter = {
 
 function buildCalculatorUI() {
   var displayValue = '0';
+  var accumulator = null;
+  var pendingOp = null;
   var waitingForOperand = false;
+  var memory = 0;
+  var lastOp = null;
+  var lastOperand = null;
+  var errorState = false;
 
   var container = document.createElement('div');
   container.className = 'calculator-app';
+  container.tabIndex = 0;
 
   // Menu bar
   var menuBar = document.createElement('div');
@@ -184,24 +191,64 @@ function buildCalculatorUI() {
     ['=',   'calc-btn-red',  1]
   ];
 
+  function performOperation(op, a, b) {
+    switch (op) {
+      case '+': return a + b;
+      case '-': return a - b;
+      case '*': return a * b;
+      case '/':
+        if (b === 0) return 'ERROR_DIV_ZERO';
+        return a / b;
+      default: return b;
+    }
+  }
+
+  function formatDisplay(value) {
+    if (typeof value === 'string') return value;
+    var str = parseFloat(value.toPrecision(15)).toString();
+    if (str.length > 20) str = str.substring(0, 20);
+    return str;
+  }
+
   function updateDisplay() {
-    display.textContent = displayValue;
+    if (errorState) {
+      display.textContent = displayValue;
+    } else {
+      display.textContent = displayValue;
+    }
+    memIndicator.textContent = memory !== 0 ? 'M' : '';
   }
 
   function handleButton(label) {
-    // Digit entry
+    // Error state guard: only C allowed
+    if (errorState) {
+      if (label === 'C') {
+        displayValue = '0';
+        accumulator = null;
+        pendingOp = null;
+        waitingForOperand = false;
+        lastOp = null;
+        lastOperand = null;
+        errorState = false;
+        updateDisplay();
+      }
+      return;
+    }
+
+    // Digits 0-9
     if (label >= '0' && label <= '9') {
-      if (waitingForOperand || displayValue === '0') {
+      if (waitingForOperand) {
         displayValue = label;
         waitingForOperand = false;
+      } else if (displayValue === '0') {
+        if (label !== '0') displayValue = label;
       } else {
-        if (displayValue.length < 20) {
-          displayValue += label;
-        }
+        if (displayValue.length < 20) displayValue += label;
       }
       updateDisplay();
       return;
     }
+
     // Decimal point
     if (label === '.') {
       if (waitingForOperand) {
@@ -213,30 +260,152 @@ function buildCalculatorUI() {
       updateDisplay();
       return;
     }
-    // Clear
-    if (label === 'C') {
-      displayValue = '0';
-      waitingForOperand = false;
+
+    // Operators
+    if (label === '+' || label === '-' || label === '*' || label === '/') {
+      var currentVal = parseFloat(displayValue);
+      if (accumulator !== null && !waitingForOperand) {
+        var result = performOperation(pendingOp, accumulator, currentVal);
+        if (result === 'ERROR_DIV_ZERO') {
+          displayValue = 'Cannot divide by zero';
+          errorState = true;
+          updateDisplay();
+          return;
+        }
+        accumulator = result;
+        displayValue = formatDisplay(result);
+      } else {
+        accumulator = currentVal;
+      }
+      pendingOp = label;
+      waitingForOperand = true;
+      lastOp = null;
       updateDisplay();
       return;
     }
-    // CE - clear entry (same as C for now, full logic in Plan 02)
+
+    // Equals
+    if (label === '=') {
+      var currentVal = parseFloat(displayValue);
+      var result;
+      if (lastOp !== null && waitingForOperand) {
+        result = performOperation(lastOp, currentVal, lastOperand);
+      } else if (accumulator !== null) {
+        lastOperand = currentVal;
+        lastOp = pendingOp;
+        result = performOperation(pendingOp, accumulator, currentVal);
+      } else {
+        return;
+      }
+      if (result === 'ERROR_DIV_ZERO') {
+        displayValue = 'Cannot divide by zero';
+        errorState = true;
+        updateDisplay();
+        return;
+      }
+      displayValue = formatDisplay(result);
+      accumulator = result;
+      pendingOp = null;
+      waitingForOperand = true;
+      updateDisplay();
+      return;
+    }
+
+    // C - Clear All
+    if (label === 'C') {
+      displayValue = '0';
+      accumulator = null;
+      pendingOp = null;
+      waitingForOperand = false;
+      lastOp = null;
+      lastOperand = null;
+      errorState = false;
+      updateDisplay();
+      return;
+    }
+
+    // CE - Clear Entry
     if (label === 'CE') {
       displayValue = '0';
       updateDisplay();
       return;
     }
+
     // Backspace
     if (label === 'Backspace') {
-      if (displayValue.length > 1) {
-        displayValue = displayValue.slice(0, -1);
-      } else {
-        displayValue = '0';
+      if (!waitingForOperand) {
+        if (displayValue.length > 1) {
+          displayValue = displayValue.slice(0, -1);
+          if (displayValue === '-') displayValue = '0';
+        } else {
+          displayValue = '0';
+        }
       }
       updateDisplay();
       return;
     }
-    // All other buttons are no-ops for now (Plan 02 implements arithmetic)
+
+    // +/- (negate)
+    if (label === '+/-') {
+      if (displayValue !== '0' && displayValue !== '0.') {
+        if (displayValue.charAt(0) === '-') {
+          displayValue = displayValue.substring(1);
+        } else {
+          displayValue = '-' + displayValue;
+        }
+      }
+      updateDisplay();
+      return;
+    }
+
+    // sqrt
+    if (label === 'sqrt') {
+      var val = parseFloat(displayValue);
+      if (val < 0) {
+        displayValue = 'Invalid input';
+        errorState = true;
+      } else {
+        displayValue = formatDisplay(Math.sqrt(val));
+      }
+      waitingForOperand = true;
+      updateDisplay();
+      return;
+    }
+
+    // % (percentage)
+    if (label === '%') {
+      var currentVal = parseFloat(displayValue);
+      if (accumulator !== null) {
+        currentVal = accumulator * (currentVal / 100);
+      }
+      displayValue = formatDisplay(currentVal);
+      waitingForOperand = true;
+      updateDisplay();
+      return;
+    }
+
+    // 1/x (reciprocal)
+    if (label === '1/x') {
+      var val = parseFloat(displayValue);
+      if (val === 0) {
+        displayValue = 'Cannot divide by zero';
+        errorState = true;
+      } else {
+        displayValue = formatDisplay(1 / val);
+      }
+      waitingForOperand = true;
+      updateDisplay();
+      return;
+    }
+
+    // MC - Memory Clear
+    if (label === 'MC') { memory = 0; updateDisplay(); return; }
+    // MR - Memory Recall
+    if (label === 'MR') { displayValue = formatDisplay(memory); waitingForOperand = true; updateDisplay(); return; }
+    // MS - Memory Store
+    if (label === 'MS') { memory = parseFloat(displayValue); updateDisplay(); return; }
+    // M+ - Memory Add
+    if (label === 'M+') { memory = memory + parseFloat(displayValue); updateDisplay(); return; }
   }
 
   buttons.forEach(function(def) {
@@ -260,6 +429,34 @@ function buildCalculatorUI() {
   });
 
   container.appendChild(btnGrid);
+
+  // Keyboard support
+  container.addEventListener('keydown', function(e) {
+    var key = e.key;
+    var handled = true;
+    if (key >= '0' && key <= '9') {
+      handleButton(key);
+    } else if (key === '.') {
+      handleButton('.');
+    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+      handleButton(key);
+    } else if (key === 'Enter' || key === '=') {
+      handleButton('=');
+    } else if (key === 'Escape') {
+      handleButton('C');
+    } else if (key === 'Backspace') {
+      handleButton('Backspace');
+    } else if (key === 'Delete') {
+      handleButton('CE');
+    } else {
+      handled = false;
+    }
+    if (handled) e.preventDefault();
+  });
+
+  // Focus container for keyboard input
+  setTimeout(function() { container.focus(); }, 0);
+
   return container;
 }
 
