@@ -6,10 +6,22 @@
       "date": "string - call date",
       "time": "string - call time",
       "phone": "string - dialed number (redacted)",
-      "disposition": "string - disposition code",
+      "disposition": "string - disposition code (see disposition_codes)",
       "duration": "string|null - call duration",
       "interviewer": "string - interviewer ID or name",
       "notes": "string|null - call notes"
+    },
+    "disposition_codes": {
+      "Complete": "Full survey administered and recorded.",
+      "Complete (text)": "Full survey administered over SMS rather than voice. Channel substitution; survey responses are entered into the standard CATI record the same way as a voice complete. No separate transcript artifact is retained. Off-script: not currently covered by the CATI flipbook (l.milavic ad hoc, pending Margaret review).",
+      "Partial": "Survey started but not completed; respondent broke off mid-script.",
+      "Callback": "Respondent answered but asked to be called at a later time.",
+      "Refusal": "Respondent declined to participate after consent script.",
+      "Hangup": "Respondent picked up but disconnected before consent script completed; not coded as Refusal because the respondent did not decline the survey itself, only the channel/timing.",
+      "No Answer": "Line rang out; no pickup, no voicemail.",
+      "Voicemail": "Voicemail reached; message left.",
+      "Busy": "Line busy; no contact made.",
+      "Disconnected": "Number reported as disconnected by carrier."
     }
   },
   "columns": [
@@ -255,6 +267,33 @@
       "23 min",
       "L. Milavic",
       "H-0002 Bergmeier (title unconfirmed)"
+    ],
+    [
+      "1/9/2000",
+      "10:55 PM",
+      "202-555-3553",
+      "Hangup",
+      "<1 min",
+      "L. Milavic",
+      "Retry of #1. Respondent: 'I'm watching a movie.' Hung up."
+    ],
+    [
+      "1/9/2000",
+      "11:02 PM",
+      "202-555-1880",
+      "Hangup",
+      "<1 min",
+      "L. Milavic",
+      "Off-shift retry of 1:55 PM VM. Picked up, said 'I'm at work!', hung up."
+    ],
+    [
+      "1/9/2000",
+      "11:03 PM",
+      "202-555-1880",
+      "Complete (text)",
+      "14 min",
+      "L. Milavic",
+      "H-0003. Survey via SMS at respondent's preference. Roosevelt. Name declined."
     ]
   ]
 }
