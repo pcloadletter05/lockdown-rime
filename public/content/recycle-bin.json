@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Deleted items in the Recycle Bin"
+  },
+  "items": [
+    {
+      "name": "RE question about today's last call.doc",
+      "originalLocation": "C:\\My Documents\\Drafts",
+      "dateDeleted": "1/9/2000 2:38 PM",
+      "type": "doc",
+      "content": "<p>Margaret,</p><p>I need to talk to you about something that happened on my last call today and I don't know who else to ask.</p><p>The Bergmeier number (202-555-3011, 4:46 PM) from the off-island list. He picked up and before I could start the screener he asked me if the line was recorded. I told him it was an unrecorded line. I said that because I thought I remembered seeing it in the script flipbook somewhere and he sounded like he would hang up if I didn't.</p><p>But Margaret I know these lines are recorded. I have seen the QA light on the phone panel. It is always on. There is no way to turn it off from the workstation. I told a respondent his call was not being recorded and I am almost certain it was.</p><p>I think what I did might be illegal. Or at least a consent violation. He asked me a direct question and I gave him the wrong answer on purpose because I was afraid he would</p>"
+    },
+    {
+      "name": "RE question about today's last call (2).doc",
+      "originalLocation": "C:\\My Documents\\Drafts",
+      "dateDeleted": "1/9/2000 2:52 PM",
+      "type": "doc",
+      "content": "<p>Hi Margaret,</p><p>I had a question about the last call of my shift today and I wanted to ask before Monday.</p><p>The call was to the Bergmeier number from the off-island list (202-555-3011, 4:46 PM). He picked up and asked how confidential the line was before answering my screener. I told him \"this is an unrecorded line.\" He completed the full screener after that.</p><p>The problem is I am not sure that was true. I have always assumed all CATI lines are recorded for QA. If they are, then I told a respondent something false about the recording status of his call, and given who he might be, that seems like it could be serious. He used \"Rep. Bergmeier\" once and answered to \"Senator\" without correcting me.</p><p>I also tried to find the consent forms for the off-island numbers after the call. The authorization memo in the Surveys folder covers the Roosevelt Community Access Initiative respondents but I could not find separate paperwork for the Horizon study distribution. Is the Horizon study even using the same consent language? The off-island numbers seem like a different population entirely and I want to make sure the right forms are on file before I make any more calls from that list.</p><p>I looked up the Bergmeier name after. I know I probably should not have done that. But if this person is who I think he is, then the recording question is not just a QA issue.</p><p>I am sorry to bring this up on a Sunday. I just could not sit with it until Monday.</p><p>Lisa</p>"
+    },
+    {
+      "name": "RE question about today's last call (3).doc",
+      "originalLocation": "C:\\My Documents\\Drafts",
+      "dateDeleted": "1/9/2000 2:58 PM",
+      "type": "doc",
+      "content": "<p>Hi Margaret,</p><p>I had a question about a call I made this afternoon and I didn't want to wait until Monday to ask.</p><p>The last call of my shift was the Bergmeier number from the off-island list (202-555-3011, 4:46 PM). He picked up. Before answering my screener he asked me how confidential the line was and I told him \"this is an unrecorded line.\" I said that because I thought I remembered it from the script flipbook and because he sounded nervous. He answered everything after that and we got a clean complete.</p><p>But after I hung up I realized I am not actually sure if that is true. Are these calls unrecorded? I always assumed everything was recorded for QA. If the line was actually being recorded and I told a respondent it wasn't, I think I have a problem, especially because of who he is or might be. He used \"Rep. Bergmeier\" once but answered to \"Senator\" without correcting me, so I am not sure which.</p><p>I would feel better knowing what I should have said and what I should say if it comes up again. I am sorry for asking on a weekend.</p><p>I am also a little confused about why the Bergmeier number was on my list. The off-island numbers you authorized for the Horizon study, are those a separate distribution from the Roosevelt Community Access Initiative? Different paperwork? Different consent language? I could not find the authorization forms for the off-island list in the Surveys folder, only the standard RCAI consent packet. I want to make sure I am reading the right script for the right respondents and that the correct consent documentation is in place.</p><p>I am also worried about my job. If I told a respondent something incorrect about recording, even if I believed it at the time, I don't know what that means for me. I want to do the right thing here.</p><p>Thank you,<br>Lisa</p>"
+    }
+  ]
+}
