@@ -185,7 +185,8 @@ function buildCalculatorUI() {
     ['1/x', 'calc-btn-blue', 1],
     // Row 4
     ['M+',  'calc-btn-blue', 1],
-    ['0',   '',              2],
+    ['0',   '',              1],
+    ['±',  '',          1],
     ['.',   '',              1],
     ['+',   'calc-btn-red',  1],
     ['=',   'calc-btn-red',  1]
@@ -346,7 +347,7 @@ function buildCalculatorUI() {
     }
 
     // +/- (negate)
-    if (label === '+/-') {
+    if (label === '+/-' || label === '±') {
       if (displayValue !== '0' && displayValue !== '0.') {
         if (displayValue.charAt(0) === '-') {
           displayValue = displayValue.substring(1);
