@@ -220,6 +220,62 @@
       "read": false,
       "deliver_at": "2000-01-09T11:30:00",
       "in_reply_to": null
+    },
+    {
+      "id": "msg-015",
+      "folder": "Sent Items",
+      "from": "Lisa Milavic <l.milavic@calcom.com>",
+      "to": "Karen Rodriguez <k.rodriguez@calcom.com>",
+      "cc": null,
+      "date": "2000-01-09T12:15:00",
+      "subject": "Re: Lunch???",
+      "body": "Karen,\n\nYes. Please. I need to get away from this screen for a few minutes. Meet you downstairs at 12:15.\n\nLisa",
+      "attachments": [],
+      "read": true,
+      "deliver_at": "2000-01-09T12:15:00",
+      "in_reply_to": "msg-014"
+    },
+    {
+      "id": "msg-016",
+      "folder": "Sent Items",
+      "from": "Lisa Milavic <l.milavic@calcom.com>",
+      "to": "Margaret Sullivan <m.sullivan@calcom.com>",
+      "cc": null,
+      "date": "2000-01-09T15:00:00",
+      "subject": "question about today's last call",
+      "body": "Hi Margaret,\n\nI had a question about a call I made this afternoon and I didn't want to wait until Monday to ask.\n\nThe last call of my shift was the Bergmeier number from the off-island list (202-555-3011, 4:46 PM). He picked up. Before answering my screener he asked me how confidential the line was and I told him \"this is an unrecorded line.\" I said that because I thought I remembered it from the script flipbook and because he sounded nervous. He answered everything after that and we got a clean complete.\n\nBut after I hung up I realized I am not actually sure if that is true. Are these calls unrecorded? I always assumed everything was recorded for QA. If the line was actually being recorded and I told a respondent it wasn't, I think I have a problem, especially because of who he is or might be. He used \"Rep. Bergmeier\" once but answered to \"Senator\" without correcting me, so I am not sure which.\n\nI would feel better knowing what I should have said and what I should say if it comes up again. I am sorry for asking on a weekend.\n\nI am also a little confused about why the Bergmeier number was on my list. The off-island numbers you authorized for the Horizon study, are those a separate distribution from the Roosevelt Community Access Initiative? Different paperwork? Different consent language? I want to make sure I am reading the right script for the right respondents.\n\nThank you,\nLisa",
+      "attachments": [],
+      "read": true,
+      "deliver_at": "2000-01-09T15:00:00",
+      "in_reply_to": null
+    },
+    {
+      "id": "msg-017",
+      "folder": "Inbox",
+      "from": "Margaret Sullivan <m.sullivan@calcom.com>",
+      "to": "Lisa Milavic <l.milavic@calcom.com>",
+      "cc": null,
+      "date": "2000-01-10T08:30:00",
+      "subject": "re: question about today's last call",
+      "body": "Lisa,\n\nThank you for flagging this. You handled the call correctly.\n\nTo clarify: all standard CATI calls are recorded for quality assurance purposes. This is noted in the interviewer handbook (Section 3.2) and in the consent language read to each respondent at the start of the screener. The recording is automatic and cannot be disabled from the workstation.\n\nRegarding the off-island numbers, the authorization memo in your Surveys\\Authorizations folder covers the distribution and protocol. Those respondents received their devices through a separate channel but are surveyed under the same study instrument. If you have further questions about the list composition, please bring them to our Monday check-in and I will walk you through it.\n\nYou have nothing to worry about. Please finish logging your dispositions for today and enjoy the rest of your evening.\n\nMargaret Sullivan\nDirector of Operations\nCalCom Research Services",
+      "attachments": [],
+      "read": false,
+      "deliver_at": "2000-01-09T17:00:00",
+      "in_reply_to": "msg-016"
+    },
+    {
+      "id": "msg-018",
+      "folder": "Deleted Items",
+      "from": "hzn-notify@calcom.com",
+      "to": "Lisa Milavic <l.milavic@calcom.com>",
+      "cc": null,
+      "date": "2000-01-08T22:47:00",
+      "subject": "Horizon Device: Scheduled Maintenance Window",
+      "body": "AUTOMATED NOTIFICATION\n\nYour Horizon unit (HZN-RI-0487) has been scheduled for recalibration during the overnight maintenance window of 01/08/2000 23:00 to 01/09/2000 05:00 EST.\n\nNo action is required on your part. Device functionality may be temporarily limited during this period.\n\nDo not reply to this message. For questions, contact Hardware Support at extension 4477.\n\nRef: MX-2000-0109-0487",
+      "attachments": [],
+      "read": true,
+      "deliver_at": "2000-01-08T22:47:00",
+      "in_reply_to": null
     }
   ]
 }
