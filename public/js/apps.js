@@ -167,6 +167,12 @@ var AppRegistry = {
       content = winampResult.element;
     } else if (appId === 'network') {
       content = buildNetworkUI(args);
+    } else if (appId === 'recycle') {
+      content = buildRecycleBinUI(args);
+      title = 'Recycle Bin';
+      icon = iconImg('recycle_bin', 16);
+      width = 620;
+      height = 400;
     }
 
     if (app || content) {
@@ -213,7 +219,7 @@ var DESKTOP_ICONS = [
     filePath: 'C:\\My Documents\\Personal\\notes.txt' }
 ];
 
-var DESKTOP_ICON_BOTTOM = { appId: 'recycle', label: 'Recycle Bin', icon: iconImg('recycle_bin', 32) };
+var DESKTOP_ICON_BOTTOM = { appId: 'recycle', label: 'Recycle Bin', icon: iconImg('recycle_bin_full', 32) };
 
 function findFileByPath(node, targetPath) {
   // Split path like "C:\\My Documents\\Personal\\notes.txt" into segments
@@ -1147,6 +1153,161 @@ function showAccessDenied(path) {
   overlay.querySelector('.nt4-btn').onclick = function() { overlay.remove(); };
   overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
   document.body.appendChild(overlay);
+}
+
+function buildRecycleBinUI(args) {
+  var container = document.createElement('div');
+  container.className = 'explorer-app';
+
+  // Menu bar
+  var menubar = document.createElement('div');
+  menubar.className = 'app-menubar';
+  ['File', 'Edit', 'View', 'Help'].forEach(function(label) {
+    var item = document.createElement('span');
+    item.className = 'menu-item';
+    item.textContent = label;
+    menubar.appendChild(item);
+  });
+  container.appendChild(menubar);
+
+  // Toolbar (all buttons disabled — open-and-look only)
+  var toolbar = document.createElement('div');
+  toolbar.className = 'app-toolbar raised';
+  ['Restore', 'Delete', 'Properties'].forEach(function(label) {
+    var btn = document.createElement('button');
+    btn.className = 'toolbar-btn-text raised';
+    btn.textContent = label;
+    btn.disabled = true;
+    toolbar.appendChild(btn);
+  });
+  container.appendChild(toolbar);
+
+  // Address bar
+  var addressBar = document.createElement('div');
+  addressBar.className = 'explorer-address';
+  var addrLabel = document.createElement('span');
+  addrLabel.className = 'address-label';
+  addrLabel.textContent = 'Address:';
+  addressBar.appendChild(addrLabel);
+  var addrPath = document.createElement('span');
+  addrPath.className = 'address-path';
+  addrPath.textContent = 'Recycle Bin';
+  addressBar.appendChild(addrPath);
+  container.appendChild(addressBar);
+
+  // Body — no tree pane, just the file list
+  var body = document.createElement('div');
+  body.className = 'explorer-body';
+  var filePane = document.createElement('div');
+  filePane.className = 'explorer-files sunken';
+  filePane.style.flex = '1';
+  body.appendChild(filePane);
+  container.appendChild(body);
+
+  // Status bar
+  var statusBar = document.createElement('div');
+  statusBar.className = 'explorer-statusbar well';
+  statusBar.textContent = 'Loading...';
+  container.appendChild(statusBar);
+
+  // Fetch and render
+  fetch('content/recycle-bin.json')
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      renderRecycleBinList(filePane, statusBar, data.items);
+    });
+
+  function renderRecycleBinList(pane, sbar, items) {
+    // Header row
+    var header = document.createElement('div');
+    header.className = 'file-list-header';
+    var cols = [
+      { label: 'Name', width: '200px' },
+      { label: 'Original Location', width: '160px' },
+      { label: 'Date Deleted', width: '130px' },
+      { label: 'Type', flex: true }
+    ];
+    cols.forEach(function(col) {
+      var span = document.createElement('span');
+      span.className = 'file-list-col';
+      span.textContent = col.label;
+      if (col.flex) {
+        span.style.flex = '1';
+      } else {
+        span.style.width = col.width;
+        span.style.flexShrink = '0';
+      }
+      header.appendChild(span);
+    });
+    pane.appendChild(header);
+
+    // Item rows
+    var selectedRow = null;
+    items.forEach(function(item) {
+      var row = document.createElement('div');
+      row.className = 'file-list-item';
+
+      // Name column
+      var nameCol = document.createElement('span');
+      nameCol.className = 'file-list-col';
+      nameCol.style.width = '200px';
+      nameCol.style.flexShrink = '0';
+      nameCol.style.display = 'flex';
+      nameCol.style.alignItems = 'center';
+      nameCol.style.gap = '4px';
+      nameCol.innerHTML = iconImg('file_doc', 16);
+      var nameText = document.createElement('span');
+      nameText.textContent = item.name;
+      nameCol.appendChild(nameText);
+      row.appendChild(nameCol);
+
+      // Original Location column
+      var locCol = document.createElement('span');
+      locCol.className = 'file-list-col';
+      locCol.style.width = '160px';
+      locCol.style.flexShrink = '0';
+      locCol.textContent = item.originalLocation;
+      row.appendChild(locCol);
+
+      // Date Deleted column
+      var dateCol = document.createElement('span');
+      dateCol.className = 'file-list-col';
+      dateCol.style.width = '130px';
+      dateCol.style.flexShrink = '0';
+      dateCol.textContent = item.dateDeleted;
+      row.appendChild(dateCol);
+
+      // Type column
+      var typeCol = document.createElement('span');
+      typeCol.className = 'file-list-col';
+      typeCol.style.flex = '1';
+      typeCol.textContent = 'WordPad Document';
+      row.appendChild(typeCol);
+
+      // Click — select row
+      row.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (selectedRow) selectedRow.classList.remove('selected');
+        row.classList.add('selected');
+        selectedRow = row;
+      });
+
+      // Double-click — open in WordPad
+      row.addEventListener('dblclick', function(e) {
+        e.stopPropagation();
+        EventBus.emit('app:launch', {
+          appId: 'wordpad',
+          args: { file: { name: item.name, content: item.content } }
+        });
+      });
+
+      pane.appendChild(row);
+    });
+
+    sbar.textContent = items.length + ' object(s)';
+  }
+
+  return container;
 }
 
 function buildNetworkUI(args) {
