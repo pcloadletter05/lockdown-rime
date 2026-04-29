@@ -178,6 +178,48 @@
       "read": false,
       "deliver_at": "1999-12-22T10:15:00",
       "in_reply_to": null
+    },
+    {
+      "id": "msg-012",
+      "folder": "Inbox",
+      "from": "CalCom IT <it-support@calcom.com>",
+      "to": "All Staff <all-staff@calcom.com>",
+      "cc": null,
+      "date": "2000-01-03T10:00:00",
+      "subject": "Y2K Compliance: All Systems Nominal",
+      "body": "Good morning, everyone.\n\nWe are pleased to report that all CalCom systems have passed the Year 2000 rollover without incident. Servers, workstations, CATI terminals, telephony switches, and internal databases all transitioned cleanly at midnight on January 1, 2000.\n\nThis outcome reflects months of preparation by the IT department and the cooperation of every division. We would like to thank all staff who completed Y2K assessment questionnaires, reported date anomalies, and observed the December 30 log-off window. Your patience made a real difference.\n\nA few housekeeping items as we move into Q1:\n\n1. DATE DISPLAY: Some applications may show two-digit years as \"00\" rather than \"2000.\" This is a display issue only and does not affect data integrity. We are rolling out patches on a department-by-department basis.\n\n2. NETWORK DRIVES: If you experience difficulty accessing shared folders on \\\\CALCOM-FS02, please submit a ticket to ext. 4357. A small number of file permissions were reset during the rollover and we are correcting them manually.\n\n3. HORIZON DEVICES: If you experience clock drift on your Horizon device, please contact Hardware Support at extension 4477. A firmware update is being distributed to affected units.\n\nOnce again, thank you for your cooperation. We are proud to confirm that CalCom entered the new millennium without a single critical system failure.\n\nCalCom IT Support\nExtension 4357",
+      "attachments": [],
+      "read": false,
+      "deliver_at": "2000-01-03T10:00:00",
+      "in_reply_to": null
+    },
+    {
+      "id": "msg-013",
+      "folder": "Inbox",
+      "from": "Margaret Sullivan <m.sullivan@calcom.com>",
+      "to": "Lisa Milavic <l.milavic@calcom.com>",
+      "cc": null,
+      "date": "2000-01-09T08:15:00",
+      "subject": "Sunday shift reminders + off-island authorizations",
+      "body": "Lisa,\n\nA few items for today.\n\n1. Please complete any remaining Q4 callbacks before end of shift. The final batch report is due to the client on Wednesday and I would like all disposition codes entered by tomorrow morning.\n\n2. Log your breaks in the shift tracker as usual. Facilities has asked us to note any time spent away from the floor so they can reconcile badge swipes with the new access system.\n\n3. For the HCS-00-Q1 study, you have been authorized to dial a set of off-island respondents. These are Horizon device holders outside the standard Roosevelt cohort. See the authorization memo in your Surveys\\Authorizations folder (OffIsland_Auth_HCS-00-Q1.doc) for the full number list and protocol notes.\n\n4. January schedules are posted on the shared drive under \\\\CALCOM-FS02\\Scheduling. If you need to swap a shift, please coordinate directly with the other interviewer and copy me on the confirmation.\n\nThank you,\n\nMargaret Sullivan\nDirector of Operations\nCalCom Research Services",
+      "attachments": [],
+      "read": false,
+      "deliver_at": "2000-01-09T08:15:00",
+      "in_reply_to": null
+    },
+    {
+      "id": "msg-014",
+      "folder": "Inbox",
+      "from": "Karen Rodriguez <k.rodriguez@calcom.com>",
+      "to": "Lisa Milavic <l.milavic@calcom.com>",
+      "cc": null,
+      "date": "2000-01-09T11:30:00",
+      "subject": "Lunch???",
+      "body": "Hey Lisa,\n\nPlease tell me you're taking a lunch break today. I cannot sit at this desk for another four hours straight. Sunday OT is cruel and unusual punishment.\n\nWant to grab something from the deli on Main St? I'm thinking noon, maybe 12:15.\n\nAlso have you been watching the weather? They're saying there might be a big storm later this month. Like, blizzard big. I'm already dreading the commute if that happens. The tram shuts down every time it snows more than three inches.\n\nLet me know.\n\nKaren",
+      "attachments": [],
+      "read": false,
+      "deliver_at": "2000-01-09T11:30:00",
+      "in_reply_to": null
     }
   ]
 }
