@@ -208,10 +208,32 @@ var DESKTOP_ICONS = [
   { appId: 'mycomputer', label: 'My Computer',           icon: iconImg('mycomputer', 32) },
   { appId: 'network',    label: 'Network Neighborhood', icon: iconImg('network', 32) },
   { appId: 'iexplore',   label: 'Internet Explorer',    icon: iconImg('iexplore', 32) },
-  { appId: 'outlook',    label: 'Inbox',                  icon: iconImg('outlook', 32) }
+  { appId: 'outlook',    label: 'Inbox',                  icon: iconImg('outlook', 32) },
+  { appId: 'notepad',   label: 'notes.txt',              icon: iconImg('file_txt', 32),
+    filePath: 'C:\\My Documents\\Personal\\notes.txt' }
 ];
 
 var DESKTOP_ICON_BOTTOM = { appId: 'recycle', label: 'Recycle Bin', icon: iconImg('recycle_bin', 32) };
+
+function findFileByPath(node, targetPath) {
+  // Split path like "C:\\My Documents\\Personal\\notes.txt" into segments
+  var parts = targetPath.replace(/\\/g, '/').split('/');
+  var current = node; // start at root (C:)
+  // Skip the drive letter (first segment like "C:")
+  for (var i = 1; i < parts.length; i++) {
+    if (!current || !current.children) return null;
+    var found = null;
+    for (var j = 0; j < current.children.length; j++) {
+      if (current.children[j].name === parts[i]) {
+        found = current.children[j];
+        break;
+      }
+    }
+    if (!found) return null;
+    current = found;
+  }
+  return current;
+}
 
 function renderDesktopIcons() {
   var desktop = document.getElementById('desktop');
@@ -247,7 +269,22 @@ function renderDesktopIcons() {
     // Double click: open
     iconEl.addEventListener('dblclick', function(e) {
       e.stopPropagation();
-      EventBus.emit('app:launch', { appId: iconDef.appId });
+      if (iconDef.filePath) {
+        // Desktop icon pointing to a specific file -- find it in files.json and open in appropriate viewer
+        fetch('content/files.json').then(function(r) { return r.json(); }).then(function(data) {
+          var file = findFileByPath(data.root, iconDef.filePath);
+          if (file) {
+            var FileRouterRef = typeof FileRouter !== 'undefined' ? FileRouter : null;
+            if (FileRouterRef) {
+              FileRouterRef.openFile(file);
+            } else {
+              AppRegistry.launch(iconDef.appId, { file: file });
+            }
+          }
+        });
+      } else {
+        EventBus.emit('app:launch', { appId: iconDef.appId });
+      }
     });
 
     container.appendChild(iconEl);
