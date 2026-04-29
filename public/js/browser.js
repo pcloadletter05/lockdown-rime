@@ -440,9 +440,15 @@ function buildBrowserUI(args) {
           position: { x: randX, y: randY }
         });
 
-        // Pop-under: restore focus to the previously active window
-        if (ad.zOrder === 'pop-under' && previousActiveId) {
+        // Explicit zOrder handling. JSON enum: "popup" | "pop-under".
+        if (ad.zOrder === 'popup') {
+          // Default behavior: the newly created window already has focus
+          // from WindowManager.createWindow above. Nothing to do.
+        } else if (ad.zOrder === 'pop-under' && previousActiveId) {
+          // Pop-under: restore focus to the previously active window
           WindowManager.focusWindow(previousActiveId);
+        } else if (ad.zOrder !== 'popup' && ad.zOrder !== 'pop-under') {
+          console.warn('Unknown popup ad zOrder:', ad.zOrder);
         }
       })
       .catch(function(err) {
