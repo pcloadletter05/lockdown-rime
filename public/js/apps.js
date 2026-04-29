@@ -130,6 +130,7 @@ var AppRegistry = {
 
     var content = null;
     var title = null;
+    var icon = null;
     var width = null;
     var height = null;
 
@@ -178,7 +179,7 @@ var AppRegistry = {
     if (app || content) {
       var winOpts = {
         title: title || (app ? app.title : appId),
-        icon: app ? app.icon : iconImg('file_doc', 16),
+        icon: icon || (app ? app.icon : iconImg('file_doc', 16)),
         width: width || (app ? app.width : 400),
         height: height || (app ? app.height : 300),
         content: content
