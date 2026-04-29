@@ -96,6 +96,173 @@ var FileRouter = {
 };
 
 
+// ---- Calculator App ----
+
+function buildCalculatorUI() {
+  var displayValue = '0';
+  var waitingForOperand = false;
+
+  var container = document.createElement('div');
+  container.className = 'calculator-app';
+
+  // Menu bar
+  var menuBar = document.createElement('div');
+  menuBar.className = 'app-menubar';
+
+  var editMenu = document.createElement('span');
+  editMenu.className = 'menu-item';
+  editMenu.textContent = 'Edit';
+  editMenu.addEventListener('click', function() {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(display.textContent);
+    }
+  });
+  menuBar.appendChild(editMenu);
+
+  var helpMenu = document.createElement('span');
+  helpMenu.className = 'menu-item';
+  helpMenu.textContent = 'Help';
+  helpMenu.style.color = 'var(--disabled-text)';
+  helpMenu.style.pointerEvents = 'none';
+  menuBar.appendChild(helpMenu);
+
+  container.appendChild(menuBar);
+
+  // Display area
+  var displayArea = document.createElement('div');
+  displayArea.className = 'calc-display-area';
+
+  var display = document.createElement('div');
+  display.className = 'calc-display';
+  display.textContent = '0';
+  displayArea.appendChild(display);
+
+  var memIndicator = document.createElement('div');
+  memIndicator.className = 'calc-memory-indicator';
+  memIndicator.textContent = '';
+  displayArea.appendChild(memIndicator);
+
+  container.appendChild(displayArea);
+
+  // Button grid
+  var btnGrid = document.createElement('div');
+  btnGrid.className = 'calc-buttons';
+
+  // Button layout: [label, extraClasses, colSpan]
+  var buttons = [
+    // Row 0
+    ['',          '',         1],
+    ['Backspace', 'calc-btn-red', 3],
+    ['CE',        'calc-btn-red', 1],
+    ['C',         'calc-btn-red', 1],
+    // Row 1
+    ['MC',  'calc-btn-blue', 1],
+    ['7',   '',              1],
+    ['8',   '',              1],
+    ['9',   '',              1],
+    ['/',   'calc-btn-red',  1],
+    ['sqrt','calc-btn-blue', 1],
+    // Row 2
+    ['MR',  'calc-btn-blue', 1],
+    ['4',   '',              1],
+    ['5',   '',              1],
+    ['6',   '',              1],
+    ['*',   'calc-btn-red',  1],
+    ['%',   'calc-btn-blue', 1],
+    // Row 3
+    ['MS',  'calc-btn-blue', 1],
+    ['1',   '',              1],
+    ['2',   '',              1],
+    ['3',   '',              1],
+    ['-',   'calc-btn-red',  1],
+    ['1/x', 'calc-btn-blue', 1],
+    // Row 4
+    ['M+',  'calc-btn-blue', 1],
+    ['0',   '',              2],
+    ['.',   '',              1],
+    ['+',   'calc-btn-red',  1],
+    ['=',   'calc-btn-red',  1]
+  ];
+
+  function updateDisplay() {
+    display.textContent = displayValue;
+  }
+
+  function handleButton(label) {
+    // Digit entry
+    if (label >= '0' && label <= '9') {
+      if (waitingForOperand || displayValue === '0') {
+        displayValue = label;
+        waitingForOperand = false;
+      } else {
+        if (displayValue.length < 20) {
+          displayValue += label;
+        }
+      }
+      updateDisplay();
+      return;
+    }
+    // Decimal point
+    if (label === '.') {
+      if (waitingForOperand) {
+        displayValue = '0.';
+        waitingForOperand = false;
+      } else if (displayValue.indexOf('.') === -1) {
+        displayValue += '.';
+      }
+      updateDisplay();
+      return;
+    }
+    // Clear
+    if (label === 'C') {
+      displayValue = '0';
+      waitingForOperand = false;
+      updateDisplay();
+      return;
+    }
+    // CE - clear entry (same as C for now, full logic in Plan 02)
+    if (label === 'CE') {
+      displayValue = '0';
+      updateDisplay();
+      return;
+    }
+    // Backspace
+    if (label === 'Backspace') {
+      if (displayValue.length > 1) {
+        displayValue = displayValue.slice(0, -1);
+      } else {
+        displayValue = '0';
+      }
+      updateDisplay();
+      return;
+    }
+    // All other buttons are no-ops for now (Plan 02 implements arithmetic)
+  }
+
+  buttons.forEach(function(def) {
+    var label = def[0];
+    var extraClass = def[1];
+    var span = def[2];
+
+    var btn = document.createElement('button');
+    btn.className = 'calc-btn raised' + (extraClass ? ' ' + extraClass : '');
+    btn.textContent = label;
+    if (span > 1) {
+      btn.style.gridColumn = 'span ' + span;
+    }
+    if (label) {
+      btn.addEventListener('click', function() { handleButton(label); });
+    } else {
+      btn.disabled = true;
+      btn.style.visibility = 'hidden';
+    }
+    btnGrid.appendChild(btn);
+  });
+
+  container.appendChild(btnGrid);
+  return container;
+}
+
 // ---- App Registry ----
 
 var AppRegistry = {
@@ -111,7 +278,8 @@ var AppRegistry = {
     'acrobat':       { title: 'Adobe Acrobat Reader',        icon: iconImg('file_pdf', 16),       width: 680, height: 520 },
     'printqueue':    { title: 'HP LaserJet 4 - \\\\CALCOM-PS01', icon: iconImg('printer', 16),   width: 550, height: 250 },
     'winamp':        { title: 'Winamp',                        icon: iconImg('winamp', 16),     width: 275, height: 'auto' },
-    'network':       { title: 'Network Neighborhood',          icon: iconImg('network', 16),    width: 640, height: 480 }
+    'network':       { title: 'Network Neighborhood',          icon: iconImg('network', 16),    width: 640, height: 480 },
+    'calculator':    { title: 'Calculator',                     icon: iconImg('calculator', 16), width: 248, height: 310 }
   },
 
   launch: function(appId, args) {
@@ -174,6 +342,8 @@ var AppRegistry = {
       icon = iconImg('recycle_bin', 16);
       width = 620;
       height = 400;
+    } else if (appId === 'calculator') {
+      content = buildCalculatorUI();
     }
 
     if (app || content) {
@@ -189,6 +359,11 @@ var AppRegistry = {
         winOpts.resizable = false;
         winOpts.maximizable = false;
         winOpts.chromeless = true;
+      }
+      if (appId === 'calculator') {
+        winOpts.resizable = false;
+        winOpts.maximizable = false;
+        winOpts.statusBar = false;
       }
       var winId = WindowManager.createWindow(winOpts);
       if (appId === 'winamp') {

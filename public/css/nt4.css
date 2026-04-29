@@ -1525,3 +1525,65 @@ body {
 .network-printer-status {
   color: var(--disabled-text);
 }
+
+/* Calculator App */
+.calculator-app {
+  display: flex;
+  flex-direction: column;
+  background: var(--button-face);
+  height: 100%;
+  user-select: none;
+}
+.calc-display-area {
+  padding: 4px 5px;
+}
+.calc-display {
+  width: 100%;
+  text-align: right;
+  font-family: 'W95FA', 'MS Sans Serif', Tahoma, sans-serif;
+  font-size: 16px;
+  padding: 2px 4px;
+  border: 2px inset #808080;
+  background: #fff;
+  color: #000;
+  box-sizing: border-box;
+  height: 24px;
+  line-height: 20px;
+  overflow: hidden;
+}
+.calc-memory-indicator {
+  font-family: 'W95FA', 'MS Sans Serif', Tahoma, sans-serif;
+  font-size: 11px;
+  height: 14px;
+  padding: 0 6px;
+  color: #000;
+}
+.calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 2px;
+  padding: 4px 5px;
+  flex: 1;
+}
+.calc-btn {
+  font-family: 'W95FA', 'MS Sans Serif', Tahoma, sans-serif;
+  font-size: 11px;
+  padding: 0;
+  min-height: 21px;
+  text-align: center;
+  cursor: default;
+  background: var(--button-face);
+  color: #000;
+  border: none;
+  outline: none;
+}
+.calc-btn:active, .calc-btn.pressed {
+  border-style: inset;
+}
+.calc-btn-red {
+  color: #800000;
+}
+.calc-btn-blue {
+  color: #0000aa;
+}
