@@ -543,7 +543,7 @@
                     [
                       "1/9/2000",
                       "1:03 PM",
-                      "202-555-3553",
+                      "202-555-7821",
                       "Voicemail",
                       "",
                       "L. Milavic",
@@ -561,7 +561,7 @@
                     [
                       "1/9/2000",
                       "1:25 PM",
-                      "202-555-4432",
+                      "202-555-4067",
                       "Voicemail",
                       "",
                       "L. Milavic",
@@ -579,7 +579,7 @@
                     [
                       "1/9/2000",
                       "1:55 PM",
-                      "202-555-1880",
+                      "202-555-9233",
                       "Voicemail",
                       "",
                       "L. Milavic",
@@ -588,7 +588,7 @@
                     [
                       "1/9/2000",
                       "3:11 PM",
-                      "202-555-5618",
+                      "202-555-1554",
                       "Voicemail",
                       "",
                       "L. Milavic",
@@ -597,7 +597,7 @@
                     [
                       "1/9/2000",
                       "3:15 PM",
-                      "202-555-8307",
+                      "202-555-6802",
                       "Voicemail",
                       "",
                       "L. Milavic",
@@ -615,7 +615,7 @@
                     [
                       "1/9/2000",
                       "10:55 PM",
-                      "202-555-3553",
+                      "202-555-7821",
                       "Hangup",
                       "<1 min",
                       "L. Milavic",
@@ -756,6 +756,31 @@
                     "modified": "1/9/2000 11:20 PM",
                     "content_key": "respondent-h-0003",
                     "content": "<h2>Respondent Record - H-0003</h2><table border=\"1\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse: collapse; width: 100%;\"><tr><td width=\"30%\"><b>Respondent ID:</b></td><td>H-0003</td></tr><tr><td><b>Interview Date:</b></td><td>1/9/2000</td></tr><tr><td><b>Interview Time:</b></td><td>11:03 PM</td></tr><tr><td><b>Phone:</b></td><td>202-555-1880</td></tr><tr><td><b>Interviewer:</b></td><td>l.milavic</td></tr><tr><td><b>Disposition:</b></td><td>COMPLETE (TEXT)</td></tr><tr><td><b>Duration:</b></td><td>~14 min (SMS)</td></tr></table><h3>Demographics</h3><table border=\"1\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse: collapse; width: 100%;\"><tr><th>Code</th><th>Question</th><th>Response</th></tr><tr><td>D1</td><td>Age range</td><td>18 to 24</td></tr><tr><td>D2</td><td>Household size</td><td>1</td></tr><tr><td>D3</td><td>City of residence</td><td>Roosevelt, DC (zip 20044)</td></tr></table><h3>Screener</h3><table border=\"1\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse: collapse; width: 100%;\"><tr><th>Code</th><th>Question</th><th>Response</th></tr><tr><td>S1</td><td>Age 18+?</td><td>Yes</td></tr><tr><td>S2</td><td>Owns Horizon?</td><td>Yes</td></tr><tr><td>S3</td><td>How long?</td><td>Less than 1 month</td></tr></table><h3>Survey Responses</h3><table border=\"1\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse: collapse; width: 100%;\"><tr><th>Code</th><th>Question</th><th>Response</th><th>Notes</th></tr><tr><td>Q1</td><td>Overall satisfaction</td><td>5</td><td>Reply: \"5555555\"</td></tr><tr><td>Q2</td><td>Signal reliability</td><td>5</td><td>Reply: \"BILLION\" / \"I MEANNN\" / \"5\"</td></tr><tr><td>Q3</td><td>Ease of use</td><td>5</td><td>Reply: \"5\"</td></tr><tr><td>Q4</td><td>Issues experienced</td><td>Spam.</td><td>Reply: \"SPAM\". Asked for more: \"UUUUUUUUUUUUUU\".</td></tr><tr><td>Q5</td><td>Likelihood to recommend</td><td>10</td><td>Reply: \"I HPE THEY PAYU WELL 4 BOTHERIN PPL\" then \"10\"</td></tr><tr><td>Q6</td><td>Additional feedback</td><td>Spam complaint; wants new phone; \"someone keeps texting me.\"</td><td>Reply: \"POOR UUUUUUUUUU\" / \"UHHHH CN U SEND ME NEW FONE\" / \"SM1 KEEPZ TXTN ME\"</td></tr></table><hr><p><em style=\"color: #000080; font-style: italic;\">First text-mode survey I have ever run. She hung up my voice call at 11:02 (said 'I'm at work!' and that was it), so I texted the number and asked if she would do the survey over SMS instead. She wrote back 'KKKKKKKKKK' and we were off. I did not know the console even supported text surveys until tonight, and I still do not know if it officially does. Adding that to the Margaret list. The cat situation: she asked 'DO CATZ COUNT' for household size and I coded it as 1 person per CATI rules, but she was very serious about that cat. Would not give me a name for follow-up, would not tell me her name at all, but wanted me to know she has a cat. Connection on my console drifted from 92% to 87% over the SMS session, same downward shape as Madison's call this afternoon. Two for two on Roosevelt respondents showing that drift. Probably nothing, but I want to look at this more. She gave straight fives across the board plus a 10 on recommend, which looks great on paper, but her open-ends are all negative and she literally asked for a replacement phone. I coded it straight per the script. After I closed the survey I stayed in the thread and asked about her cat. She called it weird. I panicked and sent a fake disconnected message to get out of the conversation. She said she was going to report me. Adding that to the Margaret list too, right under the Bergmeier 'unrecorded line' thing. Open question: is text-mode allowed? Does it count toward quota?</em></p>"
+                  }
+                ]
+              },
+              {
+                "name": "Sent_Voicemails_0109.txt",
+                "type": "file",
+                "icon": "file_txt",
+                "file_type": "txt",
+                "size": "4 KB",
+                "modified": "1/9/2000 5:30 PM",
+                "content": "========================================\nOUTBOUND VOICEMAIL LOG\nInterviewer: L. Milavic\nDate: Sunday, January 9, 2000\n========================================\n\n[1] 1:03 PM  |  202-555-7821  |  Boston, MA\n------------------------------------------------\nHello, this is Lisa Milavic calling from CalCom\nMarket Research Services. I am reaching out on\nbehalf of the Horizon Customer Satisfaction Study.\nWe are conducting a brief telephone survey about\nyour experience with the CalCom Horizon device,\nand your participation would be greatly appreciated.\nThe survey takes approximately 15 to 20 minutes\nand all of your responses are completely\nconfidential. If you could please return my call\nat your earliest convenience, our number is\n202-555-0100, extension 4216. Again, that is\n202-555-0100, extension 4216. Thank you very much\nfor your time, and I hope to hear from you soon.\n\n[2] 1:25 PM  |  202-555-4067  |  Albany, NY\n------------------------------------------------\nHi, this is Lisa Milavic from CalCom Market\nResearch Services calling about the Horizon\nCustomer Satisfaction Study. We are conducting a\nshort survey about your experience with the CalCom\nHorizon device. It takes about 15 to 20 minutes.\nPlease call us back at 202-555-0100, extension\n4216. Thank you for your time.\n\n[3] 1:55 PM  |  202-555-9233  |  Annapolis, MD\n------------------------------------------------\nHi, Lisa Milavic, CalCom Market Research. Calling\nabout the Horizon satisfaction study. We have a\nbrief survey, about 15 minutes. Please call back\nat 202-555-0100, extension 4216. Thanks.\n\n[4] 3:11 PM  |  202-555-1554  |  Trenton, NJ\n------------------------------------------------\nHello, this is Lisa Milavic from CalCom Market\nResearch... sorry, the Horizon study. We have a\nshort survey about your Horizon device. Please\ncall us back at 202-555-0100, extension 4216.\nThank you.\n\n[5] 3:15 PM  |  202-555-6802  |  Hartford, CT\n------------------------------------------------\nHi, this is Lisa from CalCom calling about the\nHorizon study. Short survey. If you could call\nus back at 202-555-0100, extension 4216. Thanks."
+              },
+              {
+                "name": "Authorizations",
+                "type": "folder",
+                "icon": "folder_closed",
+                "children": [
+                  {
+                    "name": "OffIsland_Auth_HCS-00-Q1.doc",
+                    "type": "file",
+                    "icon": "file_doc",
+                    "file_type": "doc",
+                    "size": "3 KB",
+                    "modified": "1/7/2000 4:30 PM",
+                    "content": "<h2>CALCOM MARKET RESEARCH</h2><h3>Internal Authorization Memo</h3><table border=\"0\" cellpadding=\"4\" cellspacing=\"0\" style=\"width: 100%; margin-bottom: 16px;\"><tr><td width=\"15%\"><strong>TO:</strong></td><td>Lisa Milavic, l.milavic</td></tr><tr><td><strong>FROM:</strong></td><td>Margaret Sullivan, Supervisor, Market Research</td></tr><tr><td><strong>DATE:</strong></td><td>Friday, January 7, 2000</td></tr><tr><td><strong>RE:</strong></td><td>Off-Island Outbound Authorization, HCS-00-Q1</td></tr></table><hr><p>Lisa,</p><p>For the current quarter's Horizon Customer Satisfaction Study (HCS-00-Q1), the following non-Roosevelt phone numbers have been added to your outbound queue. These respondents are CalCom-issued device holders outside the standard Community Access Initiative cohort. Their participation is authorized under the same study protocol and consent language as our Roosevelt respondents.</p><p>Use the standard CATI script. Do not deviate. If a respondent asks how they came to own a Horizon, refer them to CalCom Customer Relations at extension 4400.</p><h3>Authorized Off-Island Numbers</h3><pre>   202-555-3011    Philadelphia, PA\n   202-555-7821    Boston, MA\n   202-555-4067    Albany, NY\n   202-555-9233    Annapolis, MD\n   202-555-1554    Trenton, NJ\n   202-555-6802    Hartford, CT</pre><p><strong>Note:</strong> All numbers above are CalCom-issued and carry the 202 area code regardless of the respondent's physical city of residence. Do not flag this as a data anomaly when entering completes.</p><p>Document retention: this memo is internal. Do not distribute outside the Market Research division.</p><p>Thank you,</p><p>Margaret Sullivan<br>Supervisor, Market Research<br>CalCom Communications, Inc.</p>"
                   }
                 ]
               }
