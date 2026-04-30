@@ -34,6 +34,15 @@
       "mode": "iframe",
       "icon": null,
       "children": null
+    },
+    {
+      "name": "lockdown rave",
+      "url": "ext:rave",
+      "displayUrl": "http://jazzmonroe.neocities.org/rave",
+      "src": "https://jazzmonroe.neocities.org/rave",
+      "mode": "iframe",
+      "icon": null,
+      "children": null
     }
   ]
 }

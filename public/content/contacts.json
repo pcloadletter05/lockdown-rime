@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "version": 1,
+    "description": "Lisa's callback / to-call list",
+    "schema": {
+      "name": "string - contact name (empty string if unknown)",
+      "number": "string - phone number in 202-555-XXXX format",
+      "context": "string - why this number was saved",
+      "status": "string - to_call | called",
+      "date_added": "string - ISO date YYYY-MM-DD"
+    }
+  },
+  "contacts": [
+    {
+      "name": "",
+      "number": "202-555-2033",
+      "context": "rave flyer, break room. RIOT AT THE RAVE / RAGE AGAINST THE LOCK DOWN. Lucy mentioned party",
+      "status": "to_call",
+      "date_added": "2000-01-12"
+    },
+    {
+      "name": "Francisco",
+      "number": "202-555-8818",
+      "context": "grocery store mgmt, Lucy referral",
+      "status": "to_call",
+      "date_added": "2000-01-13"
+    }
+  ]
+}
