@@ -322,6 +322,109 @@ var BROWSER_PAGES = {
     '</table></div>'
   },
 
+  'drudge-report': {
+    title: 'DRUDGE REPORT',
+    url: 'http://www.drudgereport.com/',
+    content: /* === OUTER WRAPPER === */
+      '<table width="600" align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">' +
+      /* === RED BANNER === */
+      '<tr><td align="center" style="padding: 20px 0 5px 0;">' +
+        '<font face="Courier New, Courier, monospace" size="7" color="#FF0000"><b>DRUDGE REPORT</b></font>' +
+      '</td></tr>' +
+      /* === DATE LINE === */
+      '<tr><td align="center" style="padding: 2px 0 10px 0;">' +
+        '<font face="Courier New, Courier, monospace" size="2">THURSDAY JANUARY 13, 2000</font>' +
+      '</td></tr>' +
+      /* === BREAKING HEADLINE === */
+      '<tr><td align="center" style="padding: 10px 0;">' +
+        '<img src="assets/drudge-siren.gif" width="25" height="25"> ' +
+        '<img src="assets/drudge-siren.gif" width="25" height="25"> ' +
+        '<img src="assets/drudge-siren.gif" width="25" height="25"> ' +
+        '<font face="Courier New, Courier, monospace" size="5" color="#FF0000"><b>D.C. DECLARES STATE OF EMERGENCY AS STORM ATLAS RAGES...</b></font> ' +
+        '<img src="assets/drudge-siren.gif" width="25" height="25"> ' +
+        '<img src="assets/drudge-siren.gif" width="25" height="25"> ' +
+        '<img src="assets/drudge-siren.gif" width="25" height="25">' +
+      '</td></tr>' +
+      /* === SUB HEADLINE === */
+      '<tr><td align="center" style="padding: 5px 0 10px 0;">' +
+        '<font face="Courier New, Courier, monospace" size="3"><b>EXECUTIVE ORDER 13152 SIGNED AT DAWN... SUPREME COURT DELIBERATES...</b></font>' +
+      '</td></tr>' +
+      /* === CENTRAL PHOTO === */
+      '<tr><td align="center" style="padding: 10px 0;">' +
+        '<table width="240" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#000000">' +
+          '<tr><td bgcolor="#333333" align="center" style="padding: 40px 10px;">' +
+            '<font face="Arial, sans-serif" size="2" color="#CCCCCC"><i>AP Photo / Washington</i></font>' +
+          '</td></tr>' +
+          '<tr><td align="center" style="padding: 4px;">' +
+            '<font face="Arial, sans-serif" size="1"><i>Snow blankets the Capitol as Storm Atlas dumps 12+ inches on D.C.</i></font>' +
+          '</td></tr>' +
+        '</table>' +
+      '</td></tr>' +
+      /* === SEPARATOR === */
+      '<tr><td><hr size="1" noshade></td></tr>' +
+      /* === THREE COLUMN LINKS === */
+      '<tr><td>' +
+        '<table width="100%" cellpadding="8" cellspacing="0" border="0">' +
+          '<tr>' +
+            '<td width="33%" valign="top">' +
+              '<font face="Times New Roman, Times, serif" size="2">' +
+                '<a href="#" style="color:#0000FF;">STORM ATLAS BURIES EASTERN SEABOARD...</a><br>' +
+                '<a href="#" style="color:#0000FF;">FIRST HYPOTHERMIA DEATH CONFIRMED IN ROOSEVELT</a><br>' +
+                '<a href="#" style="color:#0000FF;">TEMPERATURES WON&#39;T EXCEED 15 DEGREES ALL DAY</a><br>' +
+                '<a href="#" style="color:#0000FF;">SNOWPLOWS STRUGGLE TO CROSS BRIDGE TO MAINLAND</a><br>' +
+                '<a href="#" style="color:#0000FF;">TRAVEL RESTRICTIONS SPARK PROTESTS</a><br>' +
+                '<a href="#" style="color:#0000FF;">SHELTERS OVERWHELMED ACROSS WARD</a><br>' +
+                '<a href="#" style="color:#0000FF;">NWS: 12 INCHES AND CLIMBING...</a><br>' +
+                '<a href="#" style="color:#0000FF;">WATER MAIN BURST LEAVES BLOCKS WITHOUT WATER</a><br>' +
+                '<font size="1" color="#999999">Reuters</font><br>' +
+              '</font>' +
+            '</td>' +
+            '<td width="33%" valign="top">' +
+              '<font face="Times New Roman, Times, serif" size="2">' +
+                '<a href="#" style="color:#0000FF;">$1.5M IN FEMA FUNDS VANISH... OFFICIALS REFUSE COMMENT</a><br>' +
+                '<a href="#" style="color:#0000FF;">POLITICAL ACTIVISTS POINT FINGERS AT HOMELAND SECURITY</a><br>' +
+                '<a href="#" style="color:#0000FF;">CALCOM HORIZON GIVES AWAY FREE PHONES... AT&amp;T BACKS OUT!</a><br>' +
+                '<a href="#" style="color:#0000FF;">SINCLAIR: &#39;WE ARE STILL STANDING&#39;</a><br>' +
+                '<a href="#" style="color:#0000FF;">Y2K FEARS &#39;LARGELY UNFOUNDED&#39; SAY OFFICIALS</a><br>' +
+                '<a href="#" style="color:#0000FF;">SUBSTATION MALFUNCTION RATTLES RESIDENTS</a><br>' +
+                '<a href="#" style="color:#0000FF;">EMERGENCY PREPAREDNESS PAMPHLETS FLOOD WARD OFFICES</a><br>' +
+                '<a href="#" style="color:#0000FF;">DOW OPENS FLAT IN FIRST WEEK OF NEW MILLENNIUM</a><br>' +
+                '<font size="1" color="#999999">AP Wire</font><br>' +
+              '</font>' +
+            '</td>' +
+            '<td width="33%" valign="top">' +
+              '<font face="Times New Roman, Times, serif" size="2">' +
+                '<a href="#" style="color:#0000FF;">KELSEY &amp; CHELSEY SPLIT! MASS BRAWLS BETWEEN FANS</a><br>' +
+                '<a href="#" style="color:#0000FF;">REMMIES SHOWDOWN: EX-DUO FORCED TO SIT TOGETHER</a><br>' +
+                '<a href="#" style="color:#0000FF;">SAMMIE&#39;S CORNER STORE CLOSES AFTER 42 YEARS</a><br>' +
+                '<a href="#" style="color:#0000FF;">PAYPHONE VANDALS STRIKE AGAIN... &#39;DELIBERATE AND POLITICAL&#39;</a><br>' +
+                '<a href="#" style="color:#0000FF;">WORLDWIDE HOCKEY CUP DRAWS RECORD CROWDS TO D.C.</a><br>' +
+                '<a href="#" style="color:#0000FF;">MAN LOSES PET FISH AT DOG PARK</a><br>' +
+                '<a href="#" style="color:#0000FF;">ROMANO&#39;S SANDWICH OWNER DECLARES WAR ON &#39;BIG MAYO&#39;</a><br>' +
+                '<a href="#" style="color:#0000FF;">SNOW EMERGENCY PARKING RULES IN EFFECT THROUGH WEEKEND</a><br>' +
+                '<font size="1" color="#999999">UPI</font><br>' +
+              '</font>' +
+            '</td>' +
+          '</tr>' +
+        '</table>' +
+      '</td></tr>' +
+      /* === SEPARATOR === */
+      '<tr><td><hr size="1" noshade></td></tr>' +
+      /* === FOOTER === */
+      '<tr><td align="center" style="padding: 10px 0;">' +
+        '<font face="Courier New, Courier, monospace" size="1">' +
+          '<a href="#" style="color:#0000FF;">matt@drudgereport.com</a><br><br>' +
+          'DRUDGE REPORT DOES NOT OWN, OPERATE, OR MAINTAIN DRUDGEREPORT.COM<br>' +
+          'IS A CONDITIONS OF USE VIOLATION TO SEND UNSOLICITED COMMERCIAL EMAIL<br>' +
+          'MATERIAL CONNECTION DISCLOSURE: You should assume that this website has an affiliate relationship and/or another material connection<br>' +
+          'to the persons or businesses mentioned in or linked to from this page and may receive commissions from purchases you make on subsequent web sites.<br><br>' +
+          'Drudge Report &#169; 2000<br>' +
+          '<font color="#999999">Visits to DRUDGE 1/13/00: 022,481,938</font>' +
+        '</font>' +
+      '</td></tr>' +
+      '</table>'
+  },
+
   '404': {
     title: 'The page cannot be displayed',
     url: '',
