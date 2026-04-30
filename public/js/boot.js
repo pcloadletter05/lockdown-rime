@@ -218,6 +218,13 @@ async function startingNT() {
     '<p class="progress-dots">.</p>';
 
   var div = setBootScreen('boot-starting', content);
+
+  // Play boot chime (inline Audio — SoundManager not loaded on index.html)
+  if (sessionStorage.getItem('nt4-muted') !== 'true') {
+    var bootChime = new Audio('assets/sounds/tada.wav');
+    bootChime.play().catch(function() {});
+  }
+
   var dotsSpan = div.querySelector('.progress-dots');
   var dotCount = 0;
   var dotInterval = setInterval(function() {
