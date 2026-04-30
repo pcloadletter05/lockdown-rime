@@ -26,7 +26,7 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 **Granularity:** coarse
 **Coverage:** 21/21 v1.8 requirements mapped
 
-- [x] **Phase 30: Anchor Shift to Jan 13** — Advance the in-game "now" from Jan 9 Sunday to Jan 13 Thursday, 2000 with read-state pass on archived email (completed 2026-04-30)
+- [x] **Phase 30: Anchor Shift to Jan 13** — Advance the in-game "now" from Jan 9 Sunday to Jan 13 Thursday, 2000 with read-state pass on archived email (completed 2026-04-30)
 - [ ] **Phase 31: Desktop Notes & Contacts** — Add Jan 12 (Syd flyer / 555-2033) and Jan 13 (Lucy → Francisco / 555-8818) entries to notes.txt and contact data
 - [ ] **Phase 32: Jan 12 Call Log & Respondents** — 7 AM 555-9949 full call, 12 PM 555-4432 Kubwimana full call, 555-7120 voicemail entry; two new H-XXXX respondent files
 - [ ] **Phase 33: Drudge Report Page** — Period-authentic 1999/2000 Drudge Report internal page in IE5 with bookmark entry
@@ -44,9 +44,9 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
   4. The real-time-to-in-game clock mapping resolves to Jan 13, 2000 across all consumers (taskbar, content gating, deliver_at evaluation)
   5. PROJECT.md, CLAUDE.md, and `.planning/` anchor docs cite Jan 13 Thursday as the active anchor day
 **Plans**:
-- [ ] 30-01-PLAN.md — Flip ANCHOR_DAY constant from 9 to 13 in time.js + correct leading comment
-- [ ] 30-02-PLAN.md — Flip 9 Inbox emails to read:true in emails.json (pre-Jan 13 archive cutoff)
-- [ ] 30-03-PLAN.md — Update CLAUDE.md and .planning/PROJECT.md to cite Jan 13 Thursday as active anchor
+- [x] 30-01-PLAN.md — Flip ANCHOR_DAY constant from 9 to 13 in time.js + correct leading comment
+- [x] 30-02-PLAN.md — Flip 9 Inbox emails to read:true in emails.json (pre-Jan 13 archive cutoff)
+- [x] 30-03-PLAN.md — Update CLAUDE.md and .planning/PROJECT.md to cite Jan 13 Thursday as active anchor
 
 ### Phase 31: Desktop Notes & Contacts
 **Goal**: Lisa's desktop notes.txt and contact JSON reflect two new days of jotted-down phone calls (Syd flyer Jan 12, Lucy → Francisco Jan 13) so the visitor can find both threads from the desktop without opening Outlook or the call log.
@@ -57,7 +57,8 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
   2. Opening notes.txt from the desktop shows a Jan 13 entry recording Lucy's referral of Francisco (grocery store management) at 555-8818
   3. Lisa's call list / contact JSON contains entries for 555-2033 and 555-8818 with appropriate context labels, accessible wherever contact data is consumed
   4. Both notes.txt entries follow Lisa-voice content conventions: no em dashes, no en dashes, period-authentic phrasing consistent with prior entries
-**Plans**: TBD
+**Plans**: 1 plan
+- [ ] 31-01-PLAN.md — Prepend Jan 12 and Jan 13 entries to notes.txt, create contacts.json, add rave bookmark
 
 ### Phase 32: Jan 12 Call Log & Respondents
 **Goal**: The Jan 12 working day is fully represented in the survey folder — two complete CATI interviews and one voicemail attempt — so a visitor browsing the survey folder on Jan 13 sees yesterday's work as fresh archive material.
@@ -94,11 +95,11 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 | 18-19 | v1.5 Network Neighborhood | 4/4 | Complete | 2026-03-31 |
 | 20-23 | v1.6 Browser & Survey | 6/6 | Complete | 2026-04-29 |
 | 24-29 | v1.7 Timeline & Polish | 11/11 | Complete | 2026-04-30 |
-| 30 | 3/3 | Complete   | 2026-04-30 | — |
-| 31 | v1.8 Timeline Forward | 0/0 | Not started | — |
+| 30 | v1.8 Timeline Forward | 3/3 | Complete | 2026-04-30 |
+| 31 | v1.8 Timeline Forward | 0/1 | Not started | — |
 | 32 | v1.8 Timeline Forward | 0/0 | Not started | — |
 | 33 | v1.8 Timeline Forward | 0/0 | Not started | — |
 
 ---
 *Roadmap created: 2026-03-29*
-*Last updated: 2026-04-29 — v1.8 milestone roadmap added (Phases 30-33)*
+*Last updated: 2026-04-30 — Phase 31 plans created (1 plan)*
