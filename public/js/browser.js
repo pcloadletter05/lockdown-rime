@@ -473,6 +473,7 @@ function buildBrowserUI(args) {
   }
 
   function showLinkOutDialog(ext) {
+    SoundManager.play('ding');
     var overlay = document.createElement('div');
     overlay.className = 'dialog-overlay';
     overlay.innerHTML =

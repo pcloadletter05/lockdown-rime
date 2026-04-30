@@ -1511,6 +1511,7 @@ function findMachine(data, name) {
 }
 
 function showAccessDenied(path) {
+  SoundManager.play('chord');
   var overlay = document.createElement('div');
   overlay.className = 'dialog-overlay';
   overlay.innerHTML =

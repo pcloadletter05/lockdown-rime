@@ -56,10 +56,23 @@ const Taskbar = {
     });
     systemTray.appendChild(printerIcon);
 
-    // Speaker icon (decorative)
+    // Speaker icon (mute toggle)
     var speakerIcon = document.createElement('span');
     speakerIcon.className = 'tray-icon';
-    speakerIcon.innerHTML = '<img src="assets/icons/16/speaker.png" width="16" height="16" alt="" draggable="false" style="image-rendering: pixelated;">';
+    var speakerImg = document.createElement('img');
+    speakerImg.src = 'assets/icons/16/' + (SoundManager.isMuted() ? 'speaker_muted.png' : 'speaker.png');
+    speakerImg.width = 16;
+    speakerImg.height = 16;
+    speakerImg.alt = '';
+    speakerImg.draggable = false;
+    speakerImg.style.imageRendering = 'pixelated';
+    speakerIcon.appendChild(speakerImg);
+    speakerIcon.style.cursor = 'pointer';
+    speakerIcon.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var muted = SoundManager.toggleMute();
+      speakerImg.src = 'assets/icons/16/' + (muted ? 'speaker_muted.png' : 'speaker.png');
+    });
     systemTray.appendChild(speakerIcon);
 
     // Clock
