@@ -290,6 +290,20 @@
       "read": true,
       "deliver_at": "2000-01-09T14:20:00",
       "in_reply_to": "msg-014"
+    },
+    {
+      "id": "msg-020",
+      "folder": "Drafts",
+      "from": "Lisa Milavic <l.milavic@calcom.com>",
+      "to": "legal@calcom.com",
+      "cc": null,
+      "date": "2000-01-15T07:15:00",
+      "subject": "call from a survey respondent this morning",
+      "body": "Hi,\n\nI wanted to let someone in legal know about a call I received this morning on the survey line.\n\nAt approximately 7:00 AM today (January 15) I received an incoming call from a respondent named Richard Madison. He is in our system as H-0001, part of the Q4 Horizon satisfaction study. I surveyed him on January 9th. His callback number is 202-555-2984.\n\nMr. Madison said he had received a call from us about five days ago and that he was curious about CalCom. He mentioned that he used to be a journalist before he started teaching, and that he gets \"hunches.\" He asked if I would be willing to speak with him on the record about CalCom.\n\nI told him that I am not authorized to speak on behalf of CalCom or any of its subsidiaries. I offered to connect him with the legal department. He declined but said he understood and that he would save my number.\n\nI am not sure if this is something that needs follow-up, but I wanted legal to be aware in case he does contact you directly. If he calls me again, please let me know if there is anything specific I should or should not say.\n\nThank you,\nLisa",
+      "attachments": [],
+      "read": true,
+      "deliver_at": "2000-01-15T07:15:00",
+      "in_reply_to": null
     }
   ]
 }
