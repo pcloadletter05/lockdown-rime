@@ -27,7 +27,7 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 **Coverage:** 21/21 v1.8 requirements mapped
 
 - [x] **Phase 30: Anchor Shift to Jan 13** — Advance the in-game "now" from Jan 9 Sunday to Jan 13 Thursday, 2000 with read-state pass on archived email (completed 2026-04-30)
-- [ ] **Phase 31: Desktop Notes & Contacts** — Add Jan 12 (Syd flyer / 555-2033) and Jan 13 (Lucy → Francisco / 555-8818) entries to notes.txt and contact data
+- [x] **Phase 31: Desktop Notes & Contacts** — Add Jan 12 (Syd flyer / 555-2033) and Jan 13 (Lucy → Francisco / 555-8818) entries to notes.txt and contact data (completed 2026-04-30)
 - [ ] **Phase 32: Jan 12 Call Log & Respondents** — 7 AM 555-9949 full call, 12 PM 555-4432 Kubwimana full call, 555-7120 voicemail entry; two new H-XXXX respondent files
 - [ ] **Phase 33: Drudge Report Page** — Period-authentic 1999/2000 Drudge Report internal page in IE5 with bookmark entry
 
@@ -58,7 +58,7 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
   3. Lisa's call list / contact JSON contains entries for 555-2033 and 555-8818 with appropriate context labels, accessible wherever contact data is consumed
   4. Both notes.txt entries follow Lisa-voice content conventions: no em dashes, no en dashes, period-authentic phrasing consistent with prior entries
 **Plans**: 1 plan
-- [ ] 31-01-PLAN.md — Prepend Jan 12 and Jan 13 entries to notes.txt, create contacts.json, add rave bookmark
+- [x] 31-01-PLAN.md — Prepend Jan 12 and Jan 13 entries to notes.txt, create contacts.json, add rave bookmark
 
 ### Phase 32: Jan 12 Call Log & Respondents
 **Goal**: The Jan 12 working day is fully represented in the survey folder — two complete CATI interviews and one voicemail attempt — so a visitor browsing the survey folder on Jan 13 sees yesterday's work as fresh archive material.
@@ -69,7 +69,9 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
   2. Two new H-XXXX respondent profile files exist (one for 555-9949, one for 555-4432 Kubwimana), each following the established CATI format (Demographics, S1-S3 screener, Survey Responses)
   3. Both new respondent files appear in the survey folder when navigated via File Explorer (wired into files.json)
   4. All survey response text and call-log entries honor the no-em-dash / no-en-dash content convention
-**Plans**: TBD
+**Plans**: 2 plans
+- [ ] 32-01-PLAN.md — Add Jan 12 call-log rows, Call_Disposition_Log_0112.xls, and Sent_Voicemails_0112.txt
+- [ ] 32-02-PLAN.md — Create H-0004 and H-0005 respondent profiles in respondents.json and files.json
 
 ### Phase 33: Drudge Report Page
 **Goal**: A visitor opening IE5 can reach a period-authentic 1999/2000 Drudge Report page via a bookmark, with in-world headlines that fit the Jan 13, 2000 anchor and rendering consistent with internal-page styling (no iframe).
@@ -96,10 +98,10 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 | 20-23 | v1.6 Browser & Survey | 6/6 | Complete | 2026-04-29 |
 | 24-29 | v1.7 Timeline & Polish | 11/11 | Complete | 2026-04-30 |
 | 30 | v1.8 Timeline Forward | 3/3 | Complete | 2026-04-30 |
-| 31 | v1.8 Timeline Forward | 0/1 | Not started | — |
-| 32 | v1.8 Timeline Forward | 0/0 | Not started | — |
+| 31 | v1.8 Timeline Forward | 1/1 | Complete | 2026-04-30 |
+| 32 | v1.8 Timeline Forward | 0/2 | Not started | — |
 | 33 | v1.8 Timeline Forward | 0/0 | Not started | — |
 
 ---
 *Roadmap created: 2026-03-29*
-*Last updated: 2026-04-30 — Phase 31 plans created (1 plan)*
+*Last updated: 2026-04-30 — Phase 32 plans created (2 plans)*

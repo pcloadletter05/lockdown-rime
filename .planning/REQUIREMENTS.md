@@ -15,10 +15,10 @@
 
 ### Desktop Notes & Contacts
 
-- [ ] **NOTES-01**: Lisa's desktop `notes.txt` gains a Jan 12 entry mentioning the Syd party flyer ("RIOT AT THE RAVE / RAGE AGAINST THE LOCK DOWN") and capturing the 555-2033 callback number
-- [ ] **NOTES-02**: Lisa's desktop `notes.txt` gains a Jan 13 entry recording Lucy's referral of Francisco at 555-8818, grocery store management
-- [ ] **NOTES-03**: Lisa's call list / contact data in JSON includes 555-2033 (Syd flyer) and 555-8818 (Francisco) entries with appropriate context labels
-- [ ] **NOTES-04**: Both notes.txt entries follow existing Lisa-voice content conventions (no em or en dashes, period-authentic phrasing)
+- [x] **NOTES-01**: Lisa's desktop `notes.txt` gains a Jan 12 entry mentioning the Syd party flyer ("RIOT AT THE RAVE / RAGE AGAINST THE LOCK DOWN") and capturing the 555-2033 callback number
+- [x] **NOTES-02**: Lisa's desktop `notes.txt` gains a Jan 13 entry recording Lucy's referral of Francisco at 555-8818, grocery store management
+- [x] **NOTES-03**: Lisa's call list / contact data in JSON includes 555-2033 (Syd flyer) and 555-8818 (Francisco) entries with appropriate context labels
+- [x] **NOTES-04**: Both notes.txt entries follow existing Lisa-voice content conventions (no em or en dashes, period-authentic phrasing)
 
 ### Jan 12 Call Log & Respondents
 
@@ -68,10 +68,10 @@ Deferred to a later milestone.
 | ANCHOR-03 | Phase 30 | Complete |
 | ANCHOR-04 | Phase 30 | Complete |
 | ANCHOR-05 | Phase 30 | Complete |
-| NOTES-01 | Phase 31 | Pending |
-| NOTES-02 | Phase 31 | Pending |
-| NOTES-03 | Phase 31 | Pending |
-| NOTES-04 | Phase 31 | Pending |
+| NOTES-01 | Phase 31 | Complete |
+| NOTES-02 | Phase 31 | Complete |
+| NOTES-03 | Phase 31 | Complete |
+| NOTES-04 | Phase 31 | Complete |
 | CALL-01 | Phase 32 | Pending |
 | CALL-02 | Phase 32 | Pending |
 | CALL-03 | Phase 32 | Pending |

@@ -643,6 +643,55 @@
                 }
               },
               {
+                "name": "Call_Disposition_Log_0112.xls",
+                "type": "file",
+                "icon": "file_xls",
+                "file_type": "xls",
+                "size": "3 KB",
+                "modified": "1/12/2000 12:30 PM",
+                "content_key": "call-disposition-log-0112",
+                "content": {
+                  "columns": [
+                    "Date",
+                    "Time",
+                    "Phone",
+                    "Disposition",
+                    "Duration",
+                    "Interviewer",
+                    "Notes"
+                  ],
+                  "rows": [
+                    [
+                      "1/12/2000",
+                      "7:00 AM",
+                      "202-555-9949",
+                      "Complete",
+                      "19 min",
+                      "L. Milavic",
+                      "H-0004; respondent declined name"
+                    ],
+                    [
+                      "1/12/2000",
+                      "7:22 AM",
+                      "202-555-7120",
+                      "Voicemail",
+                      "",
+                      "L. Milavic",
+                      "VM left"
+                    ],
+                    [
+                      "1/12/2000",
+                      "12:00 PM",
+                      "202-555-4432",
+                      "Complete",
+                      "17 min",
+                      "L. Milavic",
+                      "H-0005 Kubwimana"
+                    ]
+                  ]
+                }
+              },
+              {
                 "name": "Respondents",
                 "type": "folder",
                 "icon": "folder_closed",

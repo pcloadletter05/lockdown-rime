@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.8
 milestone_name: Timeline Forward & Drudge Report
-status: executing
-last_updated: "2026-04-30T04:29:22.484Z"
+status: unknown
+last_updated: "2026-04-30T05:03:59.627Z"
 progress:
   total_phases: 4
-  completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  completed_phases: 2
+  total_plans: 4
+  completed_plans: 4
 ---
 
 # Session State
@@ -18,12 +18,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-30)
 
 **Core value:** The visitor must feel like they've sat down at a real person's real work computer in 1999.
-**Current focus:** Phase 30 — anchor-shift-to-jan-13
+**Current focus:** Phase 32 — jan-12-calls
 
 ## Current Position
 
-Phase: 30 (anchor-shift-to-jan-13) — COMPLETE
-Plan: 3 of 3 (all complete)
+Phase: 31 (desktop-notes-contacts) — COMPLETE
+Plan: 1 of 1 (done)
+Next: Phase 32 (jan-12-calls)
 
 ## Accumulated Context
 
@@ -52,6 +53,8 @@ Phases are globally unique across all milestones:
 - Drudge Report ships as internal-page (no `mode: ext` iframe), reusing Yahoo / Ask Jeeves pattern
 - [Phase 30]: Single constant change (ANCHOR_DAY: 9 -> 13) cascades to all consumers; no downstream file edits needed
 - [Phase 30-03]: CLAUDE.md and PROJECT.md anchor docs updated to cite Jan 13 Thursday; CLAUDE.md force-added despite gitignore
+- [Phase 31-01]: contacts.json uses { meta, contacts: [] } schema (simpler than call-log rows/columns pattern)
+- [Phase 31-01]: Bookmark label "lockdown rave" in Lisa lowercase voice
 
 ### Todos / Blockers
 
@@ -60,6 +63,7 @@ Phases are globally unique across all milestones:
 
 ## Session Log
 
+- 2026-04-30: Phase 31 complete — notes.txt entries (Jan 12 rave, Jan 13 Francisco), contacts.json, rave bookmark
 - 2026-04-30: Phase 30 complete — anchor shift from Jan 9 to Jan 13 across code, emails, and docs
 - 2026-04-30: v1.7 Continuous Timeline & Desktop Polish milestone archived and tagged
 - 2026-04-29: v1.8 Timeline Forward & Drudge Report milestone started
