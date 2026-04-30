@@ -1587,3 +1587,8 @@ body {
 .calc-btn-blue {
   color: #0000aa;
 }
+
+/* Screensaver */
+#screensaver {
+  z-index: 50000;
+}
