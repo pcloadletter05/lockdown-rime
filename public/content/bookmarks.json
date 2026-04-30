@@ -17,6 +17,7 @@
     { "name": "CalCom Research Services", "url": "calcom-corporate", "icon": null, "children": null },
     { "name": "Yahoo!", "url": "yahoo-portal", "icon": null, "children": null },
     { "name": "Ask Jeeves", "url": "ask-jeeves", "icon": null, "children": null },
+    { "name": "DRUDGE REPORT", "url": "drudge-report", "icon": null, "children": null },
     {
       "name": "I Spy Riddles",
       "url": "ext:ispyriddles",

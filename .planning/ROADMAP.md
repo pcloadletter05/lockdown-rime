@@ -102,7 +102,7 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 | 30 | v1.8 Timeline Forward | 3/3 | Complete | 2026-04-30 |
 | 31 | v1.8 Timeline Forward | 1/1 | Complete | 2026-04-30 |
 | 32 | v1.8 Timeline Forward | 2/2 | Complete | 2026-04-30 |
-| 33 | v1.8 Timeline Forward | 0/2 | Not started | — |
+| 33 | 1/2 | In Progress|  | — |
 
 ---
 *Roadmap created: 2026-03-29*

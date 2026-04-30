@@ -32,11 +32,11 @@
 
 ### Drudge Report
 
-- [ ] **DRUDGE-01**: A period-authentic Drudge Report page exists in the IE5 browser, visually accurate to its 1999/2000 reference (red banner with rotating headline, three-column link layout, siren GIFs for breaking news, central photo + caption block)
-- [ ] **DRUDGE-02**: Drudge Report headlines and link text reflect in-world lore consistent with the Jan 13, 2000 timeline anchor (content sourced from staff lore Taylor will supply at build time)
+- [x] **DRUDGE-01**: A period-authentic Drudge Report page exists in the IE5 browser, visually accurate to its 1999/2000 reference (red banner with rotating headline, three-column link layout, siren GIFs for breaking news, central photo + caption block)
+- [x] **DRUDGE-02**: Drudge Report headlines and link text reflect in-world lore consistent with the Jan 13, 2000 timeline anchor (content sourced from staff lore Taylor will supply at build time)
 - [ ] **DRUDGE-03**: Drudge Report is reachable via a bookmark entry in the IE5 bookmarks list
-- [ ] **DRUDGE-04**: Drudge Report integrates with the existing internal-page registry pattern (no `mode: ext` iframe; pure styled HTML like Yahoo / Ask Jeeves)
-- [ ] **DRUDGE-05**: Drudge Report uses Tahoma / Arial fonts and period-appropriate styling; no modern CSS effects (no gradients, drop shadows, border-radius beyond what 1999 browsers supported)
+- [x] **DRUDGE-04**: Drudge Report integrates with the existing internal-page registry pattern (no `mode: ext` iframe; pure styled HTML like Yahoo / Ask Jeeves)
+- [x] **DRUDGE-05**: Drudge Report uses Tahoma / Arial fonts and period-appropriate styling; no modern CSS effects (no gradients, drop shadows, border-radius beyond what 1999 browsers supported)
 
 ## v2.0+ Requirements
 
@@ -79,11 +79,11 @@ Deferred to a later milestone.
 | CALL-05 | Phase 32 | Complete |
 | CALL-06 | Phase 32 | Complete |
 | CALL-07 | Phase 32 | Complete |
-| DRUDGE-01 | Phase 33 | Pending |
-| DRUDGE-02 | Phase 33 | Pending |
+| DRUDGE-01 | Phase 33 | Complete |
+| DRUDGE-02 | Phase 33 | Complete |
 | DRUDGE-03 | Phase 33 | Pending |
-| DRUDGE-04 | Phase 33 | Pending |
-| DRUDGE-05 | Phase 33 | Pending |
+| DRUDGE-04 | Phase 33 | Complete |
+| DRUDGE-05 | Phase 33 | Complete |
 
 **Coverage:**
 - v1.8 requirements: 21 total

@@ -485,7 +485,7 @@ function buildBrowserUI(args) {
   var throbber, throbberTimer = null;
 
   // ---- Popup Ad System ----
-  var POPUP_TRIGGER_PAGES = ['yahoo-portal'];
+  var POPUP_TRIGGER_PAGES = ['yahoo-portal', 'drudge-report'];
   var POPUP_DELAY_MS = 3000;
   var popupState = {
     triggeredPages: {},    // Object used as set -- keys are page keys that already fired
