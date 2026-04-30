@@ -28,7 +28,7 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 
 - [x] **Phase 30: Anchor Shift to Jan 13** — Advance the in-game "now" from Jan 9 Sunday to Jan 13 Thursday, 2000 with read-state pass on archived email (completed 2026-04-30)
 - [x] **Phase 31: Desktop Notes & Contacts** — Add Jan 12 (Syd flyer / 555-2033) and Jan 13 (Lucy → Francisco / 555-8818) entries to notes.txt and contact data (completed 2026-04-30)
-- [ ] **Phase 32: Jan 12 Call Log & Respondents** — 7 AM 555-9949 full call, 12 PM 555-4432 Kubwimana full call, 555-7120 voicemail entry; two new H-XXXX respondent files
+- [x] **Phase 32: Jan 12 Call Log & Respondents** — 7 AM 555-9949 full call, 12 PM 555-4432 Kubwimana full call, 555-7120 voicemail entry; two new H-XXXX respondent files (completed 2026-04-30)
 - [ ] **Phase 33: Drudge Report Page** — Period-authentic 1999/2000 Drudge Report internal page in IE5 with bookmark entry
 
 ## Phase Details
@@ -70,8 +70,8 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
   3. Both new respondent files appear in the survey folder when navigated via File Explorer (wired into files.json)
   4. All survey response text and call-log entries honor the no-em-dash / no-en-dash content convention
 **Plans**: 2 plans
-- [ ] 32-01-PLAN.md — Add Jan 12 call-log rows, Call_Disposition_Log_0112.xls, and Sent_Voicemails_0112.txt
-- [ ] 32-02-PLAN.md — Create H-0004 and H-0005 respondent profiles in respondents.json and files.json
+- [x] 32-01-PLAN.md — Add Jan 12 call-log rows, Call_Disposition_Log_0112.xls, and Sent_Voicemails_0112.txt
+- [x] 32-02-PLAN.md — Create H-0004 and H-0005 respondent profiles in respondents.json and files.json
 
 ### Phase 33: Drudge Report Page
 **Goal**: A visitor opening IE5 can reach a period-authentic 1999/2000 Drudge Report page via a bookmark, with in-world headlines that fit the Jan 13, 2000 anchor and rendering consistent with internal-page styling (no iframe).
@@ -83,7 +83,9 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
   3. The Drudge Report appears as a bookmark entry in the IE5 bookmarks list, reachable in one click from the browser
   4. The page integrates with the existing internal-page registry pattern (pure styled HTML like Yahoo / Ask Jeeves; no `mode: ext` iframe)
   5. Styling uses Tahoma / Arial fonts and period-appropriate CSS only (no gradients, drop shadows, or border-radius beyond 1999 browser support)
-**Plans**: TBD
+**Plans**: 2 plans
+- [ ] 33-01-PLAN.md — Build Drudge Report internal page HTML in browser.js with siren GIF asset
+- [ ] 33-02-PLAN.md — Add bookmark entry, popup trigger wiring, and visual verification
 
 ## Progress
 
@@ -99,9 +101,9 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 | 24-29 | v1.7 Timeline & Polish | 11/11 | Complete | 2026-04-30 |
 | 30 | v1.8 Timeline Forward | 3/3 | Complete | 2026-04-30 |
 | 31 | v1.8 Timeline Forward | 1/1 | Complete | 2026-04-30 |
-| 32 | 1/2 | In Progress|  | — |
-| 33 | v1.8 Timeline Forward | 0/0 | Not started | — |
+| 32 | v1.8 Timeline Forward | 2/2 | Complete | 2026-04-30 |
+| 33 | v1.8 Timeline Forward | 0/2 | Not started | — |
 
 ---
 *Roadmap created: 2026-03-29*
-*Last updated: 2026-04-30 — Phase 32 plans created (2 plans)*
+*Last updated: 2026-04-30 — Phase 33 plans created (2 plans)*

@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.8
 milestone_name: Timeline Forward & Drudge Report
 status: unknown
-last_updated: "2026-04-30T14:03:28.220Z"
+last_updated: "2026-04-30T14:10:42.601Z"
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 6
-  completed_plans: 5
+  completed_plans: 6
 ---
 
 # Session State
@@ -55,6 +55,7 @@ Phases are globally unique across all milestones:
 - [Phase 31-01]: contacts.json uses { meta, contacts: [] } schema (simpler than call-log rows/columns pattern)
 - [Phase 31-01]: Bookmark label "lockdown rave" in Lisa lowercase voice
 - [Phase 32]: Wilmington DE chosen as VM city for 555-7120 (unused East Coast metro)
+- [Phase 32]: H-0004 name [REFUSED] everywhere; verbatim typos preserved in dual-surface records
 
 ### Todos / Blockers
 

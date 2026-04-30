@@ -25,10 +25,10 @@
 - [x] **CALL-01**: Jan 12 call log includes a 7:00 AM full-call entry for 555-9949 (caller name TBD during build)
 - [x] **CALL-02**: Jan 12 call log includes a voicemail entry showing Lisa left an LV on 555-7120 immediately after the 7 AM call
 - [x] **CALL-03**: Jan 12 call log includes a 12:00 PM full-call entry for 555-4432 Kubwimana
-- [ ] **CALL-04**: New H-XXXX respondent profile file exists for the 555-9949 caller, following the established CATI respondent format (Demographics, S1-S3 screener, Survey Responses)
-- [ ] **CALL-05**: New H-XXXX respondent profile file exists for 555-4432 Kubwimana, following the same format
-- [ ] **CALL-06**: Both new respondent files are wired into `files.json` so they appear in the survey folder via File Explorer
-- [ ] **CALL-07**: Respondent files honor the no-em-dash / no-en-dash content convention for survey response text
+- [x] **CALL-04**: New H-XXXX respondent profile file exists for the 555-9949 caller, following the established CATI respondent format (Demographics, S1-S3 screener, Survey Responses)
+- [x] **CALL-05**: New H-XXXX respondent profile file exists for 555-4432 Kubwimana, following the same format
+- [x] **CALL-06**: Both new respondent files are wired into `files.json` so they appear in the survey folder via File Explorer
+- [x] **CALL-07**: Respondent files honor the no-em-dash / no-en-dash content convention for survey response text
 
 ### Drudge Report
 
@@ -75,10 +75,10 @@ Deferred to a later milestone.
 | CALL-01 | Phase 32 | Complete |
 | CALL-02 | Phase 32 | Complete |
 | CALL-03 | Phase 32 | Complete |
-| CALL-04 | Phase 32 | Pending |
-| CALL-05 | Phase 32 | Pending |
-| CALL-06 | Phase 32 | Pending |
-| CALL-07 | Phase 32 | Pending |
+| CALL-04 | Phase 32 | Complete |
+| CALL-05 | Phase 32 | Complete |
+| CALL-06 | Phase 32 | Complete |
+| CALL-07 | Phase 32 | Complete |
 | DRUDGE-01 | Phase 33 | Pending |
 | DRUDGE-02 | Phase 33 | Pending |
 | DRUDGE-03 | Phase 33 | Pending |
