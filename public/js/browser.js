@@ -351,9 +351,9 @@ var BROWSER_PAGES = {
       '</td></tr>' +
       /* === CENTRAL PHOTO === */
       '<tr><td align="center" style="padding: 10px 0;">' +
-        '<table width="240" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#000000">' +
-          '<tr><td bgcolor="#333333" align="center" style="padding: 40px 10px;">' +
-            '<font face="Arial, sans-serif" size="2" color="#CCCCCC"><i>AP Photo / Washington</i></font>' +
+        '<table width="320" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#000000">' +
+          '<tr><td align="center" style="padding: 0;">' +
+            '<img src="assets/news/drudge-snow.jpg" width="320" alt="Storm Atlas blankets D.C." style="display:block;">' +
           '</td></tr>' +
           '<tr><td align="center" style="padding: 4px;">' +
             '<font face="Arial, sans-serif" size="1"><i>Snow blankets the Capitol as Storm Atlas dumps 12+ inches on D.C.</i></font>' +
