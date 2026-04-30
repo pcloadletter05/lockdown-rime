@@ -99,7 +99,7 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 | 24-29 | v1.7 Timeline & Polish | 11/11 | Complete | 2026-04-30 |
 | 30 | v1.8 Timeline Forward | 3/3 | Complete | 2026-04-30 |
 | 31 | v1.8 Timeline Forward | 1/1 | Complete | 2026-04-30 |
-| 32 | v1.8 Timeline Forward | 0/2 | Not started | — |
+| 32 | 1/2 | In Progress|  | — |
 | 33 | v1.8 Timeline Forward | 0/0 | Not started | — |
 
 ---

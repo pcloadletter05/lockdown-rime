@@ -22,9 +22,9 @@
 
 ### Jan 12 Call Log & Respondents
 
-- [ ] **CALL-01**: Jan 12 call log includes a 7:00 AM full-call entry for 555-9949 (caller name TBD during build)
-- [ ] **CALL-02**: Jan 12 call log includes a voicemail entry showing Lisa left an LV on 555-7120 immediately after the 7 AM call
-- [ ] **CALL-03**: Jan 12 call log includes a 12:00 PM full-call entry for 555-4432 Kubwimana
+- [x] **CALL-01**: Jan 12 call log includes a 7:00 AM full-call entry for 555-9949 (caller name TBD during build)
+- [x] **CALL-02**: Jan 12 call log includes a voicemail entry showing Lisa left an LV on 555-7120 immediately after the 7 AM call
+- [x] **CALL-03**: Jan 12 call log includes a 12:00 PM full-call entry for 555-4432 Kubwimana
 - [ ] **CALL-04**: New H-XXXX respondent profile file exists for the 555-9949 caller, following the established CATI respondent format (Demographics, S1-S3 screener, Survey Responses)
 - [ ] **CALL-05**: New H-XXXX respondent profile file exists for 555-4432 Kubwimana, following the same format
 - [ ] **CALL-06**: Both new respondent files are wired into `files.json` so they appear in the survey folder via File Explorer
@@ -72,9 +72,9 @@ Deferred to a later milestone.
 | NOTES-02 | Phase 31 | Complete |
 | NOTES-03 | Phase 31 | Complete |
 | NOTES-04 | Phase 31 | Complete |
-| CALL-01 | Phase 32 | Pending |
-| CALL-02 | Phase 32 | Pending |
-| CALL-03 | Phase 32 | Pending |
+| CALL-01 | Phase 32 | Complete |
+| CALL-02 | Phase 32 | Complete |
+| CALL-03 | Phase 32 | Complete |
 | CALL-04 | Phase 32 | Pending |
 | CALL-05 | Phase 32 | Pending |
 | CALL-06 | Phase 32 | Pending |

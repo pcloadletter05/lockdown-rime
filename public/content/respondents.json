@@ -339,6 +339,64 @@
         "D3": "20044"
       },
       "lisa_notes": "Off-shift retry of the 1:55 PM voicemail. Picked up at 11:02 PM with what sounded like a Scandinavian 'Hei-hei?' and as soon as I started the intro she said 'I'm at work!' and hung up. Coded that one as Hangup. I texted her at 11:03 PM offering text instead and she said yes immediately. Ran the whole survey by SMS, ~14 min. I entered her answers into the standard record as if it had been a voice call, which is what I always do. The literal text shorthand stays in my head and in this notes box; the responses table is the cleaned version. Roosevelt resident. Refused to give a name for follow-up. Reported 'spam' on Q4 and asked for a new phone on Q6. The irony of a respondent telling a CalCom interviewer over text that someone keeps texting her on her CalCom Horizon was not lost on me. Connection on my console drifted from 92 to 87 percent over the SMS session, same downward shape as Madison's voice call this afternoon. Two for two on Roosevelt. After I sent the closing thank-you I stayed in the thread and asked her about her cat (she had asked if cats counted toward household size) and she called it weird, which it was. I panicked and sent a fake 'this number is disconnected' message to back out. Adding to the Margaret list along with the Bergmeier 'unrecorded line' thing. Open question for Margaret: is text-mode an allowed channel? Does it count toward the daily complete quota? Is the SMS thread saved server-side? The CATI flipbook does not cover any of this."
+    },
+    {
+      "respondent_id": "H-0004",
+      "interview_date": "2000-01-12",
+      "interview_time": "7:00 AM",
+      "phone": "202-555-9949",
+      "disposition": "COMPLETE",
+      "duration": 19,
+      "demographics": {
+        "age_range": "18-24",
+        "gender": "F",
+        "household_size": 3,
+        "zip": "20044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "2",
+        "Q1": "3",
+        "Q2": "4",
+        "Q3": "",
+        "Q4": "Uh, yeah. My text got deleted a few times, and the battery doesnt last too long.",
+        "Q5": "7",
+        "Q6": "Nope, thank you!",
+        "D1": "1",
+        "D2": "3",
+        "D3": "20044"
+      },
+      "lisa_notes": "Difficult one. She came in hostile right from the jump, did not want to give her age, definitely did not want to give her name. I wrote [REFUSED] on the name line and moved on. Snake game complaint on Q1 -- she wanted to know if I could fix it, I told her I would forward it to QA (I will not). She asked why CalCom is handing out free Horizons, which is a fair question honestly, but above my pay grade. Windy outside, you could hear it on her end, plus some kind of grunting and scraping noise the whole time. She finished the survey though, so credit where it is due. -- L.M."
+    },
+    {
+      "respondent_id": "H-0005",
+      "interview_date": "2000-01-12",
+      "interview_time": "12:00 PM",
+      "phone": "202-555-4432",
+      "disposition": "COMPLETE",
+      "duration": 17,
+      "demographics": {
+        "age_range": "18-24",
+        "gender": "M",
+        "household_size": 1,
+        "zip": "20044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "1",
+        "Q1": "5",
+        "Q2": "4",
+        "Q3": "5",
+        "Q4": "Ahh, yes. The voicemail thing. It has trouble playing and displaying.",
+        "Q5": "10",
+        "Q6": "No, thank you, ma'am.",
+        "D1": "1",
+        "D2": "1",
+        "D3": "20044"
+      },
+      "lisa_notes": "Very polite young man, lives in a dorm on Roosevelt. Answered the phone outside in the cold, had to step inside before we could start. Spelled his name out for me letter by letter -- K-W-I-Z-E-R-A K-U-B-W-I-M-A-N-A -- and was patient about it. I tried to say it back and stretched it out wrong ('Kwizeraaa'), he did not correct me. Voicemail playback issue on Q4, sounds like a real device bug, nothing unusual. L. came by mid-call and would not leave me alone, had to mute the line for a second. Love her but she has terrible timing. Signal on my console drifted from 100 to 96 percent over the call. Noted. -- L.M."
     }
   ]
 }
