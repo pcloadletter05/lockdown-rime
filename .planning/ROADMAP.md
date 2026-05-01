@@ -10,7 +10,8 @@
 - ✅ **v1.5 Network Neighborhood** — Phases 18-19 (shipped 2026-03-31)
 - ✅ **v1.6 Browser & Survey Content** — Phases 20-23 (shipped 2026-04-29)
 - ✅ **v1.7 Continuous Timeline & Desktop Polish** — Phases 24-29 (shipped 2026-04-30)
-- 🟡 **v1.8 Timeline Forward & Drudge Report** — Phases 30-33 (in progress)
+- ✅ **v1.8 Timeline Forward & Drudge Report** — Phases 30-33 (shipped 2026-04-30)
+- 🟡 **v1.9 Jan 15 Calls & Calculator Fix** — Phases 34-35 (in progress)
 
 ## Phases
 
@@ -21,15 +22,23 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 
 </details>
 
-### v1.8 Timeline Forward & Drudge Report (Active)
-
-**Granularity:** coarse
-**Coverage:** 21/21 v1.8 requirements mapped
+<details>
+<summary>✅ v1.8 (Phases 30-33) — SHIPPED</summary>
 
 - [x] **Phase 30: Anchor Shift to Jan 13** — Advance the in-game "now" from Jan 9 Sunday to Jan 13 Thursday, 2000 with read-state pass on archived email (completed 2026-04-30)
 - [x] **Phase 31: Desktop Notes & Contacts** — Add Jan 12 (Syd flyer / 555-2033) and Jan 13 (Lucy → Francisco / 555-8818) entries to notes.txt and contact data (completed 2026-04-30)
 - [x] **Phase 32: Jan 12 Call Log & Respondents** — 7 AM 555-9949 full call, 12 PM 555-4432 Kubwimana full call, 555-7120 voicemail entry; two new H-XXXX respondent files (completed 2026-04-30)
-- [ ] **Phase 33: Drudge Report Page** — Period-authentic 1999/2000 Drudge Report internal page in IE5 with bookmark entry
+- [x] **Phase 33: Drudge Report Page** — Period-authentic 1999/2000 Drudge Report internal page in IE5 with bookmark entry (completed 2026-04-30)
+
+</details>
+
+### v1.9 Jan 15 Calls & Calculator Fix (Active)
+
+**Granularity:** coarse
+**Coverage:** 11/11 v1.9 requirements mapped
+
+- [ ] **Phase 34: Jan 15 Call Log & Sticky Note** — Three Jan 15 outbound rows (Falkenburg complete, Shaw complete, 555-3553 busy retry), two new respondent profiles (H-0006, H-0007), and a notes.txt entry seeding the 555-7108 lead
+- [ ] **Phase 35: Calculator Window Position Fix** — Diagnose and fix Calculator cascade so the small (248x310) window stays fully on-screen across repeated launches, without regressing other apps that rely on cascade
 
 ## Phase Details
 
@@ -84,8 +93,36 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
   4. The page integrates with the existing internal-page registry pattern (pure styled HTML like Yahoo / Ask Jeeves; no `mode: ext` iframe)
   5. Styling uses Tahoma / Arial fonts and period-appropriate CSS only (no gradients, drop shadows, or border-radius beyond 1999 browser support)
 **Plans**: 2 plans
-- [ ] 33-01-PLAN.md — Build Drudge Report internal page HTML in browser.js with siren GIF asset
-- [ ] 33-02-PLAN.md — Add bookmark entry, popup trigger wiring, and visual verification
+- [x] 33-01-PLAN.md — Build Drudge Report internal page HTML in browser.js with siren GIF asset
+- [x] 33-02-PLAN.md — Add bookmark entry, popup trigger wiring, and visual verification
+
+### Phase 34: Jan 15 Call Log & Sticky Note
+**Goal**: A visitor browsing the survey folder on Jan 15 (or after) sees Saturday's shift as fresh archive material — three honest outbound rows, two complete respondent profiles (Falkenburg, Shaw), and a notes.txt entry seeding the 555-7108 lead so a careful reader finds the thread before any future profile lands.
+**Depends on**: Phase 30 (Jan 13 anchor); Phase 32 (H-0005 must exist so H-0006/H-0007 numbering continues cleanly)
+**Requirements**: CALL-08, CALL-09, CALL-10, CALL-11, CALL-12, CALL-13, STICKY-01, STICKY-02, STICKY-03
+**Success Criteria** (what must be TRUE):
+  1. The Jan 15 call log shows exactly three outbound rows: 11:30 AM 202-555-5618 Falkenburg Complete (H-0006), 12:30 PM 202-555-8307 Shaw Complete (H-0007) with the 555-7108 friend lead captured in the row notes, and an end-of-shift 202-555-3553 Busy whose notes reference the prior 1/9 voicemail attempt
+  2. Opening Falkenburg_Fergus.doc from the survey folder via File Explorer renders a complete H-0006 respondent profile (Demographics, S1-S3 screener, full survey responses, Lisa-voice notes) consistent with the source transcript
+  3. Opening Shaw_Dustin.doc from the survey folder via File Explorer renders a complete H-0007 respondent profile including the 555-7108 friend-lead beat and Lisa-voice notes consistent with the source transcript
+  4. Opening notes.txt from the desktop shows a Jan 15 entry with the 555-7108 lead in Lisa's voice (Shaw's friend, battery, approximately one week dead, call back Monday)
+  5. All Jan 15 call-log entries, both respondent files, and the notes.txt entry honor the no-em-dash / no-en-dash content convention
+**Plans**: 4 plans
+- [ ] 34-01-PLAN.md — Append 3 Jan 15 rows to call-log.json + add Call_Disposition_Log_0115.xls to files.json
+- [ ] 34-02-PLAN.md — Falkenburg respondent profile (H-0006) in respondents.json + Falkenburg_Fergus.doc wired into files.json
+- [ ] 34-03-PLAN.md — Shaw respondent profile (H-0007) in respondents.json + Shaw_Dustin.doc wired into files.json
+- [ ] 34-04-PLAN.md — Prepend Jan 15 entry to notes.txt with 555-7108 lead (Shaw's friend, battery, call Monday)
+
+### Phase 35: Calculator Window Position Fix
+**Goal**: Launching Calculator from the Start menu places the full window inside the visible desktop viewport across repeated launches, without regressing the cascade behavior other apps rely on.
+**Depends on**: Nothing (independent bug fix; can ship in parallel with Phase 34)
+**Requirements**: CALC-FIX-01, CALC-FIX-02
+**Success Criteria** (what must be TRUE):
+  1. Opening Calculator from the Start menu after several earlier window launches in the same session lands the full 248x310 Calculator window inside the visible desktop viewport — title bar visible at top, taskbar not overlapping the bottom of the window content
+  2. The fix is period-authentic — either a stable centered/offset default like Winamp, or a cascade that resets / clamps before pushing small windows off-screen
+  3. Other cascade-relying apps (File Explorer, Outlook, IE5, Notepad, etc.) show no visible regression in their default opening positions across a fresh session
+  4. Repeated open/close cycles of Calculator alone do not progressively walk the window off-screen
+**Plans**: 1 plan
+- [ ] 35-01-PLAN.md — Diagnose cascade behavior in public/js/desktop.js, pick fix strategy (centered default vs cascade clamp), implement, verify across multiple launches
 
 ## Progress
 
@@ -102,8 +139,10 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 | 30 | v1.8 Timeline Forward | 3/3 | Complete | 2026-04-30 |
 | 31 | v1.8 Timeline Forward | 1/1 | Complete | 2026-04-30 |
 | 32 | v1.8 Timeline Forward | 2/2 | Complete | 2026-04-30 |
-| 33 | 1/2 | In Progress|  | — |
+| 33 | v1.8 Timeline Forward | 2/2 | Complete | 2026-04-30 |
+| 34 | v1.9 Jan 15 Calls | 0/4 | Not started | — |
+| 35 | v1.9 Calculator Fix | 0/1 | Not started | — |
 
 ---
 *Roadmap created: 2026-03-29*
-*Last updated: 2026-04-30 — Phase 33 plans created (2 plans)*
+*Last updated: 2026-04-30 — v1.9 Phase 34 plans created (4 plans, 4 waves)*

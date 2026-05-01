@@ -692,6 +692,55 @@
                 }
               },
               {
+                "name": "Call_Disposition_Log_0115.xls",
+                "type": "file",
+                "icon": "file_xls",
+                "file_type": "xls",
+                "size": "3 KB",
+                "modified": "1/15/2000 3:50 PM",
+                "content_key": "call-disposition-log-0115",
+                "content": {
+                  "columns": [
+                    "Date",
+                    "Time",
+                    "Phone",
+                    "Disposition",
+                    "Duration",
+                    "Interviewer",
+                    "Notes"
+                  ],
+                  "rows": [
+                    [
+                      "1/15/2000",
+                      "11:30 AM",
+                      "202-555-5618",
+                      "Complete",
+                      "13 min",
+                      "L. Milavic",
+                      "H-0006 Falkenburg"
+                    ],
+                    [
+                      "1/15/2000",
+                      "12:30 PM",
+                      "202-555-8307",
+                      "Complete",
+                      "17 min",
+                      "L. Milavic",
+                      "H-0007 Shaw; lead provided 202-555-7108 (friend, battery)"
+                    ],
+                    [
+                      "1/15/2000",
+                      "3:48 PM",
+                      "202-555-3553",
+                      "Busy",
+                      "",
+                      "L. Milavic",
+                      "Retry. VM left on this number 1/9, no callback. Line busy today."
+                    ]
+                  ]
+                }
+              },
+              {
                 "name": "Respondents",
                 "type": "folder",
                 "icon": "folder_closed",
