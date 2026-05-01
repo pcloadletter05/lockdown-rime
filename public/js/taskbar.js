@@ -75,6 +75,13 @@ const Taskbar = {
     });
     systemTray.appendChild(speakerIcon);
 
+    // Norton AntiVirus icon (static -- last scan tooltip)
+    var nortonIcon = document.createElement('span');
+    nortonIcon.className = 'tray-icon';
+    nortonIcon.innerHTML = '<img src="assets/icons/16/norton_av.png" width="16" height="16" alt="Norton AntiVirus" draggable="false" style="image-rendering: pixelated;">';
+    nortonIcon.title = 'Last scan 1/15/2000 11:47 PM';
+    systemTray.appendChild(nortonIcon);
+
     // Clock
     var clock = document.createElement('span');
     clock.id = 'tray-clock';
