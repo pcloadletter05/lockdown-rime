@@ -243,6 +243,16 @@ const WindowManager = {
     }
     this.cascadeOffset++;
 
+    // Clamp position so the full window stays inside the visible desktop
+    var maxX = window.innerWidth - width - 8;   // 8px right margin
+    var maxY = window.innerHeight - 28 - height; // 28px taskbar height
+    if (maxX < 0) maxX = 0;
+    if (maxY < 0) maxY = 0;
+    x = Math.min(x, maxX);
+    y = Math.min(y, maxY);
+    if (x < 0) x = 0;
+    if (y < 0) y = 0;
+
     // Custom position override (for popup windows)
     if (opts.position) {
       x = opts.position.x;

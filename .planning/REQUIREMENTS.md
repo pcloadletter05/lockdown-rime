@@ -16,9 +16,9 @@
 
 ### Followup Sticky Note
 
-- [ ] **STICKY-01**: A `StickyNote_Followups.txt` artifact exists on Lisa's desktop seeding the 555-7108 lead (Shaw's friend, battery failure, approximately one week dead) so a careful reader can find the lead before any future respondent profile lands
-- [ ] **STICKY-02**: The sticky note is wired into the desktop / files data so it opens via the existing notepad / text-viewer pattern (consistent with `notes.txt`)
-- [ ] **STICKY-03**: The sticky note content is in Lisa's voice and honors the no-em-dash / no-en-dash convention
+- [x] **STICKY-01**: A `StickyNote_Followups.txt` artifact exists on Lisa's desktop seeding the 555-7108 lead (Shaw's friend, battery failure, approximately one week dead) so a careful reader can find the lead before any future respondent profile lands
+- [x] **STICKY-02**: The sticky note is wired into the desktop / files data so it opens via the existing notepad / text-viewer pattern (consistent with `notes.txt`)
+- [x] **STICKY-03**: The sticky note content is in Lisa's voice and honors the no-em-dash / no-en-dash convention
 
 ### Calculator Window Position
 
@@ -57,9 +57,9 @@ Deferred to a later milestone.
 | CALL-11 | Phase 34 | Complete |
 | CALL-12 | Phase 34 | Complete |
 | CALL-13 | Phase 34 | Complete |
-| STICKY-01 | Phase 34 | Pending |
-| STICKY-02 | Phase 34 | Pending |
-| STICKY-03 | Phase 34 | Pending |
+| STICKY-01 | Phase 34 | Complete |
+| STICKY-02 | Phase 34 | Complete |
+| STICKY-03 | Phase 34 | Complete |
 | CALC-FIX-01 | Phase 35 | Pending |
 | CALC-FIX-02 | Phase 35 | Pending |
 

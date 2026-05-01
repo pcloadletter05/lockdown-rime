@@ -37,7 +37,7 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 **Granularity:** coarse
 **Coverage:** 11/11 v1.9 requirements mapped
 
-- [ ] **Phase 34: Jan 15 Call Log & Sticky Note** — Three Jan 15 outbound rows (Falkenburg complete, Shaw complete, 555-3553 busy retry), two new respondent profiles (H-0006, H-0007), and a notes.txt entry seeding the 555-7108 lead
+- [x] **Phase 34: Jan 15 Call Log & Sticky Note** — Three Jan 15 outbound rows (Falkenburg complete, Shaw complete, 555-3553 busy retry), two new respondent profiles (H-0006, H-0007), and a notes.txt entry seeding the 555-7108 lead (completed 2026-05-01)
 - [ ] **Phase 35: Calculator Window Position Fix** — Diagnose and fix Calculator cascade so the small (248x310) window stays fully on-screen across repeated launches, without regressing other apps that rely on cascade
 
 ## Phase Details
@@ -140,7 +140,7 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 | 31 | v1.8 Timeline Forward | 1/1 | Complete | 2026-04-30 |
 | 32 | v1.8 Timeline Forward | 2/2 | Complete | 2026-04-30 |
 | 33 | v1.8 Timeline Forward | 2/2 | Complete | 2026-04-30 |
-| 34 | 3/4 | In Progress|  | — |
+| 34 | 4/4 | Complete   | 2026-05-01 | — |
 | 35 | v1.9 Calculator Fix | 0/1 | Not started | — |
 
 ---
