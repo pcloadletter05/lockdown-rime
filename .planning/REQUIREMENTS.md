@@ -8,9 +8,9 @@
 ### Jan 15 Call Log & Respondents
 
 - [x] **CALL-08**: The Jan 15 call disposition log shows three confirmed outbound attempts: 11:30 AM 202-555-5618 Falkenburg complete, 12:30 PM 202-555-8307 Shaw complete, and an end-of-shift 202-555-3553 busy (retry of the 1/9 1:03 PM voicemail attempt)
-- [ ] **CALL-09**: A Falkenburg respondent profile (H-0006) exists in `respondents.json` with Demographics, S1–S3 screener, full survey responses, and Lisa-voice notes consistent with the source transcript
+- [x] **CALL-09**: A Falkenburg respondent profile (H-0006) exists in `respondents.json` with Demographics, S1–S3 screener, full survey responses, and Lisa-voice notes consistent with the source transcript
 - [ ] **CALL-10**: A Shaw respondent profile (H-0007) exists in `respondents.json` with Demographics, S1–S3 screener, full survey responses including the friend's number lead captured in the raw notes, and Lisa-voice notes consistent with the source transcript
-- [ ] **CALL-11**: `Falkenburg_Fergus.doc` and `Shaw_Dustin.doc` appear in the survey respondents folder via `files.json` wiring, openable through File Explorer
+- [x] **CALL-11**: `Falkenburg_Fergus.doc` and `Shaw_Dustin.doc` appear in the survey respondents folder via `files.json` wiring, openable through File Explorer
 - [x] **CALL-12**: The 555-3553 row's notes reference the prior 1/9 1:03 PM voicemail attempt so the retry reads as a continuity beat
 - [x] **CALL-13**: All 1/15 survey response text, call-log entries, and Lisa-voice notes honor the no-em-dash / no-en-dash content convention
 
@@ -52,9 +52,9 @@ Deferred to a later milestone.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | CALL-08 | Phase 34 | Complete |
-| CALL-09 | Phase 34 | Pending |
+| CALL-09 | Phase 34 | Complete |
 | CALL-10 | Phase 34 | Pending |
-| CALL-11 | Phase 34 | Pending |
+| CALL-11 | Phase 34 | Complete |
 | CALL-12 | Phase 34 | Complete |
 | CALL-13 | Phase 34 | Complete |
 | STICKY-01 | Phase 34 | Pending |
