@@ -140,7 +140,7 @@ See individual milestone roadmaps in `.planning/milestones/` for details.
 | 31 | v1.8 Timeline Forward | 1/1 | Complete | 2026-04-30 |
 | 32 | v1.8 Timeline Forward | 2/2 | Complete | 2026-04-30 |
 | 33 | v1.8 Timeline Forward | 2/2 | Complete | 2026-04-30 |
-| 34 | v1.9 Jan 15 Calls | 0/4 | Not started | — |
+| 34 | 1/4 | In Progress|  | — |
 | 35 | v1.9 Calculator Fix | 0/1 | Not started | — |
 
 ---

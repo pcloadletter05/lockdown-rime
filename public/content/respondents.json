@@ -397,6 +397,35 @@
         "D3": "20044"
       },
       "lisa_notes": "Very polite young man, lives in a dorm on Roosevelt. Answered the phone outside in the cold, had to step inside before we could start. Spelled his name out for me letter by letter and was patient about it. I tried to say it back, not sure if I said it correctly... he did not correct me. Voicemail playback issue on Q4, sounds like a real device bug, nothing unusual. L. came by mid-call and would not leave me alone, had to mute the line for a second. Love her but she has terrible timing. Signal on my console drifted from 100 to 96 percent over the call. Noted. -- L.M."
+    },
+    {
+      "respondent_id": "H-0006",
+      "interview_date": "2000-01-15",
+      "interview_time": "11:30 AM",
+      "phone": "202-555-5618",
+      "disposition": "COMPLETE",
+      "duration": 13,
+      "demographics": {
+        "age_range": "25-34",
+        "gender": "M",
+        "household_size": 1,
+        "zip": "20044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "1 to 3 months",
+        "Q1": "3",
+        "Q2": "5",
+        "Q3": "3",
+        "Q4": "Not at all.",
+        "Q5": "5",
+        "Q6": "No. It's a serviceable phone.",
+        "D1": "2",
+        "D2": "1",
+        "D3": "20044"
+      },
+      "lisa_notes": "Curt, cooperative. Got through the whole survey in about 13 minutes with zero issues. Hung up while I was reading the closer -- all questions answered, coded Complete. Routine Roosevelt respondent. -- L.M."
     }
   ]
 }

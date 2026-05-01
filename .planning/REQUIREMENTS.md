@@ -1,42 +1,29 @@
-# Requirements: Lockdown Rime — v1.8 Timeline Forward & Drudge Report
+# Requirements: Lockdown Rime — v1.9 Jan 15 Calls & Calculator Fix
 
-**Defined:** 2026-04-29
+**Defined:** 2026-04-30
 **Core Value:** The visitor must feel like they've sat down at a real person's real work computer in 1999.
 
-## v1.8 Requirements
+## v1.9 Requirements
 
-### Anchor Shift
+### Jan 15 Call Log & Respondents
 
-- [x] **ANCHOR-01**: In-game "now" advances from Jan 9 Sunday to Jan 13 Thursday, 2000 across the real-time-to-in-game clock mapping
-- [x] **ANCHOR-02**: Taskbar clock and any "today is" references reflect Jan 13, 2000 (Thursday)
-- [x] **ANCHOR-03**: All emails dated before Jan 13 are marked as read (Inbox, Sent); Jan 13+ emails remain unread until their `deliver_at` fires
-- [x] **ANCHOR-04**: Existing Jan 9 emails, voicemails, and time-gated content appear as already-delivered archive on first visit (no regressions)
-- [x] **ANCHOR-05**: PROJECT.md, CLAUDE.md, and the planning anchor docs reflect Jan 13 as the active anchor day
+- [x] **CALL-08**: The Jan 15 call disposition log shows three confirmed outbound attempts: 11:30 AM 202-555-5618 Falkenburg complete, 12:30 PM 202-555-8307 Shaw complete, and an end-of-shift 202-555-3553 busy (retry of the 1/9 1:03 PM voicemail attempt)
+- [ ] **CALL-09**: A Falkenburg respondent profile (H-0006) exists in `respondents.json` with Demographics, S1–S3 screener, full survey responses, and Lisa-voice notes consistent with the source transcript
+- [ ] **CALL-10**: A Shaw respondent profile (H-0007) exists in `respondents.json` with Demographics, S1–S3 screener, full survey responses including the friend's number lead captured in the raw notes, and Lisa-voice notes consistent with the source transcript
+- [ ] **CALL-11**: `Falkenburg_Fergus.doc` and `Shaw_Dustin.doc` appear in the survey respondents folder via `files.json` wiring, openable through File Explorer
+- [x] **CALL-12**: The 555-3553 row's notes reference the prior 1/9 1:03 PM voicemail attempt so the retry reads as a continuity beat
+- [x] **CALL-13**: All 1/15 survey response text, call-log entries, and Lisa-voice notes honor the no-em-dash / no-en-dash content convention
 
-### Desktop Notes & Contacts
+### Followup Sticky Note
 
-- [x] **NOTES-01**: Lisa's desktop `notes.txt` gains a Jan 12 entry mentioning the Syd party flyer ("RIOT AT THE RAVE / RAGE AGAINST THE LOCK DOWN") and capturing the 555-2033 callback number
-- [x] **NOTES-02**: Lisa's desktop `notes.txt` gains a Jan 13 entry recording Lucy's referral of Francisco at 555-8818, grocery store management
-- [x] **NOTES-03**: Lisa's call list / contact data in JSON includes 555-2033 (Syd flyer) and 555-8818 (Francisco) entries with appropriate context labels
-- [x] **NOTES-04**: Both notes.txt entries follow existing Lisa-voice content conventions (no em or en dashes, period-authentic phrasing)
+- [ ] **STICKY-01**: A `StickyNote_Followups.txt` artifact exists on Lisa's desktop seeding the 555-7108 lead (Shaw's friend, battery failure, approximately one week dead) so a careful reader can find the lead before any future respondent profile lands
+- [ ] **STICKY-02**: The sticky note is wired into the desktop / files data so it opens via the existing notepad / text-viewer pattern (consistent with `notes.txt`)
+- [ ] **STICKY-03**: The sticky note content is in Lisa's voice and honors the no-em-dash / no-en-dash convention
 
-### Jan 12 Call Log & Respondents
+### Calculator Window Position
 
-- [x] **CALL-01**: Jan 12 call log includes a 7:00 AM full-call entry for 555-9949 (caller name TBD during build)
-- [x] **CALL-02**: Jan 12 call log includes a voicemail entry showing Lisa left an LV on 555-7120 immediately after the 7 AM call
-- [x] **CALL-03**: Jan 12 call log includes a 12:00 PM full-call entry for 555-4432 Kubwimana
-- [x] **CALL-04**: New H-XXXX respondent profile file exists for the 555-9949 caller, following the established CATI respondent format (Demographics, S1-S3 screener, Survey Responses)
-- [x] **CALL-05**: New H-XXXX respondent profile file exists for 555-4432 Kubwimana, following the same format
-- [x] **CALL-06**: Both new respondent files are wired into `files.json` so they appear in the survey folder via File Explorer
-- [x] **CALL-07**: Respondent files honor the no-em-dash / no-en-dash content convention for survey response text
-
-### Drudge Report
-
-- [x] **DRUDGE-01**: A period-authentic Drudge Report page exists in the IE5 browser, visually accurate to its 1999/2000 reference (red banner with rotating headline, three-column link layout, siren GIFs for breaking news, central photo + caption block)
-- [x] **DRUDGE-02**: Drudge Report headlines and link text reflect in-world lore consistent with the Jan 13, 2000 timeline anchor (content sourced from staff lore Taylor will supply at build time)
-- [ ] **DRUDGE-03**: Drudge Report is reachable via a bookmark entry in the IE5 bookmarks list
-- [x] **DRUDGE-04**: Drudge Report integrates with the existing internal-page registry pattern (no `mode: ext` iframe; pure styled HTML like Yahoo / Ask Jeeves)
-- [x] **DRUDGE-05**: Drudge Report uses Tahoma / Arial fonts and period-appropriate styling; no modern CSS effects (no gradients, drop shadows, border-radius beyond what 1999 browsers supported)
+- [ ] **CALC-FIX-01**: Opening Calculator from the Start menu places the full window inside the visible desktop viewport (title bar visible, taskbar not overlapping content) regardless of how many windows opened earlier in the session caused the cascade offset to advance
+- [ ] **CALC-FIX-02**: The Calculator's positioning behavior remains period-authentic — either a stable centered/offset default like Winamp, or a cascade that resets/clamps before pushing small windows off-screen — with no visual regression for other apps that rely on the cascade
 
 ## v2.0+ Requirements
 
@@ -44,52 +31,43 @@ Deferred to a later milestone.
 
 ### Forward Timeline
 
-- **FWD-01**: Jan 14 through Jan 23 daily content (call logs, emails, voicemails, notes)
-- **FWD-02**: Blizzard window content (Jan 24-26)
-- **FWD-03**: Post-blizzard content (Jan 27+)
+- **FWD-01**: Jan 14 daily content (gap-fill between Jan 13 anchor and Jan 15 shift)
+- **FWD-04**: H-0008 follow-up complete or callback for 202-555-7108 (Shaw's friend) once Lisa actually reaches him
+- **FWD-05**: Surrounding 1/15 attempts (idea-bank fillers — VM, NA, Refusal, Callback, Hangup, Disconnected, Partial) if a heavier shift mix is wanted later
+- **FWD-06**: Connection drift pattern memo (`Console_Drift_Pattern.txt`) once the dataset warrants it
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Forward timeline beyond Jan 13 | Future milestone — keep v1.8 focused on the Jan 13 anchor day |
-| Drudge Report comments / interactivity | Drudge in 1999 was static link list; no comment feature existed |
-| Drudge external link-out to other in-world sites | Internal-page-only for v1.8; cross-page wiring deferred |
-| Marking voicemails as listened/unlistened | Voicemail log is plain text, not a stateful inbox |
-| New respondent for 555-7120 (the LV recipient) | Lisa left a voicemail; no respondent interview occurred |
+| Idea-bank surrounding attempts on 1/15 | User decision: only ship the 3 confirmed attempts to keep the log honest |
+| Same-shift dial of 555-7108 | User decision: hold for a later episode; sticky note seeds the lead |
+| `Console_Drift_Pattern.txt` memo | User decision: drop drift-pattern artifact from this milestone |
+| In-world self-flag list for the Margaret conversation | User decision: stays as authorial scaffolding only |
+| Inbound Madison callback log on 1/15 | Outline scope: inbound calls live in a future inbound-call artifact, not this outbound CATI log |
 | Mobile / responsive layout | Desktop-only by design |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ANCHOR-01 | Phase 30 | Complete |
-| ANCHOR-02 | Phase 30 | Complete |
-| ANCHOR-03 | Phase 30 | Complete |
-| ANCHOR-04 | Phase 30 | Complete |
-| ANCHOR-05 | Phase 30 | Complete |
-| NOTES-01 | Phase 31 | Complete |
-| NOTES-02 | Phase 31 | Complete |
-| NOTES-03 | Phase 31 | Complete |
-| NOTES-04 | Phase 31 | Complete |
-| CALL-01 | Phase 32 | Complete |
-| CALL-02 | Phase 32 | Complete |
-| CALL-03 | Phase 32 | Complete |
-| CALL-04 | Phase 32 | Complete |
-| CALL-05 | Phase 32 | Complete |
-| CALL-06 | Phase 32 | Complete |
-| CALL-07 | Phase 32 | Complete |
-| DRUDGE-01 | Phase 33 | Complete |
-| DRUDGE-02 | Phase 33 | Complete |
-| DRUDGE-03 | Phase 33 | Pending |
-| DRUDGE-04 | Phase 33 | Complete |
-| DRUDGE-05 | Phase 33 | Complete |
+| CALL-08 | Phase 34 | Complete |
+| CALL-09 | Phase 34 | Pending |
+| CALL-10 | Phase 34 | Pending |
+| CALL-11 | Phase 34 | Pending |
+| CALL-12 | Phase 34 | Complete |
+| CALL-13 | Phase 34 | Complete |
+| STICKY-01 | Phase 34 | Pending |
+| STICKY-02 | Phase 34 | Pending |
+| STICKY-03 | Phase 34 | Pending |
+| CALC-FIX-01 | Phase 35 | Pending |
+| CALC-FIX-02 | Phase 35 | Pending |
 
 **Coverage:**
-- v1.8 requirements: 21 total
-- Mapped to phases: 21
-- Unmapped: 0 ✓
+- v1.9 requirements: 11 total
+- Mapped to phases: 11/11 ✓
+- Unmapped: 0
 
 ---
-*Requirements defined: 2026-04-29*
-*Last updated: 2026-04-29 after initial definition*
+*Requirements defined: 2026-04-30*
+*Last updated: 2026-04-30 — traceability filled by roadmapper (Phases 34-35)*
