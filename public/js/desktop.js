@@ -252,6 +252,7 @@ const WindowManager = {
     y = Math.min(y, maxY);
     if (x < 0) x = 0;
     if (y < 0) y = 0;
+    // NT4-authentic: keep full window inside desktop viewport
 
     // Custom position override (for popup windows)
     if (opts.position) {
