@@ -53,7 +53,7 @@ function renderEmailBody(bodyText) {
       html += '<div class="email-quoted">' +
         quoteLines.map(function(l) {
           // Strip leading > and space
-          var text = l.replace(/^>\s?/, '');
+          var text = l.replace(/^>+\s?/, '');
           return escapeHtml(text);
         }).join('<br>') +
         '</div>';
