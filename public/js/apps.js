@@ -470,7 +470,6 @@ var AppRegistry = {
     'iexplore':      { title: 'Microsoft Internet Explorer', icon: iconImg('iexplore', 16),       width: 800, height: 600 },
     'notepad':       { title: 'Notepad',                     icon: iconImg('notepad', 16),        width: 480, height: 360 },
     'mycomputer':    { title: 'My Computer',                 icon: iconImg('mycomputer', 16),     width: 500, height: 400 },
-    'control-panel': { title: 'Control Panel',               icon: iconImg('control_panel', 16),  width: 450, height: 350 },
     'wordpad':       { title: 'WordPad',                     icon: iconImg('file_doc', 16),       width: 600, height: 450 },
     'spreadsheet':   { title: 'Microsoft Excel',             icon: iconImg('file_xls', 16),       width: 650, height: 450 },
     'acrobat':       { title: 'Adobe Acrobat Reader',        icon: iconImg('file_pdf', 16),       width: 680, height: 520 },
@@ -568,15 +567,8 @@ var AppRegistry = {
         WinampPlayer.windowId = winId;
       }
     } else {
-      // Fallback for unregistered apps (Network Neighborhood, Recycle Bin, etc.)
-      var icon16 = getIcon(appId, 16);
-      WindowManager.createWindow({
-        title: appId.charAt(0).toUpperCase() + appId.slice(1).replace(/-/g, ' '),
-        icon: icon16 || null,
-        width: 400,
-        height: 300,
-        content: null
-      });
+      var fallbackTitle = appId.charAt(0).toUpperCase() + appId.slice(1).replace(/-/g, ' ');
+      showStubDialog(fallbackTitle);
     }
   }
 };
@@ -1520,6 +1512,26 @@ function showAccessDenied(path) {
       '<div class="dialog-body" style="display: flex; align-items: center; gap: 12px;">' +
         '<img src="assets/icons/32/exclamation.png" width="32" height="32" style="image-rendering: pixelated;">' +
         '<span>' + path + ' is not accessible.<br><br>Access is denied.</span>' +
+      '</div>' +
+      '<div class="dialog-buttons">' +
+        '<button class="nt4-btn" style="min-width: 75px;">OK</button>' +
+      '</div>' +
+    '</div>';
+  overlay.querySelector('.nt4-btn').onclick = function() { overlay.remove(); };
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+}
+
+function showStubDialog(appName) {
+  SoundManager.play('chord');
+  var overlay = document.createElement('div');
+  overlay.className = 'dialog-overlay';
+  overlay.innerHTML =
+    '<div class="nt4-dialog" style="width: 340px;">' +
+      '<div class="dialog-titlebar">' + appName + '</div>' +
+      '<div class="dialog-body" style="display: flex; align-items: center; gap: 12px;">' +
+        '<img src="assets/icons/32/information.png" width="32" height="32" style="image-rendering: pixelated;">' +
+        '<span>This feature is not yet implemented.</span>' +
       '</div>' +
       '<div class="dialog-buttons">' +
         '<button class="nt4-btn" style="min-width: 75px;">OK</button>' +
