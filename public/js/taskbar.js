@@ -146,6 +146,11 @@ const Taskbar = {
     // Documents (disabled)
     var docs = this._createMenuItem('Documents', this._docIconSVG(), false);
     docs.classList.add('disabled');
+    docs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      showStubDialog('Documents');
+      self.closeStartMenu();
+    });
     items.appendChild(docs);
 
     // Separator
