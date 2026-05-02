@@ -1,5 +1,5 @@
 // TimeEngine -- maps real-world time to January 20, 2000
-// 1:1 mapping: current hour/minute/second maps to same time on Jan 17, 2000
+// 1:1 mapping: current hour/minute/second maps to same time on Jan 20, 2000
 
 const TimeEngine = {
   ANCHOR_YEAR: 2000,
