@@ -333,7 +333,7 @@ var BROWSER_PAGES = {
       '</td></tr>' +
       /* === DATE LINE === */
       '<tr><td align="center" style="padding: 2px 0 10px 0;">' +
-        '<font face="Courier New, Courier, monospace" size="2">MONDAY JANUARY 17, 2000</font>' +
+        '<font face="Courier New, Courier, monospace" size="2">THURSDAY JANUARY 20, 2000</font>' +
       '</td></tr>' +
       /* === BREAKING HEADLINE === */
       '<tr><td align="center" style="padding: 10px 0;">' +
