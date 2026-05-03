@@ -455,6 +455,94 @@
         "D3": "20044"
       },
       "lisa_notes": "Warm, chatty kid. Lives in the dorms at RMU. Got the phone from a mall kiosk, had no idea it was a CalCom product until I said the name. Surprised but game for a 'li'l survey.' Q2 caveat: signal works great within about half a mile of campus, does not go far beyond that. Coded 5 because he was clear about the rating. Q3 keyboard complaint, wants fewer button presses. During Q4 he brought up a friend whose battery completely died, phone down for a week. Got the friend's number: 202-555-7108. Will follow up on that one Monday. Slipped during Q4, muted quick. Add to the list. Warm closer, he told me 'don't make any popsicles out there' and I laughed. Good call. -- L.M."
+    },
+    {
+      "respondent_id": "H-0008",
+      "interview_date": "2000-01-17",
+      "interview_time": "6:40 PM",
+      "phone": "202-555-7120",
+      "disposition": "COMPLETE",
+      "duration": 8,
+      "demographics": {
+        "age_range": "25-34",
+        "gender": "F",
+        "household_size": 1,
+        "zip": "20044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "Less than 1 month",
+        "Q1": "4",
+        "Q2": "4",
+        "Q3": "4",
+        "Q4": "None",
+        "Q5": "1",
+        "Q6": "None",
+        "D1": "25-34",
+        "D2": "1",
+        "D3": "20044"
+      },
+      "lisa_notes": "Picked up after the disconnect on 1/15. Apologized first thing, said 'is this Calcom again' and accepted my apology without pressing. Restarted the script clean. Quiet voice, polite, slightly slow on the scales but landed clean numerics when pushed. Q5 = 1 because the device is expensive; probed and she clarified she means when it goes to market next year, not the unit she has now. 'These things usually cost a lot. Expecting to cost more, next year.' Lives alone in Roosevelt, twenty-five. Gave only her first name at the close. Did not refuse, just stopped at Kathleen. Console 95 to 92 over about 8 min, three point drift, normal pattern for the shift. Callback obligation from Saturday is closed. -- L.M."
+    },
+    {
+      "respondent_id": "H-0009",
+      "interview_date": "2000-01-17",
+      "interview_time": "10:00 PM",
+      "phone": "202-555-6807",
+      "disposition": "COMPLETE",
+      "duration": 14,
+      "demographics": {
+        "age_range": "25-34",
+        "gender": "F",
+        "household_size": 1,
+        "zip": "20044"
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "1 to 3 months",
+        "Q1": "4",
+        "Q2": "5",
+        "Q3": "3",
+        "Q4": "Battery runs out fast.",
+        "Q5": "8",
+        "Q6": "Pretty satisfied with the phone, don't you worry.",
+        "D1": "25-34",
+        "D2": "1",
+        "D3": "20044"
+      },
+      "lisa_notes": "Inbound callback at 10 PM, return on the VM and text I left her after the Kathleen call. Personal contact, in my contacts as Kenny Bell; she gave Kendra Bell on the record. She flirted from the open through the close (girl, darlin', sweetheart, doll, Ma'am sarcastic, 'Lisa is a cute name too,' 'Awe leaving so soon, Lisa') and I let her, on speaker, with Lucy at my elbow chiming in. Lucy is on this recording. She gave Kenny a 4 out of 20 across my mic and yelled when Kenny said her name. Got through the whole script anyway. Q3 storage complaint, Q4 battery drain, otherwise positive. Q5 = 8 after a second pass. Roosevelt resident, 25 to 34, lives alone. Console 98 to 92 across about 14 min, six point drift, the steepest of the campaign so far. Six for six on the downward pattern. -- L.M."
+    },
+    {
+      "respondent_id": "H-0010",
+      "interview_date": "2000-01-18",
+      "interview_time": "10:50 AM",
+      "phone": "202-555-1278",
+      "channel": "SMS",
+      "disposition": "COMPLETE (TEXT)",
+      "duration": 24,
+      "demographics": {
+        "age_range": "18-24",
+        "gender": "",
+        "household_size": 0,
+        "zip": ""
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "Less than 1 month",
+        "Q1": "4",
+        "Q2": "5",
+        "Q3": "5",
+        "Q4": "No I don't think so.",
+        "Q5": "8",
+        "Q6": "It's pretty useful for communicating I guess. And it was free so it's cool.",
+        "D1": "18-24",
+        "D2": "Homeless",
+        "D3": "Roosevelt"
+      },
+      "lisa_notes": "SMS completion after two unanswered voicemails. Respondent gave first name only (Faith). 18 to 24, on Roosevelt, household answered as homeless ('I'm sleeping in the dorm room lobby for now'). Less than a month on the Horizon, picked up free at the mall. Q1 = 4 with a side question about when the device starts billing; Q2 = 5 with unprompted positive on battery; Q3 = 5; Q4 no issues; Q5 = 8 (friends can't afford phones); Q6 useful for communicating, free is cool. Battery report runs counter to the H-000# drain pattern; this is the newest device in the set. I asked Q6 twice and the respondent caught it. Console held flat at 96 to 95 across about 24 min, cleanest connection of the campaign and first SMS data point on the connection-drift question. Off-island weather context: I went off script once to ask if she had found somewhere in the storm. She said the lobby. I noted it and moved on. -- L.M."
     }
   ]
 }
