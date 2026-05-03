@@ -181,6 +181,17 @@ var BROWSER_PAGES = {
           'Copyright &copy; 1999 Yahoo! Inc. All rights reserved.<br>' +
           '<a href="#" style="color: #808080;">Privacy Policy</a> - <a href="#" style="color: #808080;">Terms of Service</a>' +
         '</font></center>' +
+        '<center style="margin-top: 4px;"><font size="1" face="Arial" color="#B0B0B0">' +
+          '<a href="#" data-popup-id="publishers-clearing-center" style="color: #B0B0B0; text-decoration: none;">1</a> &middot; ' +
+          '<a href="#" data-popup-id="virus-detected" style="color: #B0B0B0; text-decoration: none;">2</a> &middot; ' +
+          '<a href="#" data-popup-id="shoot-the-duck" style="color: #B0B0B0; text-decoration: none;">3</a> &middot; ' +
+          '<a href="#" data-popup-id="doctors-hate-her" style="color: #B0B0B0; text-decoration: none;">4</a> &middot; ' +
+          '<a href="#" data-popup-id="hot-singles" style="color: #B0B0B0; text-decoration: none;">5</a> &middot; ' +
+          '<a href="#" data-popup-id="napster-mp3" style="color: #B0B0B0; text-decoration: none;">6</a> &middot; ' +
+          '<a href="#" data-popup-id="online-poker" style="color: #B0B0B0; text-decoration: none;">7</a> &middot; ' +
+          '<a href="#" data-popup-id="donate-now" style="color: #B0B0B0; text-decoration: none;">8</a> &middot; ' +
+          '<a href="#" data-popup-id="aol-free" style="color: #B0B0B0; text-decoration: none;">9</a>' +
+        '</font></center>' +
       '</td></tr>' +
     '</table>'
   },
@@ -511,11 +522,26 @@ function buildBrowserUI(args) {
     }, POPUP_DELAY_MS);
   }
 
-  function spawnPopupAd() {
+  function spawnPopupAd(adId) {
     if (!popupState.adsRegistry || popupState.adsRegistry.length === 0) return;
 
-    // Random selection from available ads
-    var ad = popupState.adsRegistry[Math.floor(Math.random() * popupState.adsRegistry.length)];
+    var ad;
+    if (adId) {
+      // Manual trigger: look up by id, bypass random selection and session lock
+      for (var i = 0; i < popupState.adsRegistry.length; i++) {
+        if (popupState.adsRegistry[i].id === adId) {
+          ad = popupState.adsRegistry[i];
+          break;
+        }
+      }
+      if (!ad) {
+        console.warn('Popup ad id not found:', adId);
+        return;
+      }
+    } else {
+      // Auto trigger: random selection from available ads
+      ad = popupState.adsRegistry[Math.floor(Math.random() * popupState.adsRegistry.length)];
+    }
 
     // Play spawn sound
     if (ad.sound) {
@@ -901,6 +927,10 @@ function buildBrowserUI(args) {
     }
     if (anchor) {
       e.preventDefault();
+      var popupId = anchor.getAttribute('data-popup-id');
+      if (popupId) {
+        spawnPopupAd(popupId);
+      }
     }
   });
 
