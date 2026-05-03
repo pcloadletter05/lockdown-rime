@@ -517,6 +517,11 @@ function buildBrowserUI(args) {
     // Random selection from available ads
     var ad = popupState.adsRegistry[Math.floor(Math.random() * popupState.adsRegistry.length)];
 
+    // Play spawn sound
+    if (ad.sound) {
+      SoundManager.play(ad.sound);
+    }
+
     // Save currently active window for pop-under restoration
     var previousActiveId = WindowManager.activeWindowId;
 

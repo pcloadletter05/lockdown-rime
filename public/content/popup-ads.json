@@ -1,10 +1,83 @@
 [
   {
-    "id": "millionth-visitor",
-    "file": "millionth-visitor.html",
-    "width": 350,
+    "id": "publishers-clearing-center",
+    "file": "publishers-clearing-center.html",
+    "width": 380,
+    "height": 320,
+    "titleBar": "http://www.publishersclearing.com/winner",
+    "zOrder": "popup",
+    "sound": "ding"
+  },
+  {
+    "id": "virus-detected",
+    "file": "virus-detected.html",
+    "width": 360,
     "height": 280,
-    "titleBar": "http://ad.doubleclick.net/click/winner99",
-    "zOrder": "popup"
+    "titleBar": "Windows Security Alert",
+    "zOrder": "popup",
+    "sound": "chord"
+  },
+  {
+    "id": "shoot-the-duck",
+    "file": "shoot-the-duck.html",
+    "width": 350,
+    "height": 250,
+    "titleBar": "http://www.prizezone.com/duck-hunt",
+    "zOrder": "popup",
+    "sound": "ding"
+  },
+  {
+    "id": "doctors-hate-her",
+    "file": "doctors-hate-her.html",
+    "width": 340,
+    "height": 300,
+    "titleBar": "http://www.miracle-health-secrets.com/weightloss",
+    "zOrder": "popup",
+    "sound": "ding"
+  },
+  {
+    "id": "hot-singles",
+    "file": "hot-singles.html",
+    "width": 300,
+    "height": 250,
+    "titleBar": "http://www.loveconnect.com/local",
+    "zOrder": "popup",
+    "sound": "ding"
+  },
+  {
+    "id": "napster-mp3",
+    "file": "napster-mp3.html",
+    "width": 320,
+    "height": 260,
+    "titleBar": "http://www.napster.com/download",
+    "zOrder": "popup",
+    "sound": "ding"
+  },
+  {
+    "id": "online-poker",
+    "file": "online-poker.html",
+    "width": 360,
+    "height": 300,
+    "titleBar": "http://www.casinoroyale99.com/poker",
+    "zOrder": "popup",
+    "sound": "ding"
+  },
+  {
+    "id": "donate-now",
+    "file": "donate-now.html",
+    "width": 320,
+    "height": 280,
+    "titleBar": "http://www.revbillyray.org/donate",
+    "zOrder": "popup",
+    "sound": "ding"
+  },
+  {
+    "id": "aol-free",
+    "file": "aol-free.html",
+    "width": 300,
+    "height": 250,
+    "titleBar": "http://free.aol.com/tryaolfree",
+    "zOrder": "popup",
+    "sound": "ding"
   }
 ]
