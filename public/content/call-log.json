@@ -348,6 +348,69 @@
       "",
       "L. Milavic",
       "Retry. VM left on this number 1/9, no callback. Line busy today."
+    ],
+    [
+      "1/17/2000",
+      "6:40 PM",
+      "202-555-7120",
+      "Complete",
+      "8 min",
+      "L. Milavic",
+      "H-0008 Kathleen; closes 1/15 4:14 PM callback"
+    ],
+    [
+      "1/17/2000",
+      "7:28 PM",
+      "202-555-6807",
+      "Voicemail",
+      "",
+      "L. Milavic",
+      "VM left; post-Kathleen sweep"
+    ],
+    [
+      "1/17/2000",
+      "7:30 PM",
+      "202-555-6807",
+      "SMS",
+      "",
+      "L. Milavic",
+      "Text attempt; informal language given relationship"
+    ],
+    [
+      "1/17/2000",
+      "7:32 PM",
+      "202-555-1278",
+      "Voicemail",
+      "",
+      "L. Milavic",
+      "VM 1; no answer; post-Kathleen sweep"
+    ],
+    [
+      "1/17/2000",
+      "10:00 PM",
+      "202-555-6807",
+      "Complete (inbound callback)",
+      "14 min",
+      "L. Milavic",
+      "H-0009 Bell; return of post-Kathleen VM + SMS"
+    ],
+    [
+      "1/18/2000",
+      "9:15 AM",
+      "202-555-1278",
+      "Voicemail",
+      "",
+      "L. Milavic",
+      "VM 2; no answer; pivoted to SMS at 10:50 AM"
+    ],
+    [
+      "1/18/2000",
+      "10:50 AM",
+      "202-555-1278",
+      "Complete (Text)",
+      "24 min",
+      "L. Milavic",
+      "H-0010 Faith; SMS after 2 VMs"
     ]
   ]
 }
