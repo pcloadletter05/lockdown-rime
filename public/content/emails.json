@@ -416,6 +416,20 @@
       "read": true,
       "deliver_at": "2000-01-17T17:30:00",
       "in_reply_to": null
+    },
+    {
+      "id": "msg-029",
+      "folder": "Sent Items",
+      "from": "Lisa Milavic <l.milavic@calcom.com>",
+      "to": "CalCom IT <ithelp@calcom.com>",
+      "cc": null,
+      "date": "2000-01-19T21:47:00",
+      "subject": "URGENT please help!! computer is showing some kind of error screen!!!",
+      "body": "Hi IT,\n\nI am SO sorry to email you this late at night but I just sat down at my desk to finish up a few things and my whole monitor is showing this scary blue screen with a bunch of code on it and a bunch of file names. It will not go away. I cannot click anything!! I cannot get to my desktop or open Outlook or anything!!\n\nI tried turning the monitor off and back on twice. It just comes right back. Is this Y2K?? I thought we were supposed to be past Y2K?? The stuff Margaret had us all do in December was supposed to handle this!! Is it the whole network or is it just my computer?? PLEASE tell me my files are okay, the Q4 Satisfaction Study is on this machine and I have not done a backup since Friday and Margaret will literally kill me if I lose anything off it.\n\nCan someone PLEASE come look at this first thing in the morning?? I am going to leave my computer exactly the way it is so you can see what is on the screen with your own eyes. Please please please do not move it or restart it before I am there, I want to know what happened.\n\nAlso if anyone has heard about other people having the same thing happen tonight please let me know, I am a little freaked out and I would feel a lot better knowing it is not just me.\n\nThank you thank you thank you. I really need this fixed before my Thursday morning calls.\n\nLisa\n\n---\nLisa Milavic\nSenior CATI Interviewer | CalCom Research Services\nl.milavic@calcom.com  ·  x3147",
+      "attachments": [],
+      "read": true,
+      "deliver_at": "2000-01-19T21:47:00",
+      "in_reply_to": null
     }
   ]
 }
