@@ -741,6 +741,136 @@
                 }
               },
               {
+                "name": "Call_Disposition_Log_0117_0118.xls",
+                "type": "file",
+                "icon": "file_xls",
+                "file_type": "xls",
+                "size": "5 KB",
+                "modified": "1/18/2000 11:30 AM",
+                "content_key": "call-disposition-log-0117-0118",
+                "content": {
+                  "columns": [
+                    "Date",
+                    "Time",
+                    "Phone",
+                    "Disposition",
+                    "Duration",
+                    "Interviewer",
+                    "Notes"
+                  ],
+                  "rows": [
+                    [
+                      "1/17/2000",
+                      "6:40 PM",
+                      "202-555-7120",
+                      "Complete",
+                      "8 min",
+                      "L. Milavic",
+                      "H-0008 Kathleen; closes 1/15 4:14 PM callback"
+                    ],
+                    [
+                      "1/17/2000",
+                      "7:28 PM",
+                      "202-555-6807",
+                      "Voicemail",
+                      "",
+                      "L. Milavic",
+                      "VM left; post-Kathleen sweep; personal contact (Bell)"
+                    ],
+                    [
+                      "1/17/2000",
+                      "7:30 PM",
+                      "202-555-6807",
+                      "SMS",
+                      "",
+                      "L. Milavic",
+                      "Text attempt to same number; informal"
+                    ],
+                    [
+                      "1/17/2000",
+                      "7:32 PM",
+                      "202-555-1278",
+                      "Voicemail",
+                      "",
+                      "L. Milavic",
+                      "VM 1; no answer"
+                    ],
+                    [
+                      "1/17/2000",
+                      "7:38 PM",
+                      "202-555-8818",
+                      "Voicemail",
+                      "",
+                      "L. Milavic",
+                      "VM left"
+                    ],
+                    [
+                      "1/17/2000",
+                      "7:45 PM",
+                      "202-555-7178",
+                      "Voicemail",
+                      "",
+                      "L. Milavic",
+                      "VM left"
+                    ],
+                    [
+                      "1/17/2000",
+                      "7:53 PM",
+                      "202-555-5549",
+                      "Voicemail",
+                      "",
+                      "L. Milavic",
+                      "VM left"
+                    ],
+                    [
+                      "1/17/2000",
+                      "8:02 PM",
+                      "202-555-2033",
+                      "Voicemail",
+                      "",
+                      "L. Milavic",
+                      "VM left"
+                    ],
+                    [
+                      "1/17/2000",
+                      "8:15 PM",
+                      "202-555-7108",
+                      "Voicemail",
+                      "",
+                      "L. Milavic",
+                      "VM left; Shaw's friend per 1/15 followup"
+                    ],
+                    [
+                      "1/17/2000",
+                      "10:00 PM",
+                      "202-555-6807",
+                      "Complete (inbound callback)",
+                      "14 min",
+                      "L. Milavic",
+                      "H-0009 Bell; return of post-Kathleen VM + SMS"
+                    ],
+                    [
+                      "1/18/2000",
+                      "9:15 AM",
+                      "202-555-1278",
+                      "Voicemail",
+                      "",
+                      "L. Milavic",
+                      "VM 2; no answer; pivoted to SMS at 10:50 AM"
+                    ],
+                    [
+                      "1/18/2000",
+                      "10:50 AM",
+                      "202-555-1278",
+                      "Complete (text)",
+                      "24 min",
+                      "L. Milavic",
+                      "H-0010 Faith; SMS after 2 VMs"
+                    ]
+                  ]
+                }
+              },
+              {
                 "name": "Respondents",
                 "type": "folder",
                 "icon": "folder_closed",
