@@ -543,6 +543,35 @@
         "D3": "Roosevelt"
       },
       "lisa_notes": "SMS completion after two unanswered voicemails. Respondent gave first name only (Faith). 18 to 24, on Roosevelt, household answered as homeless ('I'm sleeping in the dorm room lobby for now'). Less than a month on the Horizon, picked up free at the mall. Q1 = 4 with a side question about when the device starts billing; Q2 = 5 with unprompted positive on battery; Q3 = 5; Q4 no issues; Q5 = 8 (friends can't afford phones); Q6 useful for communicating, free is cool. Battery report runs counter to the H-000# drain pattern; this is the newest device in the set. I asked Q6 twice and the respondent caught it. Console held flat at 96 to 95 across about 24 min, cleanest connection of the campaign and first SMS data point on the connection-drift question. Off-island weather context: I went off script once to ask if she had found somewhere in the storm. She said the lobby. I noted it and moved on. -- L.M."
+    },
+    {
+      "respondent_id": "H-0011",
+      "interview_date": "2000-01-24",
+      "interview_time": "5:00 PM",
+      "phone": "202-555-4889",
+      "disposition": "COMPLETE",
+      "duration": 16,
+      "demographics": {
+        "age_range": "25-34",
+        "gender": "F",
+        "household_size": 1,
+        "zip": ""
+      },
+      "responses": {
+        "S1": "Yes",
+        "S2": "Yes",
+        "S3": "Less than 1 month",
+        "Q1": "3",
+        "Q2": "5 (no numeric given; coded by inference from 'no issues')",
+        "Q3": "1 (respondent rated her own technical literacy, not the device)",
+        "Q4": "Ah... well. It so far did not enable me to become immortal... does that count?",
+        "Q5": "3",
+        "Q6": "Oh I just generally don't much like technology. No beef with this one specifically. It is a really good paperweight!",
+        "D1": "25-34",
+        "D2": "1 (no permanent address; only herself for the question)",
+        "D3": "Roosevelt"
+      },
+      "lisa_notes": "Outbound voice cold-dial at 5:00 PM 1/24. Number sourced off a paper tarot/cartomancy poster I saw in town ('A new age begins... The cards whisper of change. call: 555-4889'), not a CalCom lead. Picked up first ring. Twenty-eight, no permanent address ('only myself, as far as the question is concerned'), Roosevelt resident, full name on the close (Catherine Aileen Grant). Less than a month on the Horizon. Q1 = 3, Q2 = no numeric (coded 5 from 'no issues'), Q3 = 1 (self-rating; she rated her own technical literacy), Q4 immortality joke, Q5 = 3 ('for the convenience factor'), Q6 'really good paperweight.' Articulate, dark humor, non-local cadence ('technical analphabet'). Console drifted 94 to 90 across about sixteen minutes; steady drift, not a drop. Second on-island respondent in seven days with no permanent address. -- L.M."
     }
   ]
 }
