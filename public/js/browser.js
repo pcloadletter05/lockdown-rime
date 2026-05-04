@@ -351,23 +351,23 @@ var BROWSER_PAGES = {
         '<img src="assets/drudge-siren.gif" width="25" height="25"> ' +
         '<img src="assets/drudge-siren.gif" width="25" height="25"> ' +
         '<img src="assets/drudge-siren.gif" width="25" height="25"> ' +
-        '<font face="Courier New, Courier, monospace" size="5" color="#FF0000"><b>D.C. DECLARES STATE OF EMERGENCY AS STORM ATLAS RAGES...</b></font> ' +
+        '<font face="Courier New, Courier, monospace" size="5" color="#FF0000"><b>ROOSEVELT BRIDGE CLOSED FOURTH STRAIGHT DAY...</b></font> ' +
         '<img src="assets/drudge-siren.gif" width="25" height="25"> ' +
         '<img src="assets/drudge-siren.gif" width="25" height="25"> ' +
         '<img src="assets/drudge-siren.gif" width="25" height="25">' +
       '</td></tr>' +
       /* === SUB HEADLINE === */
       '<tr><td align="center" style="padding: 5px 0 10px 0;">' +
-        '<font face="Courier New, Courier, monospace" size="3"><b>EXECUTIVE ORDER 13152 SIGNED AT DAWN... SUPREME COURT DELIBERATES...</b></font>' +
+        '<font face="Courier New, Courier, monospace" size="3"><b>SUPREME COURT DEFERS ON EO 13152... NO DATE SET FOR RULING...</b></font>' +
       '</td></tr>' +
       /* === CENTRAL PHOTO === */
       '<tr><td align="center" style="padding: 10px 0;">' +
         '<table width="320" align="center" cellpadding="0" cellspacing="0" border="1" bordercolor="#000000">' +
           '<tr><td align="center" style="padding: 0;">' +
-            '<img src="assets/news/drudge-snow.jpg" width="320" alt="Storm Atlas blankets D.C." style="display:block;">' +
+            '<img src="assets/drudge/bridge.png" width="320" alt="Roosevelt Bridge closed amid Storm Atlas" style="display:block;">' +
           '</td></tr>' +
           '<tr><td align="center" style="padding: 4px;">' +
-            '<font face="Arial, sans-serif" size="1"><i>Snow blankets the Capitol as Storm Atlas dumps 12+ inches on D.C.</i></font>' +
+            '<font face="Arial, sans-serif" size="1"><i>The Roosevelt Bridge sits empty as authorities keep crossing closed for a fourth straight day.</i></font>' +
           '</td></tr>' +
         '</table>' +
       '</td></tr>' +
@@ -380,12 +380,12 @@ var BROWSER_PAGES = {
             '<td width="33%" valign="top">' +
               '<font face="Times New Roman, Times, serif" size="2">' +
                 '<a href="#" style="color:#0000FF;">STORM ATLAS BURIES EASTERN SEABOARD...</a><br>' +
-                '<a href="#" style="color:#0000FF;">FIRST HYPOTHERMIA DEATH CONFIRMED IN ROOSEVELT</a><br>' +
+                '<a href="#" style="color:#0000FF;">HYPOTHERMIA DEATHS MOUNT ACROSS ROOSEVELT</a><br>' +
                 '<a href="#" style="color:#0000FF;">TEMPERATURES WON&#39;T EXCEED 15 DEGREES ALL DAY</a><br>' +
                 '<a href="#" style="color:#0000FF;">SNOWPLOWS STRUGGLE TO CROSS BRIDGE TO MAINLAND</a><br>' +
                 '<a href="#" style="color:#0000FF;">TRAVEL RESTRICTIONS SPARK PROTESTS</a><br>' +
                 '<a href="#" style="color:#0000FF;">SHELTERS OVERWHELMED ACROSS WARD</a><br>' +
-                '<a href="#" style="color:#0000FF;">NWS: 12 INCHES AND CLIMBING...</a><br>' +
+                '<a href="#" style="color:#0000FF;">NWS: 24 INCHES AND CLIMBING...</a><br>' +
                 '<a href="#" style="color:#0000FF;">WATER MAIN BURST LEAVES BLOCKS WITHOUT WATER</a><br>' +
                 '<font size="1" color="#999999">Reuters</font><br>' +
               '</font>' +
@@ -430,7 +430,7 @@ var BROWSER_PAGES = {
           'MATERIAL CONNECTION DISCLOSURE: You should assume that this website has an affiliate relationship and/or another material connection<br>' +
           'to the persons or businesses mentioned in or linked to from this page and may receive commissions from purchases you make on subsequent web sites.<br><br>' +
           'Drudge Report &#169; 2000<br>' +
-          '<font color="#999999">Visits to DRUDGE 1/13/00: 022,481,938</font>' +
+          '<font color="#999999">Visits to DRUDGE 1/24/00: 023,671,204</font>' +
         '</font>' +
       '</td></tr>' +
       '</table>'
