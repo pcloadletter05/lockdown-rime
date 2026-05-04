@@ -552,7 +552,7 @@ function buildBrowserUI(args) {
     var previousActiveId = WindowManager.activeWindowId;
 
     // Fetch the ad HTML snippet
-    fetch('content/ads/' + ad.file)
+    fetch('content/popups/' + ad.file)
       .then(function(r) { return r.text(); })
       .then(function(html) {
         // Random position within desktop bounds
