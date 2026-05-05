@@ -34,6 +34,13 @@ var BROWSER_PAGES = {
               '<td valign="top" width="60%">' +
                 '<font size="2" face="Arial">' +
                   '<b>Announcements</b><br><br>' +
+                  '<b>Jan 24</b> - RDP remote access extended through end of emergency period. Contact IT Help Desk (ext. 4357) for connection issues.<br><br>' +
+                  '<b>Jan 22</b> - Remote work authorization confirmed for essential staff through duration of State of Emergency per directive from Director of Operations. Standard check-in procedures apply.<br><br>' +
+                  '<b>Jan 20</b> - Roosevelt Bridge closed to all traffic effective 6:00 AM. On-island essential staff report to building as normal. Off-island personnel contact your supervisor.<br><br>' +
+                  '<b>Jan 15</b> - Payroll reminder: overtime hours during emergency operations must be submitted via paper timesheet to Accounting by end of pay period.<br><br>' +
+                  '<b>Jan 12</b> - State of Emergency declared for DC metropolitan area effective immediately. All staff follow emergency operations protocol per employee handbook section 7.1.<br><br>' +
+                  '<b>Jan 6</b> - Congratulations to David Park (CATI Floor) on promotion to Senior Interviewer effective January 1.<br><br>' +
+                  '<b>Jan 3</b> - Y2K systems audit complete. No critical failures reported. Mandatory safety training rescheduled to February; updated handbook section 4.2 available at front desk.<br><br>' +
                   '<b>Dec 22</b> - Holiday party this Friday! Conference Room B, 14th floor 5:00 PM.<br><br>' +
                   '<b>Dec 21</b> - Y2K assessment survey -- please complete by Jan 15. Contact Margaret Sullivan.<br><br>' +
                   '<b>Dec 20</b> - Q4 survey on track: 847/1200 interviews completed.<br><br>' +
