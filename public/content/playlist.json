@@ -30,6 +30,16 @@
       "filename": "you-learn.mp3",
       "duration": 239,
       "order": 3
+    },
+    {
+      "id": 4,
+      "title": "Closer to Fine",
+      "artist": "Indigo Girls",
+      "album": "Indigo Girls (Expanded Edition)",
+      "year": 1989,
+      "filename": "closer_2_fine.mp3",
+      "duration": 240,
+      "order": 4
     }
   ]
 }
