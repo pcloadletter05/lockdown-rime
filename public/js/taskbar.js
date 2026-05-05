@@ -223,17 +223,35 @@ const Taskbar = {
   _setupSubmenuHover: function(parentItem, submenu) {
     var timer = null;
 
+    function positionSubmenu() {
+      // Reveal first so we can measure offsetHeight (display: none yields 0).
+      submenu.style.display = '';
+      // Clear any prior decision before remeasuring.
+      submenu.classList.remove('cascade-up');
+
+      var parentRect = parentItem.getBoundingClientRect();
+      var submenuHeight = submenu.offsetHeight;
+      var taskbarHeight = 28; // matches .start-menu { bottom: 28px } in nt4.css
+      var viewportBottom = window.innerHeight - taskbarHeight;
+
+      // Default cascade-down position: submenu top aligns with parentRect.top - 2.
+      // If that bottom edge would extend past viewportBottom, cascade up instead.
+      var cascadeDownBottom = parentRect.top + submenuHeight;
+      if (cascadeDownBottom > viewportBottom) {
+        submenu.classList.add('cascade-up');
+      }
+    }
+
     parentItem.addEventListener('mouseenter', function() {
       clearTimeout(timer);
-      timer = setTimeout(function() {
-        submenu.style.display = '';
-      }, 200);
+      timer = setTimeout(positionSubmenu, 200);
     });
 
     parentItem.addEventListener('mouseleave', function() {
       clearTimeout(timer);
       timer = setTimeout(function() {
         submenu.style.display = 'none';
+        submenu.classList.remove('cascade-up');
       }, 200);
     });
   },
