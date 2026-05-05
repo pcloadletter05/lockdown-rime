@@ -715,6 +715,25 @@ body {
   z-index: 10002;
 }
 
+/* Cascade-up variant: when submenu would clip below taskbar, anchor to bottom of parent item instead */
+.start-submenu.cascade-up {
+  top: auto;
+  bottom: -2px;
+}
+
+/* Scoped submenu item color -- prevents the parent .start-menu-item:hover white text
+   from cascading into nested submenu items on first hover (FOUC fix for UI-02).
+   Specificity (0,2,0) beats .start-menu-item:hover (0,1,1) so default state wins
+   on submenu items until they themselves are hovered. */
+.start-submenu .start-menu-item {
+  color: var(--menu-text);
+}
+
+.start-submenu .start-menu-item:hover {
+  background: var(--highlight);
+  color: var(--highlight-text);
+}
+
 /* === Shutdown Screen === */
 
 .shutdown-overlay {
