@@ -35,7 +35,34 @@
     '<p style="margin:6px 0;">B7. How confident are you in official information sources regarding the current emergency? (1 = very confident, 2 = confident, 3 = neutral, 4 = not confident, 5 = not at all confident)</p>' +
 
     '<p style="margin:24px 0 0;font-size:0.9em;">End of draft v0.3. Pending review and pilot test.</p>';
-  var NOTES_CONTENT = '';
+  var NOTES_CONTENT =
+    '1/15/2000\n\n' +
+    'Ran into Lucy at the library again. She was at one of the back carrels with her sister. I had the corner machine, dialed in to my workstation, working through call sheets. The library is quieter than I expected for a Saturday in this weather. Maybe twenty people total.\n\n' +
+    'Lucy waved me over on her way out. She said she has been wanting to talk to someone she trusts and asked if I had a few minutes later in the week. I told her any time. She looked tired. Not just storm tired. Something underneath it.\n\n' +
+    'I told her I would be at the library most days now while the bridge is closed. She said she would find me. Her sister stayed back by the window the whole time and did not come over.\n\n' +
+    'Writing this down so I remember exactly what she said. I do not want to color it later.\n\n' +
+
+    '1/19/2000\n\n' +
+    'Lucy found me at the library this afternoon. We sat in the periodicals room where nobody else was. She talked for about forty minutes. I am putting it down here as close to her words as I can while it is fresh.\n\n' +
+    'She said the building she lives in had a drop two days ago. On the roof. Not the ground floor, the roof. She said she and her sister went up because someone in the building told them aid was coming and to bring something to carry it in. They brought two canvas bags.\n\n' +
+    'Her words: "There was no food. No water. Nothing for people. They opened the crates on the roof and it was guns. Long guns and short ones, in foam. That was the whole drop."\n\n' +
+    'She said the soldiers were in full kit, faces covered. Four of them. One of them told her and her sister to back away from the crates and not to say a word about what they saw. She said he used the word twins. "He pointed at us and said you twins stay back." She said the way he said it scared her more than the rest of it because it meant he had been watching them long enough to know.\n\n' +
+    'And then this part. She said one of the soldiers had a shotgun across his chest and when she did not move fast enough he swung it down and for a second the barrel was on her. She said she does not know if he meant to point it at her or if it was just where his body went, but it was on her, and she froze, and then he lowered it and told them to go back downstairs.\n\n' +
+    'I asked her if anyone else from the building saw it. She said two of the older men on her floor were on the stairwell and turned around when they heard the soldiers shouting. She thinks they saw enough.\n\n' +
+    'This does not match anything CalCom has been told about the EO 13152 distributions. Nothing matches it. I do not know what to do with this yet. I am writing it down.\n\n' +
+
+    '1/22/2000\n\n' +
+    'Second long talk with Lucy. She came to the library specifically to find me. Her sister waited in the lobby this time.\n\n' +
+    'She told me about something that happened near the hospital on Friday. There was a small crowd outside the emergency entrance, people trying to get inside, the doors were being controlled. She said a man on the sidewalk had a seizure. He went down hard, hit the curb, started shaking. People around him backed up to give him room.\n\n' +
+    'Her words: "Two soldiers came over. They did not check him. They did not call anyone. One of them put a boot on his chest and the other one stomped on his head. They stomped him. In front of all of us."\n\n' +
+    'She said he stopped moving. She does not know if he died there or later. The soldiers stood over him for a minute and then walked back to the line at the doors. Nobody from the hospital came out.\n\n' +
+    'Then this. She said two days later cops were going around the block telling people the man had been "eating a corpse" when the soldiers found him. That was the story being passed at the corner store and at the bus shelter and at the laundromat. Eating a corpse. She said it plainly was not true. She was ten feet away. He was on the sidewalk having a seizure and they killed him for it, and then somebody decided the story needed to be that he was a cannibal so the boots made sense.\n\n' +
+    'I asked her if she would say any of this to anyone official. She laughed at that. Not a real laugh.\n\n' +
+    'I am keeping this with the draft. Both of these together or not at all.\n\n' +
+
+    '1/23/2000\n\n' +
+    'Working late from the library again. Storm has not let up. I am keeping these notes and the draft together in one place, somewhere out of sight, where I can find them and nobody else will. I am not sure yet what I am building. I just know I do not want any of this to be lost or smoothed over by the time someone asks.\n\n' +
+    'Lucy asked me yesterday whether I thought what she told me would matter to anyone. I told her I did not know yet. That was the honest answer. I am still telling myself it is the honest answer.\n';
 
   var FILES = [
     {
