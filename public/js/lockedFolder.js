@@ -37,32 +37,33 @@
     '<p style="margin:24px 0 0;font-size:0.9em;">End of draft v0.3. Pending review and pilot test.</p>';
   var NOTES_CONTENT =
     '1/15/2000\n\n' +
-    'Ran into Lucy at the library again. She was at one of the back carrels with her sister. I had the corner machine, dialed in to my workstation, working through call sheets. The library is quieter than I expected for a Saturday in this weather. Maybe twenty people total.\n\n' +
-    'Lucy waved me over on her way out. She said she has been wanting to talk to someone she trusts and asked if I had a few minutes later in the week. I told her any time. She looked tired. Not just storm tired. Something underneath it.\n\n' +
-    'I told her I would be at the library most days now while the bridge is closed. She said she would find me. Her sister stayed back by the window the whole time and did not come over.\n\n' +
-    'Writing this down so I remember exactly what she said. I do not want to color it later.\n\n' +
+    'Saturday morning. Lucy and I went up to the roof of our building at quarter past ten because Mrs. Antonelli on five had been telling everyone since Thursday that an aid drop was coming on Saturday and to bring something to carry it in. We brought two of the canvas grocery bags from the closet. Half the building was up there. Maybe thirty people, in coats and hats, standing in the snow on the roof.\n\n' +
+    'I did not see the helicopter, only heard it. By the time I looked up the crates were down and four soldiers were already on them, in full kit, faces covered.\n\n' +
+    'There was no food. There was no water. They cracked the crates open and inside was guns, in foam, long ones and short ones. The whole drop, the whole reason everyone was up there, was guns.\n\n' +
+    'People started murmuring. Lucy said it out loud before I could stop her. "Where is the food."\n\n' +
+    'One of the soldiers walked over and told us to back away from the crates. He pointed at us, at both of us, and said you twins stay back. He used the word twins. Which means he knew. Which means somebody had told him there were twins on this roof, or he had been watching us long enough to figure it out.\n\n' +
+    'When Lucy did not move fast enough he swung a shotgun off his chest and for a second the barrel was on her. I was standing to her right with my hand on her elbow. He did not fire. He lowered it and told us to go back downstairs. Lucy did not move. I had to pull her.\n\n' +
+    'Two of the older men from the third floor were on the stairwell on the way down. They had heard shouting and started up and then stopped. They looked at us and did not ask. I think they saw enough.\n\n' +
+    'I am writing this down because if I do not I will start to convince myself it did not happen the way it happened. It happened the way I am writing it.\n\n' +
 
     '1/19/2000\n\n' +
-    'Lucy found me at the library this afternoon. We sat in the periodicals room where nobody else was. She talked for about forty minutes. I am putting it down here as close to her words as I can while it is fresh.\n\n' +
-    'She said the building she lives in had a drop two days ago. On the roof. Not the ground floor, the roof. She said she and her sister went up because someone in the building told them aid was coming and to bring something to carry it in. They brought two canvas bags.\n\n' +
-    'Her words: "There was no food. No water. Nothing for people. They opened the crates on the roof and it was guns. Long guns and short ones, in foam. That was the whole drop."\n\n' +
-    'She said the soldiers were in full kit, faces covered. Four of them. One of them told her and her sister to back away from the crates and not to say a word about what they saw. She said he used the word twins. "He pointed at us and said you twins stay back." She said the way he said it scared her more than the rest of it because it meant he had been watching them long enough to know.\n\n' +
-    'And then this part. She said one of the soldiers had a shotgun across his chest and when she did not move fast enough he swung it down and for a second the barrel was on her. She said she does not know if he meant to point it at her or if it was just where his body went, but it was on her, and she froze, and then he lowered it and told them to go back downstairs.\n\n' +
-    'I asked her if anyone else from the building saw it. She said two of the older men on her floor were on the stairwell and turned around when they heard the soldiers shouting. She thinks they saw enough.\n\n' +
-    'This does not match anything CalCom has been told about the EO 13152 distributions. Nothing matches it. I do not know what to do with this yet. I am writing it down.\n\n' +
+    'Wednesday. We were walking back from the corner store and ended up at the block by the hospital because the side street was iced over and we cut through. There was a small crowd at the emergency entrance, twenty or thirty people, the doors being controlled. People trying to get inside.\n\n' +
+    'A man on the sidewalk maybe ten feet ahead of us went down hard. Hit the curb on the way. Started shaking. Seizure. Lucy grabbed my arm and we stopped. People around him backed up to give him room.\n\n' +
+    'Two soldiers came over from the line at the doors. They did not check him. They did not call for anyone. One put a boot on his chest. The other one stomped on his head. They stomped him in front of all of us. I am writing the word stomped because that is the word for what they did.\n\n' +
+    'He stopped moving. The soldiers stood over him for maybe a minute and then walked back to the line. Nobody from the hospital came out. Nobody on the sidewalk said anything. We did not say anything either. We turned around and went home the long way.\n\n' +
+    'Lucy did not talk for the rest of the night. She sat on the couch with her coat still on and would not look at me. I made tea. She would not drink it.\n\n' +
 
     '1/22/2000\n\n' +
-    'Second long talk with Lucy. She came to the library specifically to find me. Her sister waited in the lobby this time.\n\n' +
-    'She told me about something that happened near the hospital on Friday. There was a small crowd outside the emergency entrance, people trying to get inside, the doors were being controlled. She said a man on the sidewalk had a seizure. He went down hard, hit the curb, started shaking. People around him backed up to give him room.\n\n' +
-    'Her words: "Two soldiers came over. They did not check him. They did not call anyone. One of them put a boot on his chest and the other one stomped on his head. They stomped him. In front of all of us."\n\n' +
-    'She said he stopped moving. She does not know if he died there or later. The soldiers stood over him for a minute and then walked back to the line at the doors. Nobody from the hospital came out.\n\n' +
-    'Then this. She said two days later cops were going around the block telling people the man had been "eating a corpse" when the soldiers found him. That was the story being passed at the corner store and at the bus shelter and at the laundromat. Eating a corpse. She said it plainly was not true. She was ten feet away. He was on the sidewalk having a seizure and they killed him for it, and then somebody decided the story needed to be that he was a cannibal so the boots made sense.\n\n' +
-    'I asked her if she would say any of this to anyone official. She laughed at that. Not a real laugh.\n\n' +
-    'I am keeping this with the draft. Both of these together or not at all.\n\n' +
+    'Saturday. The rumor about the man at the hospital is on the block now. Mrs. Antonelli told Lucy at the mailboxes this morning. She said she heard from the bus shelter that the man at the hospital had been "eating a corpse" when the soldiers found him. That is the phrase. Eating a corpse. She said the soldiers did the right thing.\n\n' +
+    'Lucy came up the stairs and into the apartment and said it to me before she even took her coat off. Eating a corpse. She said it twice. Then she sat down at the kitchen table and put her head in her hands and laughed. Not a real laugh.\n\n' +
+    'We were ten feet away. He was on the sidewalk having a seizure and they killed him for it, and then somebody decided the story needed to be that he was a cannibal so the boots made sense. And the story is moving. Mrs. Antonelli believed it. The bus shelter believed it. By next week the whole block will believe it.\n\n' +
+    'I asked Lucy if she would tell what she saw to anyone official. She looked at me like I had asked her something stupid.\n\n' +
 
     '1/23/2000\n\n' +
-    'Working late from the library again. Storm has not let up. I am keeping these notes and the draft together in one place, somewhere out of sight, where I can find them and nobody else will. I am not sure yet what I am building. I just know I do not want any of this to be lost or smoothed over by the time someone asks.\n\n' +
-    'Lucy asked me yesterday whether I thought what she told me would matter to anyone. I told her I did not know yet. That was the honest answer. I am still telling myself it is the honest answer.\n';
+    'Sunday. Working from the library again. Bridge has been closed since Thursday and there is no sign of it opening. Margaret authorized me to dial in to my workstation from here for the duration. The library is the warmest place I have access to that has a phone line and a machine I am allowed to use.\n\n' +
+    'I am keeping these notes and the draft of the welfare survey together. Both of these or none of these. The questions in the draft ask about military presence and rationing and force used during medical emergencies because I wrote them after the roof and after the hospital, and because if anyone is going to put the right questions to the right people on this island it has to be us. Kate would ask. Margaret would not. The clients above Margaret will not.\n\n' +
+    'Lucy asked me yesterday whether I thought what we saw would matter to anyone. I told her I did not know yet. That was the honest answer. I am still telling myself it is the honest answer.\n\n' +
+    'I am hiding this folder behind a password. If you are reading this and I did not give you the password, you should not be reading this.\n';
 
   var FILES = [
     {
