@@ -582,7 +582,8 @@ var DESKTOP_ICONS = [
   { appId: 'iexplore',   label: 'Internet Explorer',    icon: iconImg('iexplore', 32) },
   { appId: 'outlook',    label: 'Inbox',                  icon: iconImg('outlook', 32) },
   { appId: 'notepad',   label: 'notes.txt',              icon: iconImg('file_txt', 32),
-    filePath: 'C:\\My Documents\\Personal\\notes.txt' }
+    filePath: 'C:\\My Documents\\Personal\\notes.txt' },
+  { appId: 'restrictedShare', label: 'Q1 Planning',      icon: iconImg('folder_closed', 32), locked: true }
 ];
 
 var DESKTOP_ICON_BOTTOM = { appId: 'recycle', label: 'Recycle Bin', icon: iconImg('recycle_bin_full', 32) };
@@ -641,6 +642,11 @@ function renderDesktopIcons() {
     // Double click: open
     iconEl.addEventListener('dblclick', function(e) {
       e.stopPropagation();
+      // locked-folder gate
+      if (iconDef.locked && typeof window.LockedFolder !== 'undefined') {
+        window.LockedFolder.open();
+        return;
+      }
       if (iconDef.filePath) {
         // Desktop icon pointing to a specific file -- find it in files.json and open in appropriate viewer
         fetch('content/files.json').then(function(r) { return r.json(); }).then(function(data) {
