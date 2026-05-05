@@ -6,7 +6,35 @@
   var _unlocked = false;
 
   // Content payloads -- populated by Plan 02. Empty strings are valid for this plan.
-  var SURVEY_CONTENT = '';
+  var SURVEY_CONTENT =
+    '<h3 style="text-align:center;margin:0;">CalCom Communications</h3>' +
+    '<p style="text-align:center;margin:4px 0 16px;"><b>Community Welfare Survey -- DRAFT v0.3</b></p>' +
+    '<p style="margin:0;">Prepared by: Lisa Milavic</p>' +
+    '<p style="margin:0 0 12px;">Last revised: January 22, 2000</p>' +
+    '<p style="margin:0 0 16px;">Interviewer reads aloud. Circle or mark the respondent\'s answer. Open response items may be transcribed verbatim. If respondent declines to answer any item, mark NR and continue.</p>' +
+
+    '<p style="margin:16px 0 8px;"><b>Section A: Household and Community Welfare</b></p>' +
+
+    '<p style="margin:6px 0;">A1. In the past 14 days, how often has your household run short of food? (never short / sometimes short / often short / NR)</p>' +
+    '<p style="margin:6px 0;">A2. How would you describe the reliability of heat and utilities at your residence over the past 14 days? (stable / intermittent / out / NR)</p>' +
+    '<p style="margin:6px 0;">A3. Please tell us the composition of your household. Record number of adults (18 to 64), number of children (under 18), and number of dependents aged 65 or older.</p>' +
+    '<p style="margin:6px 0;">A4. Are you aware of the following community resources in your area? Mark Y or N for each: (a) food bank, (b) warming center, (c) public library, (d) community medical clinic.</p>' +
+    '<p style="margin:6px 0;">A5. Over the past 30 days, how would you rate your sense of safety in your immediate neighborhood? (1 = very safe, 2 = safe, 3 = neutral, 4 = unsafe, 5 = very unsafe)</p>' +
+    '<p style="margin:6px 0;">A6. Are you currently able to reach essential services (grocery, pharmacy, clinic) on foot from your residence? (Y / N; if N, briefly note reason)</p>' +
+    '<p style="margin:6px 0;">A7. In the past 7 days, how often have you had contact with neighbors? (daily / several times / once / not at all / NR)</p>' +
+    '<p style="margin:6px 0;">A8. In the past 14 days, has any member of your household missed a scheduled medication or medical appointment? (Y / N; if Y, briefly note reason)</p>' +
+
+    '<p style="margin:16px 0 8px;"><b>Section B: Emergency Services and Government Response</b></p>' +
+
+    '<p style="margin:6px 0;">B1. Are you aware of the current State of Emergency provisions in effect in your area? (Y / N / NR)</p>' +
+    '<p style="margin:6px 0;">B2. In the past 14 days, how many checkpoints have you encountered while traveling? Record count and general locations if respondent volunteers them.</p>' +
+    '<p style="margin:6px 0;">B3. Have you observed military or uniformed personnel present at any aid distribution site you have attended or witnessed? (yes / no / not applicable; if yes, briefly describe).</p>' +
+    '<p style="margin:6px 0;">B4. What items, if any, were distributed at aid events you attended or observed? Open response. Prompt examples if needed: food, water, blankets, medical supplies, other.</p>' +
+    '<p style="margin:6px 0;">B5. Have any rationing rules or distribution limits been imposed on you or your household by an official party? (Y / N; if Y, briefly describe).</p>' +
+    '<p style="margin:6px 0;">B6. Have you or any household member witnessed force used during a medical emergency in the past 30 days? (Y / N; if Y, briefly describe. Prompt: force may include physical restraint, weapon display, or physical harm.)</p>' +
+    '<p style="margin:6px 0;">B7. How confident are you in official information sources regarding the current emergency? (1 = very confident, 2 = confident, 3 = neutral, 4 = not confident, 5 = not at all confident)</p>' +
+
+    '<p style="margin:24px 0 0;font-size:0.9em;">End of draft v0.3. Pending review and pilot test.</p>';
   var NOTES_CONTENT = '';
 
   var FILES = [
