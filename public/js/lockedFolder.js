@@ -36,34 +36,14 @@
 
     '<p style="margin:24px 0 0;font-size:0.9em;">End of draft v0.3. Pending review and pilot test.</p>';
   var NOTES_CONTENT =
-    '1/15/2000\n\n' +
-    'Saturday morning. Lucy and I went up to the roof of our building at quarter past ten because Mrs. Antonelli on five had been telling everyone since Thursday that an aid drop was coming on Saturday and to bring something to carry it in. We brought two of the canvas grocery bags from the closet. Half the building was up there. Maybe thirty people, in coats and hats, standing in the snow on the roof.\n\n' +
-    'I did not see the helicopter, only heard it. By the time I looked up the crates were down and four soldiers were already on them, in full kit, faces covered.\n\n' +
-    'There was no food. There was no water. They cracked the crates open and inside was guns, in foam, long ones and short ones. The whole drop, the whole reason everyone was up there, was guns.\n\n' +
-    'People started murmuring. Lucy said it out loud before I could stop her. "Where is the food."\n\n' +
-    'One of the soldiers walked over and told us to back away from the crates. He pointed at us, at both of us, and said you twins stay back. He used the word twins. Which means he knew. Which means somebody had told him there were twins on this roof, or he had been watching us long enough to figure it out.\n\n' +
-    'When Lucy did not move fast enough he swung a shotgun off his chest and for a second the barrel was on her. I was standing to her right with my hand on her elbow. He did not fire. He lowered it and told us to go back downstairs. Lucy did not move. I had to pull her.\n\n' +
-    'Two of the older men from the third floor were on the stairwell on the way down. They had heard shouting and started up and then stopped. They looked at us and did not ask. I think they saw enough.\n\n' +
-    'I am writing this down because if I do not I will start to convince myself it did not happen the way it happened. It happened the way I am writing it.\n\n' +
-
-    '1/19/2000\n\n' +
-    'Wednesday. We were walking back from the corner store and ended up at the block by the hospital because the side street was iced over and we cut through. There was a small crowd at the emergency entrance, twenty or thirty people, the doors being controlled. People trying to get inside.\n\n' +
-    'A man on the sidewalk maybe ten feet ahead of us went down hard. Hit the curb on the way. Started shaking. Seizure. Lucy grabbed my arm and we stopped. People around him backed up to give him room.\n\n' +
-    'Two soldiers came over from the line at the doors. They did not check him. They did not call for anyone. One put a boot on his chest. The other one stomped on his head. They stomped him in front of all of us. I am writing the word stomped because that is the word for what they did.\n\n' +
-    'He stopped moving. The soldiers stood over him for maybe a minute and then walked back to the line. Nobody from the hospital came out. Nobody on the sidewalk said anything. We did not say anything either. We turned around and went home the long way.\n\n' +
-    'Lucy did not talk for the rest of the night. She sat on the couch with her coat still on and would not look at me. I made tea. She would not drink it.\n\n' +
-
-    '1/22/2000\n\n' +
-    'Saturday. The rumor about the man at the hospital is on the block now. Mrs. Antonelli told Lucy at the mailboxes this morning. She said she heard from the bus shelter that the man at the hospital had been "eating a corpse" when the soldiers found him. That is the phrase. Eating a corpse. She said the soldiers did the right thing.\n\n' +
-    'Lucy came up the stairs and into the apartment and said it to me before she even took her coat off. Eating a corpse. She said it twice. Then she sat down at the kitchen table and put her head in her hands and laughed. Not a real laugh.\n\n' +
-    'We were ten feet away. He was on the sidewalk having a seizure and they killed him for it, and then somebody decided the story needed to be that he was a cannibal so the boots made sense. And the story is moving. Mrs. Antonelli believed it. The bus shelter believed it. By next week the whole block will believe it.\n\n' +
-    'I asked Lucy if she would tell what she saw to anyone official. She looked at me like I had asked her something stupid.\n\n' +
+    '1/18/2000\n\n' +
+    'Luce and I were coming back from the library computer lab as we heard a loud sound from the sky and saw something land on the top of our apartment. On our way up the stairs a soldier who threatened us immediately not to go anywhere near it or we'd be considered looters and shot. Calling us fucking dumbasses. This is after Kenny told us the army bought out the pizza and were stuffing themselves while we all starve... fighting for the last can on the shelves of the stores.\n\n' +
+    'Lucy went up, I got help from our neighbor. The soldier on the roof by the crates pulled out a shotgun. Not sure if there was even any food from the drop, none came our way from the arm... they haven't given out anything since. He pulled the gun on Lucy and it was scary enough she started to have an attack. Finally some old detective came and talked to them, didn't help they took everything, hording for themselves.\n\n' +
 
     '1/23/2000\n\n' +
-    'Sunday. Working from the library again. Bridge has been closed since Thursday and there is no sign of it opening. Margaret authorized me to dial in to my workstation from here for the duration. The library is the warmest place I have access to that has a phone line and a machine I am allowed to use.\n\n' +
-    'I am keeping these notes and the draft of the welfare survey together. Both of these or none of these. The questions in the draft ask about military presence and rationing and force used during medical emergencies because I wrote them after the roof and after the hospital, and because if anyone is going to put the right questions to the right people on this island it has to be us. Kate would ask. Margaret would not. The clients above Margaret will not.\n\n' +
-    'Lucy asked me yesterday whether I thought what we saw would matter to anyone. I told her I did not know yet. That was the honest answer. I am still telling myself it is the honest answer.\n\n' +
-    'I am hiding this folder behind a password. If you are reading this and I did not give you the password, you should not be reading this.\n';
+    'After the bridge collapsed everyone went to the hospital. I was there with Egan and a few others I recognized. A man wanted to know if his family was inside and the soldier... the same from the stairwell to the roof once again threatened to shoot him. So much happened. There were shots inside they the gate was stormed outside. They shot him. They shot some guy inside, Luce was in there and saw it. Then saw some guy stomp someone's head in. Army guy again.\n\n' +
+    'I texted Sofie to see what was going to happen to the guy who took force against a civi that was detained. She said he was a hero and that the guy he killed was eating a corpse. They'll say whatever they thing will get us to listen.\n\n' +
+    'I am going to start collecting data about the police and military activities.\n\n';
 
   var FILES = [
     {
