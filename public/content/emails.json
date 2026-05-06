@@ -430,6 +430,20 @@
       "read": true,
       "deliver_at": "2000-01-19T21:47:00",
       "in_reply_to": null
+    },
+    {
+      "id": "msg-030",
+      "folder": "Sent Items",
+      "from": "Lisa Milavic <l.milavic@calcom.com>",
+      "to": "CalCom IT <ithelp@calcom.com>",
+      "cc": null,
+      "date": "2000-01-28T14:30:00",
+      "subject": "Re: URGENT please help!! computer is showing some kind of error screen!!!",
+      "body": "Hi,\n\nI am writing to follow up on the email below from last week, and to ask you to please disregard it. My sister was at my console on the evening of Wednesday 1/19 and set the BSOD as my wallpaper as a prank. The panicked message that went out under my name was also her, not me. I came in Thursday morning to find both. I am very sorry for the false alarm.\n\nIf a ticket was opened on my behalf, please go ahead and close it out. My machine is fine. Nothing was actually broken. She has since fixed it.\n\nIf anyone on the help desk had to come check the workstation Wednesday night or Thursday morning, please let me know who and I will apologize to them directly. I owe them a coffee.\n\nOn a completely unrelated note, a question came up that I realized I do not actually know the answer to. When IT supports a workstation over remote desktop, are you able to see whatever wallpaper is set on that machine? I am dialing in from the Roosevelt Island library this week per Margaret's authorization for the EO and I just wanted to understand what is and is not visible on your end. No specific issue, I am just curious.\n\nThank you,\nLisa\n\n---\nLisa Milavic\nSenior CATI Interviewer | CalCom Research Services\nl.milavic@calcom.com  ·  x3147",
+      "attachments": [],
+      "read": true,
+      "deliver_at": "2000-01-28T14:30:00",
+      "in_reply_to": "msg-029"
     }
   ]
 }

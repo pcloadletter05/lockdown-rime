@@ -1,10 +1,10 @@
-// TimeEngine -- maps real-world time to January 24, 2000
-// 1:1 mapping: current hour/minute/second maps to same time on Jan 24, 2000
+// TimeEngine -- maps real-world time to January 28, 2000
+// 1:1 mapping: current hour/minute/second maps to same time on Jan 28, 2000
 
 const TimeEngine = {
   ANCHOR_YEAR: 2000,
   ANCHOR_MONTH: 0,  // January (0-indexed)
-  ANCHOR_DAY: 24,
+  ANCHOR_DAY: 28,
 
   getMappedTime() {
     const now = new Date();

@@ -326,8 +326,8 @@ body {
 #desktop {
   width: 100vw;
   height: 100vh;
-  background-color: #0000AA;
-  background-image: url('../assets/wallpaper/blue-screen.png');
+  background-color: #008080;
+  background-image: url('../assets/wallpaper/nk.png');
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
