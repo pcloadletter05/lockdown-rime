@@ -1,12 +1,36 @@
-// TimeEngine -- maps real-world time to January 28, 2000
-// 1:1 mapping: current hour/minute/second maps to same time on Jan 28, 2000
+// TimeEngine -- two-clock model for the offline-state simulation
+//
+// getStoryNow() returns "story now" anchored at Feb 10, 2000 -- used internally
+//   by isAfter() to gate deliver_at on emails. Real hours/minutes/seconds map
+//   1:1 onto Feb 10. This is what content gating reads. Never rendered to chrome.
+//
+// getDisplayClock() returns the 1980-anchored display clock -- used ONLY by the
+//   taskbar (chrome). The CMOS battery failed during the workstation move, so
+//   the BIOS reset to factory default (Jan 1, 1980 00:00:00). Fresh per session
+//   (no localStorage). Walks forward from the moment of page load.
+//
+// Authoring rule: any new deliver_at timestamp uses the Feb 10 anchor or later,
+//   NEVER 1980 dates.
 
 const TimeEngine = {
+  // Story-now anchor (internal gating; do not render)
   ANCHOR_YEAR: 2000,
-  ANCHOR_MONTH: 0,  // January (0-indexed)
-  ANCHOR_DAY: 28,
+  ANCHOR_MONTH: 1,   // February (0-indexed)
+  ANCHOR_DAY: 10,
 
-  getMappedTime() {
+  // Display-clock baseline (chrome only; CMOS factory default Jan 1, 1980 00:00:00)
+  CMOS_YEAR: 1980,
+  CMOS_MONTH: 0,     // January (0-indexed)
+  CMOS_DAY: 1,
+  CMOS_HOUR: 0,
+  CMOS_MINUTE: 0,
+  CMOS_SECOND: 0,
+
+  // Lazy-initialized on first getDisplayClock() call so the visible 1980 clock
+  // anchors to the moment the desktop renders, not module-load.
+  _bootMs: null,
+
+  getStoryNow() {
     const now = new Date();
     return new Date(
       this.ANCHOR_YEAR,
@@ -16,6 +40,19 @@ const TimeEngine = {
       now.getMinutes(),
       now.getSeconds()
     );
+  },
+
+  getDisplayClock() {
+    if (this._bootMs === null) this._bootMs = Date.now();
+    const baseline = new Date(
+      this.CMOS_YEAR,
+      this.CMOS_MONTH,
+      this.CMOS_DAY,
+      this.CMOS_HOUR,
+      this.CMOS_MINUTE,
+      this.CMOS_SECOND
+    ).getTime();
+    return new Date(baseline + (Date.now() - this._bootMs));
   },
 
   formatClockTime(date) {
@@ -34,9 +71,9 @@ const TimeEngine = {
   },
 
   isAfter(deliverAt) {
-    // Check if the current mapped time is past the deliver_at timestamp
-    const mapped = this.getMappedTime();
+    // Check if the current story-now is past the deliver_at timestamp
+    const now = this.getStoryNow();
     const target = new Date(deliverAt);
-    return mapped >= target;
+    return now >= target;
   }
 };
