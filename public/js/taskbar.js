@@ -401,9 +401,9 @@ const Taskbar = {
   updateClock: function() {
     var clockEl = document.getElementById('tray-clock');
     if (!clockEl) return;
-    var mappedTime = TimeEngine.getMappedTime();
-    clockEl.textContent = TimeEngine.formatClockTime(mappedTime);
-    clockEl.title = TimeEngine.formatFullDate(mappedTime);
+    var displayTime = TimeEngine.getDisplayClock();
+    clockEl.textContent = TimeEngine.formatClockTime(displayTime);
+    clockEl.title = TimeEngine.formatFullDate(displayTime);
   },
 
   // ---- Window Button Management ----
