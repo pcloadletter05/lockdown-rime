@@ -455,14 +455,24 @@ var BROWSER_PAGES = {
   },
 
   'dns-error': {
-    title: 'Cannot find server',
+    title: 'The page cannot be displayed',
     url: '',
-    content: '<div style="padding: 20px; font-family: Arial, sans-serif;">' +
+    content: '<div style="padding: 20px; font-family: Arial, sans-serif; background: #FFFFFF;">' +
       '<h2 style="font-weight: normal;">The page cannot be displayed</h2>' +
       '<p style="font-size: 12px;">There is a problem with the page you are trying to reach and it cannot be displayed.</p>' +
       '<hr size="1" color="#C0C0C0">' +
-      '<p style="font-size: 12px;"><b>Cannot find server or DNS Error</b></p>' +
-      '<p style="font-size: 11px;">Internet Explorer</p>' +
+      '<p style="font-size: 12px;"><b>Please try the following:</b></p>' +
+      '<ul style="font-size: 12px;">' +
+        '<li>Click the <a href="#">Refresh</a> button, or try again later.</li>' +
+        '<li>If you typed the page address in the Address bar, make sure that it is spelled correctly.</li>' +
+        '<li>To check your connection settings, click the <b>Tools</b> menu, and then click <b>Internet Options</b>. On the <b>Connections</b> tab, click <b>Settings</b>. The settings should match those provided by your Local Area Network (LAN) administrator or Internet Service Provider (ISP).</li>' +
+        '<li>If your Network Administrator has enabled it, Microsoft Windows can examine your network and automatically discover network connection settings. If you would like Windows to try and discover them, click <a href="#">Detect Network Settings</a>.</li>' +
+        '<li>Some sites require 128-bit connection security. Click the <b>Help</b> menu and then click <b>About Internet Explorer</b> to determine what strength security you have installed.</li>' +
+        '<li>If you are trying to reach a secure site, make sure your Security settings can support it. Click the <b>Tools</b> menu, and then click <b>Internet Options</b>. On the <b>Advanced</b> tab, scroll to the <b>Security</b> section and check settings for SSL 2.0, SSL 3.0, TLS 1.0, PCT 1.0.</li>' +
+        '<li>Click the <a href="#">Back</a> button to try another link.</li>' +
+      '</ul>' +
+      '<hr size="1" color="#C0C0C0">' +
+      '<p style="font-size: 12px;"><b>Cannot find server or DNS Error</b><br>Internet Explorer</p>' +
     '</div>'
   }
 };
