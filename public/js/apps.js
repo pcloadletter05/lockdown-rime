@@ -532,7 +532,8 @@ var AppRegistry = {
       var winampResult = buildWinampUI(args);
       content = winampResult.element;
     } else if (appId === 'network') {
-      content = buildNetworkUI(args);
+      showNetworkUnavailable();
+      return;
     } else if (appId === 'recycle') {
       content = buildRecycleBinUI(args);
       title = 'Recycle Bin';
@@ -1488,6 +1489,7 @@ function buildExplorerUI(args) {
 
 var _networkData = null;
 
+// v2.0 Offline: unreachable; preserved for future network-restored milestone.
 function loadNetworkData(callback) {
   if (_networkData) { callback(_networkData); return; }
   var xhr = new XMLHttpRequest();
@@ -1546,6 +1548,28 @@ function showStubDialog(appName) {
   overlay.querySelector('.nt4-btn').onclick = function() { overlay.remove(); };
   overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
   document.body.appendChild(overlay);
+}
+
+function showNetworkUnavailable() {
+  SoundManager.play('chord');
+  var overlay = document.createElement('div');
+  overlay.className = 'dialog-overlay';
+  overlay.innerHTML =
+    '<div class="nt4-dialog" style="width: 340px;">' +
+      '<div class="dialog-titlebar">Network Neighborhood</div>' +
+      '<div class="dialog-body" style="display: flex; align-items: center; gap: 12px;">' +
+        '<img src="assets/icons/32/exclamation.png" width="32" height="32" style="image-rendering: pixelated;">' +
+        '<span>Unable to browse the network.<br><br>The network is not present or not started.</span>' +
+      '</div>' +
+      '<div class="dialog-buttons">' +
+        '<button class="nt4-btn" style="min-width: 75px;">OK</button>' +
+      '</div>' +
+    '</div>';
+  var okBtn = overlay.querySelector('.nt4-btn');
+  okBtn.onclick = function() { overlay.remove(); };
+  overlay.addEventListener('click', function(e) { if (e.target === overlay) overlay.remove(); });
+  document.body.appendChild(overlay);
+  okBtn.focus();
 }
 
 function buildRecycleBinUI(args) {
@@ -1703,6 +1727,7 @@ function buildRecycleBinUI(args) {
   return container;
 }
 
+// v2.0 Offline: unreachable; AppRegistry.launch('network') short-circuits to showNetworkUnavailable. Preserved for future network-restored milestone.
 function buildNetworkUI(args) {
   var container = document.createElement('div');
   container.className = 'explorer-app';
