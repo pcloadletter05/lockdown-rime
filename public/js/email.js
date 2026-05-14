@@ -170,7 +170,7 @@ function buildEmailUI(args) {
   statusBar.className = 'well';
   statusBar.style.fontSize = '11px';
   statusBar.style.padding = '2px 4px';
-  statusBar.textContent = '0 message(s)';
+  statusBar.textContent = 'Cannot connect to mail server. Last sync 1/28/2000 4:47 PM';
   container.appendChild(statusBar);
 
   // Render functions scoped to this instance
@@ -278,9 +278,6 @@ function buildEmailUI(args) {
 
       messageList.appendChild(row);
     });
-
-    // Update status bar
-    statusBar.textContent = emails.length + ' message(s)';
   }
 
   function renderPreview(email) {
