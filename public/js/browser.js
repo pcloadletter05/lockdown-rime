@@ -1,6 +1,9 @@
 // IE5-style browser with navigation history, favorites, and page rendering
 // Provides: buildBrowserUI(args) -> HTMLElement
+// v2.0 Offline: every navigation routes through goOffline(displayUrl) and renders the IE5 DNS error page.
+//               Internal BROWSER_PAGES strings retained as dead code for future intermittent-connectivity milestones.
 
+// v2.0 Offline: internal page strings unreachable (browser intercepts at goOffline). Preserved for future intermittent-connectivity milestones.
 var BROWSER_PAGES = {
   'calcom-intranet': {
     title: 'CalCom Intranet - Home',
@@ -505,8 +508,10 @@ function buildBrowserUI(args) {
   var container = document.createElement('div');
   container.className = 'browser-app';
 
-  // Instance-level browser history
-  var history = { stack: ['calcom-intranet'], position: 0 };
+  // Instance-level browser history.
+  // v2.0 Offline: stack carries 'dns-error' keys; parallel urls[] carries the failed displayUrl per step.
+  // Seed is empty so the first goOffline() push is the only entry (Back disabled at cold start).
+  var history = { stack: [], urls: [], position: 0 };
 
   // References to DOM elements (assigned after creation)
   var backBtn, fwdBtn, addressInput, contentArea, favoritesPanel, statusBar;
@@ -721,6 +726,77 @@ function buildBrowserUI(args) {
     renderPage(pageKey);
     updateNavButtons();
     checkPopupTrigger(pageKey);
+  }
+
+  // v2.0 Offline: universal navigation entry. Every IE5 nav (initial render, Home, Refresh,
+  // address bar Enter/Go, bookmark click) routes here. Paints BROWSER_PAGES['dns-error']
+  // after a 500ms throbber, retains displayUrl in address bar, pushes onto parallel history arrays.
+  // Never calls checkPopupTrigger -> popups stay inert (SC#7 implicit).
+  function goOffline(displayUrl) {
+    // 1. Defensive: clear any in-flight iframe (cold start has none)
+    var existingIframe = contentArea.querySelector('iframe');
+    if (existingIframe) existingIframe.remove();
+
+    // 2. Address bar retains the URL the visitor tried to reach (verbatim, no normalization)
+    addressInput.value = displayUrl;
+
+    // 3. Throbber on; status bar reports the attempted URL
+    if (throbberTimer) { clearTimeout(throbberTimer); throbberTimer = null; }
+    startThrobber();
+    if (statusBar) statusBar.textContent = 'Opening page ' + displayUrl + '...';
+
+    // 4. Truncate-and-push BOTH parallel arrays atomically
+    history.stack = history.stack.slice(0, history.position + 1);
+    history.urls  = history.urls.slice(0, history.position + 1);
+    history.stack.push('dns-error');
+    history.urls.push(displayUrl);
+    history.position = history.stack.length - 1;
+
+    // 5. Schedule the actual paint at T+500ms (simulated DNS-lookup latency, SC#6)
+    throbberTimer = setTimeout(function() {
+      throbberTimer = null;
+      var errPage = BROWSER_PAGES['dns-error'];
+      contentArea.innerHTML = errPage.content;
+      // Order matters: stopThrobber() sets statusBar to 'Done'; override AFTER.
+      stopThrobber();
+      if (statusBar) statusBar.textContent = 'Cannot find server';
+
+      // Window title flip (mirrors renderPage pattern)
+      var windowEl = container.closest('.nt4-window');
+      if (windowEl) {
+        var titleEl = windowEl.querySelector('.titlebar-title');
+        if (titleEl) titleEl.textContent = errPage.title + ' - Microsoft Internet Explorer';
+      }
+
+      updateNavButtons();
+    }, 500);
+  }
+
+  // v2.0 Offline: redraw the current history entry (used by Back/Forward).
+  // Reads history.urls[history.position] for the address bar; does NOT mutate history.
+  function repaintFromHistory() {
+    var displayUrl = history.urls[history.position];
+    addressInput.value = displayUrl;
+
+    if (throbberTimer) { clearTimeout(throbberTimer); throbberTimer = null; }
+    startThrobber();
+    if (statusBar) statusBar.textContent = 'Opening page ' + displayUrl + '...';
+
+    throbberTimer = setTimeout(function() {
+      throbberTimer = null;
+      var errPage = BROWSER_PAGES['dns-error'];
+      contentArea.innerHTML = errPage.content;
+      stopThrobber();
+      if (statusBar) statusBar.textContent = 'Cannot find server';
+
+      var windowEl = container.closest('.nt4-window');
+      if (windowEl) {
+        var titleEl = windowEl.querySelector('.titlebar-title');
+        if (titleEl) titleEl.textContent = errPage.title + ' - Microsoft Internet Explorer';
+      }
+
+      updateNavButtons();
+    }, 500);
   }
 
   function goBack() {
