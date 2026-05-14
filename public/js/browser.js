@@ -802,16 +802,14 @@ function buildBrowserUI(args) {
   function goBack() {
     if (history.position > 0) {
       history.position--;
-      renderPage(history.stack[history.position]);
-      updateNavButtons();
+      repaintFromHistory();
     }
   }
 
   function goForward() {
     if (history.position < history.stack.length - 1) {
       history.position++;
-      renderPage(history.stack[history.position]);
-      updateNavButtons();
+      repaintFromHistory();
     }
   }
 
@@ -898,8 +896,8 @@ function buildBrowserUI(args) {
   refreshBtn.className = 'toolbar-btn raised';
   refreshBtn.textContent = 'R';
   refreshBtn.addEventListener('click', function() {
-    var currentKey = history.stack[history.position];
-    renderPage(currentKey);
+    // v2.0 Offline: re-fail the lookup with whatever URL is currently displayed
+    goOffline(addressInput.value);
   });
   toolbar.appendChild(refreshBtn);
 
@@ -907,7 +905,8 @@ function buildBrowserUI(args) {
   homeBtn.className = 'toolbar-btn raised';
   homeBtn.textContent = 'H';
   homeBtn.addEventListener('click', function() {
-    navigateTo('calcom-intranet');
+    // v2.0 Offline: Home attempts the intranet URL and fails with DNS error
+    goOffline('http://intranet.calcom.com/');
   });
   toolbar.appendChild(homeBtn);
 
@@ -949,12 +948,8 @@ function buildBrowserUI(args) {
   addressInput.style.fontSize = '11px';
   addressInput.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
-      var key = resolveUrl(addressInput.value);
-      if (key) {
-        navigateTo(key);
-      } else {
-        navigateTo('dns-error');
-      }
+      // v2.0 Offline: typed URL retained verbatim regardless of whether it resolves to a known page
+      goOffline(addressInput.value);
     }
   });
   addressBar.appendChild(addressInput);
@@ -963,12 +958,8 @@ function buildBrowserUI(args) {
   goBtn.className = 'nt4-button';
   goBtn.textContent = 'Go';
   goBtn.addEventListener('click', function() {
-    var key = resolveUrl(addressInput.value);
-    if (key) {
-      navigateTo(key);
-    } else {
-      navigateTo('dns-error');
-    }
+    // v2.0 Offline: same behavior as Enter — typed URL retained verbatim
+    goOffline(addressInput.value);
   });
   addressBar.appendChild(goBtn);
 
@@ -1072,7 +1063,17 @@ function buildBrowserUI(args) {
         bookmarkEl.style.paddingLeft = (4 + depth * 16) + 'px';
         bookmarkEl.innerHTML = iconImg('iexplore', 16) + ' ' + item.name;
         bookmarkEl.addEventListener('click', function() {
-          navigateTo(item.url);
+          // v2.0 Offline: resolve the URL the visitor was trying to reach.
+          // External (iframe) bookmarks carry displayUrl. Internal bookmarks have item.url as a
+          // BROWSER_PAGES key whose entry holds the URL. Fallback to item.url for malformed entries.
+          var url = item.displayUrl;
+          if (!url && BROWSER_PAGES[item.url]) {
+            url = BROWSER_PAGES[item.url].url;
+          }
+          if (!url) {
+            url = item.url;
+          }
+          goOffline(url);
         });
         parentEl.appendChild(bookmarkEl);
       }
@@ -1110,9 +1111,11 @@ function buildBrowserUI(args) {
     });
 
   // ---- Render initial page ----
-  // Use setTimeout so the DOM is attached first (needed for closest('.nt4-window'))
+  // v2.0 Offline: cold start attempts the intranet URL and fails with DNS error after 500ms throbber.
+  // The setTimeout(0) wrapper is still required so the window is attached before goOffline()
+  // tries to update the titlebar via container.closest('.nt4-window') inside its 500ms callback.
   setTimeout(function() {
-    renderPage('calcom-intranet');
+    goOffline('http://intranet.calcom.com/');
   }, 0);
 
   return container;
